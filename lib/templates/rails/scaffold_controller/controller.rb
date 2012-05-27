@@ -45,7 +45,7 @@ class <%= controller_class_name %>Controller < ApplicationController
 
     respond_to do |format|
       if @<%= orm_instance.save %>
-        format.html { redirect_to @<%= singular_table_name %>, <%= key_value :notice, "'#{human_name} was successfully created.'" %> }
+        format.html { redirect_to <%= plural_table_name %>_path, <%= key_value :notice, "'#{human_name} was successfully created.'" %> }
         format.json { render <%= key_value :json, "@#{singular_table_name}" %>, <%= key_value :status, ':created' %>, <%= key_value :location, "@#{singular_table_name}" %> }
       else
         format.html { render <%= key_value :action, '"new"' %> }
