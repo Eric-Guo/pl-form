@@ -1,34 +1,37 @@
-<h3>The <%= plural_table_name %> records</h3>
+<h3>The <%= plural_table_name.titleize %> records</h3>
+
+<%%= link_to 'Input <%= human_name %>', new_<%= singular_table_name %>_path, :class => 'btn btn-primary' %>
+
+<hr>
 
 <table class="table table-bordered">
-  <thread>
+  <thead>
   <colgroup>
+    <col class="actions" />
 <% attributes.each do |attribute| -%>
     <col />
 <% end -%>
-    <col class="actions" />
   </colgroup>
   <tr>
-<% attributes.each do |attribute| -%>
-    <th><%= attribute.human_name %></th>
-<% end -%>
     <th>Actions</th>
+<% attributes.each do |attribute| -%>
+    <th><%= attribute.human_name.titleize %></th>
+<% end -%>
   </tr>
   </thead>
   <tbody>
 <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
   <tr>
+    <td>
+    <%%= link_to raw('<i class="icon-list"></i>'), <%= singular_table_name %> -%>
+    <%%= link_to raw('<i class="icon-edit"></i>'), edit_<%= singular_table_name %>_path(<%= singular_table_name %>) -%>
+    <%%= link_to raw('<i class="icon-remove"></i>'), <%= singular_table_name %>, <%= key_value :confirm, "'Are you sure?'" %>, <%= key_value :method, ":delete" %> -%>
+    </td>
 <% attributes.each do |attribute| -%>
     <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
 <% end -%>
-    <td><%%= link_to 'Show', <%= singular_table_name %> %></td>
-    <td><%%= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>) %></td>
-    <td><%%= link_to 'Destroy', <%= singular_table_name %>, <%= key_value :confirm, "'Are you sure?'" %>, <%= key_value :method, ":delete" %> %></td>
   </tr>
 <%% end %>
   </tbody>
 </table>
 <%%= will_paginate @<%= plural_table_name %> %>
-<br />
-
-<%%= link_to 'Input <%= human_name %>', new_<%= singular_table_name %>_path, :class => 'btn btn-primary' %>

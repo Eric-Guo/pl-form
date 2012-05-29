@@ -1,5 +1,7 @@
 <% module_namespacing do -%>
 class <%= controller_class_name %>Controller < ApplicationController
+  load_and_authorize_resource
+
   # GET <%= route_url %>
   # GET <%= route_url %>.json
   def index

@@ -1,0 +1,2 @@
+# TCM Die Attach Production log sheet DOC#: 3745-01-50001
+generate "scaffold", "DA-Production-Log badge:string shift_code:string status_code:string lot_no:string reject_code:string remark:string check_type:string device:string visual_inspection_result:string die_placement_x:float die_placement_y:float die_rotation:float die_tilt:float stack_height:float confirm_by:string"

@@ -1,0 +1,24 @@
+<h3>The <%= singular_table_name.titleize %></h3>
+<div class="row">
+<div class="span10 offset1">
+<table class="table">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Value</th>
+		</tr>
+	</thead>
+	<tbody>
+<% attributes.each do |attribute| -%>
+		<tr>
+		  <td><%= attribute.human_name %></td>
+		  <td><%%= @<%= singular_table_name %>.<%= attribute.name %> %></td>
+  	</tr>
+<% end -%>
+	</tbody>
+</table>
+</div>
+</div>
+
+<%%= link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), :class => 'btn btn-primary' %> |
+<%%= link_to 'Back', <%= index_helper %>_path %>

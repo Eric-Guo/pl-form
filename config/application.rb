@@ -55,5 +55,14 @@ module PlForm
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Disable most of the extra content which is no need for PaperLess project
+    config.generators do |g|
+        g.test_framework false
+        g.stylesheets    false
+        g.assets         false
+        g.fixtures       false
+        g.helper         false
+    end
   end
 end
