@@ -42,20 +42,8 @@
         <div class="nav-collapse">
           <ul class="nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-<% if Rails.env == 'development' and request.host == 'localhost' %>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Reference Document <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-<li><a href="http://guides.rubyonrails.org/" target="_black">Rails Guides</a></li>
-<li><a href="http://api.rubyonrails.org/" target="_black">Rails API</a></li>
-<li><a href="http://www.ruby-doc.org/core/" target="_black">Ruby core</a></li>
-<li><a href="http://www.ruby-doc.org/stdlib/" target="_black">Ruby standard library</a></li>
-<li><a href="http://twitter.github.com/bootstrap/components.html" target="_black">Bootstrap reference</a></li>
-              </ul>
-            </li>
-<% end %>
+            <%= render 'fop_nav' %>
+            <%= render 'dev_reference' %>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
