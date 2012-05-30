@@ -10,6 +10,7 @@ gem 'win32console', :platforms => :mingw
 gem 'anjlab-bootstrap-rails', '>= 2.0', :require => 'bootstrap-rails'
 gem 'bootstrap-will_paginate'
 gem 'devise'
+gem 'cancan'
 gem 'simple_form'
 
 

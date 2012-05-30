@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
   attr_accessible :badge, :email, :password, :password_confirmation, :remember_me
   validates :badge, presence: true, uniqueness: true, :length => { :minimum => 2 }
   validates :email, uniqueness: true
-  # attr_accessible :title, :body
+
+  attr_accessible :shift_code, :supervisor, :qa, :admin
 
 protected
   def email_required?

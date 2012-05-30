@@ -11,15 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120526132352) do
+ActiveRecord::Schema.define(:version => 20120530125407) do
 
-  create_table "pl_schema_migrations", :id => false, :force => true do |t|
-    t.string "version", :null => false
-  end
-
-  add_index "pl_schema_migrations", ["version"], :name => "pl_unique_schema_migrations", :unique => true
-
-  create_table "pl_users", :force => true do |t|
+  create_table "users", :force => true do |t|
     t.string   "badge",                  :default => "", :null => false
     t.string   "email",                  :default => ""
     t.string   "encrypted_password",     :default => "", :null => false
@@ -33,10 +27,14 @@ ActiveRecord::Schema.define(:version => 20120526132352) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "shift_code"
+    t.boolean  "supervisor"
+    t.boolean  "qa"
+    t.boolean  "admin"
   end
 
-  add_index "pl_users", ["badge"], :name => "index_pl_users_on_badge", :unique => true
-  add_index "pl_users", ["email"], :name => "index_pl_users_on_email", :unique => true
-  add_index "pl_users", ["reset_password_token"], :name => "index_pl_users_on_reset_password_token", :unique => true
+  add_index "users", ["badge"], :name => "index_users_on_badge", :unique => true
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end
