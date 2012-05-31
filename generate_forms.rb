@@ -15,7 +15,7 @@
 #Supervisor
 
 # Common Fields
-common_fields='badge:string shift_code:string'
+common_fields='create_badge:string create_shift_code:string update_badge:string update_shift_code:string'
 
 # Production Log Fields
 production_log_fields='status_code:string device:string lot_no:string reject_code:string remark:string'

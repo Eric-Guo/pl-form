@@ -10,7 +10,7 @@ class Ability
       can :create, :all if user.present?
       can [:update, :destroy], :all if user.present? and user.supervisor?
       can :update, :all do |r|
-        r.badge == user.badge if user.present?
+        r.create_badge == user.badge if user.present?
       end
     end
   end

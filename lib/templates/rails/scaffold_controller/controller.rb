@@ -43,7 +43,7 @@ class <%= controller_class_name %>Controller < ApplicationController
   # POST <%= route_url %>
   # POST <%= route_url %>.json
   def create
-    @<%= singular_table_name %> = <%= orm_class.build(class_name, "params[:#{singular_table_name}]") %>
+    @<%= singular_table_name %> = <%= orm_class.build(class_name, "merge_create_fields params[:#{singular_table_name}]") %>
 
     respond_to do |format|
       if @<%= orm_instance.save %>
@@ -62,7 +62,7 @@ class <%= controller_class_name %>Controller < ApplicationController
     @<%= singular_table_name %> = <%= orm_class.find(class_name, "params[:id]") %>
 
     respond_to do |format|
-      if @<%= orm_instance.update_attributes("params[:#{singular_table_name}]") %>
+      if @<%= orm_instance.update_attributes("merge_update_fields params[:#{singular_table_name}]") %>
         format.html { redirect_to @<%= singular_table_name %>, <%= key_value :notice, "'#{human_name} was successfully updated.'" %> }
         format.json { head :no_content }
       else

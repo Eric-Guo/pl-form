@@ -3,7 +3,7 @@
 
   <div class="form-inputs">
   <%- attributes.each do |attribute| -%>
-    <% unless ['badge','shift_code'].include?(attribute.name) -%>
+    <% unless ['create_badge','create_shift_code','update_badge','update_shift_code'].include?(attribute.name) -%>
     <%%= f.<%= attribute.reference? ? :association : :input %> :<%= attribute.name %> %>
     <% end -%>
   <%- end -%>
