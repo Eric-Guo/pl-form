@@ -9,13 +9,17 @@
   <colgroup>
     <col class="actions" />
 <% attributes.each do |attribute| -%>
-    <col />
+    <% unless ['create_badge','create_shift_code','update_badge','update_shift_code'].include?(attribute.name) -%>
+      <col />
+    <% end -%>
 <% end -%>
   </colgroup>
   <tr>
     <th>Actions</th>
 <% attributes.each do |attribute| -%>
-    <th><%= attribute.human_name.titleize %></th>
+    <% unless ['create_badge','create_shift_code','update_badge','update_shift_code'].include?(attribute.name) -%>
+      <th><%= attribute.human_name.titleize %></th>
+    <% end -%>
 <% end -%>
   </tr>
   </thead>
@@ -32,7 +36,9 @@
     <%% end %>
     </td>
 <% attributes.each do |attribute| -%>
-    <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
+    <% unless ['create_badge','create_shift_code','update_badge','update_shift_code'].include?(attribute.name) -%>
+      <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
+    <% end -%>
 <% end -%>
   </tr>
 <%% end %>
