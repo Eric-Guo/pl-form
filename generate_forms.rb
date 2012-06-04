@@ -1,3 +1,4 @@
+# encoding: UTF-8
 #Every field must searchable
 #
 #Reject Code
@@ -36,6 +37,16 @@ production_log_fields = {
 	:reject_code => :string,
 	:remark      => :string,
 }
+
+# Wafer报废登记表 DOC#: 3743-02-10027
+wafer_scrap_log_fields = {
+	:lot_no    => :string,
+	:wafer_no  => :string,
+	:wafer_qty => :integer,
+	:remark    => :string,
+}
+generate_form 'FOP', 'WaferScrapLog',
+	(wafer_scrap_log_fields.merge common_fields)
 
 # TCM Die Attach Production log sheet DOC#: 3745-01-50001
 die_attach_production_log_fields = {
