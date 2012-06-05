@@ -1,5 +1,9 @@
 <h3>The <%= plural_table_name.titleize %> records</h3>
 
+<%%= search_form_for @q do |f| %>
+  <%%= f.submit -%>
+<%% end %>
+
 <%%= link_to 'Input <%= human_name %>', new_<%= singular_table_name %>_path, :class => 'btn btn-primary' %>
 
 <hr>

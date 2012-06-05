@@ -5,7 +5,8 @@ class <%= controller_class_name %>Controller < ApplicationController
   # GET <%= route_url %>
   # GET <%= route_url %>.json
   def index
-    @<%= plural_table_name %> = <%= class_name %>.order("created_at DESC").paginate(:page => params[:page], :per_page => 10)
+    @q = <%= class_name %>.search(params[:q])
+    @<%= plural_table_name %> = @q.result.order("created_at DESC").paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb

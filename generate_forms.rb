@@ -25,6 +25,14 @@ def generate_form(dept, form, fields)
 	inject_into_file "app/models/#{form.underscore}.rb", :before => "end" do
 	  "  validates :status_code, :presence => true\n"
 	end if fields.has_key? :status_code
+
+	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :before => '  <%= f.submit -%>' do
+	  "    <%= f.label :device_cont %><%= f.text_field :device_cont %>\n"
+	end if fields.has_key? :device
+
+	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :before => '  <%= f.submit -%>' do
+	  "    <%= f.label :lot_no_cont %><%= f.text_field :lot_no_cont %>\n"
+	end if fields.has_key? :lot_no
 end
 
 common_fields = {
