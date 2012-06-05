@@ -17,9 +17,14 @@
 
 def generate_form(dept, form, fields)
 	generate :scaffold, "#{form}#{fields.collect {|k,v| " #{k}:#{v}"}.join}"
-	inject_into_file 'app/views/application/_nav.html.erb', :before => "	</ul><!--#{dept}-->" do
+
+	inject_into_file "app/views/application/_nav.html.erb", :before => "	</ul><!--#{dept}-->" do
 	  "    <li><%= link_to '#{form.titleize}', #{form.pluralize.underscore}_path -%></li>\n"
 	end
+
+	inject_into_file "app/models/#{form.underscore}.rb", :before => "end" do
+	  "  validates :status_code, :presence => true\n"
+	end if fields.has_key? :status_code
 end
 
 common_fields = {
