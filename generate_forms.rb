@@ -26,11 +26,11 @@ def generate_form(dept, form, fields)
 	  "  validates :status_code, :presence => true\n"
 	end if fields.has_key? :status_code
 
-	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :before => '  <%= f.submit :class => "btn" -%>' do
+	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :before => '  <%= f.submit :class => "btn" %>' do
 	  "    <%= f.text_field :device_cont, :class => 'input-medium search-query', :placeholder => 'PN Device' %>\n"
 	end if fields.has_key? :device
 
-	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :before => '  <%= f.submit :class => "btn" -%>' do
+	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :before => '  <%= f.submit :class => "btn" %>' do
 	  "    <%= f.text_field :lot_no_cont, :class => 'input-medium search-query', :placeholder => 'Lot No.' %>\n"
 	end if fields.has_key? :lot_no
 end

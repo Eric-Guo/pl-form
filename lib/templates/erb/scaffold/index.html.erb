@@ -1,10 +1,9 @@
 <h3>The <%= plural_table_name.titleize %> records</h3>
 
 <%%= search_form_for @q, :class => "well form-search" do |f| %>
-  <%%= f.submit :class => "btn" -%>
+  <%%= link_to 'Input <%= human_name %>', new_<%= singular_table_name %>_path, :class => 'btn btn-primary' %>
+  <%%= f.submit :class => "btn" %>
 <%% end %>
-
-<%%= link_to 'Input <%= human_name %>', new_<%= singular_table_name %>_path, :class => 'btn btn-primary' %>
 
 <hr>
 
@@ -12,19 +11,19 @@
   <thead>
   <colgroup>
     <col class="actions" />
-<% attributes.each do |attribute| -%>
-    <% unless ['create_badge','create_shift_code','update_badge','update_shift_code'].include?(attribute.name) -%>
+<% attributes.each do |attribute| %>
+    <% unless ['create_badge','create_shift_code','update_badge','update_shift_code'].include?(attribute.name) %>
       <col />
-    <% end -%>
-<% end -%>
+    <% end %>
+<% end %>
   </colgroup>
   <tr>
     <th>Actions</th>
-<% attributes.each do |attribute| -%>
-    <% unless ['create_badge','create_shift_code','update_badge','update_shift_code'].include?(attribute.name) -%>
+<% attributes.each do |attribute| %>
+    <% unless ['create_badge','create_shift_code','update_badge','update_shift_code'].include?(attribute.name) %>
       <th><%= attribute.human_name.titleize %></th>
-    <% end -%>
-<% end -%>
+    <% end %>
+<% end %>
   </tr>
   </thead>
   <tbody>
@@ -39,11 +38,11 @@
     <%%= link_to raw('<i class="icon-remove"></i>'), <%= singular_table_name %>, <%= key_value :confirm, "'Are you sure?'" %>, <%= key_value :method, ":delete" %> -%>
     <%% end %>
     </td>
-<% attributes.each do |attribute| -%>
-    <% unless ['create_badge','create_shift_code','update_badge','update_shift_code'].include?(attribute.name) -%>
+<% attributes.each do |attribute| %>
+    <% unless ['create_badge','create_shift_code','update_badge','update_shift_code'].include?(attribute.name) %>
       <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
-    <% end -%>
-<% end -%>
+    <% end %>
+<% end %>
   </tr>
 <%% end %>
   </tbody>

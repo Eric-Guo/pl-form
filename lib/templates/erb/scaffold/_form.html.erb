@@ -2,17 +2,17 @@
   <%%= f.error_notification %>
 
   <div class="form-inputs">
-  <%- attributes.each do |attribute| -%>
-    <% unless ['create_badge','create_shift_code','update_badge','update_shift_code'].include?(attribute.name) -%>
-      <% if attribute.name == 'status_code' -%>
-        <%%= f.input :status_code, :collection => ['N','OP','CS','CD','CT','RM','PM','CP'], :required => true -%>
-      <% elsif attribute.name == 'check_type' -%>
-        <%%= f.input :check_type, :collection => ['CS','CD','RM','CT'] %>
-      <% else -%>
-        <%%= f.<%= attribute.reference? ? :association : :input %> :<%= attribute.name %> %>
-      <% end -%>
-    <% end -%>
-  <%- end -%>
+  <% attributes.each do |attribute| %>
+    <% unless ['create_badge','create_shift_code','update_badge','update_shift_code'].include?(attribute.name) %>
+      <% if attribute.name == 'status_code' %>
+    <%%= f.input :status_code, :collection => ['N','OP','CS','CD','CT','RM','PM','CP'], :required => true %>
+      <% elsif attribute.name == 'check_type' %>
+    <%%= f.input :check_type, :collection => ['CS','CD','RM','CT'] %>
+      <% else %>
+    <%%= f.<%= attribute.reference? ? :association : :input %> :<%= attribute.name %> %>
+      <% end %>
+    <% end %>
+  <% end %>
   </div>
 
   <div class="form-actions">
