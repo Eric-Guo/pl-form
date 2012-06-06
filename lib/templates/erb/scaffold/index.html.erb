@@ -9,7 +9,7 @@
 <hr>
 
 <table class="table table-bordered">
-  <thead>
+<thead>
   <colgroup>
     <col class="actions" />
 <% attributes.each do |attribute| -%>
@@ -26,26 +26,26 @@
   <% end -%>
 <% end -%>
   </tr>
-  </thead>
-  <tbody>
+</thead>
+<tbody>
 <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| -%>
-  <tr>
-    <td>
-    <%%= link_to raw('<i class="icon-list"></i>'), <%= singular_table_name %> -%>
-    <%% if can? :update, <%= singular_table_name %> %>
-    <%%= link_to raw('<i class="icon-edit"></i>'), edit_<%= singular_table_name %>_path(<%= singular_table_name %>) -%>
-    <%% end %>
-    <%% if can? :delete, <%= singular_table_name %> %>
-    <%%= link_to raw('<i class="icon-remove"></i>'), <%= singular_table_name %>, <%= key_value :confirm, "'Are you sure?'" %>, <%= key_value :method, ":delete" %> -%>
-    <%% end %>
-    </td>
+<tr>
+  <td>
+  <%%= link_to raw('<i class="icon-list"></i>'), <%= singular_table_name %> -%>
+  <%% if can? :update, <%= singular_table_name %> %>
+  <%%= link_to raw('<i class="icon-edit"></i>'), edit_<%= singular_table_name %>_path(<%= singular_table_name %>) -%>
+  <%% end %>
+  <%% if can? :delete, <%= singular_table_name %> %>
+  <%%= link_to raw('<i class="icon-remove"></i>'), <%= singular_table_name %>, <%= key_value :confirm, "'Are you sure?'" %>, <%= key_value :method, ":delete" %> -%>
+  <%% end %>
+  </td>
 <% attributes.each do |attribute| -%>
   <% unless ['create_badge','create_shift_code','update_badge','update_shift_code'].include?(attribute.name) -%>
     <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
   <% end -%>
 <% end -%>
-  </tr>
+</tr>
 <%% end -%>
-  </tbody>
+</tbody>
 </table>
 <%%= will_paginate @<%= plural_table_name %> %>
