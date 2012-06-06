@@ -27,19 +27,19 @@ def generate_form(dept, form, fields)
 	end if fields.has_key? :status_code
 
 	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :before => '  <%= f.submit :class => "btn" %>' do
-	  "    <%= f.text_field :device_cont, :class => 'input-medium search-query', :placeholder => 'Search PN Device' %>\n"
+	  "  <%= f.text_field :device_cont, :class => 'input-medium search-query', :placeholder => 'Search PN Device' %>\n"
 	end if fields.has_key? :device
 
 	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :before => '  <%= f.submit :class => "btn" %>' do
-	  "    <%= f.text_field :lot_no_cont, :class => 'input-medium search-query', :placeholder => 'Search Lot No.' %>\n"
+	  "  <%= f.text_field :lot_no_cont, :class => 'input-medium search-query', :placeholder => 'Search Lot No.' %>\n"
 	end if fields.has_key? :lot_no
 
 	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :before => '  <%= f.submit :class => "btn" %>' do
-	  "    <%= f.text_field :gold_wire_no_cont, :class => 'input-medium search-query', :placeholder => 'Search Goldwire No.' %>\n"
+	  "  <%= f.text_field :gold_wire_no_cont, :class => 'input-medium search-query', :placeholder => 'Search Goldwire No.' %>\n"
 	end if fields.has_key? :gold_wire_no
 
 	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :before => '  <%= f.submit :class => "btn" %>' do
-	  "    <%= f.text_field :wafer_no_cont, :class => 'input-medium search-query', :placeholder => 'Search Wafer No.' %>\n"
+	  "  <%= f.text_field :wafer_no_cont, :class => 'input-medium search-query', :placeholder => 'Search Wafer No.' %>\n"
 	end if fields.has_key? :wafer_no
 end
 

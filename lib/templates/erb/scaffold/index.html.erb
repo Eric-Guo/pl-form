@@ -2,6 +2,7 @@
 
 <%%= search_form_for @q, :class => "well form-search" do |f| %>
   <%%= link_to 'Input <%= human_name %>', new_<%= singular_table_name %>_path, :class => 'btn btn-primary' %>
+  <%%= raw "&nbsp;"*7 %>
   <%%= f.submit :class => "btn" %>
 <%% end %>
 
@@ -12,17 +13,17 @@
   <colgroup>
     <col class="actions" />
 <% attributes.each do |attribute| -%>
-    <% unless ['create_badge','create_shift_code','update_badge','update_shift_code'].include?(attribute.name) -%>
-      <col />
-    <% end %>
+  <% unless ['create_badge','create_shift_code','update_badge','update_shift_code'].include?(attribute.name) -%>
+    <col />
+  <% end -%>
 <% end -%>
   </colgroup>
   <tr>
     <th>Actions</th>
 <% attributes.each do |attribute| -%>
-    <% unless ['create_badge','create_shift_code','update_badge','update_shift_code'].include?(attribute.name) -%>
-      <th><%= attribute.human_name.titleize %></th>
-    <% end %>
+  <% unless ['create_badge','create_shift_code','update_badge','update_shift_code'].include?(attribute.name) -%>
+    <th><%= attribute.human_name.titleize %></th>
+  <% end -%>
 <% end -%>
   </tr>
   </thead>
@@ -39,9 +40,9 @@
     <%% end %>
     </td>
 <% attributes.each do |attribute| -%>
-    <% unless ['create_badge','create_shift_code','update_badge','update_shift_code'].include?(attribute.name) -%>
-      <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
-    <% end %>
+  <% unless ['create_badge','create_shift_code','update_badge','update_shift_code'].include?(attribute.name) -%>
+    <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
+  <% end -%>
 <% end -%>
   </tr>
 <%% end -%>
