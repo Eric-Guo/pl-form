@@ -8,10 +8,11 @@
 
 <hr>
 
-<table class="table table-bordered">
+<table class="table table-bordered table-condensed">
 <thead>
   <colgroup>
     <col class="actions" />
+    <col />
 <% attributes.each do |attribute| -%>
   <% unless ['create_badge','create_shift_code','update_badge','update_shift_code'].include?(attribute.name) -%>
     <col />
@@ -20,6 +21,7 @@
   </colgroup>
   <tr>
     <th>Actions</th>
+    <th>Input Time Ago</th>
 <% attributes.each do |attribute| -%>
   <% unless ['create_badge','create_shift_code','update_badge','update_shift_code'].include?(attribute.name) -%>
     <th><%= attribute.human_name.titleize %></th>
@@ -39,6 +41,7 @@
   <%%= link_to raw('<i class="icon-remove"></i>'), <%= singular_table_name %>, <%= key_value :confirm, "'Are you sure?'" %>, <%= key_value :method, ":delete" %> -%>
   <%% end %>
   </td>
+  <td><%%= time_ago_in_words <%= singular_table_name %>.created_at %></td>
 <% attributes.each do |attribute| -%>
   <% unless ['create_badge','create_shift_code','update_badge','update_shift_code'].include?(attribute.name) -%>
     <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
