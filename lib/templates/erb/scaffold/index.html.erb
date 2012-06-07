@@ -12,7 +12,6 @@
 <thead>
   <colgroup>
     <col class="actions" />
-    <col />
 <% attributes.each do |attribute| -%>
   <% unless ['create_badge','create_shift_code','update_badge','update_shift_code'].include?(attribute.name) -%>
     <col />
@@ -20,8 +19,7 @@
 <% end -%>
   </colgroup>
   <tr>
-    <th>Actions</th>
-    <th>Input Time Ago</th>
+    <th>Actions &amp; Time Ago</th>
 <% attributes.each do |attribute| -%>
   <% unless ['create_badge','create_shift_code','update_badge','update_shift_code'].include?(attribute.name) -%>
     <th><%= attribute.human_name.titleize %></th>
@@ -33,15 +31,14 @@
 <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| -%>
 <tr>
   <td>
-  <%%= link_to raw('<i class="icon-list"></i>'), <%= singular_table_name %> -%>
   <%% if can? :update, <%= singular_table_name %> %>
   <%%= link_to raw('<i class="icon-edit"></i>'), edit_<%= singular_table_name %>_path(<%= singular_table_name %>) -%>
   <%% end %>
   <%% if can? :delete, <%= singular_table_name %> %>
   <%%= link_to raw('<i class="icon-remove"></i>'), <%= singular_table_name %>, <%= key_value :confirm, "'Are you sure?'" %>, <%= key_value :method, ":delete" %> -%>
   <%% end %>
+  <%%= link_to time_ago_in_words(<%= singular_table_name %>.created_at), <%= singular_table_name %> -%>
   </td>
-  <td><%%= time_ago_in_words <%= singular_table_name %>.created_at %></td>
 <% attributes.each do |attribute| -%>
   <% unless ['create_badge','create_shift_code','update_badge','update_shift_code'].include?(attribute.name) -%>
     <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
