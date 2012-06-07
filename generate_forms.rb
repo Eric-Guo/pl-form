@@ -43,16 +43,28 @@ def generate_form(dept, form, fields)
 	end if fields.has_key? :reject_code
 
 	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :before => '  <%= f.submit :class => "btn" %>' do
-"  <%= f.text_field :remark_cont, :class => 'input-small search-query', :placeholder => 'Remark', :title => 'Type here to search Remark' %>\n"
-	end if fields.has_key? :remark
-
-	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :before => '  <%= f.submit :class => "btn" %>' do
 "  <%= f.text_field :gold_wire_no_cont, :class => 'input-medium search-query', :placeholder => 'Goldwire No.', :title => 'Type here to search Goldwire No.' %>\n"
 	end if fields.has_key? :gold_wire_no
 
 	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :before => '  <%= f.submit :class => "btn" %>' do
-"  <%= f.text_field :wafer_no_cont, :class => 'input-medium search-query', :placeholder => 'Wafer No.', :title => 'Wafer No.' %>\n"
+"  <%= f.text_field :wafer_no_cont, :class => 'input-medium search-query', :placeholder => 'Wafer No.', :title => 'Type here to search Wafer No.' %>\n"
 	end if fields.has_key? :wafer_no
+
+	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :before => '  <%= f.submit :class => "btn" %>' do
+"  <%= f.text_field :material_no_cont, :class => 'input-medium search-query', :placeholder => 'Material No', :title => 'Type here to search Material No.' %>\n"
+	end if fields.has_key? :material_no
+
+	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :before => '  <%= f.submit :class => "btn" %>' do
+"  <%= f.text_field :batch_no_cont, :class => 'input-medium search-query', :placeholder => 'Batch No', :title => 'Type here to search Batch No.' %>\n"
+	end if fields.has_key? :batch_no
+
+	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :before => '  <%= f.submit :class => "btn" %>' do
+"  <%= f.text_field :applicant_badge_cont, :class => 'input-medium search-query', :placeholder => 'Applicant Badge', :title => 'Type here to search Applicant Badge' %>\n"
+	end if fields.has_key? :applicant_badge
+
+	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :before => '  <%= f.submit :class => "btn" %>' do
+"  <%= f.text_field :remark_cont, :class => 'input-small search-query', :placeholder => 'Remark', :title => 'Type here to search Remark' %>\n"
+	end if fields.has_key? :remark
 end
 
 common_fields = {
@@ -79,10 +91,26 @@ gold_wire_in_out_fields = {
 	:return_qty          => :integer,
 	:issue_qty           => :integer,
 	:sent_qty            => :integer,
+	:applicant_badge     => :string,
 	:remark              => :string,
 }
 generate_form 'FOP_MAT', 'GoldwireInOut',
 	(gold_wire_in_out_fields.merge common_fields)
+
+
+# 直接原材料通用领用记录单 DOC#: 3743-02-10004
+direct_material_general_apply_fields = {
+	:material_no     => :string,
+	:batch_no        => :string,
+	:apply_qty       => :integer,
+	:issue_qty       => :integer,
+	:scrap_qty       => :integer,
+	:stock_qty       => :integer,
+	:applicant_badge => :string,
+	:remark          => :string,
+}
+generate_form 'FOP_MAT', 'DirectMaterialGeneralApply',
+	(direct_material_general_apply_fields.merge common_fields)
 
 
 # Wafer报废登记表 DOC#: 3743-02-10027
