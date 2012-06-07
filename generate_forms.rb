@@ -18,7 +18,7 @@
 def generate_form(dept, form, fields)
 	generate :scaffold, "#{form}#{fields.collect {|k,v| " #{k}:#{v}"}.join}"
 
-	inject_into_file "app/views/application/_nav.html.erb", :before => "	</ul><!--#{dept}-->" do
+	inject_into_file "app/views/application/_nav.html.erb", :before => "</ul><!--#{dept}-->\n" do
 	  "    <li><%= link_to '#{form.titleize}', #{form.pluralize.underscore}_path -%></li>\n"
 	end
 
@@ -69,8 +69,9 @@ gold_wire_in_out_fields = {
 	:sent_qty            => :integer,
 	:remark              => :string,
 }
-generate_form 'FOP', 'GoldwireInOut',
+generate_form 'FOP_MAT', 'GoldwireInOut',
 	(gold_wire_in_out_fields.merge common_fields)
+
 
 # Wafer报废登记表 DOC#: 3743-02-10027
 wafer_scrap_fields = {
@@ -79,8 +80,9 @@ wafer_scrap_fields = {
 	:wafer_qty => :integer,
 	:remark    => :string,
 }
-generate_form 'FOP', 'WaferScrapLog',
+generate_form 'FOP_MAT', 'WaferScrapLog',
 	(wafer_scrap_fields.merge common_fields)
+
 
 # TCM Die Attach Production log sheet DOC#: 3745-01-50001
 die_attach_production_fields = {
@@ -93,8 +95,9 @@ die_attach_production_fields = {
 	:stack_height             => :float,
 	:confirm_by               => :string,
 }
-generate_form 'FOP', 'DieAttachProduction',
+generate_form 'FOP_PRD', 'DieAttachProduction',
 	(common_production_fields.merge die_attach_production_fields.merge common_fields)
+
 
 # TCM Die Sorter Production log sheet DOC#: 3745-01-50002
 die_sorter_production_fields = {
@@ -104,8 +107,9 @@ die_sorter_production_fields = {
 	:visual_inspection_result => :string,
 	:confirm_by               => :string,
 }
-generate_form 'FOP', 'DieSorterProduction',
+generate_form 'FOP_PRD', 'DieSorterProduction',
 	(common_production_fields.merge die_sorter_production_fields.merge common_fields)
+
 
 # TCM Printing SMT Production log sheet Ref:DOC# 3745-01-10001/3745-01-20001
 smt_production_fields = {
@@ -118,5 +122,5 @@ smt_production_fields = {
 	:visual_inspection_after_smt      => :string,
 	:confirm_by                       => :string,
 }
-generate_form 'FOP', 'SMT-Production',
+generate_form 'FOP_PRD', 'SMT-Production',
 	(common_production_fields.merge smt_production_fields.merge common_fields)
