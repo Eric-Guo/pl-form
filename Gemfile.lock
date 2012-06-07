@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/Eric-Guo/ransack.git
+  remote: https://github.com/Eric-Guo/ransack.git
   revision: 6683b85240cbd6dc7cd3cd2c7bb6609d3f2fede9
   specs:
     ransack (0.6.0)
@@ -37,7 +37,7 @@ GEM
     activesupport (3.2.5)
       i18n (~> 0.6)
       multi_json (~> 1.0)
-    anjlab-bootstrap-rails (2.0.4.0)
+    anjlab-bootstrap-rails (2.0.4.1)
       railties (>= 3.0)
       sass
     arel (3.0.2)

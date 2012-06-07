@@ -12,7 +12,7 @@ gem 'bootstrap-will_paginate'
 gem 'devise'
 gem 'cancan'
 gem 'simple_form'
-gem "ransack", :git => "git://github.com/Eric-Guo/ransack.git"
+gem "ransack", :git => "https://github.com/Eric-Guo/ransack.git"
 
 # Gems used only for assets and not required
 # in production environments by default.
