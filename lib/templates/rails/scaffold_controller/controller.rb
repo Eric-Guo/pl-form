@@ -1,3 +1,5 @@
+require 'csv'
+
 <% module_namespacing do -%>
 class <%= controller_class_name %>Controller < ApplicationController
   load_and_authorize_resource
@@ -11,6 +13,16 @@ class <%= controller_class_name %>Controller < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render <%= key_value :json, "@#{plural_table_name}" %> }
+      format.csv do
+        render_csv_header :<%= plural_table_name %>.to_s
+        csv_res = CSV.generate do |csv|
+          csv << [:create_badge, :create_shift_code, :update_badge, :update_shift_code]
+          <%= class_name %>.all.each do |o|
+            csv << [o[:create_badge], o[:create_shift_code], o[:update_badge], o[:update_shift_code]]
+          end
+        end
+        send_data csv_res
+      end
     end
   end
 

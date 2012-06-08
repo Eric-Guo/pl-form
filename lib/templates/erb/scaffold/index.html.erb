@@ -4,6 +4,7 @@
   <%%= link_to 'Input <%= human_name %>', new_<%= singular_table_name %>_path, :class => 'btn btn-primary' %>
   <%%= raw "&nbsp;"*7 %>
   <%%= f.submit :class => "btn" %>
+  <%%= link_to 'CSV Export', <%= plural_table_name %>_path.concat('.csv') %>
 <%% end %>
 
 <hr>
