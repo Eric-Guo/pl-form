@@ -152,6 +152,23 @@ fop_trial_material_fields = {
 generate_form 'FOP_MAT', 'FOPTrailMaterial',
 	(fop_trial_material_fields.merge common_fields)
 
+# Wafer冰箱存放登记表 DOC#: 3743-02-10025
+ wafer_icebox_store_fields = {
+	:store_at      => :timestamps,
+	:return_badge  => :string,
+	:return_qty    => :integer,
+	:device        => :string,
+	:lot_no        => :string,
+	:batch_no      => :string,
+	:pass_due_at   => :timestamps,
+	:release_badge => :string,
+	:release_qty   => :integer,
+	:release_at    => :timestamps,
+	:remark        => :string,
+}
+generate_form 'FOP_MAT', 'WaferIceboxStore',
+	(wafer_icebox_store_fields.merge common_fields)
+
 # TCM Die Attach Production log sheet DOC#: 3745-01-50001
 die_attach_production_fields = {
 	:check_type               => :string,
