@@ -137,6 +137,21 @@ wire_bond_drawing_program_apply_fields = {
 generate_form 'FOP_MAT', 'WireBondDrawingProgramApply',
 	(wire_bond_drawing_program_apply_fields.merge common_fields)
 
+# 产线领用试机料登记表 DOC#: 3743-02-10022
+fop_trial_material_fields = {
+	:package       => :string,
+	:device        => :string,
+	:da_level      => :integer,
+	:equipment     => :string,
+	:substrate_no  => :string,
+	:substrate_lot => :string,
+	:substrate_qty => :string,
+	:return_badge  => :string,
+	:return_qty    => :integer,
+}
+generate_form 'FOP_MAT', 'FOPTrailMaterial',
+	(fop_trial_material_fields.merge common_fields)
+
 # TCM Die Attach Production log sheet DOC#: 3745-01-50001
 die_attach_production_fields = {
 	:check_type               => :string,
