@@ -1,7 +1,6 @@
 # encoding: UTF-8
 #Every field must searchable
 #
-#Reject Code
 #Status Code
 #select box
 #
@@ -14,6 +13,9 @@
 #QA
 #User
 #Supervisor
+#
+# Need two language
+# Add typeahead of reject code
 
 def generate_form(dept, form, fields)
 	generate :scaffold, "#{form}#{fields.collect {|k,v| " #{k}:#{v}"}.join}"
@@ -123,6 +125,17 @@ wafer_scrap_fields = {
 generate_form 'FOP_MAT', 'WaferScrapLog',
 	(wafer_scrap_fields.merge common_fields)
 
+
+# 焊线图及焊线程式软盘领用记录 DOC#: 3743-02-10006
+wire_bond_drawing_program_apply_fields = {
+	:package                => :string,
+	:bonding_die_program_no => :string,
+	:bonding_die_reversion  => :string,
+	:qty                    => :integer,
+	:remark                 => :string,
+}
+generate_form 'FOP_MAT', 'WireBondDrawingProgramApply',
+	(wire_bond_drawing_program_apply_fields.merge common_fields)
 
 # TCM Die Attach Production log sheet DOC#: 3745-01-50001
 die_attach_production_fields = {
