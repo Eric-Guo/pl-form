@@ -169,7 +169,8 @@ generate_form 'FOP_MAT', 'FOPTrailMaterial',
 generate_form 'FOP_MAT', 'WaferIceboxStore',
 	(wafer_icebox_store_fields.merge common_fields)
 
-#氮气柜湿度记录表 DOC#：3743-02-10018
+
+# 氮气柜湿度记录表 DOC#: 3743-02-10018
 humidity_n2_fields = {
 	:humidity          =>:string,
 	:humidity_standard =>:string,
@@ -177,28 +178,28 @@ humidity_n2_fields = {
 generate_form 'FOP_MAT', 'HumidityN2',
 	(humidity_n2_fields.merge common_fields)
 
-#生产重要产品通用领用记录单 DOC#：3743-02-10001
+# 生产重要产品通用领用记录单 DOC#: 3743-02-10001
 product_important_use_fields = {
 	:stocks => :integer，
 }
 generate_form 'FOP_MAT', 'ProductImportantUseApply',
 	(product_important_use_fields.merge common_fields)
 
-#线上异常金线接收登记表 DOC#：3743-02-10035
+# 线上异常金线接收登记表 DOC#: 3743-02-10035
 exception_gold_accept_register_fields = {
 	:letter_of_presentation => :string,
 }
 generate_form 'FOP_MAT', 'ExceptionGoldAcceptRegister',
 	(exception_gold_accept_register_fields.merge common_fields)
 
-#冷库冰箱湿度登记表 DOC#:3743-02-10015
+# 冷库冰箱湿度登记表 DOC#:3743-02-10015
 icebox_refrigeratory_humidity_fields = {
 	:equipment => :string,
 }
 generate_form 'FOP_PRD', 'IceboxRefrigeratoryHumidity',
 	(icebox_refrigeratory_humidity_fields.merge common_fields)
 
-#Die Sort Production log sheet 作业记录表 DOC#:3745-02-50018
+# Die Sort Production log sheet 作业记录表 DOC#: 3745-02-50018
 die_sort_production_fields={
 	:wafer_part_no => :string,
 	:wafre_ID      => :string,
@@ -213,13 +214,112 @@ die_sort_production_fields={
 generate_form 'FOP_PRD', 'DieSortProductionLog',
 	(die_sort_production_fields.merge common_fields)
 
-#SMT Production log sheet 作业记录表 DOC#:3745-02-10004
+# SMT Production log sheet 作业记录表 DOC#: 3745-02-10004
 smt_production_log_sheet_fields = {
 	:in_qty  => :string,
 	:out_qty => :string,
 }
 generate_form 'FOP_MAT', 'SMTProductionLog',
 	(smt_production_log_sheet_fields.merge common_fields)
+
+# DP_Production_log_sheet 作业记录表 DOC#: 3745-02-40004
+dp_production_log_sheet_fields = {
+	:device_thickness                          => :string,
+	:inspection_recorder                       => :string,
+	:reject_code_quantity                      => :string,
+	:repair_action_adjustment_change_materials => :string,
+}
+generate_form 'FOP_MAT', 'DPProductionLog',
+	(dp_production_log_sheet_fields.merge common_fields)
+
+# SAW刀信息记录 DOC#:3745-02-40008
+saw_balde_relace_and_recycle_record = {
+  :used_length        => :string,
+  :remaind_length     => :string,
+  :reason_for_replace => :string,
+}
+generate_form 'FOP_PRD', 'SawBaldeRelaceAndRecycle',
+	(saw_balde_relace_and_recycle_record.merge common_fields)
+
+# DP Controller Wafter 交接记录表 DOC#: 3745-02-40014
+dp_controller_wafter_handover_fields = {
+	:placed_position   => :string,
+	:hand_over_confirm => :string,
+	:revcie_confirm    => :string,
+}
+generate_form 'FOP_MAT', 'DPControllerWafterHandover',
+	(dp_controller_wafter_handover_fields.merge common_fields)
+
+# DP 2VM Production log sheet作业记录表 DOC# 3745-02-40007
+DP_2VM_Production_log_sheet_fields = {
+	:die_qty_lot   => :string,
+	:cutting_depth => :float,
+}
+generate_form 'FOP_MAT', 'DP2VMProductionlogsheet',
+	(DP_2VM_ Production_log_sheet_fields.merge common_fields)
+
+# DA Production log sheet作业记录表 DOC# 3745-02-50004
+DA_Production_log_sheet_fields = {
+}
+generate_form 'FOP_PRD', 'DAProductionlogsheet',
+	(DA_Production_log_sheet_fields.merge common_fields)
+
+# DA改机通知单 DOC# 3745-02-20021
+wiikey_requisition_fields = {
+	:wiikey_after_device_standard_uph => :integer,
+	:wiikey_after_device_reality_uph  => :integer,
+	:original_product_device          => :string,
+	:later_product_device             => :string,
+	:plan_wiikey_time                 => :timestamps,
+	:really_wiikey_time               => :timestamps,
+	:rms_turn_on                      => :string,
+	:sub_parting_strip                => :string,
+	:prodution_applicant              => :string,
+}
+generate_form 'FOP_PRD', 'WiiKeyRequisition',
+	(wiikey_requisition_fields.merge common_fields)
+
+# Plasma_production_Log DOC# 3745-02-60004
+plasma_production_log_fields={
+	:start_end_time => :timestamps,
+	:program_no     => :string,
+	:contact_angle  => :string,
+}
+generate_form 'FOP_PRD', 'PlasmaProductionLog',
+	(plasma_production_log_fields.merge common_fields)
+
+# WB production Log Rev 7 DOC# 3745-02-70004
+wb_production_log_fields={
+	:status_code             => :string,
+	:device_no               => :string,
+	:bonding_diagram_confirm => :string,
+	:visual_inspection       => :string,
+	:loop_height_per_layer   => :string,
+	:ball_size               => :string,
+	:total_loop_height       => :string,
+}
+generate_form 'FOP_PRD', 'WbProductionLog',
+	(wb_production_log_fields.merge common_fields)
+
+# 3rd optical production Log DOC# 3745-02-70007
+the_3rd_optical_production_Log_fields={
+	:rework_product_quantity=> :string
+}
+generate_form 'FOP_PRD', 'The3rdOpticalProductionLog',
+	(the_3rd_optical_production_Log_fields.merge common_fields)
+
+# Mold_Production_Log_Sheet DOC# 3746-02-10004
+mold_production_log_fields = {
+	:peeling_test                     => :string,
+	:molding_program_confirm          => :string,
+	:top_mold_chase_temp_check        => :string,
+	:btrn_mold_chase_temp_check       => :string,
+	:internal_void_check              => :string,
+	:peeling_test                     => :string,
+	:wire_sweep_check                 => :string,
+}
+generate_form 'FOP_PRD', 'MoldProductionLog',
+	(mold_production_log_fields.merge common_fields)
 
 # TCM Die Attach Production log sheet DOC#: 3745-01-50001
 die_attach_production_fields = {
