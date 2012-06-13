@@ -5,8 +5,10 @@
 @import "bootstrap";
 @import "responsive";
 
-body {
-  padding-top: 52px;
+@media (min-width: 981px) {
+    body {
+        padding-top: 56px;
+    }
 }
 .sidebar-nav {
   padding: 8px 0;
