@@ -169,6 +169,58 @@ generate_form 'FOP_MAT', 'FOPTrailMaterial',
 generate_form 'FOP_MAT', 'WaferIceboxStore',
 	(wafer_icebox_store_fields.merge common_fields)
 
+#氮气柜湿度记录表 DOC#：3743-02-10018
+humidity_n2_fields = {
+	:humidity          =>:string,
+	:humidity_standard =>:string,
+ }
+generate_form 'FOP_MAT', 'HumidityN2',
+	(humidity_n2_fields.merge common_fields)
+
+#生产重要产品通用领用记录单 DOC#：3743-02-10001
+product_important_use_fields = {
+	:stocks => :integer，
+}
+generate_form 'FOP_MAT', 'ProductImportantUseApply',
+	(product_important_use_fields.merge common_fields)
+
+#线上异常金线接收登记表 DOC#：3743-02-10035
+exception_gold_accept_register_fields = {
+	:letter_of_presentation => :string,
+}
+generate_form 'FOP_MAT', 'ExceptionGoldAcceptRegister',
+	(exception_gold_accept_register_fields.merge common_fields)
+
+#冷库冰箱湿度登记表 DOC#:3743-02-10015
+icebox_refrigeratory_humidity_fields = {
+	:equipment => :string,
+}
+generate_form 'FOP_PRD', 'IceboxRefrigeratoryHumidity',
+	(icebox_refrigeratory_humidity_fields.merge common_fields)
+
+#Die Sort Production log sheet 作业记录表 DOC#:3745-02-50018
+die_sort_production_fields={
+	:wafer_part_no => :string,
+	:wafre_ID      => :string,
+	:lot_no        => :string,
+	:reject_code   => :string,
+	:remark        => :string,
+	:trace_no      => :string,
+	:check_type    => :string,
+	:result        => :string,
+	:confirm_by    => :string,
+}
+generate_form 'FOP_PRD', 'DieSortProductionLog',
+	(die_sort_production_fields.merge common_fields)
+
+#SMT Production log sheet 作业记录表 DOC#:3745-02-10004
+smt_production_log_sheet_fields = {
+	:in_qty  => :string,
+	:out_qty => :string,
+}
+generate_form 'FOP_MAT', 'SMTProductionLog',
+	(smt_production_log_sheet_fields.merge common_fields)
+
 # TCM Die Attach Production log sheet DOC#: 3745-01-50001
 die_attach_production_fields = {
 	:check_type               => :string,
