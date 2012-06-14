@@ -16,9 +16,9 @@ class <%= controller_class_name %>Controller < ApplicationController
       format.csv do
         render_csv_header :<%= plural_table_name %>.to_s
         csv_res = CSV.generate do |csv|
-          csv << [:create_badge, :create_shift_code, :update_badge, :update_shift_code]
+          csv << <%= class_name %>.new.attributes.keys
           <%= class_name %>.all.each do |o|
-            csv << [o[:create_badge], o[:create_shift_code], o[:update_badge], o[:update_shift_code]]
+            csv << o.attributes.values
           end
         end
         send_data csv_res
