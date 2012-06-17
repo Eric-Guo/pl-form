@@ -10,14 +10,32 @@
 	</thead>
 	<tbody>
 <% attributes.each do |attribute| -%>
+  <% unless ['create_badge','create_shift_code','update_badge','update_shift_code'].include?(attribute.name) -%>
 		<tr>
 		  <td><%= attribute.human_name %></td>
 		  <td><%%= @<%= singular_table_name %>.<%= attribute.name %> %></td>
   	</tr>
+  <% end -%>
 <% end -%>
 	</tbody>
 </table>
 </div>
+</div>
+<div class="row">
+	<div class="span6">
+		<blockquote>
+		<p>Record created at <%%= @<%= singular_table_name %>.created_at %>.</p>
+		<small>By <%%= @<%= singular_table_name %>.create_badge %> (<%%= @<%= singular_table_name %>.create_shift_code %> shift)</small>
+		</blockquote>
+	</div>
+	<%% if @<%= singular_table_name %>.update_badge.present? %>
+	<div class="span6">
+		<blockquote class="pull-right">
+		<p>Updated at <%%= @<%= singular_table_name %>.updated_at %>.</p>
+		<small>By <%%= @<%= singular_table_name %>.update_badge %> (<%%= @<%= singular_table_name %>.update_shift_code %> shift)</small>
+		</blockquote>
+	</div>
+	<%% end %>
 </div>
 
 <%%= link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), :class => 'btn btn-primary' %> |
