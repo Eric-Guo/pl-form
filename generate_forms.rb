@@ -374,43 +374,49 @@ mold_production_log_fields = {
 generate_form 'FOP_PRD', 'MoldProduction',
 	(mold_production_log_fields.merge common_fields)
 
+
 # DOC# 3746-02-10008 PMC Production log sheet 作业记录表
 pmc_production_log_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamps,
-	:out_time    => :timestamps,
+	:profile_check => :string,
+	:in_time       => :timestamps,
+	:out_time      => :timestamps,
 }
 generate_form 'BOP_PRD', 'PmcProduction',
 	(common_production_fields.merge pmc_production_log_fields.merge common_fields)
 
+
 # DOC# 3746-02-10012 Ink Oven Cure Production Log Sheet
-ink_cure_production_log_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamps,
-	:out_time    => :timestamps,
+ink_oven_cure_production_fields = {
+	:profile_check => :string,
+	:in_time       => :timestamps,
+	:out_time      => :timestamps,
 }
-generate_form 'BOP_PRD', 'InkCureProduction',
-	(common_production_fields.merge ink_cure_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'InkOvenCureProduction',
+	(common_production_fields.merge ink_oven_cure_production_fields.merge common_fields)
 
-# DOC# 3746-02-20004 Mark production Log(Compound Mark)
-mark_production_log_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamps,
-	:out_time    => :timestamps,
+
+# DOC# 3746-02-20004 Compound Laser Mark Production Log
+compound_mark_production_fields = {
+	:profile_check                         => :string,
+	:repair_adjustment_or_change_materials => :string,
+	:golden_finger_defects                 => :string,
 }
-generate_form 'BOP_PRD', 'MarkProduction',
-	(common_production_fields.merge mark_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'CompoundMarkProduction',
+	(common_production_fields.merge compound_mark_production_fields.merge common_fields)
 
-# DOC# 3746-02-20030	Production_Log_Sheet_Substrate_Laser_Mark
-laser_mark_production_log_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamps,
-	:out_time    => :timestamps,
+
+# DOC# 3746-02-20030	Substrate Laser Mark Production Log
+laser_mark_production_fields = {
+	:laser_power        => :float,
+	:laser_depth        => :float,
+	:position_demension => :string,
+	:confirm_by         => :string,
 }
 generate_form 'BOP_PRD', 'LaserMarkProduction',
-	(common_production_fields.merge laser_mark_production_log_fields.merge common_fields)
+	(common_production_fields.merge laser_mark_production_fields.merge common_fields)
 
-# DOC# 3746-02-20033	Production Log Sheet for Substrate Ink mark
+
+# DOC# 3746-02-20033	Substrate Ink Mark Production Log Sheet
 substrate_ink_mark_production_log_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
@@ -419,14 +425,15 @@ substrate_ink_mark_production_log_fields = {
 generate_form 'BOP_PRD', 'InMarkProduction',
 	(common_production_fields.merge substrate_ink_mark_production_log_fields.merge common_fields)
 
-# DOC# 3746-02-20028	Production_Log_Sheet_Compound_Laser_Sweeping
-laser_weeping_production_log_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamps,
-	:out_time    => :timestamps,
+
+# DOC# 3746-02-20028	Compound Laser Sweeping Production Log
+laser_weeping_production_fields = {
+	:repair_adjustment_or_change_materials => :string,
+	:confirm_by                            => :string,
 }
 generate_form 'BOP_PRD', 'LaserWeepingProduction',
-	(common_production_fields.merge laser_weeping_production_log_fields.merge common_fields)
+	(common_production_fields.merge laser_weeping_production_fields.merge common_fields)
+
 
 # DOC# 3746-02-20011	Production log sheet for ink mark
 ink_mark_production_log_fields = {
@@ -436,6 +443,7 @@ ink_mark_production_log_fields = {
 }
 generate_form 'BOP_PRD', 'InkMarkProduction',
 	(common_production_fields.merge ink_mark_production_log_fields.merge common_fields)
+
 
 # DOC# 3746-02-30004	Laser cut production
 laser_cut_production_log_fields = {
