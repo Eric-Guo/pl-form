@@ -1043,7 +1043,7 @@ generate_form 'TOP_PRD', 'MemoryTestProductin',
 	(common_production_fields.merge memory_test_fields.merge common_fields)
 
 # DOC# 3775-02-00103	CT productin log sheet
-card_test_productin_fields = {
+card_test_production_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
@@ -1052,7 +1052,7 @@ generate_form 'TOP_PRD', 'CardTestProduction',
 	(common_production_fields.merge card_test_production_fields.merge common_fields)
 
 # DOC# 3795-02-00006	TFCL productin log sheet
-tfcl_productin_fields = {
+tfcl_production_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
@@ -1094,7 +1094,7 @@ top_conversion_fields = {
 	:out_time    => :timestamps,
 }
 generate_form 'TOP_PRD', 'TopConversion',
-	(top_conversion__fields.merge common_fields)
+	(top_conversion_fields.merge common_fields)
 
 # DOC# 3731-02-30036	STK Oven daily checklist
 stk_oven_daily_fields = {
@@ -1105,14 +1105,14 @@ stk_oven_daily_fields = {
 generate_form 'TOP_PRD', 'StkOvenDaily',
 	(stk_oven_daily_fields.merge common_fields)
 
-# DOC# 3731-02-30037	 M820 Buin-In Daily Check Record
-m820_buin_in_daily_check_fields = {
+# DOC# 3731-02-30037	 M820 Burn-In Daily Check Record
+m820_burn_in_daily_check_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
 generate_form 'TOP_PRD', 'M820BuinInDailyCheck',
-	(m820_buin_in_daily_check_fields.merge common_fields)
+	(m820_burn_in_daily_check_fields.merge common_fields)
 
 # DOC# 3731-02-30037	 ProV Buin-In Daily Check Record
  prov_buin_in_daily_check_fields = {
