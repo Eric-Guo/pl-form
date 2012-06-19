@@ -1031,3 +1031,186 @@ mhl_cure_production_log_fields = {
 }
 generate_form 'BOP_PRD', 'MhlProduction',
 	(common_production_fields.merge mhl_cure_production_log_fields.merge common_fields)
+
+#=============================================
+# DOC# 3735-02-00025	MT productin log sheet
+memory_test_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'TOP_PRD', 'MemoryTestProductin',
+	(common_production_fields.merge memory_test_fields.merge common_fields)
+
+# DOC# 3775-02-00103	CT productin log sheet
+card_test_productin_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'TOP_PRD', 'CardTestProduction',
+	(common_production_fields.merge card_test_production_fields.merge common_fields)
+
+# DOC# 3795-02-00006	TFCL productin log sheet
+tfcl_productin_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'TOP_PRD', 'TfclProduction',
+	(common_production_fields.merge tfcl_production_fields.merge common_fields)
+
+# DOC# 3735-02-00026	Memory Test Daily check list
+memory_test_daily_check_fields={
+	:start_end_time => :timestamps,
+	:program_no     => :string,
+	:contact_angle  => :string,
+}
+generate_form 'TOP_PRD', 'MemoryTestDailyCheck',
+(memory_test_daily_check_fields.merge common_fields)
+
+# DOC# 3731-02-30029	TOP shift machine jamming trend
+mt_ct_tfcl_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'TOP_PRD', 'MtCtTfcl',
+	(mt_ct_tfcl_fields.merge common_fields)
+
+# DOC# 3731-02-20006	Monthly & Half Year PM Record
+mt_ct_fields= {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'TOP_PRD', 'MtCt',
+	(mt_ct_fields.merge common_fields)
+
+# DOC# 3733-02-00138	TOP_conversion_checklist
+top_conversion_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'TOP_PRD', 'TopConversion',
+	(top_conversion__fields.merge common_fields)
+
+# DOC# 3731-02-30036	STK Oven daily checklist
+stk_oven_daily_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'TOP_PRD', 'StkOvenDaily',
+	(stk_oven_daily_fields.merge common_fields)
+
+# DOC# 3731-02-30037	 M820 Buin-In Daily Check Record
+m820_buin_in_daily_check_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'TOP_PRD', 'M820BuinInDailyCheck',
+	(m820_buin_in_daily_check_fields.merge common_fields)
+
+# DOC# 3731-02-30037	 ProV Buin-In Daily Check Record
+ prov_buin_in_daily_check_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'TOP_PRD', 'ProvBuinInDailyCheck',
+	(prov_buin_in_daily_check_fields.merge common_fields)
+
+# DOC# 3731-02-30036	JEC Oven daily checklist
+jec_oven_daily_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'TOP_PRD', 'JecOvenDaily',
+	(jec_oven_daily_fields.merge common_fields)
+
+# DOC# 3731-02-30013	Monthly & Half Year PM Record
+mirae_m820_handler_monthly_and_half_year_pm_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'TOP_PRD', 'MiraeM820hHandlerMonthlyAndHalfYearPm',
+	(mirae_m820_handler_monthly_and_half_year_pm_fields.merge common_fields)
+
+# DOC# 3731-02-30013	Monthly & Half Year PM Record
+burn_in_board_monthly_pm_record_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'TOP_PRD', 'BurnInBoardMonthlyPm',
+	(burn_in_board_monthly_pm_fields.merge common_fields)
+
+# DOC# 3775-02-00104	Card Test Daily check list
+card_test_daily_check_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'TOP_PRD', 'CardTestDailyCheck',
+	(card_test_daily_check_fields.merge common_fields)
+
+# DOC# 3733-02-00140	TFCL Test Daily check list
+tfcl_test_daily_check_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'TOP_PRD', 'TfclTestDailyCheck',
+	(tfcl_test_daily_check_fields.merge common_fields)
+
+# DOC# 3731-02-30046	HonTech Test Daily check list
+honTech_test_daily_check_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'TOP_PRD', 'HonTechTestDailyCheck',
+	(honTech_test_daily_check_fields.merge common_field)
+
+# DOC# 3731-02-30045	Mirae M150 Test Daily check list
+mirae_m150_test_daily_check_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'TOP_PRD', 'MiraeM150TestDailyCheck',
+	(mirae_m150_test_daily_check_fields.merge common_field)
+
+# DOC# 3791-02-30001	Monthly & Half Year PM Record
+tfcl_tester_monthly_and_semi_annual_pm_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'TOP_PRD', 'TfclTesterMonthlyAndSemiAnnualPm',
+	(tfcl_tester_monthly_and_semi_annual_pm_fields.merge common_field)
+
+# DOC# 3731-02-30044	Monthly & Half Year PM Record
+mirae_m150_handler_monthly_and_half_year_pm_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'TOP_PRD', 'MiraeM150HandlerMonthlyAndHalfYearPm',
+	(mirae_m150_handler_monthly_and_half_year_pm_fields.merge common_field)
+
+# DOC# 3731-02-30040	Monthly & Half Year PM Record
+hontech_ht3600a_handler_monthly_and_half_year_pm_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'TOP_PRD', 'HontechHt3600aHandlerMonthlyAndHalfYearPm',
+	(hontech_ht3600a_handler_monthly_and_half_year_pm_fields.merge common_field)
+
+#====================2nd line=====================
