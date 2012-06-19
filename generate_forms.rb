@@ -334,8 +334,9 @@ plasma_production_fields={
 	:program_no     => :string,
 	:contact_angle  => :string,
 }
-generate_form 'FOP_PRD', 'PlasmaProductionLog',
+generate_form 'FOP_PRD', 'PlasmaProduction',
 	(plasma_production_fields.merge common_fields)
+
 
 # DOC# 3745-02-70004 WB production Log Rev 7
 wb_production_fields={
@@ -370,5 +371,655 @@ mold_production_log_fields = {
 	:peeling_test                     => :string,
 	:wire_sweep_check                 => :string,
 }
-generate_form 'FOP_PRD', 'MoldProductionLog',
+generate_form 'FOP_PRD', 'MoldProduction',
 	(mold_production_log_fields.merge common_fields)
+
+# DOC# 3746-02-10008 PMC Production log sheet 作业记录表
+pmc_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'PmcProduction',
+	(common_production_fields.merge pmc_production_log_fields.merge common_fields)
+
+# DOC# 3746-02-10012 Ink Oven Cure Production Log Sheet
+ink_cure_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'InkCureProduction',
+	(common_production_fields.merge ink_cure_production_log_fields.merge common_fields)
+
+# DOC# 3746-02-20004 Mark production Log(Compound Mark)
+mark_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'MarkProduction',
+	(common_production_fields.merge mark_production_log_fields.merge common_fields)
+
+# DOC# 3746-02-20030	Production_Log_Sheet_Substrate_Laser_Mark
+laser_mark_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'LaserMarkProduction',
+	(common_production_fields.merge laser_mark_production_log_fields.merge common_fields)
+
+# DOC# 3746-02-20033	Production Log Sheet for Substrate Ink mark
+substrate_ink_mark_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'InMarkProduction',
+	(common_production_fields.merge substrate_ink_mark_production_log_fields.merge common_fields)
+
+# DOC# 3746-02-20028	Production_Log_Sheet_Compound_Laser_Sweeping
+laser_weeping_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'LaserWeepingProduction',
+	(common_production_fields.merge laser_weeping_production_log_fields.merge common_fields)
+
+# DOC# 3746-02-20011	Production log sheet for ink mark
+ink_mark_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'InkMarkProduction',
+	(common_production_fields.merge ink_mark_production_log_fields.merge common_fields)
+
+# DOC# 3746-02-30004	Laser cut production
+laser_cut_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'LaserCutProduction',
+	(common_production_fields.merge laser_cut_production_log_fields.merge common_fields)
+
+# DOC# 3746-02-40004	Saw singulation production
+saw_singulation_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'LaserCutProduction',
+	(common_production_fields.merge saw_singulation_production_log_fields.merge common_fields)
+
+# DOC# 3746-02-90010	SDSS_T-scan_production
+t_scan_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'T_scanProduction',
+	(common_production_fields.merge t_scan_production_log_fields.merge common_fields)
+
+# DOC# 3746-02-60001	AOI production
+aoi_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'AoiProduction',
+	(common_production_fields.merge aoi_production_log_fields.merge common_fields)
+
+# DOC# 3746-02-90003	SDSS Solder ball attach production
+ba_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'BaProduction',
+	(common_production_fields.merge ba_production_log_fields.merge common_fields)
+
+# DOC# 3746-02-90016	SDSS_OSP_pre-clean_production_log
+osp_pre_clean_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'BaProduction',
+	(common_production_fields.merge osp_pre_clean_production_log_fields.merge common_fields)
+
+# DOC# 3746-02-90013	SDSS_IR_Reflow_production_log
+ir_reflow_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'IrReflowProduction',
+	(common_production_fields.merge ir_reflow_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30066	Package Saw shift check Record
+sgn_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'SgnProduction',
+	(common_production_fields.merge sgn_production_log_fields.merge common_fields)
+
+# DOC# 3746-02-40003	Positrol log
+sgn_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'SgnProduction',
+	(common_production_fields.merge sgn_production_log_fields.merge common_fields)
+
+# DOC# 3746-02-30053	Conversion Kit Change Record Sheet 改机记录表
+sgn_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'SgnProduction',
+	(common_production_fields.merge sgn_production_log_fields.merge common_fields)
+
+# DOC# 3746-02-40006	saw singulation blade change record sheet
+sgn_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'SgnProduction',
+	(common_production_fields.merge sgn_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30030	PM Monthly & Half year record
+sgn_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'SgnProduction',
+	(common_production_fields.merge sgn_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30058	Oven shift check Record
+oven_shift_check_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'OvenProduction',
+	(common_production_fields.merge oven_shift_check_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30088	Oven Weekly PM Record
+oven_weekly_pm_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'OvenProduction',
+	(common_production_fields.merge oven_Weekly_pm_production_log_fields.merge common_fields)
+
+# DOC# 3746-02-10007&3746-02-10011	Positrol log
+oven_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'OvenProduction',
+	(common_production_fields.merge oven_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30074	PM Monthly & Half year record
+oven_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'OvenProduction',
+	(common_production_fields.merge oven_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30038	Engraver Equipment Monthly&Half yearly PM Record
+engraver_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'EngraverProduction',
+	(common_production_fields.merge engraver_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30061	Ink Mark shift check Record
+ink_mark_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'InkMarkrProduction',
+	(common_production_fields.merge ink_mark_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-20008	Positrol log
+ink_mark_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'InkMarkrProduction',
+	(common_production_fields.merge ink_mark_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30035	PM Monthly & Half year record
+ink_mark_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'InkMarkrProduction',
+	(common_production_fields.merge ink_mark_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30062	Laser Mark shift check Record
+laser_mark_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'LaserMarkProduction',
+	(common_production_fields.merge laser_mark_production_log_fields.merge common_fields)
+
+
+# DOC# 3742-02-30081	Laser Marking Dust weekly PM record
+laser_mark_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'LaserMarkProduction',
+	(common_production_fields.merge laser_mark_production_log_fields.merge common_fields)
+
+# DOC# 3746-02-20003	Positrol log
+laser_mark_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'LaserMarkProduction',
+	(common_production_fields.merge laser_mark_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30019	PM Monthly & Half year record
+laser_mark_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'LaserMarkProduction',
+	(common_production_fields.merge laser_mark_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30059	Laser Cut shift check record
+laser_cut_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'LaserCutProduction',
+	(common_production_fields.merge laser_cut_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30003	Positrol log
+laser_cut_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'LaserCutProduction',
+	(common_production_fields.merge laser_cut_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30054	Conversion Kit Change Record Sheet 改机记录表
+laser_cut_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'LaserCutProduction',
+	(common_production_fields.merge laser_cut_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30080	tooling_PM_&_power_check_track_list
+laser_cut_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'LaserCutProduction',
+	(common_production_fields.merge laser_cut_production_log_fields.merge common_fields)
+
+# DOC# －－－	clean filter check list
+laser_cut_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'LaserCutProduction',
+	(common_production_fields.merge laser_cut_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30028	PM Monthly & Half year record
+laser_cut_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'LaserCutProduction',
+	(common_production_fields.merge laser_cut_production_log_fields.merge common_fields)
+
+# DOC# 3746-02-90001	B/A Positrol log
+sba_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'SbaProduction',
+	(common_production_fields.merge sba_production_log_fields.merge common_fields)
+
+# DOC# 3746-02-60014	IR Reflow Positrol log
+sba_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'SbaProduction',
+	(common_production_fields.merge sba_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30063	Ball Attach Shift Check Record
+sba_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'SbaProduction',
+	(common_production_fields.merge sba_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30065	Aqueous Cleaner Shift Check Record
+sba_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'SbaProduction',
+	(common_production_fields.merge sba_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30064	Oven Reflow Shift Check Record
+sba_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'SbaProduction',
+	(common_production_fields.merge sba_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30055	Conversion Kit Change Record Sheet 改机记录表
+sba_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'SbaProduction',
+	(common_production_fields.merge sba_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30075	Auto tool clean track list
+sba_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'SbaProduction',
+	(common_production_fields.merge sba_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30076	Oven reflow change device record list
+oven_reflow_change_device_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'SbaProduction',
+	(common_production_fields.merge oven_reflow_change_device_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30046	SBA ball attach Monthly&Half yearly PM Record
+ball_attach_monthly_half_yearly_pm_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'SbaProduction',
+	(common_production_fields.merge ball_attach_monthly_half_yearly_pm_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30048	SBA reflow oven Equipment Monthly&Half yearly PM Record
+reflow_oven_equipment_monthly&half_yearly_pm_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'SbaProduction',
+	(common_production_fields.merge reflow_oven_equipment_monthly&half_yearly_pm_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30049	SBA water cleaner Equipment Monthly&Half yearly PM Record
+sba_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'SbaProduction',
+	(common_production_fields.merge sba_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30047	SBA shuttle Equipment Monthly&Half yearly PM Record
+sba_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'SbaProduction',
+	(common_production_fields.merge sba_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30070	Onloader and unloader for Pre-clean Monthly & Half yearly PM Record
+sba_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'SbaProduction',
+	(common_production_fields.merge sba_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30060	Ultrasonic Cleaner Shift Check Record
+ultrasonic_cleaner_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'UltrasonicCleanerProduction',
+	(common_production_fields.merge ultrasonic_cleaner_production_log_fields.merge common_fields)
+
+# DOC# 3746-02-50003	Positrol log
+ultrasonic_cleaner_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'UltrasonicCleanerProduction',
+	(common_production_fields.merge ultrasonic_cleaner_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30022   PM Weekly record
+ultrasonic_cleaner_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'UltrasonicCleanerProduction',
+	(common_production_fields.merge ultrasonic_cleaner_production_log_fields.merge common_fields)
+
+# DOC# 3746-02-30022	Ultrasonic Cleaning  Equipment change solvent PM Record
+ultrasonic_cleaner_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'UltrasonicCleanerProduction',
+	(common_production_fields.merge ultrasonic_cleaner__productionlog_fields.merge common_fields)
+
+# DOC# 3742-02-30023	PM Monthly & Half year record
+ultrasonic_cleaner_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'UltrasonicCleanerProduction',
+	(common_production_fields.merge ultrasonic_cleaner_production_log_fields.merge common_fields)
+
+# DOC# 3746-02-00020	Shift Check Record
+icos_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'IcosProduction',
+	(common_production_fields.merge icos_production_log_fields.merge common_fields)
+
+# DOC# 3746-02-60002	Positrol log
+icos_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'IcosProduction',
+	(common_production_fields.merge icos_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30056	PM Monthly & Half year record
+icos_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'IcosProduction',
+	(common_production_fields.merge icos_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30077	PM Monthly & Half year record
+t_scan_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'T_scanProduction',
+	(common_production_fields.merge t_scan_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30077	Quarterly PM record
+t_scan_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'T_scanProduction',
+	(common_production_fields.merge t_scan_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30079	change water tracking record - weekly
+t_scan_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'T_scanProduction',
+	(common_production_fields.merge t_scan_production_log_fields.merge common_fields)
+
+# DOC# 3746-02-60002	Positrol log
+sti_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'StiProduction',
+	(common_production_fields.merge sti_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30072	PM Weekly record
+sti_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'StiProduction',
+	(common_production_fields.merge sti_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30071	PM Monthly & Half year record
+sti_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'StiProduction',
+	(common_production_fields.merge sti_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30073	Shift Check Record
+sti_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'StiProduction',
+	(common_production_fields.merge sti_production_log_fields.merge common_fields)
+
+# DOC# 3746-02-20019	UV Ink Cure Positrol log
+uv_ink_cure_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'UvInkCureProduction',
+	(common_production_fields.merge uv_ink_cure_production_log_fields.merge common_fields)
+
+
+# DOC# 3742-02-30078	PM Monthly & Half year record
+uv_ink_cure_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'UvInkCureProduction',
+	(common_production_fields.merge uv_ink_cure_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30082	PM Monthly & Half year record
+punch_cure_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'PunchProduction',
+	(common_production_fields.merge punch_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30087	Tray Cleanning shift check Record
+punch_cure_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'PunchProduction',
+	(common_production_fields.merge punch_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30085	Tray Cleaning  Equipment change  water PM Record
+tray_cleaning_equipment_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'PunchProduction',
+	(common_production_fields.merge punch_production_log_fields.merge common_fields)
+
+# DOC# 3742-02-30086	PM Monthly & Half year record
+tray_cleaning_equipment_monthly&half_yearly_pm_record_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'PunchProduction',
+	(common_production_fields.merge tray_cleaning_equipment_monthly&half_yearly_pm_record_production_log_fields.merge common_fields)
+
+# DOC# 3744-02-00011	EOL存货卡
+mhl_cure_production_log_fields = {
+	:profile_check  => :string,
+	:in_time   => :timestamps,
+	:out_time    => :timestamps,
+}
+generate_form 'BOP_PRD', 'MhlProduction',
+	(common_production_fields.merge mhl_cure_production_log_fields.merge common_fields)
