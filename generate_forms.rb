@@ -492,9 +492,12 @@ generate_form 'BOP_PRD', 'BaProduction',
 
 # DOC# 3746-02-90016	SDSS_OSP_pre-clean_production_log
 osp_pre_clean_production_log_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamps,
-	:out_time    => :timestamps,
+	:recipe        => :string,
+	:defect        => :string,
+	:defect_qty    => :integer,
+	:reflow_recipe => :string,
+	:flux_type     => :string,
+	:flux_lot_no   => :string,
 }
 generate_form 'BOP_PRD', 'BaProduction',
 	(common_production_fields.merge osp_pre_clean_production_log_fields.merge common_fields)
@@ -682,12 +685,12 @@ generate_form 'BOP_PRD', 'LaserCutProduction',
 
 # DOC# 3742-02-30054	Conversion Kit Change Record Sheet 改机记录表
 laser_cut_production_log_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamps,
-	:out_time    => :timestamps,
+	:device_type => :string,
+	:manufacture_serial_no => :string,
+	:owner => :string,
 }
-generate_form 'BOP_PRD', 'LaserCutProduction',
-	(common_production_fields.merge laser_cut_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'LaserCutConversionKitChange',
+	(laser_cut_production_log_fields.merge common_fields)
 
 # DOC# 3742-02-30080	tooling_PM_&_power_check_track_list
 laser_cut_production_log_fields = {
