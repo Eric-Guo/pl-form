@@ -798,13 +798,13 @@ generate_form 'BOP_PRD', 'SbaProduction',
 	(common_production_fields.merge ball_attach_monthly_half_yearly_pm_production_log_fields.merge common_fields)
 
 # DOC# 3742-02-30048	SBA reflow oven Equipment Monthly&Half yearly PM Record
-reflow_oven_equipment_monthly&half_yearly_pm_production_log_fields = {
+reflow_oven_equipment_monthly_half_yearly_pm_production_log_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
 generate_form 'BOP_PRD', 'SbaProduction',
-	(common_production_fields.merge reflow_oven_equipment_monthly&half_yearly_pm_production_log_fields.merge common_fields)
+	(common_production_fields.merge reflow_oven_equipment_monthly_half_yearly_pm_production_log_fields.merge common_fields)
 
 # DOC# 3742-02-30049	SBA water cleaner Equipment Monthly&Half yearly PM Record
 sba_production_log_fields = {
@@ -1015,13 +1015,13 @@ generate_form 'BOP_PRD', 'PunchProduction',
 	(common_production_fields.merge punch_production_log_fields.merge common_fields)
 
 # DOC# 3742-02-30086	PM Monthly & Half year record
-tray_cleaning_equipment_monthly&half_yearly_pm_record_production_log_fields = {
+tray_cleaning_equipment_monthly_half_yearly_pm_record_production_log_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
 generate_form 'BOP_PRD', 'PunchProduction',
-	(common_production_fields.merge tray_cleaning_equipment_monthly&half_yearly_pm_record_production_log_fields.merge common_fields)
+	(common_production_fields.merge tray_cleaning_equipment_monthly_half_yearly_pm_record_production_log_fields.merge common_fields)
 
 # DOC# 3744-02-00011	EOL存货卡
 mhl_cure_production_log_fields = {
@@ -1285,6 +1285,7 @@ card_fvi_production_fields = {
 generate_form 'COP_PRD', 'CardFviProduction',
 	(card_fvi_production_fields.merge common_field)
 
+
 # DOC# 3755-02-60029 Production Log Sheet (Mask Label)  
 mask_label_production_fields = {
 	:profile_check  => :string,
@@ -1294,6 +1295,7 @@ mask_label_production_fields = {
 generate_form 'COP_PRD', 'MaskLabelProduction',
 	(mask_label_production_fields.merge common_field)
 
+
 # DOC# 3755-02-60041 	FVI Production log sheet
 fvi_production_fields = {
 	:profile_check  => :string,
@@ -1301,7 +1303,8 @@ fvi_production_fields = {
 	:out_time    => :timestamps,
 }
 generate_form 'COP_PRD', 'FviProduction',
-	(fvi_production_fields.merge common_field) 
+	(fvi_production_fields.merge common_field)
+
 
 # DOC# 3755-02-70012	Prodcution Log Sheet (Packing)  
 packing_production_fields = {
@@ -1310,7 +1313,7 @@ packing_production_fields = {
 	:out_time    => :timestamps,
 }
 generate_form 'COP_PRD', 'PackingProduction',
-	(packing_production_fields.merge common_field) 
+	(packing_production_fields.merge common_field)
 
 # DOC# 3755-02-70026	Production Log Sheet(Jewel case packing)  
 jewel_case_packing_production_fields = {
@@ -1319,7 +1322,7 @@ jewel_case_packing_production_fields = {
 	:out_time    => :timestamps,
 }
 generate_form 'COP_PRD', 'JewelCasePackingProduction',
-	(jewel_case_packing_production_fields.merge common_field) 
+	(jewel_case_packing_production_fields.merge common_field)
 
 # DOC# 3755-02-90011	Production Log Sheet ( Ink Masking)
 ink_masking_production_fields = {
@@ -1328,7 +1331,7 @@ ink_masking_production_fields = {
 	:out_time    => :timestamps,
 }
 generate_form 'COP_PRD', 'InkMaskingProduction',
-	(ink_masking_production_fields.merge common_field) 
+	(ink_masking_production_fields.merge common_field)
 
 # DOC# 3755-02-60016	Production Log Sheet (Mask Label Bake)  
 mask_label_bake_production_fields = {
@@ -1337,7 +1340,7 @@ mask_label_bake_production_fields = {
 	:out_time    => :timestamps,
 }
 generate_form 'COP_PRD', 'MaskLabelBakeProduction',
-	(mask_label_bake_production_fields.merge common_field) 
+	(mask_label_bake_production_fields.merge common_field)
 
 # DOC# 3751-02-10011	Auto_Welding_Equipment_Half-Yearly_PM
 auto_welding_equipment_half_yearly_pm_fields = {
@@ -1346,7 +1349,7 @@ auto_welding_equipment_half_yearly_pm_fields = {
 	:out_time    => :timestamps,
 }
 generate_form 'COP_PRD', 'AutoWeldingEquipmentHalfYearlyPm',
-	(auto_welding_equipment_half_yearly_pm_fields.merge common_field) 
+	(auto_welding_equipment_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30036	Auto_Welding_Equipment_Weekly & Monthly_PM
 card_assembly_auto_welding_equipment_weekly_and_monthly_pm_fields = {
@@ -1355,7 +1358,7 @@ card_assembly_auto_welding_equipment_weekly_and_monthly_pm_fields = {
 	:out_time    => :timestamps,
 }
 generate_form 'COP_PRD', 'CardAssemblyAutoWeldingEquipmentWeeklyAndMonthlyPM',
-	(card_assembly_auto_welding_equipment_weekly_and_monthly_pm_fields.merge common_field) 
+	(card_assembly_auto_welding_equipment_weekly_and_monthly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30060	Auto_Welder_Machine_Shiftly_Check_Record
 auto_welding_equipment_shiftly_check_fields = {
@@ -1364,7 +1367,7 @@ auto_welding_equipment_shiftly_check_fields = {
 	:out_time    => :timestamps,
 }
 generate_form 'COP_PRD', 'AutoWeldingEquipmentShiftlyCheck',
-	(auto_welding_equipment_shiftly_check_fields.merge common_field) 
+	(auto_welding_equipment_shiftly_check_fields.merge common_field)
 
 # DOC# 3751-02-30021	Manual Welding Equipment Half-Yearly PM
 manual_auto_welding_equipment_half_yearly_pm_fields = {
@@ -1373,7 +1376,7 @@ manual_auto_welding_equipment_half_yearly_pm_fields = {
 	:out_time    => :timestamps,
 }
 generate_form 'COP_PRD', 'ManualAutoWeldingEquipmentHalfYearlyPm',
-	(manual_auto_welding_equipment_half_yearly_pm_fields.merge common_field) 
+	(manual_auto_welding_equipment_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30037	Manual Welding Equipment Monthly PM
 manual_welding_equipment_monthly_pm_fields = {
@@ -1382,7 +1385,7 @@ manual_welding_equipment_monthly_pm_fields = {
 	:out_time    => :timestamps,
 }
 generate_form 'COP_PRD', 'ManualWeldingEquipmentMonthlyPm',
-	(manual_welding_equipment_monthly_pm_fields.merge common_field) 
+	(manual_welding_equipment_monthly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30059	Manual Welding Machine Shiftly Check Record
 manual_welding_machine_shiftly_check_fields = {
@@ -1391,7 +1394,7 @@ manual_welding_machine_shiftly_check_fields = {
 	:out_time    => :timestamps,
 }
 generate_form 'COP_PRD', 'ManualWeldingMachineShiftlyCheck',
-	(manual_welding_machine_shiftly_check_fields.merge common_field) 
+	(manual_welding_machine_shiftly_check_fields.merge common_field)
 
 # DOC# 3751-02-30119	De-Lid_Equipment_Month & half-Yearly_PM_Record
 de_lid_equipment_month_and_half_yearly_pm_fields = {
@@ -1400,7 +1403,7 @@ de_lid_equipment_month_and_half_yearly_pm_fields = {
 	:out_time    => :timestamps,
 }
 generate_form 'COP_PRD', 'DeLidEquipmentMonthaAndHalfYearlyPm',
-	(de_lid_equipment_month_and_half_yearly_pm_fields.merge common_field) 
+	(de_lid_equipment_month_and_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30120	De-Lid_Machine_Shiftly_Check_Record
 de_lid_machine_shiftly_check_fields = {
@@ -1511,22 +1514,22 @@ generate_form 'COP_PRD', 'OvenMachineShiftlyCheck',
 	(oven_machine_shiftly_check_fields.merge common_field)
 
 # DOC# 3751-02-30112	Vacuum_Oven_Monthly_And_Half-Yearly_PM_Record
-3751_02_30113_vacuum_oven_monthly_and_half_yearly_pm_fields = {
+vacuum_oven_monthly_and_half_yearly_pm_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
 generate_form 'COP_PRD', 'VacuumOvenMonthlyAndHalfYearlyPm',
-	(3751_02_30113_vacuum_oven_monthly_and_half_yearly_pm_fields.merge common_field)
+	(vacuum_oven_monthly_and_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30113	Vacuum_oven_Shiftly_Check_Record
-3751_02_30112_vacuum_oven_shiftly_check_fields = {
+vacuum_oven_shiftly_check_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
 generate_form 'COP_PRD', 'VacuumOvenShiftlyCheck',
-	(3751_02_30112_vacuum_oven_shiftly_check_fields.merge common_field)
+	(vacuum_oven_shiftly_check_fields.merge common_field)
 
 # DOC# 3751-02-30103	Mimaki Ink Jet Machine Shiftly Check Record
 mimaki_ink_jet_machine_shiftly_check_fields = {
@@ -1830,7 +1833,7 @@ card_assembly_h2_burn_machine_shiftly_check_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
-
+}
 generate_form 'COP_PRD', 'CardAssemblyH2BurnMachineShiftlyCheck',
     (card_assembly_h2_burn_machine_shiftly_check_fields.merge common_field)
 
@@ -1983,7 +1986,7 @@ sd_label_attach_equipment_half_yearly_pm_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
-}m
+}
 generate_form 'COP_PRD', 'SdLabelAttachEquipmentHalfYearlyPm',
 	(sd_label_attach_equipment_half_yearly_pm_fields.merge common_field)
 
@@ -1992,7 +1995,7 @@ sd_label_attach_equipment_weekly_and_monthly_pm_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
-}m
+}
 generate_form 'COP_PRD', 'SdLabelAttachEquipmentWeeklyAndMonthlyPm',
 	(sd_label_attach_equipment_weekly_and_monthly_pm_fields.merge common_field)
 
@@ -2001,13 +2004,9 @@ sd_label_machine_shiftly_check_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
-}m
+}
 generate_form 'COP_PRD', 'SdLabelMachineShiftlyCheck',
 	(sd_label_machine_shiftly_check_fields.merge common_field)
-
-
-
-----------------------------------
 
 
 # DOC# 3983-02-00003	 SDSS KGD Testing Production Log Sheet
