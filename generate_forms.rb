@@ -1066,7 +1066,7 @@ memory_test_daily_check_fields={
 	:program_no     => :string,
 	:contact_angle  => :string,
 }
-generate_form 'TOP_PRD', 'MemoryTestDailyCheck',
+generate_form 'TOP_EQP', 'MemoryTestDailyCheck',
 (memory_test_daily_check_fields.merge common_fields)
 
 # DOC# 3731-02-30029	TOP shift machine jamming trend
@@ -1075,7 +1075,7 @@ mt_ct_tfcl_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'TOP_PRD', 'MtCtTfcl',
+generate_form 'TOP_EQP', 'MtCtTfcl',
 	(mt_ct_tfcl_fields.merge common_fields)
 
 # DOC# 3731-02-20006	Monthly & Half Year PM Record
@@ -1084,7 +1084,7 @@ mt_ct_fields= {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'TOP_PRD', 'MtCt',
+generate_form 'TOP_EQP', 'MtCt',
 	(mt_ct_fields.merge common_fields)
 
 # DOC# 3733-02-00138	TOP_conversion_checklist
@@ -1093,7 +1093,7 @@ top_conversion_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'TOP_PRD', 'TopConversion',
+generate_form 'TOP_EQP', 'TopConversion',
 	(top_conversion_fields.merge common_fields)
 
 # DOC# 3731-02-30036	STK Oven daily checklist
@@ -1102,7 +1102,7 @@ stk_oven_daily_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'TOP_PRD', 'StkOvenDaily',
+generate_form 'TOP_EQP', 'StkOvenDaily',
 	(stk_oven_daily_fields.merge common_fields)
 
 # DOC# 3731-02-30037	 M820 Burn-In Daily Check Record
@@ -1111,7 +1111,7 @@ m820_burn_in_daily_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'TOP_PRD', 'M820BuinInDailyCheck',
+generate_form 'TOP_EQP', 'M820BuinInDailyCheck',
 	(m820_burn_in_daily_check_fields.merge common_fields)
 
 # DOC# 3731-02-30037	 ProV Buin-In Daily Check Record
@@ -1120,7 +1120,7 @@ generate_form 'TOP_PRD', 'M820BuinInDailyCheck',
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'TOP_PRD', 'ProvBuinInDailyCheck',
+generate_form 'TOP_EQP', 'ProvBuinInDailyCheck',
 	(prov_buin_in_daily_check_fields.merge common_fields)
 
 # DOC# 3731-02-30036	JEC Oven daily checklist
@@ -1129,7 +1129,7 @@ jec_oven_daily_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'TOP_PRD', 'JecOvenDaily',
+generate_form 'TOP_EQP', 'JecOvenDaily',
 	(jec_oven_daily_fields.merge common_fields)
 
 # DOC# 3731-02-30013	Monthly & Half Year PM Record
@@ -1138,7 +1138,7 @@ mirae_m820_handler_monthly_and_half_year_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'TOP_PRD', 'MiraeM820hHandlerMonthlyAndHalfYearPm',
+generate_form 'TOP_EQP', 'MiraeM820hHandlerMonthlyAndHalfYearPm',
 	(mirae_m820_handler_monthly_and_half_year_pm_fields.merge common_fields)
 
 # DOC# 3731-02-30013	Monthly & Half Year PM Record
@@ -1147,7 +1147,7 @@ burn_in_board_monthly_pm_record_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'TOP_PRD', 'BurnInBoardMonthlyPm',
+generate_form 'TOP_EQP', 'BurnInBoardMonthlyPm',
 	(burn_in_board_monthly_pm_fields.merge common_fields)
 
 # DOC# 3775-02-00104	Card Test Daily check list
@@ -1156,7 +1156,7 @@ card_test_daily_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'TOP_PRD', 'CardTestDailyCheck',
+generate_form 'TOP_EQP', 'CardTestDailyCheck',
 	(card_test_daily_check_fields.merge common_fields)
 
 # DOC# 3733-02-00140	TFCL Test Daily check list
@@ -1165,7 +1165,7 @@ tfcl_test_daily_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'TOP_PRD', 'TfclTestDailyCheck',
+generate_form 'TOP_EQP', 'TfclTestDailyCheck',
 	(tfcl_test_daily_check_fields.merge common_fields)
 
 # DOC# 3731-02-30046	HonTech Test Daily check list
@@ -1174,7 +1174,7 @@ honTech_test_daily_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'TOP_PRD', 'HonTechTestDailyCheck',
+generate_form 'TOP_EQP', 'HonTechTestDailyCheck',
 	(honTech_test_daily_check_fields.merge common_field)
 
 # DOC# 3731-02-30045	Mirae M150 Test Daily check list
@@ -1183,7 +1183,7 @@ mirae_m150_test_daily_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'TOP_PRD', 'MiraeM150TestDailyCheck',
+generate_form 'TOP_EQP', 'MiraeM150TestDailyCheck',
 	(mirae_m150_test_daily_check_fields.merge common_field)
 
 # DOC# 3791-02-30001	Monthly & Half Year PM Record
@@ -1192,8 +1192,8 @@ tfcl_tester_monthly_and_semi_annual_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'TOP_PRD', 'TfclTesterMonthlyAndSemiAnnualPm',
-	(tfcl_tester_monthly_and_semi_annual_pm_fields.merge common_field)
+generate_form 'TOP_EQP', 'TfclTesterMonthlyAndSemiAnnualPm',
+  (tfcl_tester_monthly_and_semi_annual_pm_fields.merge common_field)
 
 # DOC# 3731-02-30044	Monthly & Half Year PM Record
 mirae_m150_handler_monthly_and_half_year_pm_fields = {
@@ -1201,7 +1201,7 @@ mirae_m150_handler_monthly_and_half_year_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'TOP_PRD', 'MiraeM150HandlerMonthlyAndHalfYearPm',
+generate_form 'TOP_EQP', 'MiraeM150HandlerMonthlyAndHalfYearPm',
 	(mirae_m150_handler_monthly_and_half_year_pm_fields.merge common_field)
 
 # DOC# 3731-02-30040	Monthly & Half Year PM Record
@@ -1210,7 +1210,7 @@ hontech_ht3600a_handler_monthly_and_half_year_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'TOP_PRD', 'HontechHt3600aHandlerMonthlyAndHalfYearPm',
+generate_form 'TOP_EQP', 'HontechHt3600aHandlerMonthlyAndHalfYearPm',
 	(hontech_ht3600a_handler_monthly_and_half_year_pm_fields.merge common_field)
 
 # DOC# 3755-02-00101 	COP Rework Form  
@@ -1348,7 +1348,7 @@ auto_welding_equipment_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'AutoWeldingEquipmentHalfYearlyPm',
+generate_form 'COP_EQP', 'AutoWeldingEquipmentHalfYearlyPm',
 	(auto_welding_equipment_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30036	Auto_Welding_Equipment_Weekly & Monthly_PM
@@ -1357,7 +1357,7 @@ card_assembly_auto_welding_equipment_weekly_and_monthly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'CardAssemblyAutoWeldingEquipmentWeeklyAndMonthlyPM',
+generate_form 'COP_EQP', 'CardAssemblyAutoWeldingEquipmentWeeklyAndMonthlyPM',
 	(card_assembly_auto_welding_equipment_weekly_and_monthly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30060	Auto_Welder_Machine_Shiftly_Check_Record
@@ -1366,7 +1366,7 @@ auto_welding_equipment_shiftly_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'AutoWeldingEquipmentShiftlyCheck',
+generate_form 'COP_EQP', 'AutoWeldingEquipmentShiftlyCheck',
 	(auto_welding_equipment_shiftly_check_fields.merge common_field)
 
 # DOC# 3751-02-30021	Manual Welding Equipment Half-Yearly PM
@@ -1375,7 +1375,7 @@ manual_auto_welding_equipment_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'ManualAutoWeldingEquipmentHalfYearlyPm',
+generate_form 'COP_EQP', 'ManualAutoWeldingEquipmentHalfYearlyPm',
 	(manual_auto_welding_equipment_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30037	Manual Welding Equipment Monthly PM
@@ -1384,7 +1384,7 @@ manual_welding_equipment_monthly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'ManualWeldingEquipmentMonthlyPm',
+generate_form 'COP_EQP', 'ManualWeldingEquipmentMonthlyPm',
 	(manual_welding_equipment_monthly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30059	Manual Welding Machine Shiftly Check Record
@@ -1393,7 +1393,7 @@ manual_welding_machine_shiftly_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'ManualWeldingMachineShiftlyCheck',
+generate_form 'COP_EQP', 'ManualWeldingMachineShiftlyCheck',
 	(manual_welding_machine_shiftly_check_fields.merge common_field)
 
 # DOC# 3751-02-30119	De-Lid_Equipment_Month & half-Yearly_PM_Record
@@ -1402,7 +1402,7 @@ de_lid_equipment_month_and_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'DeLidEquipmentMonthaAndHalfYearlyPm',
+generate_form 'COP_EQP', 'DeLidEquipmentMonthaAndHalfYearlyPm',
 	(de_lid_equipment_month_and_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30120	De-Lid_Machine_Shiftly_Check_Record
@@ -1411,7 +1411,7 @@ de_lid_machine_shiftly_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'DeLidMachineShiftlyCheck',
+generate_form 'COP_EQP', 'DeLidMachineShiftlyCheck',
 	(de_lid_machine_shiftly_check_fields.merge common_field)
 
 # DOC# 3751-02-30016	Bottom_Lid_Marking_Equipment_Half-Yearly_PM
@@ -1420,7 +1420,7 @@ bottom_lid_marking_equipment_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'BottomLidMarkingEquipmentHalfYearlyPm',
+generate_form 'COP_EQP', 'BottomLidMarkingEquipmentHalfYearlyPm',
 	(bottom_lid_marking_equipment_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30044	Bottom_Lid_Marking_Equipment_Weekly & Monthly_PM
@@ -1429,7 +1429,7 @@ bottom_lid_marking_equipment_weekly_and_monthly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'BottomLidMarkingEquipmentWeeklyAndMonthlyPm',
+generate_form 'COP_EQP', 'BottomLidMarkingEquipmentWeeklyAndMonthlyPm',
 	(bottom_lid_marking_equipment_weekly_and_monthly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30061	 Bottom Lid Marking Machine Shiftly Check Record
@@ -1438,7 +1438,7 @@ bottom_lid_marking_machine_shiftly_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'BottomLidMarkingMachineShiftlyCheck',
+generate_form 'COP_EQP', 'BottomLidMarkingMachineShiftlyCheck',
 	(bottom_lid_marking_machine_shiftly_check_fields.merge common_field)
 
 # DOC# 3751-02-30076	Dry Cabinet Monthly And Half-Yearly PM Record
@@ -1447,7 +1447,7 @@ dry_cabinet_monthly_and_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'DryCabinetMonthlyAndHalfYearlyPm',
+generate_form 'COP_EQP', 'DryCabinetMonthlyAndHalfYearlyPm',
 	(dry_cabinet_monthly_and_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30073	Force Tester Equipment Monthly And Half-Yearly PM Record
@@ -1456,7 +1456,7 @@ force_tester_equipment_monthly_and_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'ForceTesterEquipmentMonthlyAndHalfYearlyPm',
+generate_form 'COP_EQP', 'ForceTesterEquipmentMonthlyAndHalfYearlyPm',
 	(force_tester_equipment_monthly_and_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30042	Card Assembly ICOS Equipment Monthly And Half-Yearly PM Record
@@ -1465,7 +1465,7 @@ card_assembly_icos_equipment_monthly_and_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'CardAssemblyIcosEquipmentMonthlyAndHalfYearlyPm',
+generate_form 'COP_EQP', 'CardAssemblyIcosEquipmentMonthlyAndHalfYearlyPm',
 	(card_assembly_icos_equipment_monthly_and_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30058	AOI Machine Shiftly Check Record
@@ -1474,7 +1474,7 @@ aoi_machine_shiftly_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'AoiMachineShiftlyCheckSTI_Shiftly_Check',
+generate_form 'COP_EQP', 'AoiMachineShiftlyCheckSTI_Shiftly_Check',
 	(aoi_machine_shiftly_check_fields.merge common_field)
 
 # DOC# 3751-02-30077	STI_Shiftly_Check_Record
@@ -1483,7 +1483,7 @@ sti_shiftly_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'StiShiftlyCheck',
+generate_form 'COP_EQP', 'StiShiftlyCheck',
 	(sti_shiftly_check_fields.merge common_field)
 
 # DOC# 3751-02-30117	STI_Equipment_Monthly_And_Half-Yearly_PM_Record
@@ -1492,7 +1492,7 @@ sti_hexa_equipment_monthly_and_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'StiHexaEquipmentMonthlyAndHalfYearlyPm',
+generate_form 'COP_EQP', 'StiHexaEquipmentMonthlyAndHalfYearlyPm',
     (sti_hexa_equipment_monthly_and_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30028	 Oven Equipment Monthly And Half-Yearly PM Record
@@ -1501,7 +1501,7 @@ oven_equipment_monthly_and_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'OvenEquipmentMonthlyAndHalfYearlyPm',
+generate_form 'COP_EQP', 'OvenEquipmentMonthlyAndHalfYearlyPm',
 	(oven_equipment_monthly_and_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30057	Oven_Machine_Shiftly_Check_Record
@@ -1510,7 +1510,7 @@ oven_machine_shiftly_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'OvenMachineShiftlyCheck',
+generate_form 'COP_EQP', 'OvenMachineShiftlyCheck',
 	(oven_machine_shiftly_check_fields.merge common_field)
 
 # DOC# 3751-02-30112	Vacuum_Oven_Monthly_And_Half-Yearly_PM_Record
@@ -1519,7 +1519,7 @@ vacuum_oven_monthly_and_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'VacuumOvenMonthlyAndHalfYearlyPm',
+generate_form 'COP_EQP', 'VacuumOvenMonthlyAndHalfYearlyPm',
 	(vacuum_oven_monthly_and_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30113	Vacuum_oven_Shiftly_Check_Record
@@ -1528,7 +1528,7 @@ vacuum_oven_shiftly_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'VacuumOvenShiftlyCheck',
+generate_form 'COP_EQP', 'VacuumOvenShiftlyCheck',
 	(vacuum_oven_shiftly_check_fields.merge common_field)
 
 # DOC# 3751-02-30103	Mimaki Ink Jet Machine Shiftly Check Record
@@ -1537,7 +1537,7 @@ mimaki_ink_jet_machine_shiftly_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'MimakiInkJetMachineShiftlyCheck',
+generate_form 'COP_EQP', 'MimakiInkJetMachineShiftlyCheck',
 	(mimaki_ink_jet_machine_shiftly_check_fields.merge common_field)
 
 # DOC# 3751-02-30104	Mimaki Ink Jet Machine Weekly & Monthly PM Record
@@ -1546,7 +1546,7 @@ mimaki_ink_jet_machine_Weekly_and_monthly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'MimakiInkJetMachineWeeklyAndMonthlyPm',
+generate_form 'COP_EQP', 'MimakiInkJetMachineWeeklyAndMonthlyPm',
 	(mimaki_ink_jet_machine_Weekly_and_monthly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30105	Mimaki Ink Jet Machine Half-Yearly PM Record
@@ -1555,7 +1555,7 @@ mimaki_ink_jet_machine_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'MimakiInkJetMachineHalfYearlyPm',
+generate_form 'COP_EQP', 'MimakiInkJetMachineHalfYearlyPm',
 	(mimaki_ink_jet_machine_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30100	 Microdot 930 With Dimatix Print Head Equipment Weekly & Monthly PM Record
@@ -1564,7 +1564,7 @@ microdot_930_with_dimatix_print_head_equipment_weekly_and_monthly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'Microdot930WithDimatixPrintHeadEquipmentWeeklyAndMonthlypm',
+generate_form 'COP_EQP', 'Microdot930WithDimatixPrintHeadEquipmentWeeklyAndMonthlypm',
 	(microdot_930_with_dimatix_print_head_equipment_weekly_and_monthly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30101	Microdot 930 With Dimatix Print Head Equipment Half-Yearly PM Record
@@ -1573,7 +1573,7 @@ microdot_930_with_dimatix_print_head_equipment_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'Microdot930WithDimatixPrintHeadEquipmentHalfYearlyPm',
+generate_form 'COP_EQP', 'Microdot930WithDimatixPrintHeadEquipmentHalfYearlyPm',
 	(microdot_930_with_dimatix_print_head_equipment_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30102	Microdot 930 With Dimatix Print Head Equipment Shiftly Check Record
@@ -1582,7 +1582,7 @@ microdot_930_with_dimatix_print_head_equipment_shiftly_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'Microdot930WithDimatixPrintHeadEquipmentShiftlyCheck',
+generate_form 'COP_EQP', 'Microdot930WithDimatixPrintHeadEquipmentShiftlyCheck',
 	(microdot_930_with_dimatix_print_head_equipment_shiftly_check_fields.merge common_field)
 
 # DOC# 3751-02-30032	Microdot 915 Equipment Weekly & Monthly PM Record
@@ -1591,7 +1591,7 @@ microdot_915_equipment_weekly_and_monthly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'Microdot915EquipmentWeeklyAndMonthlyPm',
+generate_form 'COP_EQP', 'Microdot915EquipmentWeeklyAndMonthlyPm',
 	(microdot_915_equipment_weekly_and_monthly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30033	 Microdot 915 Equipment Half-Yearly PM Record
@@ -1600,7 +1600,7 @@ generate_form 'COP_PRD', 'Microdot915EquipmentWeeklyAndMonthlyPm',
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'Microdot915EquipmentHalfYearlyPm',
+generate_form 'COP_EQP', 'Microdot915EquipmentHalfYearlyPm',
 	(microdot_915_equipment_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30053	 Microdot 915 Machine Shiftly Check Record
@@ -1609,7 +1609,7 @@ microdot_915_machine_shiftly_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'Microdot915MachineShiftlyCheck',
+generate_form 'COP_EQP', 'Microdot915MachineShiftlyCheck',
 	(microdot_915_machine_shiftly_check_fields.merge common_field)
 
 # DOC# 3751-02-30048	Microdot 930 Equipment Weekly & Monthly PM Record
@@ -1618,7 +1618,7 @@ microdot_930_equipment_weekly_and_monthly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'Microdot930EquipmentWeeklyAndMonthlyPm',
+generate_form 'COP_EQP', 'Microdot930EquipmentWeeklyAndMonthlyPm',
 	(microdot_930_equipment_weekly_and_monthly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30049	 Microdot 930 Equipment Half-Yearly PM Record
@@ -1627,7 +1627,7 @@ microdot_930_equipment_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'Microdot930EquipmentHalfYearlyPM ',
+generate_form 'COP_EQP', 'Microdot930EquipmentHalfYearlyPM ',
 	(microdot_930_equipment_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30054	 Microdot 930 Machine Shiftly Check Record
@@ -1636,7 +1636,7 @@ microdot_930_machine_shiftly_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'Microdot930MachineShiftlyCheck',
+generate_form 'COP_EQP', 'Microdot930MachineShiftlyCheck',
 	(microdot_930_machine_shiftly_check_fields.merge common_field)
 
 # DOC# 3741-02-30030	Plasma Equipment Quarterly PM Record
@@ -1645,7 +1645,7 @@ plasma_equipment_quarterly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'PlasmaEquipmentQuarterlyPm',
+generate_form 'COP_EQP', 'PlasmaEquipmentQuarterlyPm',
 	(plasma_equipment_quarterly_pm_fields.merge common_field)
 
 # DOC# 3741-02-30070	Plasma Equipment Shiftly Check Record
@@ -1654,7 +1654,7 @@ plasma_equipment_shiftly_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'PlasmaEquipmentShiftlyCheck',
+generate_form 'COP_EQP', 'PlasmaEquipmentShiftlyCheck',
 	(plasma_equipment_shiftly_check_fields.merge common_field)
 
 # DOC# 3751-02-30078	Card Assembly Auto Silk Screen Half-Yearly PM Record
@@ -1663,7 +1663,7 @@ card_assembly_auto_silk_screen_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'CardAssemblyAutoSilkScreenHalfYearlyPm',
+generate_form 'COP_EQP', 'CardAssemblyAutoSilkScreenHalfYearlyPm',
 	(card_assembly_auto_silk_screen_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30079	Card Assembly Auto silk screen weekly & monthly PM record
@@ -1672,7 +1672,7 @@ card_assembly_auto_silk_screen_weekly_and_monthly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'CardAssemblyAutoSilkScreenWeeklyAndMonthlyPm',
+generate_form 'COP_EQP', 'CardAssemblyAutoSilkScreenWeeklyAndMonthlyPm',
 	(card_assembly_auto_silk_screen_weekly_and_monthly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30080	 Card Assembly Auto Silk Screen Shiftly Check Record
@@ -1681,7 +1681,7 @@ card_assembly_auto_silk_screen_shiftly_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'CardAssemblyAutoSilkScreenShiftlyCheck',
+generate_form 'COP_EQP', 'CardAssemblyAutoSilkScreenShiftlyCheck',
 	(card_assembly_auto_silk_screen_shiftly_check_fields.merge common_field)
 
 # DOC# 3751-02-30034	 UV Oven Equipment Weekly & Monthly PM Record
@@ -1690,7 +1690,7 @@ generate_form 'COP_PRD', 'CardAssemblyAutoSilkScreenShiftlyCheck',
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'UvOvenEquipmentWeeklyAndMonthlyPm',
+generate_form 'COP_EQP', 'UvOvenEquipmentWeeklyAndMonthlyPm',
 	(uv_oven_equipment_weekly_and_monthly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30035	UV Oven Equipment Half-Yearly PM Record
@@ -1699,7 +1699,7 @@ uv_oven_equipment_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'UvOvenEquipmentHalfYearlyPm',
+generate_form 'COP_EQP', 'UvOvenEquipmentHalfYearlyPm',
 	(uv_oven_equipment_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30055	UV Oven Machine Shiftly Check Record
@@ -1708,7 +1708,7 @@ uv_oven_machine_shiftly_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'UvOvenMachineShiftlyCheck',
+generate_form 'COP_EQP', 'UvOvenMachineShiftlyCheck',
 	(uv_oven_machine_shiftly_check_fields.merge common_field)
 
 # DOC# 3751-02-30050	Auto_Jewel_Case_Machine_Weekly_And_Monthly_PM_Record
@@ -1717,7 +1717,7 @@ auto_jewel_case_machine_weekly_and_monthly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'AutoJewelCaseMachineWeeklyAndMonthlyPm',
+generate_form 'COP_EQP', 'AutoJewelCaseMachineWeeklyAndMonthlyPm',
 	(auto_jewel_case_machine_weekly_and_monthly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30051	Auto_Jewel_Case_Packing_Machine_Half-Yearly_PM_Record
@@ -1726,7 +1726,7 @@ auto_jewel_case_packing_machine_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'AutoJewelCasePackingMachineHalfYearlyPM',
+generate_form 'COP_EQP', 'AutoJewelCasePackingMachineHalfYearlyPM',
 	(auto_jewel_case_packing_machine_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30062	Auto_j-case_Machine_Shiftly_Check_Record
@@ -1735,7 +1735,7 @@ auto_jewel_case_machine_shiftly_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'AutoJewelCaseMachineShiftlyCheck',
+generate_form 'COP_EQP', 'AutoJewelCaseMachineShiftlyCheck',
 	(auto_jewel_case_machine_shiftly_check_fields.merge common_field)
 
 # DOC# 3751-02-30106	Card Assembly J-case Label Machine Shiftly Check Record
@@ -1744,7 +1744,7 @@ card_assembly_jewel_case_label_machine_shiftly_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'CardAssemblyJewelCaseLabelMachineShiftlyCheck',
+generate_form 'COP_EQP', 'CardAssemblyJewelCaseLabelMachineShiftlyCheck',
 	(card_assembly_jewel_case_label_machine_shiftly_check_fields.merge common_field)
 
 # DOC# 3751-02-30107	Card Assembly J-case Label Machine Monthly PM Record
@@ -1753,7 +1753,7 @@ card_assembly_jewel_case_label_machine_monthly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'CardAssemblyJewelCaseLabelMachineMonthlyPm',
+generate_form 'COP_EQP', 'CardAssemblyJewelCaseLabelMachineMonthlyPm',
 	(card_assembly_jewel_case_label_machine_monthly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30108	Card Assembly J-case Label Machine Half-Yearly PM Record
@@ -1762,7 +1762,7 @@ card_assembly_jewel_case_label_machine_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'CardAssemblyJewelCaseLabelMachineHalfYearlyPm',
+generate_form 'COP_EQP', 'CardAssemblyJewelCaseLabelMachineHalfYearlyPm',
 	(card_assembly_jewel_case_label_machine_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30052	Packing_Equipment_Half-Yearly_PM_Record
@@ -1771,7 +1771,7 @@ packing_equipment_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'PackingEquipmentHalfYearlyPm',
+generate_form 'COP_EQP', 'PackingEquipmentHalfYearlyPm',
 	(packing_equipment_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30064	Packing_Machine_Shiftly_Check_Record
@@ -1780,7 +1780,7 @@ packing_machine_shiftly_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'PackingMachineShiftlyCheck',
+generate_form 'COP_EQP', 'PackingMachineShiftlyCheck',
 	(packing_machine_shiftly_check_fields.merge common_field)
 
 # DOC# 3751-02-30048	Card Assembly Pull Strength Test Equipment Monthly&Half-Yearly PM Record
@@ -1789,7 +1789,7 @@ card_assembly_pull_strength_test_equipment_monthly_and_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'CardAssemblyPullStrengthTestEquipmentMonthlyAndHalfYearlyPm',
+generate_form 'COP_EQP', 'CardAssemblyPullStrengthTestEquipmentMonthlyAndHalfYearlyPm',
 	(card_assembly_pull_strength_test_equipment_monthly_and_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30047	Card Assembly Switch Force Test Equipment Monthly & Half-Yearly PM Record
@@ -1798,7 +1798,7 @@ card_assembly_switch_force_test_equipment_monthly_and_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'CardAssemblySwitchForceTestEquipmentMonthlyAndHalfYearlyPm',
+generate_form 'COP_EQP', 'CardAssemblySwitchForceTestEquipmentMonthlyAndHalfYearlyPm',
 	(card_assembly_switch_force_test_equipment_monthly_and_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30110	Card Assembly Engraver Equipment Machine Shift Check Record
@@ -1807,7 +1807,7 @@ card_assembly_engraver_equipment_machine_shift_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'CardAssemblyEngraverEquipmentMachineShiftCheck',
+generate_form 'COP_EQP', 'CardAssemblyEngraverEquipmentMachineShiftCheck',
 	(card_assembly_engraver_equipment_machine_shift_check_fields.merge common_field)
 
 # DOC# 3751-02-30109	Engraver Equipment Monthly & Half-Yearly PM Record
@@ -1816,7 +1816,7 @@ generate_form 'COP_PRD', 'CardAssemblyEngraverEquipmentMachineShiftCheck',
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'EngraverEquipmentMonthlyAndHalfYearlyPm',
+generate_form 'COP_EQP', 'EngraverEquipmentMonthlyAndHalfYearlyPm',
 	(engraver_equipment_monthly_and_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30081	Card Assembly H2 Burn Half-Yearly PM Record
@@ -1825,7 +1825,7 @@ card_assembly_h2_burn_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'CardAssemblyH2BurnHalfYearlyPm',
+generate_form 'COP_EQP', 'CardAssemblyH2BurnHalfYearlyPm',
 	(card_assembly_h2_burn_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30082	Card_Assembly_H2_Burn_Machine_Shiftly_Check_Record
@@ -1834,7 +1834,7 @@ card_assembly_h2_burn_machine_shiftly_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'CardAssemblyH2BurnMachineShiftlyCheck',
+generate_form 'COP_EQP', 'CardAssemblyH2BurnMachineShiftlyCheck',
     (card_assembly_h2_burn_machine_shiftly_check_fields.merge common_field)
 
 # DOC# 3751-02-30083	Card Assembly H2 Burn Weekly & Monthly PM Record
@@ -1843,7 +1843,7 @@ card_assembly_h2_burn_weekly_and_monthly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'CardAssemblyH2BurnWeeklyAndMonthlyPm',
+generate_form 'COP_EQP', 'CardAssemblyH2BurnWeeklyAndMonthlyPm',
 	(card_assembly_h2_burn_weekly_and_monthly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30069	Card Assembly ON TRAY INK MARK Monthly PM Record
@@ -1852,7 +1852,7 @@ card_assembly_on_tray_ink_mark_monthly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'CardAssemblyOnTrayInkMarkMonthlyPm',
+generate_form 'COP_EQP', 'CardAssemblyOnTrayInkMarkMonthlyPm',
 	(card_assembly_on_tray_ink_mark_monthly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30070	Card Assembly ON TRAY INK MARK Equipment Half-Yearly PM Record
@@ -1861,7 +1861,7 @@ card_assembly_on_tray_ink_mark_equipment_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'CardAssemblyOnTrayInkMarkEquipmentHalfYearlyPm',
+generate_form 'COP_EQP', 'CardAssemblyOnTrayInkMarkEquipmentHalfYearlyPm',
 	(card_assembly_on_tray_ink_mark_equipment_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30096	Card_Assembly_Tray_Ink_Mark_Shiftly_Check_Record
@@ -1870,7 +1870,7 @@ card_assembly_tray_ink_mark_shiftly_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'CardAssemblyTrayInkMarkShiftlyCheck',
+generate_form 'COP_EQP', 'CardAssemblyTrayInkMarkShiftlyCheck',
 	(card_assembly_tray_ink_mark_shiftly_check_fields.merge common_field)
 
 # DOC# 3751-02-30114	 Manual J-case Label Equipment Half-Yearly PM Record
@@ -1879,7 +1879,7 @@ manual_jewel_case_label_equipment_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'ManualJewelCaseLabelEquipmentHalfYearlyPm',
+generate_form 'COP_EQP', 'ManualJewelCaseLabelEquipmentHalfYearlyPm',
 	(manual_jewel_case_label_equipment_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30115	Manual J-Case Label Machine Shiftly Check Record
@@ -1888,7 +1888,7 @@ manual_jewel_case_label_machine_shiftly_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'ManualJewelCaseLabelMachineShiftlyCheck',
+generate_form 'COP_EQP', 'ManualJewelCaseLabelMachineShiftlyCheck',
 	(manual_jewel_case_label_machine_shiftly_check_fields.merge common_field)
 
 # DOC# 3751-02-30116	Manual J-Case Label Machine Weekly & Monthly PM Record
@@ -1897,7 +1897,7 @@ manual_jewel_case_label_machine_weekly_and_monthly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'ManualJewelCaseLabelMachineWeeklyAndMonthlyPm',
+generate_form 'COP_EQP', 'ManualJewelCaseLabelMachineWeeklyAndMonthlyPm',
 	(manual_jewel_case_label_machine_weekly_and_monthly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30087	Manual SD Label Equipment Shiftly Check Record
@@ -1906,7 +1906,7 @@ manual_sd_label_equipment_shiftly_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'ManualSdLabelEquipmentShiftlyCheck',
+generate_form 'COP_EQP', 'ManualSdLabelEquipmentShiftlyCheck',
 	(manual_sd_label_equipment_shiftly_check_fields.merge common_field)
 
 # DOC# 3751-02-30088	 Manual SD Label Machine Weekly & Monthly PM Record
@@ -1915,7 +1915,7 @@ manual_sd_label_machine_weekly_and_monthly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'ManualSdLabelMachineWeeklyAndMonthlyPm',
+generate_form 'COP_EQP', 'ManualSdLabelMachineWeeklyAndMonthlyPm',
 	(manual_sd_label_machine_weekly_and_monthly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30089	 Manual SD Label Equipment Half-Yearly PM Record
@@ -1924,7 +1924,7 @@ manual_sd_label_equipment_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'ManualSdLabelEquipmentHalfYearlyPm',
+generate_form 'COP_EQP', 'ManualSdLabelEquipmentHalfYearlyPm',
 	(manual_sd_label_equipment_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30040	 Auto Mask Label Attach Equipment Weekly & Monthly PM Record
@@ -1933,7 +1933,7 @@ auto_mask_label_attach_equipment_weekly_and_monthly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'AutoMaskLabelAttachEquipmentWeeklyAndMonthlyPm',
+generate_form 'COP_EQP', 'AutoMaskLabelAttachEquipmentWeeklyAndMonthlyPm',
 	(auto_mask_label_attach_equipment_weekly_and_monthly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30041	Auto Mask Label Attach Equipment Half-Yearly PM Record
@@ -1942,7 +1942,7 @@ auto_mask_label_attach_equipment_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'AutoMaskLabelAttachEquipmentHalfYearlyPm',
+generate_form 'COP_EQP', 'AutoMaskLabelAttachEquipmentHalfYearlyPm',
 	(auto_mask_label_attach_equipment_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30056	Auto Mask Label Machine Shiftly Check Record
@@ -1951,7 +1951,7 @@ auto_mask_label_machine_shiftly_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'AutoMaskLabelMachineShiftlyCheck',
+generate_form 'COP_EQP', 'AutoMaskLabelMachineShiftlyCheck',
 	(auto_mask_label_machine_shiftly_check_fields.merge common_field)
 
 # DOC# 3751-02-30091	Nautilus SD Label Equipment Shiftly Check Record
@@ -1960,7 +1960,7 @@ nautilus_sd_label_equipment_shiftly_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'NautilusSdLabelEquipmentShiftlyCheck',
+generate_form 'COP_EQP', 'NautilusSdLabelEquipmentShiftlyCheck',
 	(nautilus_sd_label_equipment_shiftly_check_fields.merge common_field)
 
 # DOC# 3751-02-30092	Nautilus SD Label Attach Equipment Half-Yearly PM Record
@@ -1969,7 +1969,7 @@ nautilus_sd_label_attach_equipment_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'NautilusSdLabelAttachEquipmentHalfYearlyPm',
+generate_form 'COP_EQP', 'NautilusSdLabelAttachEquipmentHalfYearlyPm',
 	(nautilus_sd_label_attach_equipment_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30090	Nautilus SD Label Attach Equipment Weekly & Monthly PM Record
@@ -1978,7 +1978,7 @@ nautilus_sd_label_attach_equipment_weekly_and_monthly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'NautilusSdLabelAttachEquipmentWeeklyAndMonthlyPm',
+generate_form 'COP_EQP', 'NautilusSdLabelAttachEquipmentWeeklyAndMonthlyPm',
 	(nautilus_sd_label_attach_equipment_weekly_and_monthly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30020	SD Label Attach Equipment Half-Yearly PM Record
@@ -1987,7 +1987,7 @@ sd_label_attach_equipment_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'SdLabelAttachEquipmentHalfYearlyPm',
+generate_form 'COP_EQP', 'SdLabelAttachEquipmentHalfYearlyPm',
 	(sd_label_attach_equipment_half_yearly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30045	SD Label Attach Equipment Weekly & Monthly PM record
@@ -1996,7 +1996,7 @@ sd_label_attach_equipment_weekly_and_monthly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'SdLabelAttachEquipmentWeeklyAndMonthlyPm',
+generate_form 'COP_EQP', 'SdLabelAttachEquipmentWeeklyAndMonthlyPm',
 	(sd_label_attach_equipment_weekly_and_monthly_pm_fields.merge common_field)
 
 # DOC# 3751-02-30063	 SD Label Machine Shiftly Check Record
@@ -2005,7 +2005,7 @@ sd_label_machine_shiftly_check_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_PRD', 'SdLabelMachineShiftlyCheck',
+generate_form 'COP_EQP', 'SdLabelMachineShiftlyCheck',
 	(sd_label_machine_shiftly_check_fields.merge common_field)
 
 
@@ -2141,7 +2141,7 @@ sdss_kgd_equipment_down_time_fields = {
 	:in_time       => :timestamps,
 	:out_time      => :timestamps,
 }
-generate_form 'KGD_PRD', 'SdssKgdEquipmentDownTime',
+generate_form 'KGD_EQP', 'SdssKgdEquipmentDownTime',
     (sdss_kgd_equipment_down_time_fields.merge common_fields)
 
 # DOC# 3981-02-30009	KGD Equipment Shift Check Record(开班检查表单)
@@ -2150,7 +2150,7 @@ kgd_equipment_shift_check_fields = {
 	:in_time       => :timestamps,
 	:out_time      => :timestamps,
 }
-generate_form 'KGD_PRD', 'KgdEquipmentShiftCheck',
+generate_form 'KGD_EQP', 'KgdEquipmentShiftCheck',
     (kgd_equipment_shift_check_fields.merge common_fields)
 
 # DOC# 3981-02-30011	 KGD Exchange parts record(备件更换表单)
@@ -2159,7 +2159,7 @@ kgd_exchange_parts_fields = {
 	:in_time       => :timestamps,
 	:out_time      => :timestamps,
 }
-generate_form 'KGD_PRD', 'KgdExchangeparts',
+generate_form 'KGD_EQP', 'KgdExchangeparts',
     (kgd_exchange_parts_fields.merge common_fields)
 
 # DOC# 3981-02-30012	 SDSS KGD Microscope Equipment Half year PM RECORD(显微镜维护表单)
@@ -2168,7 +2168,7 @@ sdss_kgd_microscope_equipment_half_year_pm_fields = {
 	:in_time       => :timestamps,
 	:out_time      => :timestamps,
 }
-generate_form 'KGD_PRD', 'SdssKgdMicroscopeEquipmentHalfYearPm',
+generate_form 'KGD_EQP', 'SdssKgdMicroscopeEquipmentHalfYearPm',
     (sdss_kgd_microscope_equipment_half_year_pm_fields.merge common_fields)
 
 # DOC# 3981-02-30013	 KGD vacuum packaging machine Monthly PM Record(真空包装机月保养表单)
@@ -2177,7 +2177,7 @@ kgd_vacuum_packaging_machine_monthly_pm_fields = {
 	:in_time       => :timestamps,
 	:out_time      => :timestamps,
 }
-generate_form 'KGD_PRD', 'KgdVacuumPackagingMachineMonthlyPm',
+generate_form 'KGD_EQP', 'KgdVacuumPackagingMachineMonthlyPm',
     (kgd_vacuum_packaging_machine_monthly_pm_fields.merge common_fields)
 
 # DOC# 3981-02-30016 	 SDSS KGD wafer sorter PM Record(Cherry pcik 机台保养表单)
@@ -2186,7 +2186,7 @@ sdss_kgd_wafer_sorter_pm_fields = {
 	:in_time       => :timestamps,
 	:out_time      => :timestamps,
 }
-generate_form 'KGD_PRD', 'SdssKgdWaferSorterPm',
+generate_form 'KGD_EQP', 'SdssKgdWaferSorterPm',
     (sdss_kgd_wafer_sorter_pm_fields.merge common_fields)
 
 # DOC# 3981-02-30025 	 SDSS KGD Dynatech wafer pack unpack shift check record(导料机开班检查记录表)
@@ -2195,7 +2195,7 @@ sdss_kgd_dynatech_wafer_pack_unpack_shift_check_fields = {
 	:in_time       => :timestamps,
 	:out_time      => :timestamps,
 }
-generate_form 'KGD_PRD', 'SdssKgdDynatechWaferPackUnpackShiftCheck',
+generate_form 'KGD_EQP', 'SdssKgdDynatechWaferPackUnpackShiftCheck',
     (sdss_kgd_dynatech_wafer_pack_unpack_shift_check_fields.merge common_fields)
 
 # DOC# 3981-02-30026 	 SDSS KGD Dynatech wafer pack unpack PM record(导料机保养表单)
@@ -2204,7 +2204,7 @@ sdss_kgd_dynatech_wafer_pack_unpack_pm_fields = {
 	:in_time       => :timestamps,
 	:out_time      => :timestamps,
 }
-generate_form 'KGD_PRD', 'SdssKgdDynatechWaferPackUnpackPm',
+generate_form 'KGD_EQP', 'SdssKgdDynatechWaferPackUnpackPm',
     (sdss_kgd_dynatech_wafer_pack_unpack_pm_fields.merge common_fields)
 
 # DOC# 3981-02-30006 	 Accretech UF3000EX Wafer Prober Monthly&Half Year PM Record(UF3000EX probe 月/年保养表单)
@@ -2213,7 +2213,7 @@ accretech_uf3000ex_wafer_prober_monthly_and_half_year_pm_fields = {
 	:in_time       => :timestamps,
 	:out_time      => :timestamps,
 }
-generate_form 'KGD_PRD', 'AccretechUf3000exWaferProberMonthlyAndHalfYearPm',
+generate_form 'KGD_EQP', 'AccretechUf3000exWaferProberMonthlyAndHalfYearPm',
     (accretech_uf3000ex_wafer_prober_monthly_and_half_year_pm_fields.merge common_fields)
 
 # DOC# 3981-02-30007 	 Innotech SI-300S Wafer Tester Monthly&Half Year PM Record (SI300S Tester 月/年保养表单)
@@ -2222,7 +2222,7 @@ innotech_si_300s_wafer_tester_monthly_and_half_year_pm_fields = {
 	:in_time       => :timestamps,
 	:out_time      => :timestamps,
 }
-generate_form 'KGD_PRD', 'InnotechSi-300sWaferTesterMonthlyAndHalfYearPm',
+generate_form 'KGD_EQP', 'InnotechSi-300sWaferTesterMonthlyAndHalfYearPm',
     (innotech_si_300s_wafer_tester_monthly_and_half_year_pm_fields.merge common_fields)
 
 # DOC# 3981-02-30008 	 JEM Probe Card Monthly&Half Year PM Record(探针卡月/年保养表单)
@@ -2231,7 +2231,7 @@ jem_probe_card_monthly_and_half_year_pm_fields = {
 	:in_time       => :timestamps,
 	:out_time      => :timestamps,
 }
-generate_form 'KGD_PRD', 'JemProbeCardMonthlyAndHalfYearPm',
+generate_form 'KGD_EQP', 'JemProbeCardMonthlyAndHalfYearPm',
     (jem_probe_card_monthly_and_half_year_pm_fields.merge common_fields)
 
 # DOC# 3981-02-30014 	 FOUP Cleaning Record(FOUP清洁记录表)
@@ -2240,7 +2240,7 @@ foup_cleaning_fields = {
 	:in_time       => :timestamps,
 	:out_time      => :timestamps,
 }
-generate_form 'KGD_PRD', 'FoupCleaning',
+generate_form 'KGD_EQP', 'FoupCleaning',
     (foup_cleaning_fields.merge common_fields)
 
 # DOC# 3981-02-30015 	 TEL Precio Wafer prober Monthly&Half Year PM Record(Precio probe 月/年保养表单)
@@ -2249,7 +2249,7 @@ tel_precio_wafer_prober_monthly_and_half_year_pm_fields = {
 	:in_time       => :timestamps,
 	:out_time      => :timestamps,
 }
-generate_form 'KGD_PRD', 'TelPrecioWaferProberMonthlyAndHalfYearPm',
+generate_form 'KGD_EQP', 'TelPrecioWaferProberMonthlyAndHalfYearPm',
     (tel_precio_wafer_prober_monthly_and_half_year_pm_fields.merge common_fields)
 
 # DOC# 3981-02-30017 	 KGD PROBE CARD buy-off report(Probe 验收报告)
@@ -2258,7 +2258,7 @@ kgd_probe_card_buy_off_fields = {
 	:in_time       => :timestamps,
 	:out_time      => :timestamps,
 }
-generate_form 'KGD_PRD', 'KgdProbeCardBuyOff',
+generate_form 'KGD_EQP', 'KgdProbeCardBuyOff',
     (kgd_probe_card_buy_off_fields.merge common_fields)
 
 # DOC# 3981-02-30021 	 KGD_IR_reflow_oven_system_shiftly_check_record (IR-Reflow 烤箱开班记录表单)
@@ -2267,7 +2267,7 @@ kgd_ir_reflow_oven_system_shiftly_check_fields = {
 	:in_time       => :timestamps,
 	:out_time      => :timestamps,
 }
-generate_form 'KGD_PRD', 'KgdIrReflowOvenSystemShiftlyCheck',
+generate_form 'KGD_EQP', 'KgdIrReflowOvenSystemShiftlyCheck',
     (kgd_ir_reflow_oven_system_shiftly_check_fields.merge common_fields)
 
 # DOC# 3981-02-30022 	 KGD_IR_Reflow_Oven_monthly&yearly_PM_record(IR-Reflow烤箱月/年保养表单)
@@ -2276,7 +2276,7 @@ kgd_ir_reflow_oven_monthly_and_yearly_pm_fields = {
 	:in_time       => :timestamps,
 	:out_time      => :timestamps,
 }
-generate_form 'KGD_PRD', 'KgdIrReflowOvenMonthlyAndYearlyPm',
+generate_form 'KGD_EQP', 'KgdIrReflowOvenMonthlyAndYearlyPm',
     (kgd_ir_reflow_oven_monthly_and_yearly_pm_fields.merge common_fields)
 
 # DOC# 3983-02-00018 	SDSS KGD Wafer Bank cycle count report
