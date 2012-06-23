@@ -14,6 +14,8 @@ gem 'cancan'
 gem 'simple_form'
 gem "ransack", :git => "https://github.com/Eric-Guo/ransack.git"
 
+gem 'pry-rails', :group => :development
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
