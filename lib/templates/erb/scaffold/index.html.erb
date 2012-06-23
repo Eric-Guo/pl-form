@@ -36,7 +36,7 @@
   <%%= link_to raw('<i class="icon-edit"></i>'), edit_<%= singular_table_name %>_path(<%= singular_table_name %>) -%>
   <%% end %>
   <%% if can? :delete, <%= singular_table_name %> %>
-  <%%= link_to raw('<i class="icon-remove"></i>'), <%= singular_table_name %>, <%= key_value :confirm, "'Are you sure?'" %>, <%= key_value :method, ":delete" %> -%>
+  <%%= link_to raw('<i class="icon-remove"></i>'), <%= singular_table_name %>, <%= key_value :data, "{:confirm => 'Are you sure?'}" %>, <%= key_value :method, ":delete" %> -%>
   <%% end %>
   <%%= link_to time_ago_in_words(<%= singular_table_name %>.created_at), <%= singular_table_name %> -%>
   </td>
