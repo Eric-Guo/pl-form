@@ -666,94 +666,94 @@ generate_form 'BOP_PRD', 'LaserMarkPmHalfYear',
 	(common_production_fields.merge laser_mark_pm_monthly_half_year_fields.merge common_fields)
 
 # DOC# 3742-02-30059	Laser Cut shift check record
-laser_cut_production_log_fields = {
+laser_cut_shift_check_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'LaserCutProduction',
-	(common_production_fields.merge laser_cut_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'LaserCutShiftCheck',
+	(common_production_fields.merge laser_cut_shift_check_fields.merge common_fields)
 
 # DOC# 3742-02-30003	Positrol log
-laser_cut_production_log_fields = {
+laser_cut_positrol_log_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'LaserCutProduction',
-	(common_production_fields.merge laser_cut_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'LaserCutPositrolLog',
+	(common_production_fields.merge laser_cut_positrol_log_fields.merge common_fields)
 
-# DOC# 3742-02-30054	Conversion Kit Change Record Sheet 改机记录表
-laser_cut_production_log_fields = {
+# DOC# 3742-02-30054	Laser Cut Conversion Kit Change Record Sheet 改机记录表
+laser_cut_conversion_kit_change_fields = {
 	:device_type => :string,
 	:manufacture_serial_no => :string,
 	:owner => :string,
 }
 generate_form 'BOP_PRD', 'LaserCutConversionKitChange',
-	(laser_cut_production_log_fields.merge common_fields)
+	(laser_cut_conversion_kit_change_fields.merge common_fields)
 
 # DOC# 3742-02-30080	tooling_PM_&_power_check_track_list
-laser_cut_production_log_fields = {
+laser_cut_tooling_pm_power_check_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'LaserCutProduction',
-	(common_production_fields.merge laser_cut_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'LaserCutToolingPmPowerCheck',
+	(common_production_fields.merge laser_cut_tooling_pm_power_check_fields.merge common_fields)
 
 # DOC# －－－	clean filter check list
-laser_cut_production_log_fields = {
+laser_cut_clean_filter_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'LaserCutProduction',
-	(common_production_fields.merge laser_cut_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'LaserCutCleanFilter',
+	(common_production_fields.merge laser_cut_clean_filter_fields.merge common_fields)
 
 # DOC# 3742-02-30028	PM Monthly & Half year record
-laser_cut_production_log_fields = {
+laser_cut_pm_monthly_half_year_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'LaserCutProduction',
-	(common_production_fields.merge laser_cut_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'LaserCutPmMonthlyHalfYear',
+	(common_production_fields.merge laser_cut_pm_monthly_half_year_fields.merge common_fields)
 
 # DOC# 3746-02-90001	B/A Positrol log
-sba_production_log_fields = {
+sba_positrol_log_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'SbaProduction',
-	(common_production_fields.merge sba_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'SbaPositrolLog',
+	(common_production_fields.merge sba_positrol_log_fields.merge common_fields)
 
 # DOC# 3746-02-60014	IR Reflow Positrol log
-sba_production_log_fields = {
+sba_ir_reflow_positrol_log_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'SbaProduction',
-	(common_production_fields.merge sba_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'SbaIrReflowPositrolLog',
+	(common_production_fields.merge sba_ir_reflow_positrol_log_fields.merge common_fields)
 
 # DOC# 3742-02-30063	Ball Attach Shift Check Record
-sba_production_log_fields = {
+sba_ball_attach_shift_check_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'SbaProduction',
-	(common_production_fields.merge sba_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'SbaBallAttachShiftCheck',
+	(common_production_fields.merge sba_ball_attach_shift_check_fields.merge common_fields)
 
 # DOC# 3742-02-30065	Aqueous Cleaner Shift Check Record
-sba_production_log_fields = {
+sba_aqueous_cleaner_shift_check_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'SbaProduction',
-	(common_production_fields.merge sba_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'SbaAqueousCleanerShiftCheck',
+	(common_production_fields.merge sba_aqueous_cleaner_shift_check_fields.merge common_fields)
 
 # DOC# 3742-02-30064	Oven Reflow Shift Check Record
 sba_production_log_fields = {
