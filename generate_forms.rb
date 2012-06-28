@@ -602,68 +602,68 @@ generate_form 'BOP_PRD', 'EngraverProduction',
 	(common_production_fields.merge engraver_production_log_fields.merge common_fields)
 
 # DOC# 3742-02-30061	Ink Mark shift check Record
-ink_mark_production_log_fields = {
+ink_mark_shift_check_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'InkMarkrProduction',
-	(common_production_fields.merge ink_mark_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'InkMarkShiftCheckLog',
+	(ink_mark_shift_check_fields.merge common_fields)
 
 # DOC# 3742-02-20008	Positrol log
-ink_mark_production_log_fields = {
+ink_mark_positrol_log_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'InkMarkrProduction',
-	(common_production_fields.merge ink_mark_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'InkMarkPositrolLog',
+	(common_production_fields.merge ink_mark_positrol_log_fields.merge common_fields)
 
 # DOC# 3742-02-30035	PM Monthly & Half year record
-ink_mark_production_log_fields = {
+ink_mark_pm_monthly_half_year_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'InkMarkrProduction',
-	(common_production_fields.merge ink_mark_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'InkMarkPmMonthlyHalfYearRecord',
+	(ink_mark_pm_monthly_half_year_fields.merge common_fields)
 
 # DOC# 3742-02-30062	Laser Mark shift check Record
-laser_mark_production_log_fields = {
+laser_mark_shift_check_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'LaserMarkProduction',
-	(common_production_fields.merge laser_mark_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'LaserMarkShiftCheck',
+	(common_production_fields.merge laser_mark_shift_check_fields.merge common_fields)
 
 
 # DOC# 3742-02-30081	Laser Marking Dust weekly PM record
-laser_mark_production_log_fields = {
+laser_mark_dust_weekly_pm_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'LaserMarkProduction',
-	(common_production_fields.merge laser_mark_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'LaserMarkDustWeeklyPM',
+	(common_production_fields.merge laser_mark_dust_weekly_pm_fields.merge common_fields)
 
-# DOC# 3746-02-20003	Positrol log
-laser_mark_production_log_fields = {
+# DOC# 3746-02-20003	Laser Mark Positrol log
+laser_mark_positrol_log_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
 generate_form 'BOP_PRD', 'LaserMarkProduction',
-	(common_production_fields.merge laser_mark_production_log_fields.merge common_fields)
+	(common_production_fields.merge laser_mark_positrol_log_fields.merge common_fields)
 
 # DOC# 3742-02-30019	PM Monthly & Half year record
-laser_mark_production_log_fields = {
+laser_mark_pm_monthly_half_year_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'LaserMarkProduction',
-	(common_production_fields.merge laser_mark_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'LaserMarkPmHalfYear',
+	(common_production_fields.merge laser_mark_pm_monthly_half_year_fields.merge common_fields)
 
 # DOC# 3742-02-30059	Laser Cut shift check record
 laser_cut_production_log_fields = {
