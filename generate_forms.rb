@@ -499,7 +499,7 @@ osp_pre_clean_production_log_fields = {
 	:flux_type     => :string,
 	:flux_lot_no   => :string,
 }
-generate_form 'BOP_PRD', 'BaProduction',
+generate_form 'BOP_PRD', 'OspPreCleanProduction',
 	(common_production_fields.merge osp_pre_clean_production_log_fields.merge common_fields)
 
 # DOC# 3746-02-90013	SDSS_IR_Reflow_production_log
@@ -512,49 +512,49 @@ generate_form 'BOP_PRD', 'IrReflowProduction',
 	(common_production_fields.merge ir_reflow_production_log_fields.merge common_fields)
 
 # DOC# 3742-02-30066	Package Saw shift check Record
-sgn_production_log_fields = {
+package_saw_shift_check_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'SgnProduction',
-	(common_production_fields.merge sgn_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'PackageSawShiftCheck',
+	(common_production_fields.merge package_saw_shift_check_fields.merge common_fields)
 
-# DOC# 3746-02-40003	Positrol log
-sgn_production_log_fields = {
+# DOC# 3746-02-40003	SGN Positrol log
+sgn_positrol_log_fields = {
 	:profile_check  => :string,
-	:in_time   => :timestamps,
+	:in_time     => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'SgnProduction',
-	(common_production_fields.merge sgn_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'SgnPositrolLog',
+	(common_production_fields.merge sgn_positrol_log_fields.merge common_fields)
 
 # DOC# 3746-02-30053	Conversion Kit Change Record Sheet 改机记录表
-sgn_production_log_fields = {
+conversion_kit_change_record_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'SgnProduction',
-	(common_production_fields.merge sgn_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'ConversionKitChangeLog',
+	(common_production_fields.merge conversion_kit_change_record_fields.merge common_fields)
 
 # DOC# 3746-02-40006	saw singulation blade change record sheet
-sgn_production_log_fields = {
+saw_singulation_blade_change_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'SgnProduction',
-	(common_production_fields.merge sgn_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'SawSingulationBladeChangeLog',
+	(common_production_fields.merge saw_singulation_blade_change_fields.merge common_fields)
 
 # DOC# 3742-02-30030	PM Monthly & Half year record
-sgn_production_log_fields = {
+sgn_pm_monthly_half_year_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'SgnProduction',
-	(common_production_fields.merge sgn_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'SgnPmMonthlyHalfYearLog',
+	(common_production_fields.merge sgn_pm_monthly_half_year_fields.merge common_fields)
 
 # DOC# 3742-02-30058	Oven shift check Record
 oven_shift_check_production_log_fields = {
@@ -562,8 +562,8 @@ oven_shift_check_production_log_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'OvenProduction',
-	(common_production_fields.merge oven_shift_check_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'OvenShiftCheckLog',
+	(oven_shift_check_production_log_fields.merge common_fields)
 
 # DOC# 3742-02-30088	Oven Weekly PM Record
 oven_weekly_pm_production_log_fields = {
@@ -571,17 +571,17 @@ oven_weekly_pm_production_log_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'OvenProduction',
-	(common_production_fields.merge oven_Weekly_pm_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'OvenWeeklyPmLog',
+	(oven_weekly_pm_production_log_fields.merge common_fields)
 
-# DOC# 3746-02-10007&3746-02-10011	Positrol log
-oven_production_log_fields = {
+# DOC# 3746-02-10007&3746-02-10011	Oven Positrol log
+oven_positrol_log_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
 generate_form 'BOP_PRD', 'OvenProduction',
-	(common_production_fields.merge oven_production_log_fields.merge common_fields)
+	(common_production_fields.merge oven_positrol_log_fields.merge common_fields)
 
 # DOC# 3742-02-30074	PM Monthly & Half year record
 oven_production_log_fields = {
@@ -589,7 +589,7 @@ oven_production_log_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'OvenProduction',
+generate_form 'BOP_PRD', 'OvenMonthlyPmAndHalfYear',
 	(common_production_fields.merge oven_production_log_fields.merge common_fields)
 
 # DOC# 3742-02-30038	Engraver Equipment Monthly&Half yearly PM Record
