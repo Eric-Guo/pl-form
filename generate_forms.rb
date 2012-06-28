@@ -460,7 +460,7 @@ saw_singulation_production_log_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'LaserCutProduction',
+generate_form 'BOP_PRD', 'SawSingulationProduction',
 	(common_production_fields.merge saw_singulation_production_log_fields.merge common_fields)
 
 # DOC# 3746-02-90010	SDSS_T-scan_production
