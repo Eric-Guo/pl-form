@@ -18,3 +18,5 @@
 .idea/
 
 public/assets/
+
+.tags*

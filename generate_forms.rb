@@ -1,4 +1,4 @@
-# encoding: UTF-8
+{ "caption": "-", "id": "build" },# encoding: UTF-8
 #Every field must searchable
 #
 #Status Code
@@ -535,7 +535,7 @@ conversion_kit_change_record_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'ConversionKitChangeLog',
+generate_form 'BOP_PRD', 'SgnConversionKitChangeLog',
 	(common_production_fields.merge conversion_kit_change_record_fields.merge common_fields)
 
 # DOC# 3746-02-40006	saw singulation blade change record sheet
@@ -756,31 +756,31 @@ generate_form 'BOP_PRD', 'SbaAqueousCleanerShiftCheck',
 	(common_production_fields.merge sba_aqueous_cleaner_shift_check_fields.merge common_fields)
 
 # DOC# 3742-02-30064	Oven Reflow Shift Check Record
-sba_production_log_fields = {
+over_reflow_shift_check_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'SbaProduction',
-	(common_production_fields.merge sba_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'SbaOvenReflowShiftCheck',
+	(common_production_fields.merge over_reflow_shift_check_fields.merge common_fields)
 
 # DOC# 3742-02-30055	Conversion Kit Change Record Sheet 改机记录表
-sba_production_log_fields = {
+sba_conversion_kit_change_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'SbaProduction',
-	(common_production_fields.merge sba_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'SbaConversionKitChangeLog',
+	(common_production_fields.merge sba_conversion_kit_change_fields.merge common_fields)
 
 # DOC# 3742-02-30075	Auto tool clean track list
-sba_production_log_fields = {
+auto_tool_clean_track_field = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'SbaProduction',
-	(common_production_fields.merge sba_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'AutoToolCleanTrack',
+	(common_production_fields.merge auto_tool_clean_track_field.merge common_fields)
 
 # DOC# 3742-02-30076	Oven reflow change device record list
 oven_reflow_change_device_production_log_fields = {
@@ -788,98 +788,98 @@ oven_reflow_change_device_production_log_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'SbaProduction',
+generate_form 'BOP_PRD', 'OverReflowChangeDevice',
 	(common_production_fields.merge oven_reflow_change_device_production_log_fields.merge common_fields)
 
 # DOC# 3742-02-30046	SBA ball attach Monthly&Half yearly PM Record
-ball_attach_monthly_half_yearly_pm_production_log_fields = {
+ball_attach_monthly_half_yearly_pm_production_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'SbaProduction',
-	(common_production_fields.merge ball_attach_monthly_half_yearly_pm_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'BallAttachMonthlyHalfYearlyPM',
+	(common_production_fields.merge ball_attach_monthly_half_yearly_pm_production_fields.merge common_fields)
 
 # DOC# 3742-02-30048	SBA reflow oven Equipment Monthly&Half yearly PM Record
-reflow_oven_equipment_monthly_half_yearly_pm_production_log_fields = {
+reflow_oven_equipment_monthly_half_yearly_pm_production_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'SbaProduction',
-	(common_production_fields.merge reflow_oven_equipment_monthly_half_yearly_pm_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'SbaReflowOvenEquipmentPM',
+	(common_production_fields.merge reflow_oven_equipment_monthly_half_yearly_pm_production_fields.merge common_fields)
 
 # DOC# 3742-02-30049	SBA water cleaner Equipment Monthly&Half yearly PM Record
-sba_production_log_fields = {
+sba_wafer_cleaner_equipment_pm_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'SbaProduction',
-	(common_production_fields.merge sba_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'SbaWaferCleanerEquipmentPM',
+	(common_production_fields.merge sba_wafer_cleaner_equipment_pm_fields.merge common_fields)
 
 # DOC# 3742-02-30047	SBA shuttle Equipment Monthly&Half yearly PM Record
-sba_production_log_fields = {
+sba_shuttle_equipment_pm_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'SbaProduction',
-	(common_production_fields.merge sba_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'SbaShuttleEquipmentPM',
+	(common_production_fields.merge sba_shuttle_equipment_pm_fields.merge common_fields)
 
 # DOC# 3742-02-30070	Onloader and unloader for Pre-clean Monthly & Half yearly PM Record
-sba_production_log_fields = {
+sba_onloader_unloader_pm_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'SbaProduction',
-	(common_production_fields.merge sba_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'SbaOnloaderAndUnloaderPM',
+	(common_production_fields.merge sba_onloader_unloader_pm_fields.merge common_fields)
 
 # DOC# 3742-02-30060	Ultrasonic Cleaner Shift Check Record
-ultrasonic_cleaner_production_log_fields = {
+ultrasonic_cleaner_shift_check_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'UltrasonicCleanerProduction',
-	(common_production_fields.merge ultrasonic_cleaner_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'UltrasonicCleanerShiftCheck',
+	(common_production_fields.merge ultrasonic_cleaner_shift_check_fields.merge common_fields)
 
 # DOC# 3746-02-50003	Positrol log
-ultrasonic_cleaner_production_log_fields = {
+ultrasonic_cleaner_positrol_log_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'UltrasonicCleanerProduction',
-	(common_production_fields.merge ultrasonic_cleaner_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'UltrasonicCleanerPositrolLog',
+	(common_production_fields.merge ultrasonic_cleaner_positrol_log_fields.merge common_fields)
 
 # DOC# 3742-02-30022   PM Weekly record
-ultrasonic_cleaner_production_log_fields = {
+ultrasonic_cleaner_weekly_pm_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'UltrasonicCleanerProduction',
-	(common_production_fields.merge ultrasonic_cleaner_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'UltrasonicCleanerPmWeekly',
+	(common_production_fields.merge ultrasonic_cleaner_weekly_pm_fields.merge common_fields)
 
 # DOC# 3746-02-30022	Ultrasonic Cleaning  Equipment change solvent PM Record
-ultrasonic_cleaner_production_log_fields = {
+ultrasonic_cleaner_equipment_change_solvent_pm_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'UltrasonicCleanerProduction',
-	(common_production_fields.merge ultrasonic_cleaner__productionlog_fields.merge common_fields)
+generate_form 'BOP_PRD', 'UltrasonicCleanerEquipmentChangeSolvent',
+	(common_production_fields.merge ultrasonic_cleaner_equipment_change_solvent_pm_fields.merge common_fields)
 
 # DOC# 3742-02-30023	PM Monthly & Half year record
-ultrasonic_cleaner_production_log_fields = {
+ultrasonic_cleaner_monthly_half_year_pm_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'UltrasonicCleanerProduction',
-	(common_production_fields.merge ultrasonic_cleaner_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'UltrasonicCleanerMonthlyHalfYearPm',
+	(common_production_fields.merge ultrasonic_cleaner_monthly_half_year_pm_fields.merge common_fields)
 
 # DOC# 3746-02-00020	Shift Check Record
 icos_production_log_fields = {
@@ -997,7 +997,7 @@ punch_cure_production_log_fields = {
 	:out_time    => :timestamps,
 }
 generate_form 'BOP_PRD', 'PunchProduction',
-	(common_production_fields.merge punch_production_log_fields.merge common_fields)
+	(common_production_fields.merge punch_cure_production_log_fields.merge common_fields)
 
 # DOC# 3742-02-30087	Tray Cleanning shift check Record
 punch_cure_production_log_fields = {
@@ -1006,7 +1006,7 @@ punch_cure_production_log_fields = {
 	:out_time    => :timestamps,
 }
 generate_form 'BOP_PRD', 'PunchProduction',
-	(common_production_fields.merge punch_production_log_fields.merge common_fields)
+	(common_production_fields.merge punch_cure_production_log_fields.merge common_fields)
 
 # DOC# 3742-02-30085	Tray Cleaning  Equipment change  water PM Record
 tray_cleaning_equipment_production_log_fields = {
@@ -1015,7 +1015,7 @@ tray_cleaning_equipment_production_log_fields = {
 	:out_time    => :timestamps,
 }
 generate_form 'BOP_PRD', 'PunchProduction',
-	(common_production_fields.merge punch_production_log_fields.merge common_fields)
+	(common_production_fields.merge tray_cleaning_equipment_production_log_fields.merge common_fields)
 
 # DOC# 3742-02-30086	PM Monthly & Half year record
 tray_cleaning_equipment_monthly_half_yearly_pm_record_production_log_fields = {
@@ -1035,7 +1035,6 @@ mhl_cure_production_log_fields = {
 generate_form 'BOP_PRD', 'MhlProduction',
 	(common_production_fields.merge mhl_cure_production_log_fields.merge common_fields)
 
-#=============================================
 # DOC# 3735-02-00025	MT productin log sheet
 memory_test_fields = {
 	:profile_check  => :string,
@@ -1151,7 +1150,7 @@ burn_in_board_monthly_pm_record_fields = {
 	:out_time    => :timestamps,
 }
 generate_form 'TOP_EQP', 'BurnInBoardMonthlyPm',
-	(burn_in_board_monthly_pm_fields.merge common_fields)
+	(burn_in_board_monthly_pm_record_fields.merge common_fields)
 
 # DOC# 3775-02-00104	Card Test Daily check list
 card_test_daily_check_fields = {
