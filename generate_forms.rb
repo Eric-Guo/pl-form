@@ -881,132 +881,132 @@ ultrasonic_cleaner_monthly_half_year_pm_fields = {
 generate_form 'BOP_PRD', 'UltrasonicCleanerMonthlyHalfYearPm',
 	(common_production_fields.merge ultrasonic_cleaner_monthly_half_year_pm_fields.merge common_fields)
 
-# DOC# 3746-02-00020	Shift Check Record
-icos_production_log_fields = {
+# DOC# 3746-02-00020	ICOS Shift Check Record
+icos_shift_check_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'IcosProduction',
-	(common_production_fields.merge icos_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'IcosShiftCheck',
+	(common_production_fields.merge icos_shift_check_fields.merge common_fields)
 
 # DOC# 3746-02-60002	Positrol log
-icos_production_log_fields = {
+icos_positrol_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'IcosProduction',
-	(common_production_fields.merge icos_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'IcosPositrolLog',
+	(common_production_fields.merge icos_positrol_fields.merge common_fields)
 
 # DOC# 3742-02-30056	PM Monthly & Half year record
-icos_production_log_fields = {
+icos_monthly_half_year_pm_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'IcosProduction',
-	(common_production_fields.merge icos_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'IcosMonthlyHalfYearRecord',
+	(common_production_fields.merge icos_monthly_half_year_pm_fields.merge common_fields)
 
 # DOC# 3742-02-30077	PM Monthly & Half year record
-t_scan_production_log_fields = {
+t_scan_monthly_half_year_pm_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'T_scanProduction',
-	(common_production_fields.merge t_scan_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'TScanMonthlyHalfYear',
+	(common_production_fields.merge t_scan_monthly_half_year_pm_fields.merge common_fields)
 
 # DOC# 3742-02-30077	Quarterly PM record
-t_scan_production_log_fields = {
+t_scan_quarterly_pm_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'T_scanProduction',
-	(common_production_fields.merge t_scan_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'TScanQuarterlyPm',
+	(common_production_fields.merge t_scan_quarterly_pm_fields.merge common_fields)
 
 # DOC# 3742-02-30079	change water tracking record - weekly
-t_scan_production_log_fields = {
+t_scan_change_water_tracking_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'T_scanProduction',
-	(common_production_fields.merge t_scan_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'TScanChangeWaferTracking',
+	(common_production_fields.merge t_scan_change_water_tracking_fields.merge common_fields)
 
 # DOC# 3746-02-60002	Positrol log
-sti_production_log_fields = {
+sti_positrol_log_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'StiProduction',
-	(common_production_fields.merge sti_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'StiPositrolLog',
+	(common_production_fields.merge sti_positrol_log_fields.merge common_fields)
 
 # DOC# 3742-02-30072	PM Weekly record
-sti_production_log_fields = {
+sti_weekly_record_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'StiProduction',
-	(common_production_fields.merge sti_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'StiWeeklyRecord',
+	(common_production_fields.merge sti_weekly_record_fields.merge common_fields)
 
 # DOC# 3742-02-30071	PM Monthly & Half year record
-sti_production_log_fields = {
+sti_monthly_half_year_pm_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'StiProduction',
-	(common_production_fields.merge sti_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'StiMonthlyHalfYearPm',
+	(common_production_fields.merge sti_monthly_half_year_pm_fields.merge common_fields)
 
 # DOC# 3742-02-30073	Shift Check Record
-sti_production_log_fields = {
+sti_shift_check_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'StiProduction',
-	(common_production_fields.merge sti_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'StiShiftCheck',
+	(common_production_fields.merge sti_shift_check_fields.merge common_fields)
 
 # DOC# 3746-02-20019	UV Ink Cure Positrol log
-uv_ink_cure_production_log_fields = {
+uv_ink_cure_positrol_log_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'UvInkCureProduction',
-	(common_production_fields.merge uv_ink_cure_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'UvInkCurePositrol',
+	(common_production_fields.merge uv_ink_cure_positrol_log_fields.merge common_fields)
 
 
 # DOC# 3742-02-30078	PM Monthly & Half year record
-uv_ink_cure_production_log_fields = {
+uv_ink_cure_month_half_year_pm_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'UvInkCureProduction',
-	(common_production_fields.merge uv_ink_cure_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'UvInkCureMonthlyHalfYear',
+	(common_production_fields.merge uv_ink_cure_month_half_year_pm_fields.merge common_fields)
 
 # DOC# 3742-02-30082	PM Monthly & Half year record
-punch_cure_production_log_fields = {
+punch_cure_monthly_half_year_pm_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'PunchProduction',
-	(common_production_fields.merge punch_cure_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'PunchMonthlyHalfYear',
+	(common_production_fields.merge punch_cure_monthly_half_year_pm_fields.merge common_fields)
 
 # DOC# 3742-02-30087	Tray Cleanning shift check Record
-punch_cure_production_log_fields = {
+punch_cure_shift_check_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
 generate_form 'BOP_PRD', 'PunchProduction',
-	(common_production_fields.merge punch_cure_production_log_fields.merge common_fields)
+	(common_production_fields.merge punch_cure_shift_check_fields.merge common_fields)
 
 # DOC# 3742-02-30085	Tray Cleaning  Equipment change  water PM Record
 tray_cleaning_equipment_production_log_fields = {
