@@ -1,4 +1,4 @@
-{ "caption": "-", "id": "build" },# encoding: UTF-8
+# encoding: UTF-8
 #Every field must searchable
 #
 #Status Code
