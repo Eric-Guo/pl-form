@@ -997,52 +997,52 @@ punch_cure_monthly_half_year_pm_fields = {
 	:out_time    => :timestamps,
 }
 generate_form 'BOP_PRD', 'PunchMonthlyHalfYear',
-	(common_production_fields.merge punch_cure_monthly_half_year_pm_fields.merge common_fields)
+	(punch_cure_monthly_half_year_pm_fields.merge common_fields)
 
 # DOC# 3742-02-30087	Tray Cleanning shift check Record
-punch_cure_shift_check_fields = {
+tray_cleanning_shift_check_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'PunchProduction',
-	(common_production_fields.merge punch_cure_shift_check_fields.merge common_fields)
+generate_form 'BOP_PRD', 'TrayCleanningShiftCheck',
+	(tray_cleanning_shift_check_fields.merge common_fields)
 
 # DOC# 3742-02-30085	Tray Cleaning  Equipment change  water PM Record
-tray_cleaning_equipment_production_log_fields = {
+tray_cleaning_equipment_change_wafer_pm_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'PunchProduction',
-	(common_production_fields.merge tray_cleaning_equipment_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'TrayCleaningEquipmentChangeWaferPM',
+	(tray_cleaning_equipment_change_wafer_pm_fields.merge common_fields)
 
 # DOC# 3742-02-30086	PM Monthly & Half year record
-tray_cleaning_equipment_monthly_half_yearly_pm_record_production_log_fields = {
+tray_cleaning_equipment_monthly_half_yearly_pm_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'PunchProduction',
-	(common_production_fields.merge tray_cleaning_equipment_monthly_half_yearly_pm_record_production_log_fields.merge common_fields)
+generate_form 'BOP_PRD', 'TrayCleaningEquipmentMonthlyHalfYearlyPM',
+	(tray_cleaning_equipment_monthly_half_yearly_pm_fields.merge common_fields)
 
 # DOC# 3744-02-00011	EOL存货卡
-mhl_cure_production_log_fields = {
+bop_eol_inventory_record = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
 generate_form 'BOP_PRD', 'MhlProduction',
-	(common_production_fields.merge mhl_cure_production_log_fields.merge common_fields)
+	(bop_eol_inventory_record.merge common_fields)
 
 # DOC# 3735-02-00025	MT productin log sheet
-memory_test_fields = {
+memory_test_positrol_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
 generate_form 'TOP_PRD', 'MemoryTestProductin',
-	(common_production_fields.merge memory_test_fields.merge common_fields)
+	(common_production_fields.merge memory_test_positrol_fields.merge common_fields)
 
 # DOC# 3775-02-00103	CT productin log sheet
 card_test_production_fields = {
