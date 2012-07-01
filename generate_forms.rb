@@ -644,7 +644,7 @@ laser_mark_dust_weekly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'LaserMarkDustWeeklyPM',
+generate_form 'BOP_PRD', 'LaserMarkDustWeeklyPm',
 	(common_production_fields.merge laser_mark_dust_weekly_pm_fields.merge common_fields)
 
 # DOC# 3746-02-20003	Laser Mark Positrol log
@@ -797,7 +797,7 @@ ball_attach_monthly_half_yearly_pm_production_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'BallAttachMonthlyHalfYearlyPM',
+generate_form 'BOP_PRD', 'BallAttachMonthlyHalfYearlyPm',
 	(common_production_fields.merge ball_attach_monthly_half_yearly_pm_production_fields.merge common_fields)
 
 # DOC# 3742-02-30048	SBA reflow oven Equipment Monthly&Half yearly PM Record
@@ -806,7 +806,7 @@ reflow_oven_equipment_monthly_half_yearly_pm_production_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'SbaReflowOvenEquipmentPM',
+generate_form 'BOP_PRD', 'SbaReflowOvenEquipmentPm',
 	(common_production_fields.merge reflow_oven_equipment_monthly_half_yearly_pm_production_fields.merge common_fields)
 
 # DOC# 3742-02-30049	SBA water cleaner Equipment Monthly&Half yearly PM Record
@@ -815,7 +815,7 @@ sba_wafer_cleaner_equipment_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'SbaWaferCleanerEquipmentPM',
+generate_form 'BOP_PRD', 'SbaWaferCleanerEquipmentPm',
 	(common_production_fields.merge sba_wafer_cleaner_equipment_pm_fields.merge common_fields)
 
 # DOC# 3742-02-30047	SBA shuttle Equipment Monthly&Half yearly PM Record
@@ -824,7 +824,7 @@ sba_shuttle_equipment_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'SbaShuttleEquipmentPM',
+generate_form 'BOP_PRD', 'SbaShuttleEquipmentPm',
 	(common_production_fields.merge sba_shuttle_equipment_pm_fields.merge common_fields)
 
 # DOC# 3742-02-30070	Onloader and unloader for Pre-clean Monthly & Half yearly PM Record
@@ -833,7 +833,7 @@ sba_onloader_unloader_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'SbaOnloaderAndUnloaderPM',
+generate_form 'BOP_PRD', 'SbaOnloaderAndUnloaderPm',
 	(common_production_fields.merge sba_onloader_unloader_pm_fields.merge common_fields)
 
 # DOC# 3742-02-30060	Ultrasonic Cleaner Shift Check Record
@@ -1014,7 +1014,7 @@ tray_cleaning_equipment_change_wafer_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'TrayCleaningEquipmentChangeWaferPM',
+generate_form 'BOP_PRD', 'TrayCleaningEquipmentChangeWaferPm',
 	(tray_cleaning_equipment_change_wafer_pm_fields.merge common_fields)
 
 # DOC# 3742-02-30086	PM Monthly & Half year record
@@ -1023,7 +1023,7 @@ tray_cleaning_equipment_monthly_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'BOP_PRD', 'TrayCleaningEquipmentMonthlyHalfYearlyPM',
+generate_form 'BOP_PRD', 'TrayCleaningEquipmentMonthlyHalfYearlyPm',
 	(tray_cleaning_equipment_monthly_half_yearly_pm_fields.merge common_fields)
 
 # DOC# 3744-02-00011	EOL存货卡
