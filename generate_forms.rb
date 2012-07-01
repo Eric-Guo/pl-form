@@ -2219,13 +2219,13 @@ generate_form 'KGD_EQP', 'AccretechUf3000exWaferProberMonthlyAndHalfYearPm',
     (accretech_uf3000ex_wafer_prober_monthly_and_half_year_pm_fields.merge common_fields)
 
 # DOC# 3981-02-30007 	 Innotech SI-300S Wafer Tester Monthly&Half Year PM Record (SI300S Tester 月/年保养表单)
-innotech_si_300s_wafer_tester_monthly_and_half_year_pm_fields = {
+innotech_si300s_wafer_tester_monthly_and_half_year_pm_fields = {
     :profile_check => :string,
 	:in_time       => :timestamps,
 	:out_time      => :timestamps,
 }
-generate_form 'KGD_EQP', 'InnotechSi-300sWaferTesterMonthlyAndHalfYearPm',
-    (innotech_si_300s_wafer_tester_monthly_and_half_year_pm_fields.merge common_fields)
+generate_form 'KGD_EQP', 'InnotechSi300sWaferTesterMonthlyAndHalfYearPm',
+    (innotech_si300s_wafer_tester_monthly_and_half_year_pm_fields.merge common_fields)
 
 # DOC# 3981-02-30008 	 JEM Probe Card Monthly&Half Year PM Record(探针卡月/年保养表单)
 jem_probe_card_monthly_and_half_year_pm_fields = {
