@@ -259,13 +259,13 @@ generate_form 'FOP_PRD', 'DPWaferSawProduction',
 
 
 # DOC#:3745-02-40008 SAW刀信息记录
-saw_blade_relace_and_recycle_record = {
+saw_blade_relace_and_recycle_fields = {
   :used_length        => :string,
   :remaind_length     => :string,
   :reason_for_replace => :string,
 }
 generate_form 'FOP_PRD', 'SawBladeRelaceAndRecycle',
-	(saw_blade_relace_and_recycle_record.merge common_fields)
+	(saw_blade_relace_and_recycle_fields.merge common_fields)
 
 
 # DOC#: 3745-02-40014 DP Controller Wafter 交接记录表
@@ -329,7 +329,7 @@ generate_form 'FOP_PRD', 'WiiKeyRequisition',
 	(wiikey_requisition_fields.merge common_fields)
 
 # DOC# 3745-02-60004 Plasma_production_Log
-plasma_production_fields={
+plasma_production_fields = {
 	:start_end_time => :timestamps,
 	:program_no     => :string,
 	:contact_angle  => :string,
@@ -339,7 +339,7 @@ generate_form 'FOP_PRD', 'PlasmaProduction',
 
 
 # DOC# 3745-02-70004 WB production Log Rev 7
-wb_production_fields={
+wb_production_fields = {
 	:status_code             => :string,
 	:device_no               => :string,
 	:bonding_diagram_confirm => :string,
@@ -353,7 +353,7 @@ generate_form 'FOP_PRD', 'WbProductionLog',
 
 
 # DOC# 3745-02-70007 3VM 3rd optical production Log
-the_3vm_optical_production_fields={
+the_3vm_optical_production_fields = {
 	:in_qty              => :integer,
 	:out_qty              => :integer,
 }
@@ -406,14 +406,14 @@ generate_form 'BOP_PRD', 'CompoundMarkProduction',
 
 
 # DOC# 3746-02-20030	Substrate Laser Mark Production Log
-laser_mark_production_fields = {
+substrate_laser_mark_production_fields = {
 	:laser_power        => :float,
 	:laser_depth        => :float,
 	:position_demension => :string,
 	:confirm_by         => :string,
 }
-generate_form 'BOP_PRD', 'LaserMarkProduction',
-	(common_production_fields.merge laser_mark_production_fields.merge common_fields)
+generate_form 'BOP_PRD', 'SubstrateLaserMarkProduction',
+	(common_production_fields.merge substrate_laser_mark_production_fields.merge common_fields)
 
 
 # DOC# 3746-02-20033	Substrate Ink Mark Production Log Sheet
@@ -774,13 +774,13 @@ generate_form 'BOP_PRD', 'SbaConversionKitChangeLog',
 	(common_production_fields.merge sba_conversion_kit_change_fields.merge common_fields)
 
 # DOC# 3742-02-30075	Auto tool clean track list
-auto_tool_clean_track_field = {
+auto_tool_clean_track_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
 generate_form 'BOP_PRD', 'AutoToolCleanTrack',
-	(common_production_fields.merge auto_tool_clean_track_field.merge common_fields)
+	(common_production_fields.merge auto_tool_clean_track_fields.merge common_fields)
 
 # DOC# 3742-02-30076	Oven reflow change device record list
 oven_reflow_change_device_production_log_fields = {
@@ -1027,13 +1027,13 @@ generate_form 'BOP_PRD', 'TrayCleaningEquipmentMonthlyHalfYearlyPM',
 	(tray_cleaning_equipment_monthly_half_yearly_pm_fields.merge common_fields)
 
 # DOC# 3744-02-00011	EOL存货卡
-bop_eol_inventory_record = {
+bop_eol_inventory_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
 generate_form 'BOP_PRD', 'MhlProduction',
-	(bop_eol_inventory_record.merge common_fields)
+	(bop_eol_inventory_fields.merge common_fields)
 
 # DOC# 3735-02-00025	MT productin log sheet
 memory_test_positrol_fields = {
@@ -1063,7 +1063,7 @@ generate_form 'TOP_PRD', 'TfclProduction',
 	(common_production_fields.merge tfcl_production_fields.merge common_fields)
 
 # DOC# 3735-02-00026	Memory Test Daily check list
-memory_test_daily_check_fields={
+memory_test_daily_check_fields = {
 	:start_end_time => :timestamps,
 	:program_no     => :string,
 	:contact_angle  => :string,
@@ -1081,7 +1081,7 @@ generate_form 'TOP_EQP', 'MtCtTfcl',
 	(mt_ct_tfcl_fields.merge common_fields)
 
 # DOC# 3731-02-20006	Monthly & Half Year PM Record
-mt_ct_fields= {
+mt_ct_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
@@ -2102,7 +2102,7 @@ generate_form 'KGD_PRD', 'QualityDeviationNoticeFormat',
 	(quality_deviation_notice_format_fields.merge common_fields)
 
 # DOC# 3724-02-10044	 KGD_Wafer_Receiver_Form
- kgd_wafer_receiver_form_fields = {
+kgd_wafer_receiver_form_fields = {
     :profile_check => :string,
 	:in_time       => :timestamps,
 	:out_time      => :timestamps,
@@ -2111,7 +2111,7 @@ generate_form 'KGD_PRD', 'KgdWaferReceiverForm',
 	(kgd_wafer_receiver_form_fields.merge common_fields)
 
 # DOC# 3981-02-30024	KGD Equipment Conversion Checklist(改机单)
-  kgd_equipment_conversion_fields = {
+kgd_equipment_conversion_fields = {
     :profile_check => :string,
 	:in_time       => :timestamps,
 	:out_time      => :timestamps,
