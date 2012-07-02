@@ -185,7 +185,7 @@ generate_form 'FOP_MAT', 'HumidityN2',
 
 # DOC#: 3743-02-10001 生产重要产品通用领用记录单
 product_important_use_fields = {
-	:stocks => :integer，
+	:stocks => :integer,
 }
 generate_form 'FOP_MAT', 'ProductImportantUseApply',
 	(product_important_use_fields.merge common_fields)
