@@ -1359,7 +1359,7 @@ card_assembly_auto_welding_equipment_weekly_and_monthly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_EQP', 'CardAssemblyAutoWeldingEquipmentWeeklyAndMonthlyPM',
+generate_form 'COP_EQP', 'CardAssemblyAutoWeldingEquipmentWeeklyAndMonthlyPm',
 	(card_assembly_auto_welding_equipment_weekly_and_monthly_pm_fields.merge common_fields)
 
 # DOC# 3751-02-30060	Auto_Welder_Machine_Shiftly_Check_Record
@@ -1629,7 +1629,7 @@ microdot_930_equipment_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_EQP', 'Microdot930EquipmentHalfYearlyPM ',
+generate_form 'COP_EQP', 'Microdot930EquipmentHalfYearlyPm',
 	(microdot_930_equipment_half_yearly_pm_fields.merge common_fields)
 
 # DOC# 3751-02-30054	 Microdot 930 Machine Shiftly Check Record
@@ -1728,7 +1728,7 @@ auto_jewel_case_packing_machine_half_yearly_pm_fields = {
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_EQP', 'AutoJewelCasePackingMachineHalfYearlyPM',
+generate_form 'COP_EQP', 'AutoJewelCasePackingMachineHalfYearlyPm',
 	(auto_jewel_case_packing_machine_half_yearly_pm_fields.merge common_fields)
 
 # DOC# 3751-02-30062	Auto_j-case_Machine_Shiftly_Check_Record
