@@ -1561,31 +1561,31 @@ generate_form 'COP_EQP', 'MimakiInkJetMachineHalfYearlyPm',
 	(mimaki_ink_jet_machine_half_yearly_pm_fields.merge common_fields)
 
 # DOC# 3751-02-30100	 Microdot 930 With Dimatix Print Head Equipment Weekly & Monthly PM Record
-microdot_930_with_dimatix_print_head_equipment_weekly_and_monthly_pm_fields = {
+microdot_930_with_dimatix_equipment_weekly_and_monthly_pm_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_EQP', 'Microdot930WithDimatixPrintHeadEquipmentWeeklyAndMonthlypm',
-	(microdot_930_with_dimatix_print_head_equipment_weekly_and_monthly_pm_fields.merge common_fields)
+generate_form 'COP_EQP', 'Microdot930WithDimatixEquipmentWeeklyAndMonthlyPm',
+	(microdot_930_with_dimatix_equipment_weekly_and_monthly_pm_fields.merge common_fields)
 
 # DOC# 3751-02-30101	Microdot 930 With Dimatix Print Head Equipment Half-Yearly PM Record
-microdot_930_with_dimatix_print_head_equipment_half_yearly_pm_fields = {
+microdot_930_with_dimatix_equipment_half_yearly_pm_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_EQP', 'Microdot930WithDimatixPrintHeadEquipmentHalfYearlyPm',
-	(microdot_930_with_dimatix_print_head_equipment_half_yearly_pm_fields.merge common_fields)
+generate_form 'COP_EQP', 'Microdot930WithDimatixEquipmentHalfYearlyPm',
+	(microdot_930_with_dimatix_equipment_half_yearly_pm_fields.merge common_fields)
 
 # DOC# 3751-02-30102	Microdot 930 With Dimatix Print Head Equipment Shiftly Check Record
-microdot_930_with_dimatix_print_head_equipment_shiftly_check_fields = {
+microdot_930_with_dimatix_equipment_shiftly_check_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamps,
 	:out_time    => :timestamps,
 }
-generate_form 'COP_EQP', 'Microdot930WithDimatixPrintHeadEquipmentShiftlyCheck',
-	(microdot_930_with_dimatix_print_head_equipment_shiftly_check_fields.merge common_fields)
+generate_form 'COP_EQP', 'Microdot930WithDimatixEquipmentShiftlyCheck',
+	(microdot_930_with_dimatix_equipment_shiftly_check_fields.merge common_fields)
 
 # DOC# 3751-02-30032	Microdot 915 Equipment Weekly & Monthly PM Record
 microdot_915_equipment_weekly_and_monthly_pm_fields = {
