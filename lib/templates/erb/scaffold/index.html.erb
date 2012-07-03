@@ -1,7 +1,7 @@
 <h3><%%= link_to 'The <%= plural_table_name.titleize %> records:', <%= plural_table_name %>_path %></h3>
 
 <%%= search_form_for @q, :class => "well form-search" do |f| %>
-  <%%= link_to 'Input <%= human_name %>', new_<%= singular_table_name %>_path, :class => 'btn btn-primary' %>
+  <%%= link_to 'Input', new_<%= singular_table_name %>_path, :class => 'btn btn-primary' %>
   <%%= raw "&nbsp;"*7 %>
   <%%= f.submit :class => "btn" %>
   <%%= link_to 'CSV Export', <%= plural_table_name %>_path.concat('.csv') %>
