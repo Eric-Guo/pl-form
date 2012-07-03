@@ -29,8 +29,11 @@ group :assets do
 end
 
 group :development do
-  gem "quiet_assets"
+  gem 'quiet_assets'
+  gem 'pry-rails'
+  gem 'pry-debugger'
 end
+gem 'rack-webconsole-pry', :require => 'rack-webconsole'
 
 gem 'jquery-rails'
 
