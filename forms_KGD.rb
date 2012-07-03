@@ -150,7 +150,7 @@ kgd_exchange_parts_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
 }
-generate_form 'KGD_EQP', 'KgdExchangeparts',
+generate_form 'KGD_EQP', 'KgdExchangePart',
     (kgd_exchange_parts_fields.merge common_fields)
 
 # DOC# 3981-02-30012	 SDSS KGD Microscope Equipment Half year PM RECORD(显微镜维护表单)
@@ -285,5 +285,5 @@ material_transfer_issue_request_form_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
 }
-generate_form 'KGD_PRD', 'MaterialTransferIssueRequestForm',
+generate_form 'KGD_PRD', 'MaterialTransferIssueRequest',
     (material_transfer_issue_request_form_fields.merge common_fields)
