@@ -1,6 +1,5 @@
 # encoding: UTF-8
-
-# DOC# 3755-02-00101 	COP FVI Rework Form  
+# DOC# 3755-02-00101 	COP FVI Rework Form
 cop_rework_form_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamp,
@@ -9,7 +8,7 @@ cop_rework_form_fields = {
 generate_form 'COP_PRD', 'CopFviReworkForm',
 	(cop_rework_form_fields.merge common_fields)
 
-# DOC# 3755-02-11001	Production Log Sheet(Tray Ink mark)  
+# DOC# 3755-02-11001	Production Log Sheet(Tray Ink mark)
 tray_ink_mark_production_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamp,
@@ -18,7 +17,7 @@ tray_ink_mark_production_fields = {
 generate_form 'COP_PRD', 'TrayInkMarkProduction',
 	(tray_ink_mark_production_fields.merge common_fields)
 
-# DOC# 3755-02-11005	Cosmetic_Marking_Production_Log_Sheet_R1  
+# DOC# 3755-02-11005	Cosmetic_Marking_Production_Log_Sheet_R1
 cosmetic_marking_production_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamp,
@@ -27,7 +26,7 @@ cosmetic_marking_production_fields = {
 generate_form 'COP_PRD', 'CosmeticMarkingProduction',
 	(cosmetic_marking_production_fields.merge common_fields)
 
-# DOC# 3755-02-12001	Production Log Sheet(Compound Black TOP)  
+# DOC# 3755-02-12001	Production Log Sheet(Compound Black TOP)
 compound_black_top_production_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamp,
@@ -36,7 +35,7 @@ compound_black_top_production_fields = {
 generate_form 'COP_PRD', 'CompoundBlackTopProduction',
 	(compound_black_top_production_fields.merge common_fields)
 
-# DOC# 3755-02-20004	Production Log Sheet (welding)  
+# DOC# 3755-02-20004	Production Log Sheet (welding)
 welding_production_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamp,
@@ -54,7 +53,7 @@ card_assembly_laser_mark_production_fields = {
 generate_form 'COP_PRD', 'CardAssemblyLaserMarkProduction',
 	(card_assembly_laser_mark_production_fields.merge common_fields)
 
-# DOC# 3755-02-60004	Production Log Sheet (SD label)  
+# DOC# 3755-02-60004	Production Log Sheet (SD label)
 sd_label_production_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamp,
@@ -63,7 +62,7 @@ sd_label_production_fields = {
 generate_form 'COP_PRD', 'SdLabelProduction',
 	(sd_label_production_fields.merge common_fields)
 
-# DOC# 3755-02-60011	Prodcution Log Sheet ( Card FVI)  
+# DOC# 3755-02-60011	Prodcution Log Sheet ( Card FVI)
 card_fvi_production_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamp,
@@ -73,7 +72,7 @@ generate_form 'COP_PRD', 'CardFviProduction',
 	(card_fvi_production_fields.merge common_fields)
 
 
-# DOC# 3755-02-60029 Production Log Sheet (Mask Label)  
+# DOC# 3755-02-60029 Production Log Sheet (Mask Label)
 mask_label_production_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamp,
@@ -93,7 +92,7 @@ generate_form 'COP_PRD', 'FviProduction',
 	(fvi_production_fields.merge common_fields)
 
 
-# DOC# 3755-02-70012	Prodcution Log Sheet (Packing)  
+# DOC# 3755-02-70012	Prodcution Log Sheet (Packing)
 packing_production_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamp,
@@ -102,7 +101,7 @@ packing_production_fields = {
 generate_form 'COP_PRD', 'PackingProduction',
 	(packing_production_fields.merge common_fields)
 
-# DOC# 3755-02-70026	Production Log Sheet(Jewel case packing)  
+# DOC# 3755-02-70026	Production Log Sheet(Jewel case packing)
 jewel_case_packing_production_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamp,
@@ -120,7 +119,7 @@ ink_masking_production_fields = {
 generate_form 'COP_PRD', 'InkMaskingProduction',
 	(ink_masking_production_fields.merge common_fields)
 
-# DOC# 3755-02-60016	Production Log Sheet (Mask Label Bake)  
+# DOC# 3755-02-60016	Production Log Sheet (Mask Label Bake)
 mask_label_bake_production_fields = {
 	:profile_check  => :string,
 	:in_time   => :timestamp,

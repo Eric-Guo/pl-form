@@ -1,5 +1,5 @@
 # encoding: UTF-8
-module FormsQa
+
 # DOC#: F1206-0002 incoming inspection report
 qa_incoming_inspection_fields = {
 	:part_no      => :string,
@@ -14,4 +14,3 @@ qa_incoming_inspection_fields = {
 }
 generate_form 'FOP_MAT', 'IncomingInspectionReport',
 	(qa_incoming_inspection_fields.merge common_fields)
-end

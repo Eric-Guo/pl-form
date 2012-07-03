@@ -86,6 +86,21 @@ common_production_fields = {
 	:remark      => :string,
 }
 
+# generate FOP forms
+eval File.read(File.expand_path('../forms_fop.rb', __FILE__))
+
 # generate QA forms
-require File.expand_path('../forms_qa', __FILE__)
+eval File.read(File.expand_path('../forms_bop.rb', __FILE__))
+
+# generate QA forms
+eval File.read(File.expand_path('../forms_top.rb', __FILE__))
+
+# generate QA forms
+eval File.read(File.expand_path('../forms_cop.rb', __FILE__))
+
+# generate QA forms
+eval File.read(File.expand_path('../forms_kgd.rb', __FILE__))
+
+# generate QA forms
+eval File.read(File.expand_path('../forms_qa.rb', __FILE__))
 
