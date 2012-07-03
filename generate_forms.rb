@@ -86,3 +86,6 @@ common_production_fields = {
 	:remark      => :string,
 }
 
+# generate QA forms
+require File.expand_path('../forms_qa', __FILE__)
+
