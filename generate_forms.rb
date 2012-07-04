@@ -18,10 +18,10 @@ def generate_form(dept, form, fields, detail_fields=nil)
 
 	if detail_fields.present?
 		dm_name = "#{form}Detail"
-		generate :model, "#{dm_name} #{form.underscore}:references #{fields.collect {|k,v| " #{k}:#{v}"}.join}"
+		generate :model, "#{dm_name} #{form.underscore}:references #{detail_fields.collect {|k,v| " #{k}:#{v}"}.join}"
 
 		inject_into_file "app/models/#{form.underscore}.rb", :before => "end" do
-	  	"  has_many :#{dm_name.underscore.pluralize}\n  attr_accessible ::#{dm_name.underscore.pluralize}\n"
+	  	"  has_many :#{dm_name.underscore.pluralize}\n  attr_accessible :#{dm_name.underscore.pluralize}\n"
 		end
 
 		inject_into_file "app/models/#{dm_name.underscore}.rb", :before => "end" do
