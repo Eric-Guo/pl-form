@@ -13,6 +13,7 @@ qa_incoming_inspection_fields = {
 	:receiving_quantity => :integer,
 }
 qa_incoming_inspection_detail_fields = {
+	:row_count => 7,
 	:item => :string,
 	:spec => :string,
 	:data_type => :string,

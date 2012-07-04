@@ -16,8 +16,14 @@
 def generate_form(dept, form, fields, detail_fields=nil)
 	generate :scaffold, "#{form}#{fields.collect {|k,v| " #{k}:#{v}"}.join}"
 
+	inject_into_file "app/models/#{form.underscore}.rb", :before => "end" do
+	  "  validates :status_code, :presence => true\n"
+	end if fields.has_key? :status_code
+
 	if detail_fields.present?
 		dm_name = "#{form}Detail"
+		dm_row_count=detail_fields.shift[1].to_i
+
 		generate :model, "#{dm_name} #{form.underscore}:references #{detail_fields.collect {|k,v| " #{k}:#{v}"}.join}"
 
 		inject_into_file "app/models/#{form.underscore}.rb", :before => "end" do
@@ -29,15 +35,17 @@ def generate_form(dept, form, fields, detail_fields=nil)
 		inject_into_file "app/models/#{dm_name.underscore}.rb", :before => "end" do
 	  	"  belongs_to :#{form.underscore}\n"
 		end
+
+		inject_into_file "app/controllers/#{dm_name.underscore.pluralize}_controller.rb", :after => "#{form}.new\n" do
+	  	"  1.upto #{dm_row_count} do |i|\n" + \
+	  	"    @#{form.underscore}.#{form.underscore}_details.build\n" + \
+	  	"  end\n"
+		end
 	end
 
 	inject_into_file "app/views/application/_nav.html.erb", :before => "</ul><!--#{dept}-->\n" do
 	  "  <li><%= link_to '#{form.titleize}', #{form.pluralize.underscore}_path -%></li>\n"
 	end
-
-	inject_into_file "app/models/#{form.underscore}.rb", :before => "end" do
-	  "  validates :status_code, :presence => true\n"
-	end if fields.has_key? :status_code
 
 	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :after => '<!--Note-->' do
 '<h5>Status Code: (N) Normal operation 一般作业；(SC)Shift Change 换班；(OP) MC Set Up 开机；(CD) Change device换型号；(CS) Change solder paste  换锡膏；(CC) Change component  换元器件；(MS) mount squeegee 安装刮刀；(CS) change stencil 更换钢板；(RM) Repaire M/C 修机；(PM) PM 保养。</h5>'
