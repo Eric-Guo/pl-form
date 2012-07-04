@@ -28,18 +28,18 @@ def generate_form(dept, form, fields, detail_fields=nil)
 
 		inject_into_file "app/models/#{form.underscore}.rb", :before => "end" do
 	  	"  has_many :#{dm_name.underscore.pluralize}, dependent: :destroy\n" + \
-	  	"  accepts_nested_attributes_for :#{dm_name.underscore.pluralize}\n"
-	  	"  attr_accessible :#{dm_name.underscore.pluralize}_attributes\n" + \
+	  	"  accepts_nested_attributes_for :#{dm_name.underscore.pluralize}\n" + \
+	  	"  attr_accessible :#{dm_name.underscore.pluralize}_attributes\n"
 		end
 
 		inject_into_file "app/models/#{dm_name.underscore}.rb", :before => "end" do
 	  	"  belongs_to :#{form.underscore}\n"
 		end
 
-		inject_into_file "app/controllers/#{dm_name.underscore.pluralize}_controller.rb", :after => "#{form}.new\n" do
-	  	"  1.upto #{dm_row_count} do |i|\n" + \
-	  	"    @#{form.underscore}.#{form.underscore}_details.build\n" + \
-	  	"  end\n"
+		inject_into_file "app/controllers/#{form.underscore.pluralize}_controller.rb", :after => "#{form}.new\n" do
+	  	"    1.upto #{dm_row_count} do |i|\n" + \
+	  	"      @#{form.underscore}.#{form.underscore}_details.build\n" + \
+	  	"    end\n"
 		end
 	end
 
