@@ -21,7 +21,7 @@ class <%= controller_class_name %>Controller < ApplicationController
             csv << o.attributes.values
           end
         end
-        send_data csv_res
+        send_data "\xEF\xBB\xBF"<<csv_res.force_encoding("ASCII-8BIT")
       end
     end
   end
