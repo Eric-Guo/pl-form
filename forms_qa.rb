@@ -12,5 +12,17 @@ qa_incoming_inspection_fields = {
 	:iqa_inspection_date => :date,
 	:receiving_quantity => :integer,
 }
+qa_incoming_inspection_detail_fields = {
+	:item => :string,
+	:spec => :string,
+	:data_type => :string,
+	:data1 => :float,
+	:data2 => :float,
+	:data3 => :float,
+	:data4 => :float,
+	:data5 => :float,
+	:accept_or_ng => :boolean,
+	:remark => :string,
+}
 generate_form 'FOP_MAT', 'IncomingInspectionReport',
-	(qa_incoming_inspection_fields.merge common_fields)
+	(qa_incoming_inspection_fields.merge common_fields), qa_incoming_inspection_detail_fields
