@@ -1,12 +1,4 @@
 # encoding: UTF-8
-#Every field must searchable
-#
-#Status Code
-#select box
-#
-#Add reviewed field, if already reviewed, can not change now.
-#Also record the reviewer info, review time
-#
 #Equipment,Container need autocomplete
 #
 #confirmed by need password confirm
@@ -14,8 +6,13 @@
 #User
 #Supervisor
 #
-# Need two language
-# Add typeahead of reject code
+# Need two language (pending)
+# * Add typeahead of reject code
+# * FOP Introduce 2 level form navitation
+# * Add recent form quick list for OP
+# * Detail, Head forms format need to support
+
+
 
 def generate_form(dept, form, fields)
 	generate :scaffold, "#{form}#{fields.collect {|k,v| " #{k}:#{v}"}.join}"
