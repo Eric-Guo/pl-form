@@ -24,5 +24,5 @@ qa_incoming_inspection_detail_fields = {
 	:accept_or_ng => :boolean,
 	:remark => :string,
 }
-generate_form 'FOP_MAT', 'IncomingInspectionReport',
+generate_form 'QA', 'IncomingInspectionReport',
 	(qa_incoming_inspection_fields.merge common_fields), qa_incoming_inspection_detail_fields
