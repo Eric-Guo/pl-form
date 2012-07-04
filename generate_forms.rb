@@ -21,9 +21,9 @@ def generate_form(dept, form, fields, detail_fields=nil)
 		generate :model, "#{dm_name} #{form.underscore}:references #{detail_fields.collect {|k,v| " #{k}:#{v}"}.join}"
 
 		inject_into_file "app/models/#{form.underscore}.rb", :before => "end" do
-	  	"  attr_accessible :#{dm_name.underscore.pluralize}\n" + \
 	  	"  has_many :#{dm_name.underscore.pluralize}, dependent: :destroy\n" + \
 	  	"  accepts_nested_attributes_for :#{dm_name.underscore.pluralize}\n"
+	  	"  attr_accessible :#{dm_name.underscore.pluralize}_attributes\n" + \
 		end
 
 		inject_into_file "app/models/#{dm_name.underscore}.rb", :before => "end" do
