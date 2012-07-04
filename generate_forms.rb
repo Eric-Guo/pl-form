@@ -13,9 +13,21 @@
 # * Detail, Head forms format need to support
 
 
-
-def generate_form(dept, form, fields)
+def generate_form(dept, form, fields, detail_fields=nil)
 	generate :scaffold, "#{form}#{fields.collect {|k,v| " #{k}:#{v}"}.join}"
+
+	if detail_fields.present?
+		dm_name = "#{form}Detail"
+		generate :model, "#{dm_name} #{form.underscore}:references #{fields.collect {|k,v| " #{k}:#{v}"}.join}"
+
+		inject_into_file "app/models/#{form.underscore}.rb", :before => "end" do
+	  	"  has_many :#{dm_name.underscore.pluralize}\n  attr_accessible ::#{dm_name.underscore.pluralize}\n"
+		end
+
+		inject_into_file "app/models/#{dm_name.underscore}.rb", :before => "end" do
+	  	"  belongs_to :#{form.underscore}\n"
+		end
+	end
 
 	inject_into_file "app/views/application/_nav.html.erb", :before => "</ul><!--#{dept}-->\n" do
 	  "  <li><%= link_to '#{form.titleize}', #{form.pluralize.underscore}_path -%></li>\n"
@@ -84,19 +96,19 @@ common_production_fields = {
 }
 
 # generate FOP forms
-eval File.read(File.expand_path('../forms_fop.rb', __FILE__))
+#eval File.read(File.expand_path('../forms_fop.rb', __FILE__))
 
 # generate QA forms
-eval File.read(File.expand_path('../forms_bop.rb', __FILE__))
+#eval File.read(File.expand_path('../forms_bop.rb', __FILE__))
 
 # generate QA forms
-eval File.read(File.expand_path('../forms_top.rb', __FILE__))
+#eval File.read(File.expand_path('../forms_top.rb', __FILE__))
 
 # generate QA forms
-eval File.read(File.expand_path('../forms_cop.rb', __FILE__))
+#eval File.read(File.expand_path('../forms_cop.rb', __FILE__))
 
 # generate QA forms
-eval File.read(File.expand_path('../forms_kgd.rb', __FILE__))
+#eval File.read(File.expand_path('../forms_kgd.rb', __FILE__))
 
 # generate QA forms
 eval File.read(File.expand_path('../forms_qa.rb', __FILE__))
