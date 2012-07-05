@@ -46,20 +46,20 @@ def generate_form(dept, form, fields, detail_fields=nil)
 		end
 
 		dm_table_headers=detail_fields.keys.map {|e| "<th>#{e.to_s}</th>\n"}.join
-		dm_table_fields=detail_fields.keys.map {|e| "<th><%= g.input :#{e.to_s}, :class => 'input-mini' %></th>\n"}.join
+		dm_table_fields=detail_fields.keys.map {|e| "<td><%= g.input :#{e.to_s}, :wrapper => :tdata, :class => 'input-mini' %></td>\n"}.join
 
 		inject_into_file "app/views/#{form.underscore.pluralize}/_form.html.erb", :before => "  </div>\n" do
 	  	'  <table class="table table-bordered">' + "\n" + \
 	  	'    <tr>' + "\n" \
 	  	"#{dm_table_headers}" + \
 	  	'    </tr>' + "\n" + \
-	  	"<% @#{form.underscore}.#{dm_name.underscore.pluralize}.each do |detail| %>" + \
-	  	"  <%= f.fields_for :#{dm_name.underscore.pluralize}, detail do |g| %>" + \
+	  	"<% @#{form.underscore}.#{dm_name.underscore.pluralize}.each do |detail| %>\n" + \
+	  	"  <%= f.fields_for :#{dm_name.underscore.pluralize}, detail do |g| %>\n" + \
 	  	'    <tr>' + "\n" \
 	  	"#{dm_table_fields}" + \
 	  	'    </tr>' + "\n" + \
-	  	"  <% end %>" + \
-	  	"<% end %>" + \
+	  	"  <% end %>\n" + \
+	  	"<% end %>\n" + \
 	  	"  </table>\n"
 		end
 

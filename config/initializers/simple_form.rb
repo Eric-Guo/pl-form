@@ -82,6 +82,12 @@ SimpleForm.setup do |config|
     end
   end
 
+  config.wrappers :tdata, :error_class => "error" do |b|
+    b.use :input
+    b.use :error
+    b.use :hint
+  end
+
   # Wrappers for forms and inputs using the Twitter Bootstrap toolkit.
   # Check the Bootstrap docs (http://twitter.github.com/bootstrap)
   # to learn about the different styles for forms and inputs,
