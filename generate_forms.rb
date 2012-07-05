@@ -46,7 +46,7 @@ def generate_form(dept, form, fields, detail_fields=nil)
 		end
 
 		dm_table_headers=detail_fields.keys.map {|e| "<th>#{e.to_s}</th>\n"}.join
-		dm_table_fields=detail_fields.keys.map {|e| "<td><%= g.input :#{e.to_s}, :wrapper => :tdata, :class => 'input-mini' %></td>\n"}.join
+		dm_table_fields=detail_fields.keys.map {|e| "<td><%= g.input :#{e.to_s}, :wrapper => :tdata, :input_html => { :class => 'input-mini' } %></td>\n"}.join
 
 		inject_into_file "app/views/#{form.underscore.pluralize}/_form.html.erb", :before => "  </div><!--end_form-->\n" do
 	  	'  <table class="table table-bordered">' + "\n" + \
