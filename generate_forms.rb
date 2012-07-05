@@ -8,9 +8,12 @@
 #
 # Need two language (pending)
 # * Add typeahead of reject code
+# * Add typeahead of complete reduce lot name input error.
 # * FOP Introduce 2 level form navitation
 # * Add recent form quick list for OP
 # * Detail, Head forms format need to support
+# * Add data and color scope indicator
+# * file attachment
 
 
 def generate_form(dept, form, fields, detail_fields=nil)
