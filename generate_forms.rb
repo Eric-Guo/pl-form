@@ -29,6 +29,12 @@ def generate_form(dept, form, fields, detail_fields=nil)
 
 		generate :model, "#{dm_name} #{form.underscore}:references #{detail_fields.collect {|k,v| " #{k}:#{v}"}.join}"
 
+		Dir.glob("db/migrate/*_create_#{dm_name.underscore.pluralize}.rb") do |dm|
+			inject_into_file dm, :before => "\n  end\nend" do
+		  	", :name => 'idex_#{dm_name.underscore.pluralize}'"
+			end
+		end
+
 		inject_into_file "app/models/#{form.underscore}.rb", :before => "end" do
 	  	"  has_many :#{dm_name.underscore.pluralize}, dependent: :destroy\n" + \
 	  	"  accepts_nested_attributes_for :#{dm_name.underscore.pluralize}\n" + \
