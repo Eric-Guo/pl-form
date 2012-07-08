@@ -11,7 +11,7 @@
 # * Add typeahead of complete reduce lot name input error.
 # * FOP Introduce 2 level form navitation
 # * Add recent form quick list for OP
-# * Detail, Head forms format need to support
+# * Detail, Head forms format need to support (done)
 # * Add data and color scope indicator
 # * file attachment
 
@@ -69,7 +69,21 @@ def generate_form(dept, form, fields, detail_fields=nil)
 	  	"  </table>\n"
 		end
 
-	end
+		dm_table_items=detail_fields.keys.map {|e| "<td><%= d.#{e.to_s} %></td>\n"}.join
+
+		inject_into_file "app/views/#{form.underscore.pluralize}/show.html.erb", :after => "<!--end_of_header-->\n" do
+	  	'  <table class="table table-bordered">' + "\n" + \
+	  	'    <tr>' + "\n" \
+	  	"#{dm_table_headers}" + \
+	  	'    </tr>' + "\n" + \
+	  	"<% @#{form.underscore}.#{dm_name.underscore.pluralize}.each do |d| %>\n" + \
+	  	'    <tr>' + "\n" \
+	  	"#{dm_table_items}" + \
+	  	'    </tr>' + "\n" + \
+	  	"<% end %>\n" + \
+	  	"  </table>\n"
+		end
+	end # detail_fields.present?
 
 	inject_into_file "app/views/application/_nav.html.erb", :before => "</ul><!--#{dept}-->\n" do
 	  "  <li><%= link_to '#{form.titleize}', #{form.pluralize.underscore}_path -%></li>\n"
