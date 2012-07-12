@@ -27,3 +27,27 @@ qa_incoming_inspection_detail_fields = {
 }
 generate_form 'QA', 'IncomingInspectionReport',
 	(qa_incoming_inspection_fields.merge common_fields), qa_incoming_inspection_detail_fields
+
+# Doc#: 3712-02-00034 QC Laser cut   Monitor Sheet
+qa_qc_laser_cut_monitor_fields = {
+	:equipment_no      => :string,
+	:device      => :string,
+	:lot_no	=> :string,
+	:positrol_log_monitor => :boolean,
+	:status_code      => :string,
+	:sample_size	=> :string,
+	:monitor_result => :boolean,
+	:defect_code => :string,
+	:defect_qty => :integer,
+	:remark => :string,
+}
+qa_qc_laser_cut_monitor_detail_fields = {
+	:item => ["Demention A","Demention B","Demention C","Demention D","Demention E"],
+	:demention_mm => :float,
+	:demention_mm => :float,
+	:demention_mm => :float,
+	:demention_mm => :float,
+	:demention_mm => :float,
+}
+generate_form 'QA', 'QcLaserCutMonitor',
+	(qa_qc_laser_cut_monitor_fields.merge common_fields), qa_qc_laser_cut_monitor_detail_fields

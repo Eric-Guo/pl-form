@@ -14,7 +14,8 @@
 # * Detail, Head forms format need to support (done)
 # * Add data and color scope indicator
 # * file attachment
-
+# * Add Item and Spec as detail field description
+# * Group Detail Item to up 5 times
 
 def generate_form(dept, form, fields, detail_fields=nil)
 	generate :scaffold, "#{form}#{fields.collect {|k,v| " #{k}:#{v}"}.join}"
