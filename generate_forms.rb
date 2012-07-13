@@ -155,7 +155,7 @@ common_production_fields = {
 # generate FOP forms
 #eval File.read(File.expand_path('../forms_fop.rb', __FILE__))
 
-# generate QA forms
+# generate BOP forms
 #eval File.read(File.expand_path('../forms_bop.rb', __FILE__))
 
 # generate QA forms

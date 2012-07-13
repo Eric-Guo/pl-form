@@ -117,7 +117,7 @@ generate_form 'FOP_MAT', 'ProductImportantUseApply',
 # DOC#: 3743-02-10035 线上异常金线接收登记表
 exception_gold_accept_register_fields = {
 	:machine_no             => :string,
-	:OP_ID                  => :string,
+	:operator_id            => :string,
 	:receive_badge          => :string,
 	:supervisor_mark        => :string,
 	:letter_of_presentation => :string,
@@ -133,7 +133,7 @@ icebox_refrigeratory_humidity_fields = {
 	:is_pass               => :boolean,
 	:equipment             => :string,
 	:time                  => :timestamp,
-	:remart                => :string,	
+	:remart                => :string,
 }
 generate_form 'FOP_MAT', 'IceboxRefrigeratoryHumidity',
 	(icebox_refrigeratory_humidity_fields.merge common_fields)

@@ -22,7 +22,7 @@ ink_oven_cure_production_fields = {
 	:program_id    => :string,
 	:profile_check => :string,
 	:remark        => :string,
-	
+
 }
 generate_form 'BOP_PRD', 'InkOvenCureProduction',
 	(common_production_fields.merge ink_oven_cure_production_fields.merge common_fields)
@@ -107,7 +107,6 @@ saw_singulation_production_log_fields = {
 	:repair_action_or_adjustment     => :string,
 	:confirm_by                      => :string,
 }
-}
 generate_form 'BOP_PRD', 'SawSingulationProduction',
 	(common_production_fields.merge saw_singulation_production_log_fields.merge common_fields)
 
@@ -124,11 +123,11 @@ generate_form 'BOP_PRD', 'T_scanProduction',
 	(common_production_fields.merge t_scan_production_log_fields.merge common_fields)
 
 # DOC# 3746-02-60001	AOI production
-aoi_production_log_fields = 
+aoi_production_log_fields = {
     :status_code            => :string,
     :lot_no                 => :string,
     :input_qty              => :integer,
-    :output_qty             => :integer.
+    :output_qty             => :integer,
     :rework_qty             => :integer,
     :reject_qty             => :integer,
     :reject_code            => :string,
@@ -195,13 +194,12 @@ generate_form 'BOP_EQP', 'PackageSawShiftCheck',
 # DOC# 3746-02-40003	SGN Positrol log
 sgn_positrol_log_fields = {
 	:device_no                      => :string,
-	:after_change _device_program_no=> :string,
+	:after_change_device_program_no => :string,
 	:blade_thickness                => :string,
 	:z1_blade_cut_length            => :string,
 	:z2_blade_cut_length            => :string,
 	:spindle1_speed                 => :string,
 	:spindle2_speed                 => :string,
-
 }
 generate_form 'BOP_EQP', 'SgnPositrolLog',
 	(common_production_fields.merge sgn_positrol_log_fields.merge common_fields)
@@ -232,45 +230,44 @@ generate_form 'BOP_EQP', 'SawSingulationBladeChangeLog',
 
 # DOC# 3742-02-30030	PM Monthly & Half year record
 sgn_pm_monthly_half_year_fields = {
-	:Clean_every_station_of_the_system                             => :boolean,
-	:Clean_all_motor_motion_status                                 => :boolean,
-	:cheak_timing_blet                                             => :boolean,
-	:Check_clean_vacuum_pad_not_damage                             => :boolean,
-	:Check_safety_door_and_interlock                               => :boolean,
-	:Machine_Ground_ESD                                            => :boolean,
-	:Check_flange_wheel_mount                                      => :boolean,
-	:Clean_the_wash_tank_brush                                     => :boolean,
-	:Clean_the_spindle_flange                                      => :boolean,
-	:Clean_bellows_at_front_rear_of_SAW                            => :boolean,
-	:Clean_the_lens_of_Saw_camera                                  => :boolean,
-	:Clean_drain_tank                                              => :boolean,
-	:Check_the_cylinder_and_the_connector_of_trachea_not_leakage   => :boolean,
-	:Check_spindle_and_shower_cutting_water_flow                   => :boolean,
-	:Exchange_the_PCW_cooling_water_filter                         => :boolean,
-	:Check_every_position_screw_and_nut                            => :boolean, 
-	:Check_the_servo_motor_and_connection_of_the_encoder_confirm_not_to_be_loose                               => :boolean,
-	:Check_the_connection_of_every_station_circuit_confirm_not_to_be_loose_between_wire_and_sons_of_end_unit   => :boolean,
-	:Check_all_kinds_of_electric_components                        => :boolean,
-	:cheasn_the_exhaust_motor                                      => :boolean,
-	:Check_clean_the_guide_screw_of_the_equipment_and_lubricate_all=> :boolean,
-	:BUY_OFF                                                       => :boolean,
-	:Optical_inspection                                            => :boolean,
-	:Measure_5pcs_dummy_size_after_sawing                          => :boolean,
-	:maintainer                                                    => :string,
-    :confirm_by                                                    => :string,
-
+	:clean_every_station_of_the_system                                                                       => :boolean,
+	:clean_all_motor_motion_status                                                                           => :boolean,
+	:cheak_timing_blet                                                                                       => :boolean,
+	:check_clean_vacuum_pad_not_damage                                                                       => :boolean,
+	:check_safety_door_and_interlock                                                                         => :boolean,
+	:Machine_Ground_ESD                                                                                      => :boolean,
+	:check_flange_wheel_mount                                                                                => :boolean,
+	:clean_the_wash_tank_brush                                                                               => :boolean,
+	:clean_the_spindle_flange                                                                                => :boolean,
+	:clean_bellows_at_front_rear_of_SAW                                                                      => :boolean,
+	:clean_the_lens_of_Saw_camera                                                                            => :boolean,
+	:clean_drain_tank                                                                                        => :boolean,
+	:check_the_cylinder_and_the_connector_of_trachea_not_leakage                                             => :boolean,
+	:check_spindle_and_shower_cutting_water_flow                                                             => :boolean,
+	:exchange_the_PCW_cooling_water_filter                                                                   => :boolean,
+	:check_every_position_screw_and_nut                                                                      => :boolean,
+	:check_the_servo_motor_and_connection_of_the_encoder_confirm_not_to_be_loose                             => :boolean,
+	:check_the_connection_of_every_station_circuit_confirm_not_to_be_loose_between_wire_and_sons_of_end_unit => :boolean,
+	:check_all_kinds_of_electric_components                                                                  => :boolean,
+	:cheasn_the_exhaust_motor                                                                                => :boolean,
+	:check_clean_the_guide_screw_of_the_equipment_and_lubricate_all                                          => :boolean,
+	:buy_off                                                                                                 => :boolean,
+	:optical_inspection                                                                                      => :boolean,
+	:measure_5pcs_dummy_size_after_sawing                                                                    => :boolean,
+	:maintainer                                                                                              => :string,
+	:confirm_by                                                                                              => :string,
 }
 generate_form 'BOP_EQP', 'SgnPmMonthlyHalfYearLog',
 	(common_production_fields.merge sgn_pm_monthly_half_year_fields.merge common_fields)
 
 # DOC# 3742-02-30058	Oven shift check Record
 oven_shift_check_production_log_fields = {
-	:Air_flow_control                               => :boolean,
-	:Check_computer_monitor_status                  => :boolean,
-	:Check_oven_profile                             => :boolean,
-	:Each_chamber_clean                             => :boolean,
-	:over_set_temperature_protect_check             => :boolean,
-	:sign                                           => :string,
+	:air_flow_control                   => :boolean,
+	:check_computer_monitor_status      => :boolean,
+	:check_oven_profile                 => :boolean,
+	:each_chamber_clean                 => :boolean,
+	:over_set_temperature_protect_check => :boolean,
+	:sign                               => :string,
 }
 generate_form 'BOP_EQP', 'OvenShiftCheckLog',
 	(oven_shift_check_production_log_fields.merge common_fields)
@@ -278,12 +275,12 @@ generate_form 'BOP_EQP', 'OvenShiftCheckLog',
 # DOC# 3742-02-30088	Oven Weekly PM Record
 oven_weekly_pm_production_log_fields = {
 	:oven_bottom_region_clean  => :boolean,
-	:oven_door_region_clean  => :boolean,	
-	:temperature_check_point_ok  => :boolean,	
-	:oven_dashboard_ok  => :boolean,	
-	:oven_temp_checkpoint_buy_off  => :boolean,	
-	:maintainer  => :string,	
-	:confirm_by  => :string,	
+	:oven_door_region_clean  => :boolean,
+	:temperature_check_point_ok  => :boolean,
+	:oven_dashboard_ok  => :boolean,
+	:oven_temp_checkpoint_buy_off  => :boolean,
+	:maintainer  => :string,
+	:confirm_by  => :string,
 }
 generate_form 'BOP_EQP', 'OvenWeeklyPmLog',
 	(oven_weekly_pm_production_log_fields.merge common_fields)
