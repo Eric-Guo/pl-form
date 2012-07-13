@@ -2,9 +2,13 @@
 
 # DOC# 3746-02-10008 PMC Production log sheet 作业记录表
 pmc_production_log_fields = {
-	:profile_check => :string,
-	:in_time       => :timestamp,
-	:out_time      => :timestamp,
+	:in_time                => :timestamp,
+	:out_time               => :timestamp,
+	:status_code            => :string,
+	:program_id             => :string,
+	:profile_check          => :string,
+	:golden_finger_defects  => :string,
+	:remark                 => :string,
 }
 generate_form 'BOP_PRD', 'PmcProduction',
 	(common_production_fields.merge pmc_production_log_fields.merge common_fields)
@@ -12,9 +16,13 @@ generate_form 'BOP_PRD', 'PmcProduction',
 
 # DOC# 3746-02-10012 Ink Oven Cure Production Log Sheet
 ink_oven_cure_production_fields = {
-	:profile_check => :string,
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
+	:status_code   => :string,
+	:program_id    => :string,
+	:profile_check => :string,
+	:remark        => :string,
+	
 }
 generate_form 'BOP_PRD', 'InkOvenCureProduction',
 	(common_production_fields.merge ink_oven_cure_production_fields.merge common_fields)
@@ -22,9 +30,10 @@ generate_form 'BOP_PRD', 'InkOvenCureProduction',
 
 # DOC# 3746-02-20004 Compound Laser Mark Production Log
 compound_mark_production_fields = {
-	:profile_check                         => :string,
-	:repair_adjustment_or_change_materials => :string,
+    :repair_adjustment_or_change_materials => :string,
+	:lot_no                                => :string,
 	:golden_finger_defects                 => :string,
+	:confirm_by                            => :string,
 }
 generate_form 'BOP_PRD', 'CompoundMarkProduction',
 	(common_production_fields.merge compound_mark_production_fields.merge common_fields)
@@ -32,10 +41,12 @@ generate_form 'BOP_PRD', 'CompoundMarkProduction',
 
 # DOC# 3746-02-20030	Substrate Laser Mark Production Log
 substrate_laser_mark_production_fields = {
-	:laser_power        => :float,
-	:laser_depth        => :float,
-	:position_demension => :string,
-	:confirm_by         => :string,
+	:repair_action_or_adjustment=> :string,
+	:lot_no                     => :string,
+	:laser_power                => :float,
+	:laser_depth                => :float,
+	:position_demension         => :string,
+	:confirm_by                 => :string,
 }
 generate_form 'BOP_PRD', 'SubstrateLaserMarkProduction',
 	(common_production_fields.merge substrate_laser_mark_production_fields.merge common_fields)
@@ -43,9 +54,11 @@ generate_form 'BOP_PRD', 'SubstrateLaserMarkProduction',
 
 # DOC# 3746-02-20033	Substrate Ink Mark Production Log Sheet
 substrate_ink_mark_production_log_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamp,
-	:out_time    => :timestamp,
+	:status_code                  => :string,
+	:lot_no                       => :string,
+	:inspection_recorder          => :string,
+	:repair_action_or_adjustment  => :string,
+	:confirm_by                   => :string,
 }
 generate_form 'BOP_PRD', 'InMarkProduction',
 	(common_production_fields.merge substrate_ink_mark_production_log_fields.merge common_fields)
@@ -54,6 +67,7 @@ generate_form 'BOP_PRD', 'InMarkProduction',
 # DOC# 3746-02-20028	Compound Laser Sweeping Production Log
 laser_weeping_production_fields = {
 	:repair_adjustment_or_change_materials => :string,
+	:lot_no                                => :string,
 	:confirm_by                            => :string,
 }
 generate_form 'BOP_PRD', 'LaserWeepingProduction',
@@ -62,9 +76,11 @@ generate_form 'BOP_PRD', 'LaserWeepingProduction',
 
 # DOC# 3746-02-20011	Production log sheet for ink mark
 ink_mark_production_log_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamp,
-	:out_time    => :timestamp,
+	:status_code                   => :string,
+	:lot_no                        => :string,
+	:inspection_recorder           => :string,
+	:repair_action_or_adjustment   => :string,
+	:confirm_by                    => :string,
 }
 generate_form 'BOP_PRD', 'InkMarkProduction',
 	(common_production_fields.merge ink_mark_production_log_fields.merge common_fields)
@@ -72,129 +88,202 @@ generate_form 'BOP_PRD', 'InkMarkProduction',
 
 # DOC# 3746-02-30004	Laser cut production
 laser_cut_production_log_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamp,
-	:out_time    => :timestamp,
+	:status_code                     => :string,
+	:strip_drawing_vender            => :string,
+	:lot_no                          => :string,
+	:inspection_recorder             => :string,
+	:repair_action_or_adjustment     => :string,
+	:confirm_by                      => :string,
 }
 generate_form 'BOP_PRD', 'LaserCutProduction',
 	(common_production_fields.merge laser_cut_production_log_fields.merge common_fields)
 
 # DOC# 3746-02-40004	Saw singulation production
 saw_singulation_production_log_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamp,
-	:out_time    => :timestamp,
+    :status_code                     => :string,
+	:strip_drawing_vender            => :string,
+	:lot_no                          => :string,
+	:inspection_recorder             => :string,
+	:repair_action_or_adjustment     => :string,
+	:confirm_by                      => :string,
+}
 }
 generate_form 'BOP_PRD', 'SawSingulationProduction',
 	(common_production_fields.merge saw_singulation_production_log_fields.merge common_fields)
 
 # DOC# 3746-02-90010	SDSS_T-scan_production
 t_scan_production_log_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamp,
-	:out_time    => :timestamp,
+	:production_part_no          => :string,
+	:lot_no                      => :string,
+	:sample_size                 => :integer,
+	:defect_qty                  => :integer,
+	:remark                      => :string,
+
 }
 generate_form 'BOP_PRD', 'T_scanProduction',
 	(common_production_fields.merge t_scan_production_log_fields.merge common_fields)
 
 # DOC# 3746-02-60001	AOI production
-aoi_production_log_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamp,
-	:out_time    => :timestamp,
+aoi_production_log_fields = 
+    :status_code            => :string,
+    :lot_no                 => :string,
+    :input_qty              => :integer,
+    :output_qty             => :integer.
+    :rework_qty             => :integer,
+    :reject_qty             => :integer,
+    :reject_code            => :string,
+    :remark                 => :string,
 }
 generate_form 'BOP_PRD', 'AoiProduction',
 	(common_production_fields.merge aoi_production_log_fields.merge common_fields)
 
 # DOC# 3746-02-90003	SDSS Solder ball attach production
 ba_production_log_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamp,
-	:out_time    => :timestamp,
+	:status_code             => :string,
+	:lot_no                  => :string,
+	:reflow_recipe           => :string,
+	:materal_information     => :string,
+	:remark                  => :string,
 }
 generate_form 'BOP_PRD', 'BaProduction',
 	(common_production_fields.merge ba_production_log_fields.merge common_fields)
 
 # DOC# 3746-02-90016	SDSS_OSP_pre-clean_production_log
 osp_pre_clean_production_log_fields = {
+	:status_code   => :string,
+	:lot_no        => :string,
 	:recipe        => :string,
-	:defect        => :string,
 	:defect_qty    => :integer,
 	:reflow_recipe => :string,
 	:flux_type     => :string,
 	:flux_lot_no   => :string,
+	:remark        => :string,
 }
 generate_form 'BOP_PRD', 'OspPreCleanProduction',
 	(common_production_fields.merge osp_pre_clean_production_log_fields.merge common_fields)
 
 # DOC# 3746-02-90013	SDSS_IR_Reflow_production_log
 ir_reflow_production_log_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamp,
-	:out_time    => :timestamp,
+	:status_code          => :string,
+	:lot_no               => :string,
+	:reflow_recipe        => :string,
+	:remark               => :string,
 }
 generate_form 'BOP_PRD', 'IrReflowProduction',
 	(common_production_fields.merge ir_reflow_production_log_fields.merge common_fields)
 
 # DOC# 3742-02-30066	Package Saw shift check Record
 package_saw_shift_check_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamp,
-	:out_time    => :timestamp,
+	:machine_main_air_pressure          => :boolean,
+	:machine_water_pressure             => :boolean,
+	:workpiece_vacuum                   => :boolean,
+	:wheel_coolant_water                => :boolean,
+	:disco_chuck_table_area_and_bellows => :boolean,
+    :hangler_area_and_z_picker          => :boolean,
+    :orientation_cheak_function         => :boolean,
+    :kerf_cheak_function                => :boolean,
+    :ionizate_fan                       => :boolean,
+    :kit_rubber                         => :boolean,
+    :each_kit_vacuum_setting            => :boolean,
+    :orientation_pin_cheak              => :boolean,
+    :check_camera_cover                 => :boolean,
+    :sign                               => :string,
 }
 generate_form 'BOP_EQP', 'PackageSawShiftCheck',
 	(common_production_fields.merge package_saw_shift_check_fields.merge common_fields)
 
 # DOC# 3746-02-40003	SGN Positrol log
 sgn_positrol_log_fields = {
-	:profile_check  => :string,
-	:in_time     => :timestamp,
-	:out_time    => :timestamp,
+	:device_no                      => :string,
+	:after_change _device_program_no=> :string,
+	:blade_thickness                => :string,
+	:z1_blade_cut_length            => :string,
+	:z2_blade_cut_length            => :string,
+	:spindle1_speed                 => :string,
+	:spindle2_speed                 => :string,
+
 }
 generate_form 'BOP_EQP', 'SgnPositrolLog',
 	(common_production_fields.merge sgn_positrol_log_fields.merge common_fields)
 
 # DOC# 3746-02-30053	Conversion Kit Change Record Sheet 改机记录表
 conversion_kit_change_record_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamp,
-	:out_time    => :timestamp,
+	:devise_type           => :string,
+	:manufacture_serial_no => :string,
+	:owner                 => :string,
+	:remark                => :string,
 }
 generate_form 'BOP_EQP', 'SgnConversionKitChangeLog',
 	(common_production_fields.merge conversion_kit_change_record_fields.merge common_fields)
 
 # DOC# 3746-02-40006	saw singulation blade change record sheet
 saw_singulation_blade_change_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamp,
-	:out_time    => :timestamp,
+	:blade_type            => :string,
+	:blade_length          => :string,
+	:wear_out              => :string,
+	:bbd_sensor            => :string,
+	:ncs_sensor            => :string,
+	:hairline_width        => :string,
+	:owner                 => :string ,
+	:remark                => :string,
 }
 generate_form 'BOP_EQP', 'SawSingulationBladeChangeLog',
 	(common_production_fields.merge saw_singulation_blade_change_fields.merge common_fields)
 
 # DOC# 3742-02-30030	PM Monthly & Half year record
 sgn_pm_monthly_half_year_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamp,
-	:out_time    => :timestamp,
+	:Clean_every_station_of_the_system                             => :boolean,
+	:Clean_all_motor_motion_status                                 => :boolean,
+	:cheak_timing_blet                                             => :boolean,
+	:Check_clean_vacuum_pad_not_damage                             => :boolean,
+	:Check_safety_door_and_interlock                               => :boolean,
+	:Machine_Ground_ESD                                            => :boolean,
+	:Check_flange_wheel_mount                                      => :boolean,
+	:Clean_the_wash_tank_brush                                     => :boolean,
+	:Clean_the_spindle_flange                                      => :boolean,
+	:Clean_bellows_at_front_rear_of_SAW                            => :boolean,
+	:Clean_the_lens_of_Saw_camera                                  => :boolean,
+	:Clean_drain_tank                                              => :boolean,
+	:Check_the_cylinder_and_the_connector_of_trachea_not_leakage   => :boolean,
+	:Check_spindle_and_shower_cutting_water_flow                   => :boolean,
+	:Exchange_the_PCW_cooling_water_filter                         => :boolean,
+	:Check_every_position_screw_and_nut                            => :boolean, 
+	:Check_the_servo_motor_and_connection_of_the_encoder_confirm_not_to_be_loose                               => :boolean,
+	:Check_the_connection_of_every_station_circuit_confirm_not_to_be_loose_between_wire_and_sons_of_end_unit   => :boolean,
+	:Check_all_kinds_of_electric_components                        => :boolean,
+	:cheasn_the_exhaust_motor                                      => :boolean,
+	:Check_clean_the_guide_screw_of_the_equipment_and_lubricate_all=> :boolean,
+	:BUY_OFF                                                       => :boolean,
+	:Optical_inspection                                            => :boolean,
+	:Measure_5pcs_dummy_size_after_sawing                          => :boolean,
+	:maintainer                                                    => :string,
+    :confirm_by                                                    => :string,
+
 }
 generate_form 'BOP_EQP', 'SgnPmMonthlyHalfYearLog',
 	(common_production_fields.merge sgn_pm_monthly_half_year_fields.merge common_fields)
 
 # DOC# 3742-02-30058	Oven shift check Record
 oven_shift_check_production_log_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamp,
-	:out_time    => :timestamp,
+	:Air_flow_control                               => :boolean,
+	:Check_computer_monitor_status                  => :boolean,
+	:Check_oven_profile                             => :boolean,
+	:Each_chamber_clean                             => :boolean,
+	:over_set_temperature_protect_check             => :boolean,
+	:sign                                           => :string,
 }
 generate_form 'BOP_EQP', 'OvenShiftCheckLog',
 	(oven_shift_check_production_log_fields.merge common_fields)
 
 # DOC# 3742-02-30088	Oven Weekly PM Record
 oven_weekly_pm_production_log_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamp,
-	:out_time    => :timestamp,
+	:oven_bottom_region_clean  => :boolean,
+	:oven_door_region_clean  => :boolean,	
+	:temperature_check_point_ok  => :boolean,	
+	:oven_dashboard_ok  => :boolean,	
+	:oven_temp_checkpoint_buy_off  => :boolean,	
+	:maintainer  => :string,	
+	:confirm_by  => :string,	
 }
 generate_form 'BOP_EQP', 'OvenWeeklyPmLog',
 	(oven_weekly_pm_production_log_fields.merge common_fields)
