@@ -12,10 +12,10 @@
 # * FOP Introduce 2 level form navitation
 # * Add recent form quick list for OP
 # * Detail, Head forms format need to support (done)
-# * Add data and color scope indicator
-# * file attachment
-# * Add Item and Spec as detail field description
-# * Group Detail Item to up 5 times
+# * Add data and color scope indicator (QA)
+# * file attachment (pending)
+# * Add Item and Spec as detail field description (QA)
+# * Group Detail Item to up 5 times (QA)
 
 def generate_form(dept, form, fields, detail_fields=nil)
 	generate :scaffold, "#{form}#{fields.collect {|k,v| " #{k}:#{v}"}.join}"
