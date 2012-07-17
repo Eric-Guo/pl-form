@@ -89,6 +89,7 @@ qa_qc_laser_sweeping_monitor_fields = {
 generate_form 'QA', 'QcLaserSweepingMonitor',
 	(qa_qc_laser_sweeping_monitor_fields.merge common_fields)
 
+
 # Doc#: 3712-02-00034 QC Saw Singulation Monitor Sheet
 qa_qc_saw_singulation_monitor_fields = {
 	:equipment_no      => :string,
@@ -117,7 +118,6 @@ qa_qc_osp_product_monitor_fields = {
 }
 generate_form 'QA', 'QcOspProductMonitor',
 	(qa_qc_osp_product_monitor_fields.merge common_fields)
-
 
 
 # Doc#: 1111-02-20005 QC T-Scan Monitor Sheet
@@ -152,8 +152,6 @@ generate_form 'QA', 'KgdQcLineMonitor',
 	(qa_qc_kgd_line_monitor_fields.merge common_fields)
 
 
-
-
 # Doc#: 3712-02-00038 QC Labeling Monitor Sheet
 qa_qc_labeling_monitor_fields = {
 	:equipment_no      => :string,
@@ -172,7 +170,6 @@ generate_form 'QA', 'QcLabelingMonitor',
 	(qa_qc_labeling_monitor_fields.merge common_fields)
 
 
-
 # Doc#: 3712-02-00184 QC Retail Fulfillment Fvi Record
 qa_qc_retail_fulfillment_monitor_fields = {
 	:part_no   => :string,
@@ -186,8 +183,6 @@ qa_qc_retail_fulfillment_monitor_fields = {
 }
 generate_form 'QA', 'QcRetailFulfillmentMonitor',
 	(qa_qc_retail_fulfillment_monitor_fields.merge common_fields)
-
-
 
 
 # Doc#: 3712-02-00214 QC Retail Fulfillment shipping QA Record
