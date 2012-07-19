@@ -199,12 +199,77 @@ qa_qc_retail_fulfillment_shipping_monitor_fields = {
 generate_form 'QA', 'QcRetailFulfillmentShippingMonitor',
 	(qa_qc_retail_fulfillment_shipping_monitor_fields.merge common_fields)
 
-
-
-
-
-
-
-
-
+# DOC#: F1206-0002 Substrate Incoming Inspection Report
+substrate_incoming_inspection_fields = {
+	:part_no      => :string,
+	:material_description      => :string,
+	:po_no	=> :string,
+	:supplier_lot_no => :string,
+	:material_spec      => :string,
+	:receiving_date	=> :date,
+	:supplier => :string,
+	:iqa_inspection_date => :date,
+	:receiving_quantity => :integer,
+}
+substrate_incoming_inspection_detail_fields = {
+	:items => [
+		"Tooling hole diameter 定位孔直径",
+		"Left tooling hole diameter 左定位孔直径",
+		"Strip width  总宽",
+		"Strip length 总长",
+		"Tooling hole center to center, Y vertical 定位孔间距 Y方向",
+		"Upper tooling hole center to center: X Horizontal 上定位孔间距 X方向",
+		"Lower tooling hole center to substrate edge  Y vertical 下定位孔中心到基板边缘距离 Y方向",
+		"Space between left hole: Y vertical 左定位孔间距Y方向",
+		"Center of left tooling hole to center of lower tooling hole :X Horizontal 左定位中心到下定位孔中心X方向距离",
+		"Center of left tooling hole to center of lower tooling hole :Y vertical 左定位中心到下定位孔中心Y方向距离",
+		"Space between lower hole X Horizontal下定位孔间距X方向",
+		"左下定位中心到右定位孔中心X方向距离",
+		"Space between right hole Y vertical 右定位孔间距Y方向",
+		"Bonding finger width 焊线柱宽度",
+		"Bonding finger space 焊线柱间距",
+		"Molding gate width (Cu to strip edge)注胶口宽度",
+		"Top fiducial mark plating bar width(X) 正面基准mark电镀线宽度",
+		"Top fiducial mark plating bar width(Y) 正面基准mark电镀线宽度",
+		"Bottom fiducial mark plating bar width(X) 背面基准mark电镀线宽度",
+		"Bottom fiducial mark plating bar width(Y) 背面基准mark电镀线宽度",
+		"S/M Shift(Top)",
+		"S/M Shift(Bottom)",
+		"正面定位方块偏移",
+		"Substrate thickness 基板厚度"],
+	:specs => [
+		"1.50+/-0.05",
+		"1.50+/-0.05",
+		"74.0+/-0.10",
+		"240.0+/-0.10",
+		"70.45+/-0.05",
+		"11.40+/-0.05",
+		"2.00+/-0.075",
+		"36.00+/-0.05",
+		"5.00+/-0.05",
+		"17.00+/-0.05",
+		"113.00+/-0.05",
+		"231.00+/-0.075",
+		"57.50+/-0.05",
+		"Min:0.050",
+		"Min:0.025",
+		"3.40+/-0.075",
+		"0.150+/-0.020",
+		"0.300+/-0.020",
+		"0.150+/-0.020",
+		"0.200+/-0.020",
+		"Max :50um",
+		"Max :50um",
+		"Max :50um",
+		"0.210+/-0.040"],
+	:data1 => :float,
+	:data2 => :float,
+	:data3 => :float,
+	:data4 => :float,
+	:data5 => :float,
+	:accept_or_ng => :boolean,
+	:remark => :string,
+}
+generate_form 'QA', 'SubstrateIncomingInspectionReport',
+	(substrate_incoming_inspection_fields.merge common_fields), substrate_incoming_inspection_detail_fields
 
