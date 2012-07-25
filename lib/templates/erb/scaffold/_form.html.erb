@@ -4,13 +4,7 @@
   <div class="form-inputs">
   <% attributes.each do |attribute| %>
     <% unless ['create_badge','create_shift_code','update_badge','update_shift_code'].include?(attribute.name) -%>
-      <% if attribute.name == 'status_code' -%>
-    <%%= f.input :status_code, :collection => ['N','OP','CS','CD','CT','RM','PM','CP'], :required => true %>
-      <% elsif attribute.name == 'check_type' -%>
-    <%%= f.input :check_type, :collection => ['CS','CD','RM','CT'] %>
-      <% else -%>
     <%%= pl_field f, :<%= attribute.name %> %>
-      <% end -%>
     <% end -%>
   <% end %>
   </div><!--end_form-->
