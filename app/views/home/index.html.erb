@@ -1,12 +1,26 @@
 <div class="hero-unit">
+<% if (current_user.present? and ['MAT',''].include? current_user.department ) or current_user.blank? -%>
 <h3>MAT</h3><!--FOP_MAT-->
+<% end %>
+<% if (current_user.present? and ['FOP',''].include? current_user.department ) or current_user.blank? -%>
 <h3>FOP Production</h3><!--FOP_PRD-->
+<% end %>
+<% if (current_user.present? and ['BOP',''].include? current_user.department ) or current_user.blank? -%>
 <h3>BOP Equipment</h3><!--BOP_EQP-->
 <h3>BOP Production</h3><!--BOP_PRD-->
+<% end %>
+<% if (current_user.present? and ['TOP',''].include? current_user.department ) or current_user.blank? -%>
 <h3>TOP</h3><!--TOP-->
+<% end %>
+<% if (current_user.present? and ['COP',''].include? current_user.department ) or current_user.blank? -%>
 <h3>COP Equipment</h3><!--COP_EQP-->
 <h3>COP Production</h3><!--COP_PRD-->
+<% end %>
+<% if (current_user.present? and ['KGD',''].include? current_user.department ) or current_user.blank? -%>
 <h3>KGD Equipment</h3><!--KGD_EQP-->
 <h3>KGD Production</h3><!--KGD_PRD-->
+<% end %>
+<% if (current_user.present? and ['QA',''].include? current_user.department ) or current_user.blank? -%>
 <h3>QA</h3><!--QA-->
+<% end %>
 </div>
