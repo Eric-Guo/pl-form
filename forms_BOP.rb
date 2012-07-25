@@ -30,7 +30,7 @@ generate_form 'BOP_PRD', 'InkOvenCureProduction',
 
 # DOC# 3746-02-20004 Compound Laser Mark Production Log
 compound_mark_production_fields = {
-    :repair_adjustment_or_change_materials => :string,
+	:repair_adjustment_or_change_materials => :string,
 	:lot_no                                => :string,
 	:golden_finger_defects                 => :string,
 	:confirm_by                            => :string,

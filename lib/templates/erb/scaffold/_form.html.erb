@@ -9,7 +9,7 @@
       <% elsif attribute.name == 'check_type' -%>
     <%%= f.input :check_type, :collection => ['CS','CD','RM','CT'] %>
       <% else -%>
-    <%%= f.<%= attribute.reference? ? :association : :input %> :<%= attribute.name %> %>
+    <%%= pl_field f, :<%= attribute.name %> %>
       <% end -%>
     <% end -%>
   <% end %>
