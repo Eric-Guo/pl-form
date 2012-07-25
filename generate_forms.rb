@@ -8,7 +8,7 @@
 #
 # Need two language (pending)
 # * Fetch previous last record
-# * FOP Introduce 2 level form navitation, profile add department and only show department forms for perticular user
+# * FOP Introduce 2 level form navigation, profile add department and only show department forms for perticular user
 # * Add typeahead of reject code auto complete (done)
 # * QA pass/failed confirm with password and checkbox to indicate result.
 # * Add typeahead of complete reduce lot name input error.

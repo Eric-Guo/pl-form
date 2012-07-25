@@ -6,6 +6,7 @@
   <div class="inputs">
     <%= f.input :badge, :required => true, :autofocus => true %>
     <%= f.input :shift_code, :required => true %>
+    <%= f.input :department, :required => true, :collection => ['MAT','FOP','BOP','TOP','COP','KGD','QA'] %>
     <%= f.input :email %>
     <%= f.input :password, :required => true %>
     <%= f.input :password_confirmation, :required => true %>
