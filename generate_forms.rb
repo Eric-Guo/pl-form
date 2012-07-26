@@ -27,10 +27,21 @@ def generate_form(dept, form, fields, detail_fields=nil)
 
 	if detail_fields.present?
 		dm_name = "#{form}Detail"
-		dm_row_count=detail_fields.shift[1].to_i
+		dm_row_count = detail_fields[:row_count]
+		detail_fields.delete :row_count
+		if detail_fields[:items].present?
+			dm_row_count ||= detail_fields[:items].count
+
+			dm_items = detail_fields[:items]
+			detail_fields[:items]=:string unless dm_items.nil?
+
+			dm_specs = detail_fields[:specs]
+			detail_fields[:specs]=:string unless dm_specs.nil?
+		end
 
 		generate :model, "#{dm_name} #{form.underscore}:references #{detail_fields.collect {|k,v| " #{k}:#{v}"}.join}"
 
+		# resolve index name too long
 		Dir.glob("db/migrate/*_create_#{dm_name.underscore.pluralize}.rb") do |dm|
 			inject_into_file dm, :before => "\n  end\nend" do
 		  	", :name => 'idex_#{dm_name.underscore.pluralize}'"
