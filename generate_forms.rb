@@ -14,6 +14,7 @@
 # * Add typeahead of complete reduce lot name input error.
 # * Add recent form quick list for OP
 # * Detail, Head forms format need to support (done)
+# * Support detail expend in index page (suggest by summer)
 # * Add data and color scope indicator (QA)
 # * file attachment (pending)
 # * Add Item and Spec as detail field description (QA)
