@@ -55,7 +55,7 @@ def generate_form(dept, form, fields, detail_fields=nil)
 	  	"  attr_accessible :#{dm_name.underscore.pluralize}_attributes\n"
 		end
 
-		detail_model_inserts = "  belongs_to :#{form.underscore}\n"
+		detail_model_inserts = "  belongs_to :#{form.underscore}\n\n"
 		if dm_items.present?
 			detail_model_inserts<<"  def items_desc\n"
 			detail_model_inserts<<"    #{dm_items.to_s}\n"
@@ -97,21 +97,28 @@ def generate_form(dept, form, fields, detail_fields=nil)
 		end
 
 		dm_table_headers=detail_fields.keys.map {|e| "<th>#{e.to_s}</th>\n"}.join
-		dm_table_fields=detail_fields.keys.map {|e| "<td><%= g.input :#{e.to_s}, :wrapper => :tdata, :input_html => { :class => 'input-mini' } %></td>\n"}.join
+
+		detail_view__form_inserts = '  <table class="table table-bordered">' + "\n"
+		detail_view__form_inserts<< "    <tr>\n"
+		detail_view__form_inserts<< "#{dm_table_headers}"
+		detail_view__form_inserts<< "    </tr>\n"
+		detail_view__form_inserts<< "<% @#{form.underscore}.#{dm_name.underscore.pluralize}.each do |detail| %>\n"
+		detail_view__form_inserts<< "  <%= f.fields_for :#{dm_name.underscore.pluralize}, detail do |g| %>\n"
+		detail_view__form_inserts<< "    <tr>\n"
+		detail_fields.keys.each do |field_name|
+	  	if [:items, :specs].include? field_name
+				detail_view__form_inserts<< "<td><%= detail.#{field_name.to_s} %></td>\n"
+	 		else
+				detail_view__form_inserts<< "<td><%= g.input :#{field_name.to_s}, :wrapper => :tdata, :input_html => { :class => 'input-mini' } %></td>\n"
+	 		end
+		end
+		detail_view__form_inserts<< "    </tr>\n"
+		detail_view__form_inserts<< "  <% end %>\n"
+		detail_view__form_inserts<< "<% end %>\n"
+		detail_view__form_inserts<< "  </table>\n"
 
 		inject_into_file "app/views/#{form.underscore.pluralize}/_form.html.erb", :before => "  </div><!--end_form-->\n" do
-	  	'  <table class="table table-bordered">' + "\n" + \
-	  	'    <tr>' + "\n" \
-	  	"#{dm_table_headers}" + \
-	  	'    </tr>' + "\n" + \
-	  	"<% @#{form.underscore}.#{dm_name.underscore.pluralize}.each do |detail| %>\n" + \
-	  	"  <%= f.fields_for :#{dm_name.underscore.pluralize}, detail do |g| %>\n" + \
-	  	'    <tr>' + "\n" \
-	  	"#{dm_table_fields}" + \
-	  	'    </tr>' + "\n" + \
-	  	"  <% end %>\n" + \
-	  	"<% end %>\n" + \
-	  	"  </table>\n"
+			detail_view__form_inserts
 		end
 
 		dm_table_items=detail_fields.keys.map {|e| "<td><%= d.#{e.to_s} %></td>\n"}.join
