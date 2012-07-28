@@ -70,10 +70,30 @@ def generate_form(dept, form, fields, detail_fields=nil)
 			detail_model_inserts
 		end
 
+		detail_controller_new_inserts ="    0.upto #{dm_row_count-1} do |i|\n"
+		detail_controller_new_inserts<<"      t=@#{form.underscore}.#{form.underscore}_details.build\n"
+		if dm_items.present?
+			detail_controller_new_inserts<<"        t.items=t.items_desc[i]\n"
+		end
+		if dm_specs.present?
+			detail_controller_new_inserts<<"        t.specs=t.specs_desc[i]\n"
+		end
+		detail_controller_new_inserts<<"    end\n"
 		inject_into_file "app/controllers/#{form.underscore.pluralize}_controller.rb", :after => "#{form}.new\n" do
-	  	"    0.upto #{dm_row_count-1} do |i|\n" + \
-	  	"      @#{form.underscore}.#{form.underscore}_details.build\n" + \
-	  	"    end\n"
+			detail_controller_new_inserts
+		end
+
+		detail_controller_create_inserts ="\n"
+		if dm_items.present?
+			detail_controller_create_inserts<<"    params[:#{form.underscore}][:#{dm_name.underscore.pluralize}_attributes].each do |d|\n"
+			detail_controller_create_inserts<<"      d[1][:items] = @#{form.underscore}.#{dm_name.underscore.pluralize}.build.items_desc[d[0].to_i]\n"
+			if dm_specs.present?
+			detail_controller_create_inserts<<"      d[1][:specs] = @#{form.underscore}.#{dm_name.underscore.pluralize}.build.specs_desc[d[0].to_i]\n"
+			end
+			detail_controller_create_inserts<<"    end\n"
+		end
+		inject_into_file "app/controllers/#{form.underscore.pluralize}_controller.rb", :after => "def create\n" do
+			detail_controller_create_inserts
 		end
 
 		dm_table_headers=detail_fields.keys.map {|e| "<th>#{e.to_s}</th>\n"}.join
