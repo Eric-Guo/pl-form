@@ -60,7 +60,7 @@ def generate_form(dept, form, fields, detail_fields=nil)
 		end
 
 		inject_into_file "app/controllers/#{form.underscore.pluralize}_controller.rb", :after => "#{form}.new\n" do
-	  	"    1.upto #{dm_row_count} do |i|\n" + \
+	  	"    0.upto #{dm_row_count-1} do |i|\n" + \
 	  	"      @#{form.underscore}.#{form.underscore}_details.build\n" + \
 	  	"    end\n"
 		end
