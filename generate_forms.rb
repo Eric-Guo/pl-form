@@ -33,8 +33,8 @@ def generate_form(dept, form, fields, detail_fields=nil)
 		if detail_fields[:items].present?
 			dm_row_count ||= detail_fields[:items].count
 
-			dm_items = detail_fields[:items]
-			detail_fields[:items]=:string unless dm_items.nil?
+			dm_items = detail_fields[:items] # Store Array first
+			detail_fields[:items]=:string unless dm_items.nil? # replace with :string to generate model
 
 			dm_specs = detail_fields[:specs]
 			detail_fields[:specs]=:string unless dm_specs.nil?
@@ -55,8 +55,19 @@ def generate_form(dept, form, fields, detail_fields=nil)
 	  	"  attr_accessible :#{dm_name.underscore.pluralize}_attributes\n"
 		end
 
+		detail_model_inserts = "  belongs_to :#{form.underscore}\n"
+		if dm_items.present?
+			detail_model_inserts<<"  def items_desc\n"
+			detail_model_inserts<<"    #{dm_items.to_s}\n"
+			detail_model_inserts<<"  end\n\n"
+		end
+		if dm_specs.present?
+			detail_model_inserts<<"  def specs_desc\n"
+			detail_model_inserts<<"    #{dm_specs.to_s}\n"
+			detail_model_inserts<<"  end\n\n"
+		end
 		inject_into_file "app/models/#{dm_name.underscore}.rb", :before => "end" do
-	  	"  belongs_to :#{form.underscore}\n"
+			detail_model_inserts
 		end
 
 		inject_into_file "app/controllers/#{form.underscore.pluralize}_controller.rb", :after => "#{form}.new\n" do
