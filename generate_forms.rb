@@ -55,6 +55,10 @@ def generate_form(dept, form, fields, detail_fields=nil)
 	  	"  attr_accessible :#{dm_name.underscore.pluralize}_attributes\n"
 		end
 
+		inject_into_file "app/models/#{dm_name.underscore}.rb", :before => "class" do
+			"# encoding: UTF-8\n" # to avoid some non-English chat may appear in below
+		end
+
 		detail_model_inserts = "  belongs_to :#{form.underscore}\n\n"
 		if dm_items.present?
 			detail_model_inserts<<"  def items_desc\n"
