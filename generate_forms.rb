@@ -6,19 +6,19 @@
 #User
 #Supervisor
 #
-# Need two language (pending)
 # * Fetch previous last record
 # * FOP Introduce 2 level form navigation, profile add department and only show department forms for perticular user
-# * Add typeahead of reject code auto complete (done)
 # * QA pass/failed confirm with password and checkbox to indicate result.
-# * Add typeahead of complete reduce lot name input error.
 # * Add recent form quick list for OP
-# * Detail, Head forms format need to support (done)
-# * Support detail expend in index page (suggest by summer)
 # * Add data and color scope indicator (QA)
-# * file attachment (pending)
-# * Add Item and Spec as detail field description (QA)
 # * Group Detail Item to up 5 times (QA)
+# * Add typeahead of complete reduce lot name input error.
+# * Support detail expend in index page (suggest by summer)
+# * [pending] Display two language in forms
+# * [pending] File attachment
+# * [done] Add typeahead of reject code auto complete
+# * [done] Add Item and Spec as detail field description (QA)
+# * [done] Detail, Head forms format need to support
 def generate_form(dept, form, fields, detail_fields=nil)
 	generate :scaffold, "#{form}#{fields.collect {|k,v| " #{k}:#{v}"}.join}"
 
