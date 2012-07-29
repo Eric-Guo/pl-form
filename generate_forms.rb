@@ -6,7 +6,6 @@
 #User
 #Supervisor
 #
-# * Fetch previous last record
 # * FOP Introduce 2 level form navigation, profile add department and only show department forms for perticular user
 # * QA pass/failed confirm with password and checkbox to indicate result.
 # * Add recent form quick list for OP
@@ -19,6 +18,7 @@
 # * [done] Add typeahead of reject code auto complete
 # * [done] Add Item and Spec as detail field description (QA)
 # * [done] Detail, Head forms format need to support
+# * [done]Fetch previous last record
 def generate_form(dept, form, fields, detail_fields=nil)
 	generate :scaffold, "#{form}#{fields.collect {|k,v| " #{k}:#{v}"}.join}"
 
@@ -83,7 +83,7 @@ def generate_form(dept, form, fields, detail_fields=nil)
 			detail_controller_new_inserts<<"        t.specs=t.specs_desc[i]\n"
 		end
 		detail_controller_new_inserts<<"    end\n"
-		inject_into_file "app/controllers/#{form.underscore.pluralize}_controller.rb", :after => "#{form}.new\n" do
+		inject_into_file "app/controllers/#{form.underscore.pluralize}_controller.rb", :after => "# after_controller_new\n" do
 			detail_controller_new_inserts
 		end
 

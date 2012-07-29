@@ -40,7 +40,11 @@ class <%= controller_class_name %>Controller < ApplicationController
   # GET <%= route_url %>/new
   # GET <%= route_url %>/new.json
   def new
-    @<%= singular_table_name %> = <%= orm_class.build(class_name) %>
+    if params[:last] then
+      @<%= singular_table_name %> = <%= class_name %>.all.last.dup
+    else
+      @<%= singular_table_name %> = <%= orm_class.build(class_name) %>
+    end # after_controller_new
 
     respond_to do |format|
       format.html # new.html.erb
