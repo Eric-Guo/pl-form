@@ -2,7 +2,7 @@
 <% if current_user.present? -%>
 <h2><%= current_user.badge %>'s recent input forms</h2>
 	<% current_user.user_recent_forms.each do |r| -%>
-		<%= link_to r.controller.titleize, :controller => r.controller, :action => :new %>
+		<li><%= link_to r.controller.titleize, :controller => r.controller, :action => :new %></li>
 	<% end -%>
 <% end %>
 <% if (current_user.present? and ['MAT',''].include? current_user.department ) or current_user.blank? -%>
