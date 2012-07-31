@@ -1,4 +1,10 @@
 <div class="hero-unit">
+<% if current_user.present? -%>
+<h2><%= current_user.badge %>'s recent input forms</h2>
+	<% current_user.user_recent_forms.each do |r| -%>
+		<%= link_to r.controller.titleize, :controller => r.controller, :action => :new %>
+	<% end -%>
+<% end %>
 <% if (current_user.present? and ['MAT',''].include? current_user.department ) or current_user.blank? -%>
 <h3>MAT</h3><!--FOP_MAT-->
 <% end %>

@@ -1,7 +1,6 @@
 # encoding: UTF-8
 # PL-Forms Feature Status:
 # * Add typeahead of complete equipment.
-# * Add recent form quick list for OP
 # * Add pass/failed confirm with password and checkbox to indicate result, need define role as QA as seperate
 # * Add typeahead of complete lot name to reduce input error. (dynamic auto complete)
 # * [no technical issue, need MFG line give 2 level category info, lacking such info in Excel] FOP Introduce 2 level form navigation, profile add department and only show department forms for perticular user
@@ -13,7 +12,8 @@
 # * [done] Add typeahead of reject code auto complete
 # * [done] Add Item and Spec as detail field description (QA)
 # * [done] Detail, Head forms format need to support
-# * [done] Fetch previous last record
+# * [done] Fetch previous inputed record (only the latest)
+# * [done] Add recent form quick list for OP
 def generate_form(dept, form, fields, detail_fields=nil)
 	generate :scaffold, "#{form}#{fields.collect {|k,v| " #{k}:#{v}"}.join}"
 
