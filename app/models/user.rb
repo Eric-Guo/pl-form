@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
 
   attr_accessible :shift_code, :department, :supervisor, :qa, :admin
+  attr_accessible :user_recent_forms
+  has_many :user_recent_forms, dependent: :destroy
 
 protected
   def email_required?

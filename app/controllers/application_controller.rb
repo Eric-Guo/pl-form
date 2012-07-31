@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  after_filter :update_user_recent_forms, :only => :create
+
 
   rescue_from CanCan::AccessDenied do |exception|
     flash[:alert] = exception.message
@@ -28,5 +30,16 @@ class ApplicationController < ActionController::Base
 	    headers["Content-Type"] ||= 'text/csv'
 	    headers["Content-Disposition"] = "attachment; filename=\"#{filename}\""
 	  end
+	end
+
+	def update_user_recent_forms
+		if current_user.present? and controller_name != 'sessions'
+			r=current_user.user_recent_forms.find_by_controller(controller_name)
+			if r.nil?
+				r=current_user.user_recent_forms.build
+				r.controller=controller_name
+				r.save
+			end
+		end
 	end
 end
