@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
 	end
 
 	def update_user_recent_forms
-		if current_user.present? and controller_name != 'sessions'
+		if current_user.present? and  ( ! ['sessions','registrations'].include? controller_name)
 			r=current_user.user_recent_forms.find_by_controller(controller_name)
 			if r.nil?
 				r=current_user.user_recent_forms.build
