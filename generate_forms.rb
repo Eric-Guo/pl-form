@@ -1,24 +1,19 @@
 # encoding: UTF-8
-#Equipment,Container need autocomplete
-#
-#confirmed by need password confirm
-#QA
-#User
-#Supervisor
-#
-# * FOP Introduce 2 level form navigation, profile add department and only show department forms for perticular user
-# * QA pass/failed confirm with password and checkbox to indicate result.
+# PL-Forms Feature Status:
+# * Add typeahead of complete equipment.
 # * Add recent form quick list for OP
-# * Add data and color scope indicator (QA)
-# * Group Detail Item to up 5 times (QA)
-# * Add typeahead of complete reduce lot name input error.
-# * Support detail expend in index page (suggest by summer)
-# * [pending] Display two language in forms
-# * [pending] File attachment
+# * Add pass/failed confirm with password and checkbox to indicate result, need define role as QA as seperate
+# * Add typeahead of complete lot name to reduce input error. (dynamic auto complete)
+# * [no technical issue, need MFG line give 2 level category info, lacking such info in Excel] FOP Introduce 2 level form navigation, profile add department and only show department forms for perticular user
+# * [pending due to it's a UI enhancement only]Support detail expend in index page (suggest by summer)
+# * [pending due to forms not complete, so vocabulary not complete] Display two language in forms
+# * [pending due to no forms needs]Group Detail Item to up 5 times (QA)
+# * [pending due to no forms needs currently] File attachment
+# * [pending due to it's not general feature for forms tempalte] Add data and color scope indicator (QA)
 # * [done] Add typeahead of reject code auto complete
 # * [done] Add Item and Spec as detail field description (QA)
 # * [done] Detail, Head forms format need to support
-# * [done]Fetch previous last record
+# * [done] Fetch previous last record
 def generate_form(dept, form, fields, detail_fields=nil)
 	generate :scaffold, "#{form}#{fields.collect {|k,v| " #{k}:#{v}"}.join}"
 
