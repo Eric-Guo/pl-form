@@ -43,7 +43,7 @@ qa_qc_package_mark_monitor_fields = {
 	:peeling_test    => :boolean,
 }
 qa_qc_package_mark_monitor_detail_fields = {
-	:item => ["Demention A","Demention B","Demention C","Demention D","Demention E"],
+	:items => ["Demention A","Demention B","Demention C","Demention D","Demention E"],
 	:demention=> :float,
 }
 generate_form 'QA', 'QcPackageMarkMonitor',
@@ -64,7 +64,7 @@ qa_qc_laser_cut_monitor_fields = {
 	:remark => :string,
 }
 qa_qc_laser_cut_monitor_detail_fields = {
-	:item => ["Demention A","Demention B","Demention C","Demention D","Demention E"],
+	:items => ["Demention A","Demention B","Demention C","Demention D","Demention E"],
 	:demention => :float,
 }
 generate_form 'QA', 'QcLaserCutMonitor',
