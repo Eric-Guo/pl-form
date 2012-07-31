@@ -1,15 +1,15 @@
 # encoding: UTF-8
 # PL-Forms Feature Status:
-# * Add typeahead of complete equipment.
 # * Add pass/failed confirm with password and checkbox to indicate result, need define role as QA as seperate
-# * Add typeahead of complete lot name to reduce input error. (dynamic auto complete)
+# * Add typeahead of complete lot name to reduce input error. (dynamic auto complete, need link to MES DB in backend)
 # * [no technical issue, need MFG line give 2 level category info, lacking such info in Excel] FOP Introduce 2 level form navigation, profile add department and only show department forms for perticular user
 # * [pending due to it's a UI enhancement only]Support detail expend in index page (suggest by summer)
 # * [pending due to forms not complete, so vocabulary not complete] Display two language in forms
-# * [pending due to no forms needs]Group Detail Item to up 5 times (QA)
+# * [pending due to no forms needs currently] Group Detail Item to up 5 times (QA)
 # * [pending due to no forms needs currently] File attachment
-# * [pending due to it's not general feature for forms tempalte] Add data and color scope indicator (QA)
-# * [done] Add typeahead of reject code auto complete
+# * [pending due to it's not a general feature for forms tempalte, so can add latter by one by one] Add data and color scope indicator (QA)
+# * [done] Add typeahead of reject code auto complete.
+# * [done] Add typeahead of complete equipment. (static auto complete function is done)
 # * [done] Add Item and Spec as detail field description (QA)
 # * [done] Detail, Head forms format need to support
 # * [done] Fetch previous inputed record (only the latest)
