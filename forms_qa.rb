@@ -65,7 +65,7 @@ qa_qc_laser_cut_monitor_fields = {
 }
 qa_qc_laser_cut_monitor_detail_fields = {
 	:items => ["Demention A","Demention B","Demention C","Demention D","Demention E"],
-	:demention => :float,
+	:dimension => :float,
 }
 generate_form 'QA', 'QcLaserCutMonitor',
 	(qa_qc_laser_cut_monitor_fields.merge common_fields), qa_qc_laser_cut_monitor_detail_fields
