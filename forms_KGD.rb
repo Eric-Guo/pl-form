@@ -4,7 +4,7 @@
 kgd_common_production_fields = {
 	:machine_no    => :string,
 	:date          => :date,
-	:Shift         => :string,
+	:shift         => :string,
 	:operator_id   => :integer,
 	:wafer_part_no => :string,
 	:mes_lot_no    => :string,
