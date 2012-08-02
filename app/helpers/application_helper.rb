@@ -1,3 +1,4 @@
+# encoding: UTF-8
 module ApplicationHelper
   def pl_field(f, field_name)
   	case field_name
@@ -10,7 +11,7 @@ module ApplicationHelper
   	when :status_code
   		f.input field_name.to_sym, :collection => ['N','OP','CS','CD','CT','RM','PM','CP'], :required => true
     when :kgd_machine_status
-      f.input field_name.to_sym, :collection => ['A','B','C','D','E','F','G','H','I','J','K','L'], :required => true
+      f.input field_name.to_sym, :collection => ['A :Operation Time (机器运行时间)','B :Check Probe Mark (检查针痕)','C :Change Probe Card (更换针卡)','D :Setup Device (机器转换不同产品)','E :PM & CAL (维护校准时间)','F :Prober Down Time (针测机停机时间)','G :Tester Down Time (测试机停机时间)','H :Facility Down (厂务停机时间)','I :Engeer Use Time (工程使用时间)','J :End lot Time (Lot转换时间)','K :Idle (待料时间)','L :Misc (其它)'], :required => true
   	else
   		f.input field_name.to_sym
   	end

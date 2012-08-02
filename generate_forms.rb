@@ -151,7 +151,7 @@ def generate_form(dept, form, fields, detail_fields=nil)
 	end if fields.has_key? :status_code
 
 	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :after => '<!--Note-->' do
-'<h5>KGD Machine Status: A :Operation Time(机器运行时间)      B :Check Probe Mark(检查针痕)     C :Change Probe Card(更换针卡)     D :Setup Device(机器转换不同产品)       E :PM & CAL(维护校准时间)   F :Prober Down Time(针测机停机时间)    G :Tester Down Time(测试机停机时间)       H :Facility Down(厂务停机时间)        I :Engeer Use Time(工程使用时间)        J :End lot Time(Lot转换时间)       K :Idle(待料 时间)         L :Misc(其它)</h5>'
+'<h5>KGD Machine Status: A :Operation Time (机器运行时间); B :Check Probe Mark (检查针痕); C :Change Probe Card (更换针卡); D :Setup Device (机器转换不同产品); E :PM & CAL (维护校准时间); F :Prober Down Time (针测机停机时间); G :Tester Down Time (测试机停机时间); H :Facility Down (厂务停机时间); I :Engeer Use Time (工程使用时间); J :End lot Time (Lot转换时间); K :Idle (待料时间); L :Misc (其它)</h5>'
 	end if fields.has_key? :kgd_machine_status
 
 	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :before => '  <%= f.submit :class => "btn" %>' do
