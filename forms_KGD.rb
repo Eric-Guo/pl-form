@@ -2,21 +2,29 @@
 
 # Common Production Fields can be merge in production log form
 kgd_common_production_fields = {
-	:status_code => :string,
-	:device      => :string,
-	:lot_no      => :string,
-	:reject_code => :string,
-	:remark      => :string,
+	:machine_no    => :string,
+	:date          => :date,
+	:Shift         => :string,
+	:operator_id   => :integer,
+	:wafer_part_no => :string,
+	:mes_lot_no    => :string,
+	:wafer_id      => :string,
+	:remark        => :string,
 }
 
 # DOC# 3983-02-00003	 SDSS KGD Testing Production Log Sheet
 sdss_kgd_testing_production_fields = {
-	:profile_check => :string,
-	:in_time       => :timestamp,
+	:program       => :string,
+	:tempreature      => :integer,
+    :over_drive_um      => :integer,
+    :in_time       => :timestamp,
 	:out_time      => :timestamp,
+    :probe_mark_check_result  => :boolean,
+    :machine_status => :string,
+
 }
 generate_form 'KGD_PRD', 'SdssKgdTestingProduction',
-	(kgd_common_production_fields.merge sdss_kgd_testing_production_fields.merge common_fields)
+	(kgd_common_production_fields.merge sdss_kgd_testing_production_fields)
 
 # DOC# KGD test	3983-02-00004	 SDSS KGD Material Loan Record
 sdss_kgd_material_loan_fields = {
