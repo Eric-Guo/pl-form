@@ -1,7 +1,8 @@
 # encoding: UTF-8
 # PL-Forms Feature Status:
-# * Add pass/failed confirm with password and checkbox to indicate result, need define role as QA as seperate
+# * Add pass/failed confirm with QA, allow QA confirm after Operator input the data, QA have an extended time (e.g. 4 hours) to confirm
 # * Add typeahead of complete lot name to reduce input error. (via dynamicly, need link to MES DB in backend)
+# * All update action must be record down, not only including last one, all in history
 # * [no technical issue, need MFG line give 2 level category info, lacking such info in Excel] FOP Introduce 2 level form navigation, profile add department and only show department forms for perticular user
 # * [pending due to it's a UI enhancement only]Support detail expend in index page (suggest by summer)
 # * [pending due to forms not complete, so vocabulary not complete] Display two language in forms
@@ -148,6 +149,10 @@ def generate_form(dept, form, fields, detail_fields=nil)
 	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :after => '<!--Note-->' do
 '<h5>Status Code: (N) Normal operation 一般作业；(SC)Shift Change 换班；(OP) MC Set Up 开机；(CD) Change device换型号；(CS) Change solder paste  换锡膏；(CC) Change component  换元器件；(MS) mount squeegee 安装刮刀；(CS) change stencil 更换钢板；(RM) Repaire M/C 修机；(PM) PM 保养。</h5>'
 	end if fields.has_key? :status_code
+
+	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :after => '<!--Note-->' do
+'<h5>KGD Machine Status: A :Operation Time(机器运行时间)      B :Check Probe Mark(检查针痕)     C :Change Probe Card(更换针卡)     D :Setup Device(机器转换不同产品)       E :PM & CAL(维护校准时间)   F :Prober Down Time(针测机停机时间)    G :Tester Down Time(测试机停机时间)       H :Facility Down(厂务停机时间)        I :Engeer Use Time(工程使用时间)        J :End lot Time(Lot转换时间)       K :Idle(待料 时间)         L :Misc(其它)</h5>'
+	end if fields.has_key? :kgd_machine_status
 
 	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :before => '  <%= f.submit :class => "btn" %>' do
 "  <%= f.text_field :device_cont, :class => 'input-small search-query', :placeholder => 'PN Device', :title => 'Type here to search PN Device' %>\n"
