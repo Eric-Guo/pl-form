@@ -1,5 +1,14 @@
 # encoding: UTF-8
 
+# Common Production Fields can be merge in production log form
+kgd_common_production_fields = {
+	:status_code => :string,
+	:device      => :string,
+	:lot_no      => :string,
+	:reject_code => :string,
+	:remark      => :string,
+}
+
 # DOC# 3983-02-00003	 SDSS KGD Testing Production Log Sheet
 sdss_kgd_testing_production_fields = {
 	:profile_check => :string,
@@ -7,7 +16,7 @@ sdss_kgd_testing_production_fields = {
 	:out_time      => :timestamp,
 }
 generate_form 'KGD_PRD', 'SdssKgdTestingProduction',
-	(common_production_fields.merge sdss_kgd_testing_production_fields.merge common_fields)
+	(kgd_common_production_fields.merge sdss_kgd_testing_production_fields.merge common_fields)
 
 # DOC# KGD test	3983-02-00004	 SDSS KGD Material Loan Record
 sdss_kgd_material_loan_fields = {
@@ -115,7 +124,7 @@ sdss_kgd_wafer_sorter_production_fields = {
 	:out_time      => :timestamp,
 }
 generate_form 'KGD_PRD', 'SdssKgdWaferSorterProduction',
-    (common_production_fields.merge sdss_kgd_wafer_sorter_production_fields.merge common_fields)
+    (kgd_common_production_fields.merge sdss_kgd_wafer_sorter_production_fields.merge common_fields)
 
 # DOC# 3985-02-00006	 KGD_Enginner_lot_N2_Cabinet_Record(KGD工程批氮气柜记录表)
 kgd_enginner_lot_n2_cabinet_fields = {

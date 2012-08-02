@@ -194,15 +194,6 @@ common_fields = {
 	:update_shift_code => :string,
 }
 
-# Common Production Fields can be merge in production log form
-common_production_fields = {
-	:status_code => :string,
-	:device      => :string,
-	:lot_no      => :string,
-	:reject_code => :string,
-	:remark      => :string,
-}
-
 # generate FOP forms
 #eval File.read(File.expand_path('../forms_fop.rb', __FILE__))
 

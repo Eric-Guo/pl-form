@@ -1,5 +1,14 @@
 # encoding: UTF-8
 
+# Common Production Fields can be merge in production log form
+fop_common_production_fields = {
+	:status_code => :string,
+	:device      => :string,
+	:lot_no      => :string,
+	:reject_code => :string,
+	:remark      => :string,
+}
+
 # DOC#: 3743-02-10007 金线领用及入库记录单
 gold_wire_in_out_fields = {
 	:gold_wire_no        => :string,
@@ -152,7 +161,7 @@ die_sort_production_fields = {
 	:confirm_by               => :string,
 }
 generate_form 'FOP_PRD', 'DieSortProduction',
-	(common_production_fields.merge die_sort_production_fields.merge common_fields)
+	(fop_common_production_fields.merge die_sort_production_fields.merge common_fields)
 
 
 # DOC#: 3745-02-10004 SMT Production log sheet 作业记录表
@@ -167,7 +176,7 @@ smt_production_fields = {
 	:confirm_by                       => :string,
 }
 generate_form 'FOP_PRD', 'SMT-Production',
-	(common_production_fields.merge smt_production_fields.merge common_fields)
+	(fop_common_production_fields.merge smt_production_fields.merge common_fields)
 
 
 # DOC#: 3745-02-30007 DP(Back/Grinding) DP_Production_log_sheet 作业记录表
@@ -183,7 +192,7 @@ dp_production_fields = {
 	:confirm_by                            => :string,
 }
 generate_form 'FOP_PRD', 'DPBackGrindingProduction',
-	(common_production_fields.merge dp_production_fields.merge common_fields)
+	(fop_common_production_fields.merge dp_production_fields.merge common_fields)
 
 
 # DOC#: 3745-02-40004 DP(Wafer Saw) DP_Production_log_sheet 作业记录表
@@ -200,7 +209,7 @@ dp_ws_production_fields = {
 	:confirm_by                            => :string,
 }
 generate_form 'FOP_PRD', 'DPWaferSawProduction',
-	(common_production_fields.merge dp_ws_production_fields.merge common_fields)
+	(fop_common_production_fields.merge dp_ws_production_fields.merge common_fields)
 
 
 # DOC#:3745-02-40008 SAW刀信息记录
@@ -257,7 +266,7 @@ die_attach_production_fields = {
 	:confirm_by               => :string,
 }
 generate_form 'FOP_PRD', 'DieAttachProduction',
-	(common_production_fields.merge die_attach_production_fields.merge common_fields)
+	(fop_common_production_fields.merge die_attach_production_fields.merge common_fields)
 
 
 # DOC#  3745-02-50008 DA(Oven Cure) Production log sheet 作业记录表
@@ -271,7 +280,7 @@ da_oven_cure_production_fields = {
 	:remark                    => :string,
 }
 generate_form 'FOP_PRD', 'DA-OvenCureProduction',
-	(common_production_fields.merge da_oven_cure_production_fields.merge common_fields)
+	(fop_common_production_fields.merge da_oven_cure_production_fields.merge common_fields)
 
 
 # DOC# 3745-02-20021 DA改机通知单
@@ -333,7 +342,7 @@ the_3vm_optical_production_fields = {
 	:remark              => :string,
 }
 generate_form 'FOP_PRD', 'The3VMOpticalProduction',
-	(common_production_fields.merge the_3vm_optical_production_fields.merge common_fields)
+	(fop_common_production_fields.merge the_3vm_optical_production_fields.merge common_fields)
 
 
 # DOC# 3746-02-10004 Mold_Production_Log_Sheet

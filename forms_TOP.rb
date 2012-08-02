@@ -1,5 +1,14 @@
 # encoding: UTF-8
 
+# Common Production Fields can be merge in production log form
+top_common_production_fields = {
+	:status_code => :string,
+	:device      => :string,
+	:lot_no      => :string,
+	:reject_code => :string,
+	:remark      => :string,
+}
+
 # DOC# 3735-02-00025	MT productin log sheet
 memory_test_positrol_fields = {
 	:profile_check  => :string,
@@ -7,7 +16,7 @@ memory_test_positrol_fields = {
 	:out_time    => :timestamp,
 }
 generate_form 'TOP', 'MemoryTestProductin',
-	(common_production_fields.merge memory_test_positrol_fields.merge common_fields)
+	(top_common_production_fields.merge memory_test_positrol_fields.merge common_fields)
 
 # DOC# 3775-02-00103	CT productin log sheet
 card_test_production_fields = {
@@ -16,7 +25,7 @@ card_test_production_fields = {
 	:out_time    => :timestamp,
 }
 generate_form 'TOP', 'CardTestProduction',
-	(common_production_fields.merge card_test_production_fields.merge common_fields)
+	(top_common_production_fields.merge card_test_production_fields.merge common_fields)
 
 # DOC# 3795-02-00006	TFCL productin log sheet
 tfcl_production_fields = {
@@ -25,7 +34,7 @@ tfcl_production_fields = {
 	:out_time    => :timestamp,
 }
 generate_form 'TOP', 'TfclProduction',
-	(common_production_fields.merge tfcl_production_fields.merge common_fields)
+	(top_common_production_fields.merge tfcl_production_fields.merge common_fields)
 
 # DOC# 3735-02-00026	Memory Test Daily check list
 memory_test_daily_check_fields = {

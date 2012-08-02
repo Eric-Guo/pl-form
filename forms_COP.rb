@@ -1,4 +1,14 @@
 # encoding: UTF-8
+
+# Common Production Fields can be merge in production log form
+cop_common_production_fields = {
+	:status_code => :string,
+	:device      => :string,
+	:lot_no      => :string,
+	:reject_code => :string,
+	:remark      => :string,
+}
+
 # DOC# 3755-02-00101 	COP FVI Rework Form
 cop_rework_form_fields = {
 	:profile_check  => :string,
