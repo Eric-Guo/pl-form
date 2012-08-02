@@ -253,20 +253,21 @@ generate_form 'FOP_PRD', 'DP2VMProductionLog',
 
 # DOC# 3745-02-50004 DA Production log sheet作业记录表
 die_attach_production_fields = {
-	:op_id                    => :string,
 	:status_code              => :string,
 	:lot_no                   => :string,
+	:reject_code		      => :string,
+	:remark					  => :string,
 	:check_type               => :string,
-	:visual_inspection_result => :string,
-	:die_placement_x          => :float,
-	:die_placement_y          => :float,
-	:die_rotation             => :float,
-	:die_tilt                 => :float,
-	:stack_height             => :float,
+	:device 				  => :string,
 	:confirm_by               => :string,
 }
+die_attach_production_detail_fields = {
+	:items => ["低倍显微镜目检结果 Visual Inspection","芯片偏移 Die Placement (≤ ±25µm)","芯片旋转 Die Rotation (memory ≤ 20um  CTL/CB≤15um)","芯片倾斜 Die tilt (≤50µm )","叠片高度 Stack height , 标准参见DA positrol guide line"],
+	:result_x => :float,
+	:result_y => :float,
+}
 generate_form 'FOP_PRD', 'DieAttachProduction',
-	(fop_common_production_fields.merge die_attach_production_fields.merge common_fields)
+	(die_attach_production_fields.merge common_fields), die_attach_production_detail_fields
 
 
 # DOC#  3745-02-50008 DA(Oven Cure) Production log sheet 作业记录表
