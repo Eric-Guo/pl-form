@@ -14,14 +14,13 @@ kgd_common_production_fields = {
 
 # DOC# 3983-02-00003	 SDSS KGD Testing Production Log Sheet
 sdss_kgd_testing_production_fields = {
-	:program       => :string,
-	:tempreature      => :integer,
-    :over_drive_um      => :integer,
-    :in_time       => :timestamp,
-	:out_time      => :timestamp,
-    :probe_mark_check_result  => :boolean,
-    :machine_status => :string,
-
+		:program       => :string,
+		:tempreature      => :integer,
+		:over_drive_um      => :integer,
+		:in_time       => :timestamp,
+		:out_time      => :timestamp,
+		:probe_mark_check_result  => :boolean,
+		:kgd_machine_status => :string,
 }
 generate_form 'KGD_PRD', 'SdssKgdTestingProduction',
 	(kgd_common_production_fields.merge sdss_kgd_testing_production_fields)
