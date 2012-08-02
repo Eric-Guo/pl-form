@@ -201,15 +201,15 @@ generate_form 'QA', 'QcRetailFulfillmentShippingMonitor',
 
 # DOC#: F1206-0002 Substrate Incoming Inspection Report
 substrate_incoming_inspection_fields = {
-	:part_no      => :string,
-	:material_description      => :string,
-	:po_no	=> :string,
-	:supplier_lot_no => :string,
-	:material_spec      => :string,
-	:receiving_date	=> :date,
-	:supplier => :string,
-	:iqa_inspection_date => :date,
-	:receiving_quantity => :integer,
+	:part_no              => :string,
+	:material_description => :string,
+	:po_no                => :string,
+	:supplier_lot_no      => :string,
+	:material_spec        => :string,
+	:receiving_date       => :date,
+	:supplier             => :string,
+	:iqa_inspection_date  => :date,
+	:receiving_quantity   => :integer,
 }
 substrate_incoming_inspection_detail_fields = {
 	:items => [

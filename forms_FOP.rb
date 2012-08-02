@@ -108,7 +108,6 @@ product_important_use_fields = {
 	:release_badge  => :string,
 	:receive_badge  => :string,
 	:remark         => :string,
-
 }
 generate_form 'FOP_MAT', 'ProductImportantUseApply',
 	(product_important_use_fields.merge common_fields)
@@ -265,7 +264,7 @@ generate_form 'FOP_PRD', 'DieAttachProduction',
 da_oven_cure_production_fields = {
 	:machine_no                => :string,
 	:status_code               => :string,
-	:over_type                 => :string,
+	:oven_type                 => :string,
 	:program_no                => :string,
 	:begin_time                => :timestamp,
 	:cure_profile_check_result => :string,
