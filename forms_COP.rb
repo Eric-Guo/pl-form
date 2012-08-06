@@ -20,27 +20,73 @@ generate_form 'COP_PRD', 'CopFviReworkForm',
 
 # DOC# 3755-02-11001	Production Log Sheet(Tray Ink mark)
 tray_ink_mark_production_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamp,
-	:out_time    => :timestamp,
+	:machine_no                 => :string,
+	:status_code                => :string,
+	:device_no                  => :string,
+	:program_id                 => :string,
+	:lot_no                     => :string,
+	:in_qty                     => :integer,
+	:out_qty                    => :integer,
+	:visual_inspection_recorder => :string,
+	:remark                     => :string,
+}
+tray_ink_mark_production_detail_fields = {
+	:items               => ["position measurement x 位置测量 x", "position measurement y 位置测量 y"],
+	:data1               => :float,
+	:data2               => :float,
+	:data3               => :float,
+	:data4               => :float,
+	:data5               => :float,
+	:printing_times      => :integer,
+	:visual_inspection   => :boolean,
+	:viscosity_test_1_3s => :boolean,
+	:peeling_test_by_QC  => :boolean,
+	:solvents_test_by_QC => :boolean,
 }
 generate_form 'COP_PRD', 'TrayInkMarkProduction',
-	(tray_ink_mark_production_fields.merge common_fields)
+	(tray_ink_mark_production_fields.merge common_fields), tray_ink_mark_production_detail_fields
 
 # DOC# 3755-02-11005	Cosmetic_Marking_Production_Log_Sheet_R1
 cosmetic_marking_production_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamp,
-	:out_time    => :timestamp,
+	:machine_no                 => :string,
+	:status_code                => :string,
+	:lot_no                     => :string,
+	:device_no                  => :string,
+	:in_qty                     => :integer,
+	:out_qty                    => :integer,
+	:visual_inspection_recorder => :string,
+	:remark                     => :string,
+}
+cosmetic_marking_production_detail_fields = {
+	:check_items         => ["Position measurement_x 位置测量_x", "Position measurement_y位置测量_y", "Ink Thickness油墨厚度"],
+	:data1               => :float,
+	:data2               => :float,
+	:data3               => :float,
+	:data4               => :float,
+	:data5               => :float,
+	:data6               => :float,
+	:visual_inspection   => :boolean,
+	:peeling_test_by_QC  => :boolean,
+	:solvents_test_by_QC => :boolean,
 }
 generate_form 'COP_PRD', 'CosmeticMarkingProduction',
-	(cosmetic_marking_production_fields.merge common_fields)
+	(cosmetic_marking_production_fields.merge common_fields), cosmetic_marking_production_detail_fields
 
 # DOC# 3755-02-12001	Production Log Sheet(Compound Black TOP)
 compound_black_top_production_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamp,
-	:out_time    => :timestamp,
+	:machine_no                     => :string,
+	:status_code                    => :string,
+	:lot_no                         => :string,
+	:device_no                      => :string,
+	:in_qty                         => :integer,
+	:out_qty                        => :integer,
+	:rework_qty                     => :integer,
+	:rework_units_inspection_result => :string,
+	:visual_inspection_recorder     => :string,
+	:remark                         => :string,
+	:silk_print_position            => :boolean,
+	:visual_inspection              => :boolean,
+	:permanence_test_by_QC          => :boolean,
 }
 generate_form 'COP_PRD', 'CompoundBlackTopProduction',
 	(compound_black_top_production_fields.merge common_fields)
@@ -66,12 +112,31 @@ generate_form 'COP_PRD', 'WeldingProduction',
 
 # DOC# 3755-02-50004	Production Log Sheet ( card assembly laser mark)
 card_assembly_laser_mark_production_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamp,
-	:out_time    => :timestamp,
+	:machine_no                 => :string,
+	:status_code                => :string,
+	:lot_no                     => :string,
+	:in_qty                     => :integer,
+	:out_qty                    => :integer,
+	:visual_inspection_recorder => :string,
+	:remark                     => :string,
+	:frequency                  => :string,
+	:device                     => :string,
+}
+card_assembly_laser_mark_production_detail_fields = {
+	:items             => ['buyoff position measurement_x', 'buyoff position measurement_y'],
+	:data1             => :float,
+	:data2             => :float,
+	:data3             => :float,
+	:data4             => :float,
+	:data5             => :float,
+	:data6             => :float,
+	:data7             => :float,
+	:data8             => :float,
+	:visual_inspection => :boolean,
+	:laser_power       => :boolean,
 }
 generate_form 'COP_PRD', 'CardAssemblyLaserMarkProduction',
-	(card_assembly_laser_mark_production_fields.merge common_fields)
+	(card_assembly_laser_mark_production_fields.merge common_fields), card_assembly_laser_mark_production_detail_fields
 
 # DOC# 3755-02-60004	Production Log Sheet (SD label)
 sd_label_production_fields = {
@@ -91,16 +156,31 @@ card_fvi_production_fields = {
 generate_form 'COP_PRD', 'CardFviProduction',
 	(card_fvi_production_fields.merge common_fields)
 
-
 # DOC# 3755-02-60029 Production Log Sheet (Mask Label)
 mask_label_production_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamp,
-	:out_time    => :timestamp,
+	:machine_no                 => :string,
+	:status_code                => :string,
+	:lot_no                     => :string,
+	:in_qty                     => :integer,
+	:out_qty                    => :integer,
+	:visual_inspection_recorder => :string,
+	:remark                     => :string,
+	:frequency                  => :string,
+}
+mask_label_production_detail_fields  = {
+	:items                  =>  ["mask Label position_a标签位置_a", "mask Label position_b标签位置_b", "mask Label thickness_c(mm)标签厚度_c(mm)"],
+	:data1                  => :float,
+	:data2                  => :float,
+	:data3                  => :float,
+	:data4                  => :float,
+	:data5                  => :float,
+	:data6                  => :float,
+	:mask_label_orientation => :boolean,
+	:mask_Label_permanent   => :boolean,
+	:confirm_by_QC          => :boolean,
 }
 generate_form 'COP_PRD', 'MaskLabelProduction',
-	(mask_label_production_fields.merge common_fields)
-
+	(mask_label_production_fields.merge common_fields), mask_label_production_detail_fields
 
 # DOC# 3755-02-60041 	FVI Production log sheet
 fvi_production_fields = {
@@ -132,21 +212,43 @@ generate_form 'COP_PRD', 'JewelCasePackingProduction',
 
 # DOC# 3755-02-90011	Production Log Sheet ( Ink Masking)
 ink_masking_production_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamp,
-	:out_time    => :timestamp,
+	:machine_no        => :string,
+	:status_code       => :string,
+	:lot_no            => :string,
+	:in_qty            => :integer,
+	:out_qty           => :integer,
+	:Visual_inspection_recorder   => :string,
+	:remark            => :string,
+	:frequency         => :string,
+}
+ink_masking_production_detail_fields = {
+	:items  => ["ink mask position_a标签位置_a", "ink mask position_b标签位置_b", "ink mask position_c标签位置_c", "ink mask position_d标签位置_d","ink mask thickness_e标签厚度_e"],
+	:data_1   => :float,
+	:data_2   => :float,
+	:data_3   => :float,
+	:data_4   => :float,
+	:data_5   => :float,
+	:data_6   => :float,
+	:ink_mask_permanent   => :boolean,
+	:confirm_by_QC   => :boolean,
 }
 generate_form 'COP_PRD', 'InkMaskingProduction',
-	(ink_masking_production_fields.merge common_fields)
+	(ink_masking_production_fields.merge common_fields), ink_masking_production_detail_fields
 
-# DOC# 3755-02-60016	Production Log Sheet (Mask Label Bake)
-mask_label_bake_production_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamp,
-	:out_time    => :timestamp,
+# DOC# 3755-02-60016	Production Log Sheet (Bake)
+bake_production_fields = {
+	:machine_no    => :string,
+	:status_code   => :string,
+	:lot_no        => :string,
+	:out_qty       => :integer,
+	:bake_program  => :string,
+	:temp          => :string,
+	:profile_check => :boolean,
+	:remarks       => :string,
 }
-generate_form 'COP_PRD', 'MaskLabelBakeProduction',
-	(mask_label_bake_production_fields.merge common_fields)
+generate_form 'COP_PRD', 'BakeProduction',
+	(bake_production_fields.merge common_fields)
+
 
 # DOC# 3751-02-10011	Auto_Welding_Equipment_Half-Yearly_PM
 auto_welding_equipment_half_yearly_pm_fields = {
