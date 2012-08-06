@@ -176,7 +176,7 @@ smt_production_fields = {
 	:check_item                       => :string,
 	:confirm_by                       => :string,
 smt_production_detail_fields = {
-	:items => ["Visual Inspection after printing(印刷之后目检)","Solder thickness(锡膏厚度)","Capacitor shear force(电容剪切力)","Visual Inspection after SMT   (SMT之后目检)"]
+	:items => ["Visual Inspection after printing(印刷之后目检)","Solder thickness(锡膏厚度)","Capacitor shear force(电容剪切力)","Visual Inspection after SMT   (SMT之后目检)"],
 	:result => :string,
 }
 generate_form 'FOP_PRD', 'SMT-Production',
@@ -195,7 +195,7 @@ dp_production_fields = {
 	:repair_adjustment_or_change_materials => :string,
 	:check_item                            => :string,
 dp_production_detail_fields = {
-	:items => ["Wafer Thickness (是否pass)","Visual Inspection (是否pass)"]
+	:items => ["Wafer Thickness (是否pass)","Visual Inspection (是否pass)"],
 	:result                                => :boolean,
 	:confirm_by                            => :string,
 }
@@ -214,7 +214,7 @@ dp_ws_production_fields = {
 	:remark                                => :string,
 	:repair_adjustment_or_change_materials => :string,
 dp_ws_production_detail_fields = {
-	:items => ["Kerf width","Inspection code"]
+	:items => ["Kerf width","Inspection code"],
 	:result                                => :string,
 	:confirm                               => :string,
 }
