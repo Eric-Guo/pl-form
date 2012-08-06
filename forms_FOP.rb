@@ -166,15 +166,16 @@ generate_form 'FOP_PRD', 'DieSortProduction',
 
 # DOC#: 3745-02-10004 SMT Production log sheet 作业记录表
 smt_production_fields = {
-	:status_code                      =>:string,
-  :device_no                        =>:string,
-  :lot_no                           =>:string,
-	:in_qty                           => :integer,
-	:out_qty                          => :integer,
-	:inspection_result                => :string,
-	:remark                           => :string,
-	:check_item                       => :string,
-	:confirm_by                       => :string,
+	:status_code       =>:string,
+	:device_no         =>:string,
+	:lot_no            =>:string,
+	:in_qty            => :integer,
+	:out_qty           => :integer,
+	:inspection_result => :string,
+	:remark            => :string,
+	:check_item        => :string,
+	:confirm_by        => :string,
+}
 smt_production_detail_fields = {
 	:items => ["Visual Inspection after printing(印刷之后目检)","Solder thickness(锡膏厚度)","Capacitor shear force(电容剪切力)","Visual Inspection after SMT   (SMT之后目检)"],
 	:result => :string,
@@ -194,6 +195,7 @@ dp_production_fields = {
 	:remark                                => :string,
 	:repair_adjustment_or_change_materials => :string,
 	:check_item                            => :string,
+}
 dp_production_detail_fields = {
 	:items => ["Wafer Thickness (是否pass)","Visual Inspection (是否pass)"],
 	:result                                => :boolean,
@@ -213,6 +215,7 @@ dp_ws_production_fields = {
 	:inspection_recorder                   => :string,
 	:remark                                => :string,
 	:repair_adjustment_or_change_materials => :string,
+}
 dp_ws_production_detail_fields = {
 	:items => ["Kerf width","Inspection code"],
 	:result                                => :string,
