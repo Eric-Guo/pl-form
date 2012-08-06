@@ -167,8 +167,8 @@ generate_form 'FOP_PRD', 'DieSortProduction',
 # DOC#: 3745-02-10004 SMT Production log sheet 作业记录表
 smt_production_fields = {
 	:status_code                      =>:string,
-    :device_no                        =>:string,
-    :lot_no                           =>:string,
+  :device_no                        =>:string,
+  :lot_no                           =>:string,
 	:qty_in                           => :integer,
 	:qty_out                          => :integer,
 	:inspection_result                => :string,
@@ -176,7 +176,7 @@ smt_production_fields = {
 	:check_item                       => :string,
 	:confirm_by                       => :string,
 smt_production_detail_fields = {
-	:items => ["Visual Inspection after printing(印刷之后目检)","Solder thickness(锡膏厚度)","capacitor shear force(电容剪切力)","Visual Inspection after SMT   (SMT之后目检)"]
+	:items => ["Visual Inspection after printing(印刷之后目检)","Solder thickness(锡膏厚度)","Capacitor shear force(电容剪切力)","Visual Inspection after SMT   (SMT之后目检)"]
 	:result => :string,
 }
 generate_form 'FOP_PRD', 'SMT-Production',
@@ -187,20 +187,20 @@ generate_form 'FOP_PRD', 'SMT-Production',
 dp_production_fields = {
 	:work_time                             => :timestamp,
 	:status_code                           => :string,
-    :device_no                             => :string,
-    :target_thickness                      => :string,
-    :lot_no                                => :string,
+  :device_no                             => :string,
+  :target_thickness                      => :string,
+  :lot_no                                => :string,
 	:inspection_recorder                   => :string,
 	:remark                                => :string,
 	:repair_adjustment_or_change_materials => :string,
 	:check_item                            => :string,
 dp_production_detail_fields = {
 	:items => ["Wafer Thickness (是否pass)","Visual Inspection (是否pass)"]
+	:result                                => :boolean,
 	:confirm_by                            => :string,
-	:result                                => :string,
 }
 generate_form 'FOP_PRD', 'DPBackGrindingProduction',
-	(fop_common_production_fields.merge dp_production_fields.merge common_fields),dp_production_detail_fields
+	(fop_common_production_fields.merge dp_production_fields.merge common_fields), dp_production_detail_fields
 
 
 # DOC#: 3745-02-40004 DP(Wafer Saw) DP_Production_log_sheet 作业记录表
@@ -214,9 +214,9 @@ dp_ws_production_fields = {
 	:remark                                => :string,
 	:repair_adjustment_or_change_materials => :string,
 dp_ws_production_detail_fields = {
-	:items => [" Kerf width","Inspection code"]
-	:confirm                               => :string,
+	:items => ["Kerf width","Inspection code"]
 	:result                                => :string,
+	:confirm                               => :string,
 }
 generate_form 'FOP_PRD', 'DPWaferSawProduction',
 	(fop_common_production_fields.merge dp_ws_production_fields.merge common_fields),dp_ws_production_detail_fields
@@ -249,15 +249,15 @@ generate_form 'FOP_PRD', 'DPControllerWafterHandover',
 
 # DOC# 3745-02-40007 DP 2VM Production log sheet作业记录表
 dp_2vm_Production_log_sheet_fields = {
-	:work_time             => :timestamp,
-	:device_no             => :string,
-	:lot_no                => :string,
-	:wafer_in_qty          => :string,
-	:wafer_out_qty         => :string,
-    :die_qty_lot           => :string,
-    :inspecttion_recorder  => :string,
-	:cutting_depth         => :float,
-	:remark                => :string,
+	:work_time            => :timestamp,
+	:device_no            => :string,
+	:lot_no               => :string,
+	:wafer_in_qty         => :string,
+	:wafer_out_qty        => :string,
+	:die_qty_lot          => :string,
+	:inspecttion_recorder => :string,
+	:cutting_depth        => :float,
+	:remark               => :string,
 }
 generate_form 'FOP_PRD', 'DP2VMProductionLog',
 	(dp_2vm_Production_log_sheet_fields.merge common_fields)
@@ -265,13 +265,13 @@ generate_form 'FOP_PRD', 'DP2VMProductionLog',
 
 # DOC# 3745-02-50004 DA Production log sheet作业记录表
 die_attach_production_fields = {
-	:status_code              => :string,
-	:lot_no                   => :string,
-	:reject_code		      => :string,
-	:remark					  => :string,
-	:check_type               => :string,
-	:device 				  => :string,
-	:confirm_by               => :string,
+	:status_code => :string,
+	:lot_no      => :string,
+	:reject_code => :string,
+	:remark      => :string,
+	:check_type  => :string,
+	:device      => :string,
+	:confirm_by  => :string,
 }
 die_attach_production_detail_fields = {
 	:items => ["低倍显微镜目检结果 Visual Inspection","芯片偏移 Die Placement (≤ ±25µm)","芯片旋转 Die Rotation (memory ≤ 20um  CTL/CB≤15um)","芯片倾斜 Die tilt (≤50µm )","叠片高度 Stack height , 标准参见DA positrol guide line"],
@@ -338,11 +338,11 @@ wb_production_fields = {
 }
 wb_production_detail_fields = {
 	:items => ["焊线图确认 bonding_diagram_confirm","目检 visual_inspection","各层弧高测量 loop_height_per_layer(um)","焊球大小 ball_size(um)","总弧高测量 Total_loop_height, 标准参见wb positrol guide line"],
-    :result               => :string,
-    :confirm_operator     => :integer,
+  :result               => :string,
+  :confirm_by				    => :string,
 }
 generate_form 'FOP_PRD', 'WbProductionLog',
-	(wb_production_fields.merge common_fields)
+	(wb_production_fields.merge common_fields), wb_production_detail_fields
 
 
 # DOC# 3745-02-70007 3VM 3rd_optical_production_Log 3VM作业记录表
@@ -360,21 +360,21 @@ generate_form 'FOP_PRD', 'The3VMOpticalProduction',
 
 # DOC# 3746-02-10004 Mold_Production_Log_Sheet
 mold_production_log_fields = {
-	:work_time                        => :string,
-	:status_code                      => :string,
-	:device_no                        => :string,
-	:lot_no                           => :string,
-	:peeling_test                     => :string,
-	:in_qty                           => :string,
-	:out_qty                          => :string,
-	:inspection_recorder              => :string,
-	:molding_program_confirm          => :string,
-	:top_mold_chase_temp_check        => :string,
-	:btrn_mold_chase_temp_check       => :string,
-	:internal_void_check              => :string,
-	:peeling_test                     => :string,
-	:wire_sweep_check                 => :string,
-	:confirm_by                       => :string,
+	:work_time                  => :string,
+	:status_code                => :string,
+	:device_no                  => :string,
+	:lot_no                     => :string,
+	:peeling_test               => :string,
+	:in_qty                     => :string,
+	:out_qty                    => :string,
+	:inspection_recorder        => :string,
+	:molding_program_confirm    => :string,
+	:top_mold_chase_temp_check  => :string,
+	:btrn_mold_chase_temp_check => :string,
+	:internal_void_check        => :string,
+	:peeling_test               => :string,
+	:wire_sweep_check           => :string,
+	:confirm_by                 => :string,
 }
 generate_form 'FOP_PRD', 'MoldProduction',
 	(mold_production_log_fields.merge common_fields)
