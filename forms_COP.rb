@@ -47,12 +47,22 @@ generate_form 'COP_PRD', 'CompoundBlackTopProduction',
 
 # DOC# 3755-02-20004	Production Log Sheet (welding)
 welding_production_fields = {
-	:profile_check  => :string,
-	:in_time   => :timestamp,
-	:out_time    => :timestamp,
+	:status_code         => :string, # 机台状态一律用这个，会生成统一下拉框
+	:product_type        => :string,
+	:device              => :string,
+	:lot_no              => :string,
+	:in_qty              => :integer,
+	:out_qty             => :integer,
+	:reject_code         => :string,
+	:shaking_test_record => :string,
+	:remark              => :string,
+}
+welding_production_detail_fields = {
+	:items => ['Air pressure  气压','Energy Force 焊接能量','Amplitude %  振幅','Velocity 焊头下降速度','Hold Time 保持时间','Trig Force 触发压力','上盖P/N(模号&穴号）','下盖P/N(模号&穴号）','Visual Inspection外观检查','Card dimension卡的尺寸','switch force&pull force开关力和拉力','Shaking Test摇晃测试(仅对于Daxter产品)'],
+	:result => :string,
 }
 generate_form 'COP_PRD', 'WeldingProduction',
-	(welding_production_fields.merge common_fields)
+	(welding_production_fields.merge common_fields), welding_production_detail_fields
 
 # DOC# 3755-02-50004	Production Log Sheet ( card assembly laser mark)
 card_assembly_laser_mark_production_fields = {
