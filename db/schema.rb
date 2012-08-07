@@ -11,7 +11,48 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120731024237) do
+ActiveRecord::Schema.define(:version => 20120807054054) do
+
+  create_table "audits", :force => true do |t|
+    t.integer  "auditable_id"
+    t.string   "auditable_type"
+    t.integer  "associated_id"
+    t.string   "associated_type"
+    t.integer  "user_id"
+    t.string   "user_type"
+    t.string   "username"
+    t.string   "action"
+    t.text     "audited_changes"
+    t.integer  "version",         :default => 0
+    t.string   "comment"
+    t.string   "remote_address"
+    t.datetime "created_at"
+  end
+
+  add_index "audits", ["associated_id", "associated_type"], :name => "associated_index"
+  add_index "audits", ["auditable_id", "auditable_type"], :name => "auditable_index"
+  add_index "audits", ["created_at"], :name => "index_audits_on_created_at"
+  add_index "audits", ["user_id", "user_type"], :name => "user_index"
+
+  create_table "sdss_kgd_testing_productions", :force => true do |t|
+    t.string   "machine_no"
+    t.date     "date"
+    t.string   "shift"
+    t.integer  "operator_id"
+    t.string   "wafer_part_no"
+    t.string   "mes_lot_no"
+    t.string   "wafer_id"
+    t.string   "remark"
+    t.string   "program"
+    t.integer  "tempreature"
+    t.integer  "over_drive_um"
+    t.datetime "in_time"
+    t.datetime "out_time"
+    t.boolean  "probe_mark_check_result"
+    t.string   "kgd_machine_status"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
 
   create_table "user_recent_forms", :force => true do |t|
     t.integer  "user_id"
