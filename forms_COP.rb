@@ -40,8 +40,8 @@ tray_ink_mark_production_detail_fields = {
 	:printing_times      => :integer,
 	:visual_inspection   => :boolean,
 	:viscosity_test_1_3s => :boolean,
-	:peeling_test_by_QC  => :boolean,
-	:solvents_test_by_QC => :boolean,
+	:peeling_test_by_qc  => :boolean,
+	:solvents_test_by_qc => :boolean,
 }
 generate_form 'COP_PRD', 'TrayInkMarkProduction',
 	(tray_ink_mark_production_fields.merge common_fields), tray_ink_mark_production_detail_fields
@@ -66,8 +66,8 @@ cosmetic_marking_production_detail_fields = {
 	:data5               => :float,
 	:data6               => :float,
 	:visual_inspection   => :boolean,
-	:peeling_test_by_QC  => :boolean,
-	:solvents_test_by_QC => :boolean,
+	:peeling_test_by_qc  => :boolean,
+	:solvents_test_by_qc => :boolean,
 }
 generate_form 'COP_PRD', 'CosmeticMarkingProduction',
 	(cosmetic_marking_production_fields.merge common_fields), cosmetic_marking_production_detail_fields
@@ -86,7 +86,7 @@ compound_black_top_production_fields = {
 	:remark                         => :string,
 	:silk_print_position            => :boolean,
 	:visual_inspection              => :boolean,
-	:permanence_test_by_QC          => :boolean,
+	:permanence_test_by_qc          => :boolean,
 }
 generate_form 'COP_PRD', 'CompoundBlackTopProduction',
 	(compound_black_top_production_fields.merge common_fields)
@@ -177,7 +177,7 @@ mask_label_production_detail_fields  = {
 	:data6                  => :float,
 	:mask_label_orientation => :boolean,
 	:mask_Label_permanent   => :boolean,
-	:confirm_by_QC          => :boolean,
+	:confirm_by_qc          => :boolean,
 }
 generate_form 'COP_PRD', 'MaskLabelProduction',
 	(mask_label_production_fields.merge common_fields), mask_label_production_detail_fields
@@ -230,7 +230,7 @@ ink_masking_production_detail_fields = {
 	:data_5   => :float,
 	:data_6   => :float,
 	:ink_mask_permanent   => :boolean,
-	:confirm_by_QC   => :boolean,
+	:confirm_by_qc   => :boolean,
 }
 generate_form 'COP_PRD', 'InkMaskingProduction',
 	(ink_masking_production_fields.merge common_fields), ink_masking_production_detail_fields
