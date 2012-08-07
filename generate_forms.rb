@@ -2,7 +2,6 @@
 # PL-Forms Feature Status:
 # * Add pass/failed confirm with QA, allow QA confirm after Operator input the data, QA have an extended time (e.g. 4 hours) to confirm
 # * Add typeahead of complete lot name to reduce input error. (via dynamicly, need link to MES DB in backend)
-# * All update action must be record down, not only including last one, all in history
 # * [no technical issue, need MFG line give 2 level category info, lacking such info in Excel] FOP Introduce 2 level form navigation, profile add department and only show department forms for perticular user
 # * [pending due to it's a UI enhancement only]Support detail expend in index page (suggest by summer)
 # * [pending due to forms not complete, so vocabulary not complete] Display two language in forms
@@ -16,6 +15,7 @@
 # * [done] Fetch previous inputed record (only the latest)
 # * [done] Add recent form quick list for OP
 # * [done] Add filter based on user profile
+# * [done] All input/update/delete action will be record now, not only including last one, all in history
 def generate_form(dept, form, fields, detail_fields=nil)
 	generate :scaffold, "#{form}#{fields.collect {|k,v| " #{k}:#{v}"}.join}"
 
