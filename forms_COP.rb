@@ -58,7 +58,7 @@ cosmetic_marking_production_fields = {
 	:remark                     => :string,
 }
 cosmetic_marking_production_detail_fields = {
-	:check_items         => ["Position measurement_x 位置测量_x", "Position measurement_y位置测量_y", "Ink Thickness油墨厚度"],
+	:items         => ["Position measurement_x 位置测量_x", "Position measurement_y位置测量_y", "Ink Thickness油墨厚度"],
 	:data1               => :float,
 	:data2               => :float,
 	:data3               => :float,
