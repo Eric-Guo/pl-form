@@ -226,14 +226,14 @@ generate_form 'FOP_PRD', 'DPWaferSawProduction',
 
 
 # DOC#:3745-02-40008 SAW刀信息记录
-saw_blade_relace_and_recycle_fields = {
-  :used_length        => :string,
-  :remaind_length     => :string,
-  :reason_for_replace => :string,
-  :remark             => :string,
-}
-generate_form 'FOP_PRD', 'SawBladeRelaceAndRecycle',
-	(saw_blade_relace_and_recycle_fields.merge common_fields)
+#saw_blade_relace_and_recycle_fields = {
+#  :used_length        => :string,
+#  :remaind_length     => :string,
+#  :reason_for_replace => :string,
+#  :remark             => :string,
+#}
+#generate_form 'FOP_PRD', 'SawBladeRelaceAndRecycle',
+#	(saw_blade_relace_and_recycle_fields.merge common_fields)
 
 
 # DOC#: 3745-02-40014 DP Controller Wafter 交接记录表
@@ -260,6 +260,8 @@ dp_2vm_Production_log_sheet_fields = {
 	:die_qty_lot          => :string,
 	:inspecttion_recorder => :string,
 	:cutting_depth        => :float,
+	:defect_code          => :string,
+	:defect_qty           => :string,
 	:remark               => :string,
 }
 generate_form 'FOP_PRD', 'DP2VMProductionLog',
