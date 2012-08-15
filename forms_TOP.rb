@@ -91,6 +91,38 @@ tfcl_production_fields = {
 generate_form 'TOP', 'TfclProduction',
 	(top_common_production_fields.merge tfcl_production_fields.merge common_fields)
 
+# Doc:3735-02-00042 Burn In production lot sheet
+mt_burn_in_production_fields = {
+  :uld_no                     => :string,
+	:lot_no                     => :string,
+	:package_capacity           => :string,
+	:start_time_fo_load         => :timestamp,
+	:end_time_for_load          => :timestamp,
+	:qty_in_for_load            => :string,
+	:start_time_fo_unload       => :timestamp,
+	:end_time_for_unload        => :timestamp,
+	:qty_out_for_unload         => :timestamp,
+	:lot_start_time_for_oven    => :timestamp,
+	:lot_end_time_for_oven      => :timestamp,
+	:oven_temp                  => :string,
+	:qty_in_for_oven            => :string,
+	:qty_out_for_oven           => :string,
+	:setup_conversion_for_uld   => :timestamp,
+	:pm_cal_for_uld             => :timestamp,
+	:pm_cal_for_oven            => :timestamp,
+	:uld_repair                 => :timestamp,
+	:oven_repair                => :timestamp,
+	:look_for_missing_unit      => :timestamp,
+	:fac                        => :timestamp,
+	:eng                        => :timestamp,
+	:end_lot                    => :timestamp,
+	:mlu_idle                   => :timestamp,
+	:oven_idle                  => :timestamp,
+	:others                     => :string,
+}
+generate_form 'TOP', 'BurnInProduction',
+	(top_common_production_fields.merge mt_burn_in_production_fields.merge common_fields)
+
 # DOC# 3735-02-00026	Memory Test Daily check list
 memory_test_daily_check_fields = {
 	:start_end_time => :timestamp,
