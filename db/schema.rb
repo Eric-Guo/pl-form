@@ -34,26 +34,6 @@ ActiveRecord::Schema.define(:version => 20120807054054) do
   add_index "audits", ["created_at"], :name => "index_audits_on_created_at"
   add_index "audits", ["user_id", "user_type"], :name => "user_index"
 
-  create_table "sdss_kgd_testing_productions", :force => true do |t|
-    t.string   "machine_no"
-    t.date     "date"
-    t.string   "shift"
-    t.integer  "operator_id"
-    t.string   "wafer_part_no"
-    t.string   "mes_lot_no"
-    t.string   "wafer_id"
-    t.string   "remark"
-    t.string   "program"
-    t.integer  "tempreature"
-    t.integer  "over_drive_um"
-    t.datetime "in_time"
-    t.datetime "out_time"
-    t.boolean  "probe_mark_check_result"
-    t.string   "kgd_machine_status"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
-  end
-
   create_table "user_recent_forms", :force => true do |t|
     t.integer  "user_id"
     t.string   "controller"
