@@ -108,7 +108,7 @@ welding_production_fields = {
 
 }
 welding_production_detail_fields = {
-	:items => ['Air pressure  气压','Energy Force 焊接能量','Amplitude %  振幅','Velocity 焊头下降速度','Hold Time 保持时间','Trig Force 触发压力','上盖P/N(模号&穴号）','下盖P/N(模号&穴号）',]
+	:items => ['Air pressure  气压','Energy Force 焊接能量','Amplitude %  振幅','Velocity 焊头下降速度','Hold Time 保持时间','Trig Force 触发压力','上盖P/N(模号&穴号）','下盖P/N(模号&穴号）'],
 	:result => :string,
 	:visual_inspection   => :boolean,
 	:card_dimension      => :boolean,
