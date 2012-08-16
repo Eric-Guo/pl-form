@@ -167,6 +167,7 @@ generate_form 'FOP_PRD', 'DieSortProduction',
 # DOC#: 3745-02-10004 SMT Production log sheet 作业记录表
 smt_production_fields = {
 	:work_time         => :timestamp,
+	:done_time         => :timestamp,
 	:status_code       =>:string,
 	:lot_no            =>:string,
 	:in_qty            => :integer,
@@ -178,7 +179,15 @@ smt_production_fields = {
 }
 smt_production_detail_fields = {
 	:items => ["Visual Inspection after printing(印刷之后目检)","Solder thickness(锡膏厚度)","Capacitor shear force(电容剪切力)","Visual Inspection after SMT   (SMT之后目检)"],
-	:result => :string,
+	:result_1 => :string,
+	:result_2 => :string,
+	:result_3 => :string,
+	:result_4 => :string,
+	:result_5 => :string,
+	:result_6 => :string,
+	:result_7 => :string,
+	:result_8 => :string,
+
 }
 generate_form 'FOP_PRD', 'SMT-Production',
 	(fop_common_production_fields.merge smt_production_fields.merge common_fields), smt_production_detail_fields
@@ -187,6 +196,7 @@ generate_form 'FOP_PRD', 'SMT-Production',
 # DOC#: 3745-02-30007 DP(Back/Grinding) DP_Production_log_sheet 作业记录表
 dp_production_fields = {
 	:work_time                             => :timestamp,
+	:done_time                             => :timestamp,
 	:status_code                           => :string,
     :target_thickness                      => :string,
     :lot_no                                => :string,
@@ -208,6 +218,7 @@ generate_form 'FOP_PRD', 'DPBackGrindingProduction',
 # DOC#: 3745-02-40004 DP(Wafer Saw) DP_Production_log_sheet 作业记录表
 dp_ws_production_fields = {
 	:work_time                             => :timestamp,
+	:done_time                             => :timestamp,
 	:status_code                           => :string,
 	:device_thickness                      => :string,
 	:lot_no                                => :string,
@@ -218,7 +229,10 @@ dp_ws_production_fields = {
 }
 dp_ws_production_detail_fields = {
 	:items => ["Kerf width","Inspection code"],
-	:result                                => :string,
+	:result_1                              => :string,
+	:result_2                              => :string,
+	:result_3                              => :string,
+	:result_4                              => :string,
 	:confirm                               => :string,
 }
 generate_form 'FOP_PRD', 'DPWaferSawProduction',
@@ -253,6 +267,7 @@ generate_form 'FOP_PRD', 'DPControllerWafterHandover',
 # DOC# 3745-02-40007 DP 2VM Production log sheet作业记录表
 dp_2vm_Production_log_sheet_fields = {
 	:work_time            => :timestamp,
+	:done_time            => :timestamp,
 	:device_no            => :string,
 	:lot_no               => :string,
 	:wafer_in_qty         => :string,
@@ -270,6 +285,7 @@ generate_form 'FOP_PRD', 'DP2VMProductionLog',
 
 # DOC# 3745-02-50004 DA Production log sheet作业记录表
 die_attach_production_fields = {
+	:work_time   => :timestamp,
 	:status_code => :string,
 	:lot_no      => :string,
 	:reject_code => :string,
@@ -280,8 +296,16 @@ die_attach_production_fields = {
 }
 die_attach_production_detail_fields = {
 	:items => ["低倍显微镜目检结果 Visual Inspection","芯片偏移 Die Placement (≤ ±25µm)","芯片旋转 Die Rotation (memory ≤ 20um  CTL/CB≤15um)","芯片倾斜 Die tilt (≤50µm )","叠片高度 Stack height , 标准参见DA positrol guide line"],
-	:result_x => :float,
-	:result_y => :float,
+	:x_1 => :float,
+	:x_2 => :float,
+	:x_3 => :float,
+	:x_4 => :float,
+	:X_5 => :float,
+	:y_1 => :float,
+	:y_2 => :float,
+	:y_3 => :float,
+	:y_4 => :float,
+	:y_5 => :float,
 }
 generate_form 'FOP_PRD', 'DieAttachProduction',
 	(die_attach_production_fields.merge common_fields), die_attach_production_detail_fields
