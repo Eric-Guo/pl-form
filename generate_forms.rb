@@ -24,11 +24,11 @@
 def generate_form(dept, form, fields, detail_fields=nil)
 	generate :scaffold, "#{form}#{fields.collect {|k,v| " #{k}:#{v}"}.join}"
 
-	inject_into_file "app/models/#{form.underscore}.rb", :before => "end" do
+	inject_into_file "app/models/#{form.underscore}.rb", :before => "end\n" do
 	  "  audited\n"
 	end
 
-	inject_into_file "app/models/#{form.underscore}.rb", :before => "end" do
+	inject_into_file "app/models/#{form.underscore}.rb", :before => "end\n" do
 	  "  validates :status_code, :presence => true\n"
 	end if fields.has_key? :status_code
 
@@ -55,7 +55,7 @@ def generate_form(dept, form, fields, detail_fields=nil)
 			end
 		end
 
-		inject_into_file "app/models/#{form.underscore}.rb", :before => "end" do
+		inject_into_file "app/models/#{form.underscore}.rb", :before => "end\n" do
 	  	"  has_many :#{dm_name.underscore.pluralize}, dependent: :destroy\n" + \
 	  	"  accepts_nested_attributes_for :#{dm_name.underscore.pluralize}\n" + \
 	  	"  attr_accessible :#{dm_name.underscore.pluralize}_attributes\n" + \
@@ -78,7 +78,7 @@ def generate_form(dept, form, fields, detail_fields=nil)
 			detail_model_inserts<<"    #{dm_specs.to_s}\n"
 			detail_model_inserts<<"  end\n\n"
 		end
-		inject_into_file "app/models/#{dm_name.underscore}.rb", :before => "end" do
+		inject_into_file "app/models/#{dm_name.underscore}.rb", :before => "end\n" do
 			detail_model_inserts
 		end
 
