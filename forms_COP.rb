@@ -29,6 +29,11 @@ tray_ink_mark_production_fields = {
 	:out_qty                    => :integer,
 	:visual_inspection_recorder => :string,
 	:remark                     => :string,
+
+	:visual_inspection   => :boolean,
+	:viscosity_test_1_3s => :boolean,
+	:peeling_test_by_qc  => :boolean,
+	:solvents_test_by_qc => :boolean,
 }
 tray_ink_mark_production_detail_fields = {
 	:items               => ["position measurement x 位置测量 x", "position measurement y 位置测量 y"],
@@ -38,10 +43,6 @@ tray_ink_mark_production_detail_fields = {
 	:data4               => :float,
 	:data5               => :float,
 	:printing_times      => :integer,
-	:visual_inspection   => :boolean,
-	:viscosity_test_1_3s => :boolean,
-	:peeling_test_by_qc  => :boolean,
-	:solvents_test_by_qc => :boolean,
 }
 generate_form 'COP_PRD', 'TrayInkMarkProduction',
 	(tray_ink_mark_production_fields.merge common_fields), tray_ink_mark_production_detail_fields
@@ -56,6 +57,10 @@ cosmetic_marking_production_fields = {
 	:out_qty                    => :integer,
 	:visual_inspection_recorder => :string,
 	:remark                     => :string,
+
+	:visual_inspection   => :boolean,
+	:peeling_test_by_qc  => :boolean,
+	:solvents_test_by_qc => :boolean,
 }
 cosmetic_marking_production_detail_fields = {
 	:items         => ["Position measurement_x 位置测量_x", "Position measurement_y位置测量_y", "Ink Thickness油墨厚度"],
@@ -65,9 +70,6 @@ cosmetic_marking_production_detail_fields = {
 	:data4               => :float,
 	:data5               => :float,
 	:data6               => :float,
-	:visual_inspection   => :boolean,
-	:peeling_test_by_qc  => :boolean,
-	:solvents_test_by_qc => :boolean,
 }
 generate_form 'COP_PRD', 'CosmeticMarkingProduction',
 	(cosmetic_marking_production_fields.merge common_fields), cosmetic_marking_production_detail_fields
@@ -105,15 +107,14 @@ welding_production_fields = {
 	:remark              => :string,
 	:frequency           => :string,
 
-
-}
-welding_production_detail_fields = {
-	:items => ['Air pressure  气压','Energy Force 焊接能量','Amplitude %  振幅','Velocity 焊头下降速度','Hold Time 保持时间','Trig Force 触发压力','上盖P/N(模号&穴号）','下盖P/N(模号&穴号）'],
-	:result => :string,
 	:visual_inspection   => :boolean,
 	:card_dimension      => :boolean,
 	:switch_force_pull_force  => :boolean,
 	:shaking_test       => :boolean,
+}
+welding_production_detail_fields = {
+	:items => ['Air pressure  气压','Energy Force 焊接能量','Amplitude %  振幅','Velocity 焊头下降速度','Hold Time 保持时间','Trig Force 触发压力','上盖P/N(模号&穴号）','下盖P/N(模号&穴号）'],
+	:result => :string,
 }
 generate_form 'COP_PRD', 'WeldingProduction',
 	(welding_production_fields.merge common_fields), welding_production_detail_fields
@@ -130,6 +131,9 @@ card_assembly_laser_mark_production_fields = {
 	:frequency                  => :string,
 	:device_no                  => :string,
 	:product_type               => :string,
+
+	:visual_inspection => :boolean,
+	:laser_power       => :boolean,
 }
 card_assembly_laser_mark_production_detail_fields = {
 	:items             => ['buyoff position measurement_x', 'buyoff position measurement_y'],
@@ -141,8 +145,6 @@ card_assembly_laser_mark_production_detail_fields = {
 	:data6             => :float,
 	:data7             => :float,
 	:data8             => :float,
-	:visual_inspection => :boolean,
-	:laser_power       => :boolean,
 }
 generate_form 'COP_PRD', 'CardAssemblyLaserMarkProduction',
 	(card_assembly_laser_mark_production_fields.merge common_fields), card_assembly_laser_mark_production_detail_fields
@@ -175,6 +177,10 @@ mask_label_production_fields = {
 	:visual_inspection_recorder => :string,
 	:remark                     => :string,
 	:frequency                  => :string,
+
+	:mask_label_orientation => :boolean,
+	:mask_label_permanent   => :boolean,
+	:confirm_by_qc          => :boolean,
 }
 mask_label_production_detail_fields  = {
 	:items                  =>  ["mask Label position a 标签位置 a", "mask Label position b 标签位置 b", "mask Label thickness c(mm) 标签厚度 c(mm)"],
@@ -184,9 +190,6 @@ mask_label_production_detail_fields  = {
 	:data4                  => :float,
 	:data5                  => :float,
 	:data6                  => :float,
-	:mask_label_orientation => :boolean,
-	:mask_label_permanent   => :boolean,
-	:confirm_by_qc          => :boolean,
 }
 generate_form 'COP_PRD', 'MaskLabelProduction',
 	(mask_label_production_fields.merge common_fields), mask_label_production_detail_fields
@@ -228,6 +231,9 @@ ink_masking_production_fields = {
 	:Visual_inspection_recorder   => :string,
 	:remark            => :string,
 	:frequency         => :string,
+
+	:ink_mask_permanent   => :boolean,
+	:confirm_by_qc   => :boolean,
 }
 ink_masking_production_detail_fields = {
 	:items  => ["ink mask position_a标签位置_a", "ink mask position_b标签位置_b", "ink mask position_c标签位置_c", "ink mask position_d标签位置_d","ink mask thickness_e标签厚度_e"],
@@ -237,8 +243,6 @@ ink_masking_production_detail_fields = {
 	:data_4   => :float,
 	:data_5   => :float,
 	:data_6   => :float,
-	:ink_mask_permanent   => :boolean,
-	:confirm_by_qc   => :boolean,
 }
 generate_form 'COP_PRD', 'InkMaskingProduction',
 	(ink_masking_production_fields.merge common_fields), ink_masking_production_detail_fields
