@@ -21,7 +21,7 @@ sdss_kgd_testing_production_fields = {
 	:probe_mark_check_result => :boolean,
 	:kgd_machine_status      => :string,
 }
-generate_form 'KGD_PRD', 'SdssKgdTestingProduction',
+generate_form 'KGD_PRD', 'KgdTestingProduction',
 	(kgd_common_production_fields.merge sdss_kgd_testing_production_fields.merge common_fields)
 
 # DOC# KGD test	3983-02-00004	 SDSS KGD Material Loan Record
@@ -30,7 +30,7 @@ sdss_kgd_material_loan_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
 }
-generate_form 'KGD_PRD', 'SdssKgdMaterialLoan',
+generate_form 'KGD_PRD', 'KgdMaterialLoan',
 	(sdss_kgd_material_loan_fields.merge common_fields)
 
 # DOC# 3983-02-00005	 SDSS KGD Wafer Abnormal Hold Sheet
@@ -39,7 +39,7 @@ sdss_kgd_wafer_abnormal_hold_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
 }
-generate_form 'KGD_PRD', 'SdssKgdWaferAbnormalHold',
+generate_form 'KGD_PRD', 'KgdWaferAbnormalHold',
 	(sdss_kgd_wafer_abnormal_hold_fields.merge common_fields)
 
 # DOC# 3983-02-00006	 SDSS KGD Return Wafer Record
@@ -48,7 +48,7 @@ sdss_kgd_return_wafer_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
 }
-generate_form 'KGD_PRD', 'SdssKgdReturnWafer',
+generate_form 'KGD_PRD', 'KgdReturnWafer',
 	(sdss_kgd_return_wafer_fields.merge common_fields)
 
 # DOC# 3983-02-00007	SDSS KGD MRB Material Track Rrecord
@@ -57,7 +57,7 @@ sdss_kgd_mrb_material_track_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
 }
-generate_form 'KGD_PRD', 'SdssKgdMrbMaterialTrack',
+generate_form 'KGD_PRD', 'KgdMrbMaterialTrack',
 	(sdss_kgd_mrb_material_track_fields.merge common_fields)
 
 # DOC# 3983-02-00013	 SDSS KGD Borrowing Machine Form
@@ -66,7 +66,7 @@ sdss_kgd_borrowing_machine_form_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
 }
-generate_form 'KGD_PRD', 'SdssKgdBorrowingMachineForm',
+generate_form 'KGD_PRD', 'KgdBorrowingMachineForm',
 	(sdss_kgd_borrowing_machine_form_fields.merge common_fields)
 
 # DOC# 3983-02-00015	SDSS KGD Wafer Vacuum Packing Machine first sample affirm record (晶圆真空包装机首件确认记录)
@@ -75,7 +75,7 @@ sdss_kgd_wafer_vacuum_packing_machine_first_sample_affirm_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
 }
-generate_form 'KGD_PRD', 'SdssKgdWaferVacuumPackingMachineFirstSampleAffirm',
+generate_form 'KGD_PRD', 'WaferVacuumPackingFirstSample',
 	(sdss_kgd_wafer_vacuum_packing_machine_first_sample_affirm_fields.merge common_fields)
 
 # DOC# 3983-02-00017	SDSS KGD N2 Cabinet humidity record
@@ -84,7 +84,7 @@ sdss_kgd_n2_cabinet_humidity_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
 }
-generate_form 'KGD_PRD', 'SdssKgdN2CabinetHumidity',
+generate_form 'KGD_PRD', 'KgdN2CabinetHumidity',
 	(sdss_kgd_n2_cabinet_humidity_fields.merge common_fields)
 
 # DOC# 3983-02-00025	 SDSS KGD wafer vacuum bag use record
@@ -93,7 +93,7 @@ sdss_kgd_wafer_vacuum_bag_use_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
 }
-generate_form 'KGD_PRD', 'SdssKgdWaferVacuumBagUse',
+generate_form 'KGD_PRD', 'KgdWaferVacuumBagUse',
 	(sdss_kgd_wafer_vacuum_bag_use_fields.merge common_fields)
 
 # DOC# 3712-02-00049	 QDN format
@@ -174,7 +174,7 @@ sdss_kgd_microscope_equipment_half_year_pm_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
 }
-generate_form 'KGD_EQP', 'SdssKgdMicroscopeEquipmentHalfYearPm',
+generate_form 'KGD_EQP', 'KgdMicroscopeEqpHalfYearPm',
     (sdss_kgd_microscope_equipment_half_year_pm_fields.merge common_fields)
 
 # DOC# 3981-02-30013	 KGD vacuum packaging machine Monthly PM Record(真空包装机月保养表单)
@@ -183,7 +183,7 @@ kgd_vacuum_packaging_machine_monthly_pm_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
 }
-generate_form 'KGD_EQP', 'KgdVacuumPackagingMachineMonthlyPm',
+generate_form 'KGD_EQP', 'KgdVacuumPackagingEqpMonthlyPm',
     (kgd_vacuum_packaging_machine_monthly_pm_fields.merge common_fields)
 
 # DOC# 3981-02-30016 	 SDSS KGD wafer sorter PM Record(Cherry pcik 机台保养表单)
@@ -192,7 +192,7 @@ sdss_kgd_wafer_sorter_pm_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
 }
-generate_form 'KGD_EQP', 'SdssKgdWaferSorterPm',
+generate_form 'KGD_EQP', 'KgdWaferSorterPm',
     (sdss_kgd_wafer_sorter_pm_fields.merge common_fields)
 
 # DOC# 3981-02-30025 	 SDSS KGD Dynatech wafer pack unpack shift check record(导料机开班检查记录表)
@@ -201,7 +201,7 @@ sdss_kgd_dynatech_wafer_pack_unpack_shift_check_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
 }
-generate_form 'KGD_EQP', 'SdssKgdDynatechWaferPackUnpackShiftCheck',
+generate_form 'KGD_EQP', 'KgdDynatechWaferPUPShiftCheck',
     (sdss_kgd_dynatech_wafer_pack_unpack_shift_check_fields.merge common_fields)
 
 # DOC# 3981-02-30026 	 SDSS KGD Dynatech wafer pack unpack PM record(导料机保养表单)
@@ -210,7 +210,7 @@ sdss_kgd_dynatech_wafer_pack_unpack_pm_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
 }
-generate_form 'KGD_EQP', 'SdssKgdDynatechWaferPackUnpackPm',
+generate_form 'KGD_EQP', 'KgdDynatechWaferPackUnpackPm',
     (sdss_kgd_dynatech_wafer_pack_unpack_pm_fields.merge common_fields)
 
 # DOC# 3981-02-30006 	 Accretech UF3000EX Wafer Prober Monthly&Half Year PM Record(UF3000EX probe 月/年保养表单)
@@ -219,7 +219,7 @@ accretech_uf3000ex_wafer_prober_monthly_and_half_year_pm_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
 }
-generate_form 'KGD_EQP', 'AccretechUf3000exWaferProberMonthlyAndHalfYearPm',
+generate_form 'KGD_EQP', 'AccretechUf3000exWaferProberPm',
     (accretech_uf3000ex_wafer_prober_monthly_and_half_year_pm_fields.merge common_fields)
 
 # DOC# 3981-02-30007 	 Innotech SI-300S Wafer Tester Monthly&Half Year PM Record (SI300S Tester 月/年保养表单)
@@ -228,7 +228,7 @@ innotech_si300s_wafer_tester_monthly_and_half_year_pm_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
 }
-generate_form 'KGD_EQP', 'InnotechSi300sWaferTesterMonthlyAndHalfYearPm',
+generate_form 'KGD_EQP', 'InnotechSi300sWaferTesterPm',
     (innotech_si300s_wafer_tester_monthly_and_half_year_pm_fields.merge common_fields)
 
 # DOC# 3981-02-30008 	 JEM Probe Card Monthly&Half Year PM Record(探针卡月/年保养表单)
@@ -237,7 +237,7 @@ jem_probe_card_monthly_and_half_year_pm_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
 }
-generate_form 'KGD_EQP', 'JemProbeCardMonthlyAndHalfYearPm',
+generate_form 'KGD_EQP', 'JemProbeCardMonthlyHalfYearPm',
     (jem_probe_card_monthly_and_half_year_pm_fields.merge common_fields)
 
 # DOC# 3981-02-30014 	 FOUP Cleaning Record(FOUP清洁记录表)
@@ -255,7 +255,7 @@ tel_precio_wafer_prober_monthly_and_half_year_pm_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
 }
-generate_form 'KGD_EQP', 'TelPrecioWaferProberMonthlyAndHalfYearPm',
+generate_form 'KGD_EQP', 'TelPrecioWaferProberMH_Pm',
     (tel_precio_wafer_prober_monthly_and_half_year_pm_fields.merge common_fields)
 
 # DOC# 3981-02-30017 	 KGD PROBE CARD buy-off report(Probe 验收报告)
@@ -273,7 +273,7 @@ kgd_ir_reflow_oven_system_shiftly_check_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
 }
-generate_form 'KGD_EQP', 'KgdIrReflowOvenSystemShiftlyCheck',
+generate_form 'KGD_EQP', 'IrReflowOvenSystemShiftCheck',
     (kgd_ir_reflow_oven_system_shiftly_check_fields.merge common_fields)
 
 # DOC# 3981-02-30022 	 KGD_IR_Reflow_Oven_monthly&yearly_PM_record(IR-Reflow烤箱月/年保养表单)
@@ -282,7 +282,7 @@ kgd_ir_reflow_oven_monthly_and_yearly_pm_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
 }
-generate_form 'KGD_EQP', 'KgdIrReflowOvenMonthlyAndYearlyPm',
+generate_form 'KGD_EQP', 'IrReflowOvenMonthlyAndYearlyPm',
     (kgd_ir_reflow_oven_monthly_and_yearly_pm_fields.merge common_fields)
 
 # DOC# 3983-02-00018 	SDSS KGD Wafer Bank cycle count report
@@ -291,7 +291,7 @@ sdss_kgd_wafer_bank_cycle_count_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
 }
-generate_form 'KGD_PRD', 'SdssKgdWaferBankCycleCount',
+generate_form 'KGD_PRD', 'KgdWaferBankCycleCount',
     (sdss_kgd_wafer_bank_cycle_count_fields.merge common_fields)
 
 # DOC# 3724-02-10007	Material Request Sheet
