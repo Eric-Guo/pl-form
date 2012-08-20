@@ -146,7 +146,7 @@ card_assembly_laser_mark_production_detail_fields = {
 	:data7             => :float,
 	:data8             => :float,
 }
-generate_form 'COP_PRD', 'CardAssemblyLaserMarkProduction',
+generate_form 'COP_PRD', 'CardAssemblyLaserMarkPrd',
 	(card_assembly_laser_mark_production_fields.merge common_fields), card_assembly_laser_mark_production_detail_fields
 
 # DOC# 3755-02-60004	Production Log Sheet (SD label)
