@@ -201,7 +201,7 @@ sdss_kgd_dynatech_wafer_pack_unpack_shift_check_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
 }
-generate_form 'KGD_EQP', 'DynatechWaferPUPShiftCheck',
+generate_form 'KGD_EQP', 'DynatechWaferPUPShiftChk',
     (sdss_kgd_dynatech_wafer_pack_unpack_shift_check_fields.merge common_fields)
 
 # DOC# 3981-02-30026 	 SDSS KGD Dynatech wafer pack unpack PM record(导料机保养表单)
