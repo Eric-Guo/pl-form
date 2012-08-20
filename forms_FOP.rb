@@ -35,7 +35,7 @@ direct_material_general_apply_fields = {
 	:applicant_badge => :string,
 	:remark          => :string,
 }
-generate_form 'FOP_MAT', 'DirectMaterialGeneralApply',
+generate_form 'FOP_MAT', 'DirectMatGeneralApply',
 	(direct_material_general_apply_fields.merge common_fields)
 
 
@@ -58,7 +58,7 @@ wire_bond_drawing_program_apply_fields = {
 	:qty                    => :integer,
 	:remark                 => :string,
 }
-generate_form 'FOP_MAT', 'WireBondDrawingProgramApply',
+generate_form 'FOP_MAT', 'WireBondDrawingPrmApply',
 	(wire_bond_drawing_program_apply_fields.merge common_fields)
 
 
@@ -130,7 +130,7 @@ exception_gold_accept_register_fields = {
 	:supervisor_mark        => :string,
 	:letter_of_presentation => :string,
 }
-generate_form 'FOP_MAT', 'ExceptionGoldAcceptRegister',
+generate_form 'FOP_MAT', 'ExceptionGoldAcceptForm',
 	(exception_gold_accept_register_fields.merge common_fields)
 
 
@@ -143,7 +143,7 @@ icebox_refrigeratory_humidity_fields = {
 	:time                  => :timestamp,
 	:remart                => :string,
 }
-generate_form 'FOP_MAT', 'IceboxRefrigeratoryHumidity',
+generate_form 'FOP_MAT', 'IceboxHumidity',
 	(icebox_refrigeratory_humidity_fields.merge common_fields)
 
 
@@ -211,7 +211,7 @@ dp_production_detail_fields = {
 	:result                                => :boolean,
 	:confirm_by                            => :string,
 }
-generate_form 'FOP_PRD', 'DPBackGrindingProduction',
+generate_form 'FOP_PRD', 'DPBackGrindingProd',
 	(fop_common_production_fields.merge dp_production_fields.merge common_fields), dp_production_detail_fields
 
 
@@ -235,7 +235,7 @@ dp_ws_production_detail_fields = {
 	:result_4                              => :string,
 	:confirm                               => :string,
 }
-generate_form 'FOP_PRD', 'DPWaferSawProduction',
+generate_form 'FOP_PRD', 'DPWaferSawProd',
 	(fop_common_production_fields.merge dp_ws_production_fields.merge common_fields),dp_ws_production_detail_fields
 
 
@@ -250,7 +250,7 @@ generate_form 'FOP_PRD', 'DPWaferSawProduction',
 #	(saw_blade_relace_and_recycle_fields.merge common_fields)
 
 
-# DOC#: 3745-02-40014 DP Controller Wafter 交接记录表
+# DOC#: 3745-02-40014 DP Controller Wafer 交接记录表
 dp_controller_wafter_handover_fields = {
 	:lot_no            => :string,
 	:wafer_lot_no      => :string,
@@ -260,7 +260,7 @@ dp_controller_wafter_handover_fields = {
 	:revcie_confirm    => :string,
 	:op_id             => :string,
 }
-generate_form 'FOP_PRD', 'DPControllerWafterHandover',
+generate_form 'FOP_PRD', 'DPCtlWaferHandover',
 	(dp_controller_wafter_handover_fields.merge common_fields)
 
 
@@ -383,7 +383,7 @@ the_3vm_optical_production_fields = {
 	:inspection_recorder => :string,
 	:remark              => :string,
 }
-generate_form 'FOP_PRD', 'The3VMOpticalProduction',
+generate_form 'FOP_PRD', 'The3VMOpticalProd',
 	(fop_common_production_fields.merge the_3vm_optical_production_fields.merge common_fields)
 
 
