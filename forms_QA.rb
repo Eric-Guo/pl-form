@@ -148,7 +148,7 @@ qa_qc_kgd_line_monitor_fields = {
 	:result => :boolean,
     :qdn_no_remark_qdn  => :string,
     }
-generate_form 'QA', 'KgdQcLineMonitor',
+generate_form 'QA', 'QcKgdLineMonitor',
 	(qa_qc_kgd_line_monitor_fields.merge common_fields)
 
 
@@ -181,7 +181,7 @@ qa_qc_retail_fulfillment_monitor_fields = {
 	:result => :boolean,
 	:qdn_no_remark_qdn  => :string,
 }
-generate_form 'QA', 'QcRetailFulfillmentMonitor',
+generate_form 'QA', 'QcRfFviMonitor',
 	(qa_qc_retail_fulfillment_monitor_fields.merge common_fields)
 
 
@@ -270,6 +270,6 @@ substrate_incoming_inspection_detail_fields = {
 	:accept_or_ng => :boolean,
 	:remark => :string,
 }
-generate_form 'QA', 'SubstrateIncomingInspection',
+generate_form 'QA', 'SubstrateIncomeInspect',
 	(substrate_incoming_inspection_fields.merge common_fields), substrate_incoming_inspection_detail_fields
 
