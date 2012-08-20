@@ -33,7 +33,7 @@ def generate_form(dept, form, fields, detail_fields=nil)
 	end if fields.has_key? :status_code
 
 	if detail_fields.present?
-		dm_name = "#{form}Detail"
+		dm_name = "#{form}D"
 		dm_row_count = detail_fields[:row_count]
 		detail_fields.delete :row_count
 		if detail_fields[:items].present?
@@ -83,7 +83,7 @@ def generate_form(dept, form, fields, detail_fields=nil)
 		end
 
 		detail_controller_new_inserts ="    0.upto #{dm_row_count-1} do |i|\n"
-		detail_controller_new_inserts<<"      t=@#{form.underscore}.#{form.underscore}_details.build\n"
+		detail_controller_new_inserts<<"      t=@#{form.underscore}.#{form.underscore}_ds.build\n"
 		if dm_items.present?
 			detail_controller_new_inserts<<"        t.items=t.items_desc[i]\n"
 		end
