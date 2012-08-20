@@ -57,7 +57,7 @@ substrate_laser_mark_production_fields = {
 	:position_demension         => :string,
 	:confirm_by                 => :string,
 }
-generate_form 'BOP_PRD', 'SubstrateLaserMarkProduction',
+generate_form 'BOP_PRD', 'SubstrateLaserMarkProd',
 	(bop_common_production_fields.merge substrate_laser_mark_production_fields.merge common_fields)
 
 
@@ -220,7 +220,7 @@ conversion_kit_change_record_fields = {
 	:owner                 => :string,
 	:remark                => :string,
 }
-generate_form 'BOP_EQP', 'SgnConversionKitChangeLog',
+generate_form 'BOP_EQP', 'SgnConversionKitChange',
 	(bop_common_production_fields.merge conversion_kit_change_record_fields.merge common_fields)
 
 # DOC# 3746-02-40006	saw singulation blade change record sheet
@@ -234,7 +234,7 @@ saw_singulation_blade_change_fields = {
 	:owner                 => :string ,
 	:remark                => :string,
 }
-generate_form 'BOP_EQP', 'SawSingulationBladeChangeLog',
+generate_form 'BOP_EQP', 'SawSingulationBladeChange',
 	(bop_common_production_fields.merge saw_singulation_blade_change_fields.merge common_fields)
 
 # DOC# 3742-02-30030	PM Monthly & Half year record
@@ -266,7 +266,7 @@ sgn_pm_monthly_half_year_fields = {
 	:maintainer                                                                                              => :string,
 	:confirm_by                                                                                              => :string,
 }
-generate_form 'BOP_EQP', 'SgnPmMonthlyHalfYearLog',
+generate_form 'BOP_EQP', 'SgnPmMonthlyHalfYear',
 	(bop_common_production_fields.merge sgn_pm_monthly_half_year_fields.merge common_fields)
 
 # DOC# 3742-02-30058	Oven shift check Record
@@ -278,7 +278,7 @@ oven_shift_check_production_log_fields = {
 	:over_set_temperature_protect_check => :boolean,
 	:sign                               => :string,
 }
-generate_form 'BOP_EQP', 'OvenShiftCheckLog',
+generate_form 'BOP_EQP', 'OvenShiftCheck',
 	(oven_shift_check_production_log_fields.merge common_fields)
 
 # DOC# 3742-02-30088	Oven Weekly PM Record
@@ -291,7 +291,7 @@ oven_weekly_pm_production_log_fields = {
 	:maintainer  => :string,
 	:confirm_by  => :string,
 }
-generate_form 'BOP_EQP', 'OvenWeeklyPmLog',
+generate_form 'BOP_EQP', 'OvenWeeklyPm',
 	(oven_weekly_pm_production_log_fields.merge common_fields)
 
 # DOC# 3746-02-10007 & 3746-02-10011	Oven Positrol log
@@ -345,7 +345,7 @@ ink_mark_pm_monthly_half_year_fields = {
 	:in_time   => :timestamp,
 	:out_time    => :timestamp,
 }
-generate_form 'BOP_EQP', 'InkMarkPmMonthlyHalfYearRecord',
+generate_form 'BOP_EQP', 'InkMarkPmMonthlyHalfYear',
 	(ink_mark_pm_monthly_half_year_fields.merge common_fields)
 
 # DOC# 3742-02-30062	Laser Mark shift check Record
@@ -400,7 +400,7 @@ laser_cut_positrol_log_fields = {
 	:in_time   => :timestamp,
 	:out_time    => :timestamp,
 }
-generate_form 'BOP_EQP', 'LaserCutPositrolLog',
+generate_form 'BOP_EQP', 'LaserCutPositrol',
 	(bop_common_production_fields.merge laser_cut_positrol_log_fields.merge common_fields)
 
 # DOC# 3742-02-30054	Laser Cut Conversion Kit Change Record Sheet 改机记录表
@@ -517,7 +517,7 @@ ball_attach_monthly_half_yearly_pm_production_fields = {
 	:in_time   => :timestamp,
 	:out_time    => :timestamp,
 }
-generate_form 'BOP_EQP', 'BallAttachMonthlyHalfYearlyPm',
+generate_form 'BOP_EQP', 'BallAttachMonthlyHalfYearPm',
 	(bop_common_production_fields.merge ball_attach_monthly_half_yearly_pm_production_fields.merge common_fields)
 
 # DOC# 3742-02-30048	SBA reflow oven Equipment Monthly&Half yearly PM Record
@@ -571,7 +571,7 @@ ultrasonic_cleaner_positrol_log_fields = {
 	:in_time   => :timestamp,
 	:out_time    => :timestamp,
 }
-generate_form 'BOP_EQP', 'UltrasonicCleanerPositrolLog',
+generate_form 'BOP_EQP', 'UltrasonicCleanerPositrol',
 	(bop_common_production_fields.merge ultrasonic_cleaner_positrol_log_fields.merge common_fields)
 
 # DOC# 3742-02-30022   PM Weekly record
@@ -589,7 +589,7 @@ ultrasonic_cleaner_equipment_change_solvent_pm_fields = {
 	:in_time   => :timestamp,
 	:out_time    => :timestamp,
 }
-generate_form 'BOP_EQP', 'UltrasonicCleanerEquipmentChangeSolvent',
+generate_form 'BOP_EQP', 'UltrasonicCleanerEqpSolvent',
 	(bop_common_production_fields.merge ultrasonic_cleaner_equipment_change_solvent_pm_fields.merge common_fields)
 
 # DOC# 3742-02-30023	PM Monthly & Half year record
@@ -598,7 +598,7 @@ ultrasonic_cleaner_monthly_half_year_pm_fields = {
 	:in_time   => :timestamp,
 	:out_time    => :timestamp,
 }
-generate_form 'BOP_EQP', 'UltrasonicCleanerMonthlyHalfYearPm',
+generate_form 'BOP_EQP', 'UltrasonicCleanerMonthHYPm',
 	(bop_common_production_fields.merge ultrasonic_cleaner_monthly_half_year_pm_fields.merge common_fields)
 
 # DOC# 3746-02-00020	ICOS Shift Check Record
@@ -734,7 +734,7 @@ tray_cleaning_equipment_change_wafer_pm_fields = {
 	:in_time   => :timestamp,
 	:out_time    => :timestamp,
 }
-generate_form 'BOP_EQP', 'TrayCleaningEquipmentChangeWaferPm',
+generate_form 'BOP_EQP', 'TrayCleaningEqpChangeWaferPm',
 	(tray_cleaning_equipment_change_wafer_pm_fields.merge common_fields)
 
 # DOC# 3742-02-30086	PM Monthly & Half year record
@@ -743,7 +743,7 @@ tray_cleaning_equipment_monthly_half_yearly_pm_fields = {
 	:in_time   => :timestamp,
 	:out_time    => :timestamp,
 }
-generate_form 'BOP_EQP', 'TrayCleaningEquipmentMonthlyHalfYearlyPm',
+generate_form 'BOP_EQP', 'TrayCleaningEqpMonthHalfYearPm',
 	(tray_cleaning_equipment_monthly_half_yearly_pm_fields.merge common_fields)
 
 # DOC# 3744-02-00011	EOL存货卡
