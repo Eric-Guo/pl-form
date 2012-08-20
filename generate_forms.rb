@@ -51,7 +51,7 @@ def generate_form(dept, form, fields, detail_fields=nil)
 		# resolve index name too long
 		Dir.glob("db/migrate/*_create_#{dm_name.underscore.pluralize}.rb") do |dm|
 			inject_into_file dm, :before => "\n  end\nend" do
-		  	", :name => 'idex_#{dm_name.underscore.pluralize}'"
+		  	", :name => 'i_#{dm_name.underscore}'"
 			end
 		end
 
