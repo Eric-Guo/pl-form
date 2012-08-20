@@ -16,7 +16,8 @@
 <h3>BOP Production</h3><!--BOP_PRD-->
 <% end %>
 <% if (current_user.present? and ['TOP',''].include? current_user.department ) or current_user.blank? -%>
-<h3>TOP</h3><!--TOP-->
+<h3>TOP Equipment</h3><!--TOP_EQP-->
+<h3>TOP Production</h3><!--TOP_PRD-->
 <% end %>
 <% if (current_user.present? and ['COP',''].include? current_user.department ) or current_user.blank? -%>
 <h3>COP Equipment</h3><!--COP_EQP-->
