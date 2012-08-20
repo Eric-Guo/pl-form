@@ -137,7 +137,7 @@ mt_ct_tfcl_fields = {
 	:in_time   => :timestamp,
 	:out_time    => :timestamp,
 }
-generate_form 'TOP', 'MtCtTfcl',
+generate_form 'TOP', 'ShiftMachineJammingRecord',
 	(mt_ct_tfcl_fields.merge common_fields)
 
 # DOC# 3731-02-20006	Monthly & Half Year PM Record
@@ -146,7 +146,7 @@ mt_ct_fields = {
 	:in_time   => :timestamp,
 	:out_time    => :timestamp,
 }
-generate_form 'TOP', 'MtCt',
+generate_form 'TOP', 'TOPMonthlyHalfYearlyPm',
 	(mt_ct_fields.merge common_fields)
 
 # DOC# 3733-02-00138	TOP_conversion_checklist
@@ -200,7 +200,7 @@ mirae_m820_handler_monthly_and_half_year_pm_fields = {
 	:in_time   => :timestamp,
 	:out_time    => :timestamp,
 }
-generate_form 'TOP', 'MiraeM820hHandlerMonthlyAndHalfYearPm',
+generate_form 'TOP', 'MiraeM820hHandlerMonthlyHY_Pm',
 	(mirae_m820_handler_monthly_and_half_year_pm_fields.merge common_fields)
 
 # DOC# 3731-02-30013	Monthly & Half Year PM Record
@@ -254,7 +254,7 @@ tfcl_tester_monthly_and_semi_annual_pm_fields = {
 	:in_time   => :timestamp,
 	:out_time    => :timestamp,
 }
-generate_form 'TOP', 'TfclTesterMonthlyAndSemiAnnualPm',
+generate_form 'TOP', 'TfclTesterMonthlyAndHY_Pm',
   (tfcl_tester_monthly_and_semi_annual_pm_fields.merge common_fields)
 
 # DOC# 3731-02-30044	Monthly & Half Year PM Record
@@ -263,7 +263,7 @@ mirae_m150_handler_monthly_and_half_year_pm_fields = {
 	:in_time   => :timestamp,
 	:out_time    => :timestamp,
 }
-generate_form 'TOP', 'MiraeM150HandlerMonthlyAndHalfYearPm',
+generate_form 'TOP', 'MiraeM150HandlerMonthlyHY_Pm',
 	(mirae_m150_handler_monthly_and_half_year_pm_fields.merge common_fields)
 
 # DOC# 3731-02-30040	Monthly & Half Year PM Record
@@ -272,5 +272,5 @@ hontech_ht3600a_handler_monthly_and_half_year_pm_fields = {
 	:in_time   => :timestamp,
 	:out_time    => :timestamp,
 }
-generate_form 'TOP', 'HontechHt3600aHandlerMonthlyAndHalfYearPm',
+generate_form 'TOP', 'HontechHt3600aHandlerMHY_Pm',
 	(hontech_ht3600a_handler_monthly_and_half_year_pm_fields.merge common_fields)
