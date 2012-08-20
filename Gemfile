@@ -6,6 +6,8 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'ruby-oci8', '~> 2.1.2'
+gem 'activerecord-oracle_enhanced-adapter', '~> 1.4.1'
 gem 'win32console', :platforms => :mingw
 gem 'anjlab-bootstrap-rails', '>= 2.0', :require => 'bootstrap-rails'
 gem 'bootstrap-will_paginate'
