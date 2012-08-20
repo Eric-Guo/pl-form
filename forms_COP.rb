@@ -90,7 +90,7 @@ compound_black_top_production_fields = {
 	:visual_inspection              => :boolean,
 	:permanence_test_by_qc          => :boolean,
 }
-generate_form 'COP_PRD', 'CompoundBlackTopProduction',
+generate_form 'COP_PRD', 'CompoundBlackTopProd',
 	(compound_black_top_production_fields.merge common_fields)
 
 # DOC# 3755-02-20004	Production Log Sheet (welding)
