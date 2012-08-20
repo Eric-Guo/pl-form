@@ -196,7 +196,7 @@ qa_qc_retail_fulfillment_shipping_monitor_fields = {
 	:result => :boolean,
 	:qdn_no_remark_qdn  => :string,
 }
-generate_form 'QA', 'QcRetailFulfillmentShippingMonitor',
+generate_form 'QA', 'QcRF_ShippingMonitor',
 	(qa_qc_retail_fulfillment_shipping_monitor_fields.merge common_fields)
 
 # DOC#: F1206-0002 Substrate Incoming Inspection Report
@@ -270,6 +270,6 @@ substrate_incoming_inspection_detail_fields = {
 	:accept_or_ng => :boolean,
 	:remark => :string,
 }
-generate_form 'QA', 'SubstrateIncomingInspectionReport',
+generate_form 'QA', 'SubstrateIncomingInspection',
 	(substrate_incoming_inspection_fields.merge common_fields), substrate_incoming_inspection_detail_fields
 
