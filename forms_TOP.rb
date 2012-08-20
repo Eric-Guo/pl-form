@@ -182,7 +182,7 @@ generate_form 'TOP_EQP', 'M820BuinInDailyCheck',
 	:in_time   => :timestamp,
 	:out_time    => :timestamp,
 }
-generate_form 'TOP_EQP', 'ProvBuinInDailyCheck',
+generate_form 'TOP_EQP', 'ProVBuinInDailyCheck',
 	(prov_buin_in_daily_check_fields.merge common_fields)
 
 # DOC# 3731-02-30036	JEC Oven daily checklist
@@ -200,7 +200,7 @@ mirae_m820_handler_monthly_and_half_year_pm_fields = {
 	:in_time   => :timestamp,
 	:out_time    => :timestamp,
 }
-generate_form 'TOP_EQP', 'MiraeM820hHandlerMonthlyHY_Pm',
+generate_form 'TOP_EQP', 'MiraeM820hHandler_Pm',
 	(mirae_m820_handler_monthly_and_half_year_pm_fields.merge common_fields)
 
 # DOC# 3731-02-30013	Monthly & Half Year PM Record
@@ -254,7 +254,7 @@ tfcl_tester_monthly_and_semi_annual_pm_fields = {
 	:in_time   => :timestamp,
 	:out_time    => :timestamp,
 }
-generate_form 'TOP_EQP', 'TfclTesterMonthlyAndHY_Pm',
+generate_form 'TOP_EQP', 'TfclTesterMonthlyHY_Pm',
   (tfcl_tester_monthly_and_semi_annual_pm_fields.merge common_fields)
 
 # DOC# 3731-02-30044	Monthly & Half Year PM Record
@@ -263,7 +263,7 @@ mirae_m150_handler_monthly_and_half_year_pm_fields = {
 	:in_time   => :timestamp,
 	:out_time    => :timestamp,
 }
-generate_form 'TOP_EQP', 'MiraeM150HandlerMonthlyHY_Pm',
+generate_form 'TOP_EQP', 'MiraeM150Handler_Pm',
 	(mirae_m150_handler_monthly_and_half_year_pm_fields.merge common_fields)
 
 # DOC# 3731-02-30040	Monthly & Half Year PM Record
@@ -272,5 +272,5 @@ hontech_ht3600a_handler_monthly_and_half_year_pm_fields = {
 	:in_time   => :timestamp,
 	:out_time    => :timestamp,
 }
-generate_form 'TOP_EQP', 'HontechHt3600aHandlerMHY_Pm',
+generate_form 'TOP_EQP', 'HontechHt3600aHandler_Pm',
 	(hontech_ht3600a_handler_monthly_and_half_year_pm_fields.merge common_fields)
