@@ -69,7 +69,7 @@ cosmetic_marking_production_detail_fields = {
 	:data5 => :float,
 	:data6 => :float,
 }
-generate_form 'COP_PRD', 'CosmeticMarkingProduction',
+generate_form 'COP_PRD', 'CosmeticMarkingProd',
 	(cosmetic_marking_production_fields.merge common_fields), cosmetic_marking_production_detail_fields
 
 # DOC# 3755-02-12001	Production Log Sheet(Compound Black TOP)
@@ -238,7 +238,7 @@ ink_masking_production_detail_fields = {
 	:data_5   => :float,
 	:data_6   => :float,
 }
-generate_form 'COP_PRD', 'InkMaskingProduction',
+generate_form 'COP_PRD', 'InkMaskingProd',
 	(ink_masking_production_fields.merge common_fields), ink_masking_production_detail_fields
 
 # DOC# 3755-02-60016	Production Log Sheet (Bake)
