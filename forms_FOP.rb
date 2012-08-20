@@ -195,16 +195,16 @@ generate_form 'FOP_PRD', 'SMT-Production',
 
 # DOC#: 3745-02-30007 DP(Back/Grinding) DP_Production_log_sheet 作业记录表
 dp_production_fields = {
-	:work_time                             => :timestamp,
-	:done_time                             => :timestamp,
-	:status_code                           => :string,
-    :target_thickness                      => :string,
-    :lot_no                                => :string,
-	:defect_code                           => :string,
-	:defect_qty                            => :string,
-	:remark                                => :string,
-	:repair_adjustment_or_change_materials => :string,
-	:check_item                            => :string,
+	:work_time                   => :timestamp,
+	:done_time                   => :timestamp,
+	:status_code                 => :string,
+	:target_thickness            => :string,
+	:lot_no                      => :string,
+	:defect_code                 => :string,
+	:defect_qty                  => :string,
+	:remark                      => :string,
+	:repair_adjust_or_change_mat => :string,
+	:check_item                  => :string,
 }
 dp_production_detail_fields = {
 	:items => ["Wafer Thickness (是否pass)","Visual Inspection (是否pass)"],
@@ -217,15 +217,15 @@ generate_form 'FOP_PRD', 'DPBackGrindingProd',
 
 # DOC#: 3745-02-40004 DP(Wafer Saw) DP_Production_log_sheet 作业记录表
 dp_ws_production_fields = {
-	:work_time                             => :timestamp,
-	:done_time                             => :timestamp,
-	:status_code                           => :string,
-	:device_thickness                      => :string,
-	:lot_no                                => :string,
-	:defect_code                           => :string,
-	:defect_qty                            => :string,
-	:remark                                => :string,
-	:repair_adjustment_or_change_materials => :string,
+	:work_time                   => :timestamp,
+	:done_time                   => :timestamp,
+	:status_code                 => :string,
+	:device_thickness            => :string,
+	:lot_no                      => :string,
+	:defect_code                 => :string,
+	:defect_qty                  => :string,
+	:remark                      => :string,
+	:repair_adjust_or_change_mat => :string,
 }
 dp_ws_production_detail_fields = {
 	:items => ["Kerf width","Inspection code"],
@@ -327,16 +327,16 @@ generate_form 'FOP_PRD', 'DA-OvenCureProduction',
 
 # DOC# 3745-02-20021 DA改机通知单
 wiikey_requisition_fields = {
-	:machine_no                       => :string,
-	:wiikey_after_device_standard_uph => :integer,
-	:wiikey_after_device_reality_uph  => :integer,
-	:original_product_device          => :string,
-	:later_product_device             => :string,
-	:plan_wiikey_time                 => :timestamp,
-	:really_wiikey_time               => :timestamp,
-	:rms_turn_on                      => :string,
-	:sub_parting_strip                => :string,
-	:prodution_applicant              => :string,
+	:machine_no                   => :string,
+	:wiikey_after_pn_standard_uph => :integer,
+	:wiikey_after_pn_reality_uph  => :integer,
+	:original_product_device      => :string,
+	:later_product_device         => :string,
+	:plan_wiikey_time             => :timestamp,
+	:really_wiikey_time           => :timestamp,
+	:rms_turn_on                  => :string,
+	:sub_parting_strip            => :string,
+	:prodution_applicant          => :string,
 }
 generate_form 'FOP_PRD', 'WiiKeyRequisition',
 	(wiikey_requisition_fields.merge common_fields)
