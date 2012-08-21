@@ -1,6 +1,5 @@
 # encoding: UTF-8
 # PL-Forms Feature Status:
-# * Seperate TOP ENG and PRD forms
 # * Add new feature support define status code per each forms (optional)
 # * Status code need redefine for each department (COP, FOP, BOP, )
 # * Sub-total status code in shift time, sum the same status code and production qty
@@ -21,6 +20,7 @@
 # * [done] Add recent form quick list for OP
 # * [done] Add filter based on user profile
 # * [done] All input/update/delete action will be record now, not only including last one, all in history
+# * [done]Seperate TOP ENG and PRD forms
 def generate_form(dept, form, fields, detail_fields=nil)
 	generate :scaffold, "#{form}#{fields.collect {|k,v| " #{k}:#{v}"}.join}"
 
