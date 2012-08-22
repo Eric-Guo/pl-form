@@ -132,7 +132,7 @@ sdss_kgd_wafer_vacuum_packing_machine_first_sample_affirm_fields = {
     :first_lot_affirm_passed     => :boolean,
     :remark                      => :string,
 }
-generate_form 'KGD_PRD', 'WaferVacuumPackingFirstLot',
+generate_form 'KGD_PRD', 'WaferVacuumPackFirstLot',
 	(sdss_kgd_wafer_vacuum_packing_machine_first_sample_affirm_fields.merge common_fields)
 
 # DOC# 3983-02-00017	SDSS KGD N2 Cabinet humidity record
@@ -339,7 +339,7 @@ sdss_kgd_dynatech_wafer_pack_unpack_shift_check_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
 }
-generate_form 'KGD_EQP', 'DynatechWaferPackUnpackChk',
+generate_form 'KGD_EQP', 'DynaWaferPackUnpackChk',
     (sdss_kgd_dynatech_wafer_pack_unpack_shift_check_fields.merge common_fields)
 
 # DOC# 3981-02-30026 	 SDSS KGD Dynatech wafer pack unpack PM record(导料机保养表单)
@@ -348,7 +348,7 @@ sdss_kgd_dynatech_wafer_pack_unpack_pm_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
 }
-generate_form 'KGD_EQP', 'DynatechWaferPackUnpackPm',
+generate_form 'KGD_EQP', 'DynaWaferPackUnpackPm',
     (sdss_kgd_dynatech_wafer_pack_unpack_pm_fields.merge common_fields)
 
 # DOC# 3981-02-30006 	 Accretech UF3000EX Wafer Prober Monthly&Half Year PM Record(UF3000EX probe 月/年保养表单)
@@ -411,7 +411,7 @@ kgd_ir_reflow_oven_system_shiftly_check_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
 }
-generate_form 'KGD_EQP', 'IrReflowOvenSystemShiftChk',
+generate_form 'KGD_EQP', 'KgdIrReflowOvenShiftChk',
     (kgd_ir_reflow_oven_system_shiftly_check_fields.merge common_fields)
 
 # DOC# 3981-02-30022 	 KGD_IR_Reflow_Oven_monthly&yearly_PM_record(IR-Reflow烤箱月/年保养表单)
@@ -420,7 +420,7 @@ kgd_ir_reflow_oven_monthly_and_yearly_pm_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
 }
-generate_form 'KGD_EQP', 'IrReflowOvenPm',
+generate_form 'KGD_EQP', 'KgdIrReflowOvenPm',
     (kgd_ir_reflow_oven_monthly_and_yearly_pm_fields.merge common_fields)
 
 # DOC# 3983-02-00018 	SDSS KGD Wafer Bank cycle count report
