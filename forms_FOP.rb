@@ -251,17 +251,17 @@ generate_form 'FOP_PRD', 'DPWaferSawProd',
 
 
 # DOC#: 3745-02-40014 DP Controller Wafer 交接记录表
-dp_controller_wafter_handover_fields = {
-	:lot_no            => :string,
-	:wafer_lot_no      => :string,
-	:wafer_qty         => :integer,
-	:placed_position   => :string,
-	:hand_over_confirm => :string,
-	:revcie_confirm    => :string,
-	:op_id             => :string,
-}
-generate_form 'FOP_PRD', 'DPCtlWaferHandover',
-	(dp_controller_wafter_handover_fields.merge common_fields)
+#dp_controller_wafter_handover_fields = {
+#	:lot_no            => :string,
+#	:wafer_lot_no      => :string,
+#	:wafer_qty         => :integer,
+#	:placed_position   => :string,
+#	:hand_over_confirm => :string,
+#	:revcie_confirm    => :string,
+#	:op_id             => :string,
+#}
+#generate_form 'FOP_PRD', 'DPCtlWaferHandover',
+#	(dp_controller_wafter_handover_fields.merge common_fields)
 
 
 # DOC# 3745-02-40007 DP 2VM Production log sheet作业记录表
@@ -326,20 +326,20 @@ generate_form 'FOP_PRD', 'DA-OvenCureProduction',
 
 
 # DOC# 3745-02-20021 DA改机通知单
-wiikey_requisition_fields = {
-	:machine_no                   => :string,
-	:wiikey_after_pn_standard_uph => :integer,
-	:wiikey_after_pn_reality_uph  => :integer,
-	:original_product_device      => :string,
-	:later_product_device         => :string,
-	:plan_wiikey_time             => :timestamp,
-	:really_wiikey_time           => :timestamp,
-	:rms_turn_on                  => :string,
-	:sub_parting_strip            => :string,
-	:prodution_applicant          => :string,
-}
-generate_form 'FOP_PRD', 'WiiKeyRequisition',
-	(wiikey_requisition_fields.merge common_fields)
+#wiikey_requisition_fields = {
+#	:machine_no                   => :string,
+#	:wiikey_after_pn_standard_uph => :integer,
+#	:wiikey_after_pn_reality_uph  => :integer,
+#	:original_product_device      => :string,
+#	:later_product_device         => :string,
+#	:plan_wiikey_time             => :timestamp,
+#	:really_wiikey_time           => :timestamp,
+#	:rms_turn_on                  => :string,
+#	:sub_parting_strip            => :string,
+#	:prodution_applicant          => :string,
+#}
+#generate_form 'FOP_PRD', 'WiiKeyRequisition',
+#	(wiikey_requisition_fields.merge common_fields)
 
 
 # DOC# 3745-02-60004 Plasma_production_Log plasma 作业记录表
