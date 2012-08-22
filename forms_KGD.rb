@@ -357,7 +357,7 @@ accretech_uf3000ex_wafer_prober_monthly_and_half_year_pm_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
 }
-generate_form 'KGD_EQP', 'AccreUf3000exWaferProberPm',
+generate_form 'KGD_EQP', 'AccreUf3000exWaferProbePm',
     (accretech_uf3000ex_wafer_prober_monthly_and_half_year_pm_fields.merge common_fields)
 
 # DOC# 3981-02-30007 	 Innotech SI-300S Wafer Tester Monthly&Half Year PM Record (SI300S Tester 月/年保养表单)
