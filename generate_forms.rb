@@ -7,6 +7,7 @@
 # * Add typeahead of complete lot name to reduce input error. (via dynamicly, need link to MES DB in backend)
 # * [no technical issue, need MFG line give 2 level category info, lacking such info in Excel] FOP Introduce 2 level form navigation, profile add department and only show department forms for perticular user
 # * [phaseII]Kickout all operator login account
+# * [phaseII]Support barcode scan via Mobile Phone Camera
 # * [pending due to it's a UI enhancement only]Support detail expend in index page (suggest by summer)
 # * [pending due to forms not complete, so vocabulary not complete] Display two language in forms
 # * [pending due to no forms needs currently] Group Detail Item to up 5 times (QA)
