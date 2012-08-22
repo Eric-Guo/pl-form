@@ -1,16 +1,12 @@
 # encoding: UTF-8
 
 # Common Production Fields can be merge in production log form
-top_common_production_fields = {
-	:status_code => :string,
-	:device      => :string,
-	:lot_no      => :string,
-	:reject_code => :string,
-	:remark      => :string,
-}
+# no common production field in TOP
 
 # DOC# 3735-02-00025	MT productin log sheet
 memory_test_positrol_fields = {
+	:status_code => :string,
+	:lot_no      => :string,
 	:m_c               => :string,
 	:lot_no            => :string,
 	:package           => :string,
@@ -36,10 +32,11 @@ memory_test_positrol_fields = {
 	:visual_inspection => :string,
 }
 generate_form 'TOP_PRD', 'MemoryTestProductin',
-	(top_common_production_fields.merge memory_test_positrol_fields.merge common_fields)
+	(memory_test_positrol_fields.merge common_fields)
 
 # DOC# 3775-02-00103	CT productin log sheet
 card_test_production_fields = {
+	:status_code => :string,
 	:m_c               => :string,
 	:lot_no            => :string,
 	:package           => :string,
@@ -63,7 +60,7 @@ card_test_production_fields = {
 	:visual_inspection => :string,
 }
 generate_form 'TOP_PRD', 'CardTestProduction',
-	(top_common_production_fields.merge card_test_production_fields.merge common_fields)
+	(card_test_production_fields.merge common_fields)
 
 # DOC# 3795-02-00006	TFCL productin log sheet
 tfcl_production_fields = {
@@ -88,10 +85,12 @@ tfcl_production_fields = {
 	:misc         => :string,
 }
 generate_form 'TOP_PRD', 'TfclProduction',
-	(top_common_production_fields.merge tfcl_production_fields.merge common_fields)
+	(tfcl_production_fields.merge common_fields)
 
 # Doc:3735-02-00042 Burn In production lot sheet
 mt_burn_in_production_fields = {
+	:status_code => :string,
+	:lot_no      => :string,
 	:uld_no                   => :string,
 	:stk_oven_no              => :string,
 	:lot_no                   => :string,
@@ -121,7 +120,7 @@ mt_burn_in_production_fields = {
 	:others                   => :string,
 }
 generate_form 'TOP_PRD', 'BurnInProduction',
-	(top_common_production_fields.merge mt_burn_in_production_fields.merge common_fields)
+	(mt_burn_in_production_fields.merge common_fields)
 
 # DOC# 3735-02-00026	Memory Test Daily check list
 memory_test_daily_check_fields = {
