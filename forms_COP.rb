@@ -146,13 +146,21 @@ generate_form 'COP_PRD', 'CardAssyLaserMarkPrd',
 	(card_assembly_laser_mark_production_fields.merge common_fields), card_assembly_laser_mark_production_detail_fields
 
 # DOC# 3755-02-60004	Production Log Sheet (SD label)
-#sd_label_production_fields = {
-#:profile_check  => :string,
-#:in_time   => :timestamp,
-#:out_time    => :timestamp,
-#}
-#generate_form 'COP_PRD', 'SdLabelProduction',
-#  (sd_label_production_fields.merge common_fields)
+sd_label_production_fields = {
+    :machine_no                 => :string,
+	:status_code                => :string,
+	:lot_no                     => :string,
+	:in_qty                     => :integer,
+	:out_qty                    => :integer,
+	:visual_inspection_recorder => :string,
+	:remark                     => :string,
+	:visual_inspection	        => :boolean,
+	:label_position	            => :boolean,
+	:confirm_by_qc              => :boolean,
+
+}
+generate_form 'COP_PRD', 'SdLabelProduction',
+   (sd_label_production_fields.merge common_fields)
 
 # DOC# 3755-02-60011	Prodcution Log Sheet ( Card FVI)
 #card_fvi_production_fields = {

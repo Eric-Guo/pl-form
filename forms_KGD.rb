@@ -2,13 +2,13 @@
 
 # Common Production Fields can be merge in production log form
 kgd_common_production_fields = {
-    :equipment_no  => :string,
-    :date          => :date,
-    :shift         => :string,
-    :op_id         => :string,
-    :wafer_part_no => :string,
-    :lot_no        => :string,
-    :wafer_id      => :string,
+	:equipment_no  => :string,
+	:date          => :date,
+	:shift         => :string,
+	:op_id         => :string,
+	:wafer_part_no => :string,
+	:mes_lot_no    => :string,
+	:wafer_id      => :string,
 }
 
 # DOC# 3983-02-00003	 SDSS KGD Testing Production Log Sheet
