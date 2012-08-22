@@ -93,6 +93,7 @@ generate_form 'TOP_PRD', 'TfclProduction',
 # Doc:3735-02-00042 Burn In production lot sheet
 mt_burn_in_production_fields = {
 	:uld_no                   => :string,
+	:stk_oven_no              => :string,
 	:lot_no                   => :string,
 	:package_capacity         => :string,
 	:start_time_fo_load       => :timestamp,
