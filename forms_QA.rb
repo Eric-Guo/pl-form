@@ -1,4 +1,5 @@
 # encoding: UTF-8
+# file date 8/23/2012 by Eric
 
 # DOC#: F1206-0002 incoming inspection report
 qa_incoming_inspection_fields = {

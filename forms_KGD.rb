@@ -1,4 +1,5 @@
 # encoding: UTF-8
+# file date 8/23/2012 by Eric
 
 # Common Production Fields can be merge in production log form
 kgd_common_production_fields = {
