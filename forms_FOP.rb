@@ -157,6 +157,7 @@ die_sort_production_fields = {
 	:rejet_code               => :string,
 	:remark                   => :string,
 	:check_type               => :string,
+	:check_device             => :string,
 	:visual_inspection_result => :string,
 	:confirm_by               => :string,
 }
