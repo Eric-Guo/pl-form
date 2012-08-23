@@ -2,6 +2,8 @@
 module ApplicationHelper
   def pl_field(f, field_name)
   	case field_name
+    when :capacity
+      f.input field_name.to_sym, :input_html => {'autocomplete' => 'off' , 'data-provide' => :typeahead, 'data-items' => 4, 'data-source' => '["2G","4G","8G","16G","24G","32G","60G","64G","120G","128G","256G","512G","1024G"]'}
   	when :check_type
   		f.input field_name.to_sym, :collection => ['CS','CD','RM','CT']
   	when :reject_code
