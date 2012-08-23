@@ -6,7 +6,7 @@
 	<% end -%>
 <% end %>
 <% if (current_user.present? and ['MAT','',nil].include? current_user.department ) or current_user.blank? -%>
-<h3>MAT</h3><!--FOP_MAT-->
+<h3>FOP MAT</h3><!--FOP_MAT-->
 <% end %>
 <% if (current_user.present? and ['FOP','',nil].include? current_user.department ) or current_user.blank? -%>
 <h3>FOP Production</h3><!--FOP_PRD-->
