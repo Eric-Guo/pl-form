@@ -1,5 +1,5 @@
 # encoding: UTF-8
-# file date 8/23/2012 by Eric
+# file date 8/29/2012 by Eric
 
 # DOC# 3755-02-00101 	COP FVI Rework Form
 #cop_rework_form_fields = {
@@ -25,6 +25,7 @@ tray_ink_mark_production_fields = {
 	:viscosity_test_1_3s        => :boolean,
 	:peeling_test_by_qc         => :boolean,
 	:solvents_test_by_qc        => :boolean,
+	:printing_times             => :integer,
 }
 tray_ink_mark_production_detail_fields = {
 	:items          => ["position measurement x 位置测量 x", "position measurement y 位置测量 y"],
@@ -33,7 +34,7 @@ tray_ink_mark_production_detail_fields = {
 	:data3          => :float,
 	:data4          => :float,
 	:data5          => :float,
-	:printing_times => :integer,
+
 }
 generate_form 'COP_PRD', 'TrayInkMarkProduction',
 	(tray_ink_mark_production_fields.merge common_fields), tray_ink_mark_production_detail_fields
