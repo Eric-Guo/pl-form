@@ -4,10 +4,8 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 development:
-  adapter: oracle_enhanced
-  database: SPMSTST
-  username: formstst
-  password: formstst
+  adapter: sqlite3
+  database: db/development.sqlite3
   pool: 5
   timeout: 5000
 
@@ -25,5 +23,13 @@ production:
   database: SPMSTST
   username: formstst
   password: formstst
+  pool: 5
+  timeout: 5000
+
+typeahead:
+  adapter: oracle_enhanced
+  database: MESWIP45.SDCORP.GLOBAL.SANDISK.COM
+  username: mesprd
+  password: wip24ux
   pool: 5
   timeout: 5000
