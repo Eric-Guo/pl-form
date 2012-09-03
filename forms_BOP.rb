@@ -1,12 +1,11 @@
 # encoding: UTF-8
-# file date 8/23/2012 by Eric
+# file date 9/3/2012 by Eric
 
 # Common Production Fields can be merge in production log form
 bop_common_production_fields = {
 	:status_code => :string,
-	:device      => :string,
 	:lot_no      => :string,
-	:reject_code => :string,
+	:machine_no  => :string,
 	:remark      => :string,
 }
 
@@ -14,11 +13,7 @@ bop_common_production_fields = {
 pmc_production_log_fields = {
 	:in_time                => :timestamp,
 	:out_time               => :timestamp,
-	:status_code            => :string,
-	:program_id             => :string,
-	:profile_check          => :string,
-	:golden_finger_defects  => :string,
-	:remark                 => :string,
+
 }
 generate_form 'BOP_PRD', 'PmcProduction',
 	(bop_common_production_fields.merge pmc_production_log_fields.merge common_fields)
@@ -28,10 +23,7 @@ generate_form 'BOP_PRD', 'PmcProduction',
 ink_oven_cure_production_fields = {
 	:in_time       => :timestamp,
 	:out_time      => :timestamp,
-	:status_code   => :string,
-	:program_id    => :string,
-	:profile_check => :string,
-	:remark        => :string,
+
 
 }
 generate_form 'BOP_PRD', 'InkOvenCureProduction',
@@ -40,10 +32,8 @@ generate_form 'BOP_PRD', 'InkOvenCureProduction',
 
 # DOC# 3746-02-20004 Compound Laser Mark Production Log
 compound_mark_production_fields = {
-	:repair_adjust_or_change_mat => :string,
 	:lot_no                      => :string,
-	:golden_finger_defects       => :string,
-	:confirm_by                  => :string,
+
 }
 generate_form 'BOP_PRD', 'CompoundMarkProduction',
 	(bop_common_production_fields.merge compound_mark_production_fields.merge common_fields)
@@ -51,12 +41,10 @@ generate_form 'BOP_PRD', 'CompoundMarkProduction',
 
 # DOC# 3746-02-20030	Substrate Laser Mark Production Log
 substrate_laser_mark_production_fields = {
-	:repair_action_or_adjustment=> :string,
 	:lot_no                     => :string,
 	:laser_power                => :float,
 	:laser_depth                => :float,
-	:position_demension         => :string,
-	:confirm_by                 => :string,
+
 }
 generate_form 'BOP_PRD', 'SubstrateLaserMarkProd',
 	(bop_common_production_fields.merge substrate_laser_mark_production_fields.merge common_fields)
@@ -66,31 +54,25 @@ generate_form 'BOP_PRD', 'SubstrateLaserMarkProd',
 substrate_ink_mark_production_log_fields = {
 	:status_code                  => :string,
 	:lot_no                       => :string,
-	:inspection_recorder          => :string,
-	:repair_action_or_adjustment  => :string,
-	:confirm_by                   => :string,
-}
+
 generate_form 'BOP_PRD', 'InMarkProduction',
 	(bop_common_production_fields.merge substrate_ink_mark_production_log_fields.merge common_fields)
 
-
 # DOC# 3746-02-20028	Compound Laser Sweeping Production Log
-laser_weeping_production_fields = {
-	:repair_adjust_or_change_mat => :string,
-	:lot_no                      => :string,
-	:confirm_by                  => :string,
-}
-generate_form 'BOP_PRD', 'LaserWeepingProduction',
-	(bop_common_production_fields.merge laser_weeping_production_fields.merge common_fields)
+#laser_weeping_production_fields = {
+#	:repair_adjust_or_change_mat => :string,
+#	:lot_no                      => :string,
+#	:confirm_by                  => :string,
+#}
+#generate_form 'BOP_PRD', 'LaserWeepingProduction',
+#	(bop_common_production_fields.merge laser_weeping_production_fields.merge common_fields)
 
 
 # DOC# 3746-02-20011	Production log sheet for ink mark
 ink_mark_production_log_fields = {
 	:status_code                 => :string,
 	:lot_no                      => :string,
-	:inspection_recorder         => :string,
-	:repair_action_or_adjustment => :string,
-	:confirm_by                  => :string,
+
 }
 generate_form 'BOP_PRD', 'InkMarkProduction',
 	(bop_common_production_fields.merge ink_mark_production_log_fields.merge common_fields)
@@ -99,11 +81,8 @@ generate_form 'BOP_PRD', 'InkMarkProduction',
 # DOC# 3746-02-30004	Laser cut production
 laser_cut_production_log_fields = {
 	:status_code                 => :string,
-	:strip_drawing_vender        => :string,
 	:lot_no                      => :string,
-	:inspection_recorder         => :string,
-	:repair_action_or_adjustment => :string,
-	:confirm_by                  => :string,
+
 }
 generate_form 'BOP_PRD', 'LaserCutProduction',
 	(bop_common_production_fields.merge laser_cut_production_log_fields.merge common_fields)
@@ -111,35 +90,28 @@ generate_form 'BOP_PRD', 'LaserCutProduction',
 # DOC# 3746-02-40004	Saw singulation production
 saw_singulation_production_log_fields = {
 	:status_code                 => :string,
-	:strip_drawing_vender        => :string,
 	:lot_no                      => :string,
-	:inspection_recorder         => :string,
-	:repair_action_or_adjustment => :string,
-	:confirm_by                  => :string,
+
 }
 generate_form 'BOP_PRD', 'SawSingulationProduction',
 	(bop_common_production_fields.merge saw_singulation_production_log_fields.merge common_fields)
 
 # DOC# 3746-02-90010	SDSS_T-scan_production
-t_scan_production_log_fields = {
-	:production_part_no => :string,
-	:lot_no             => :string,
-	:sample_size        => :integer,
-	:defect_qty         => :integer,
-	:remark             => :string,
-}
-generate_form 'BOP_PRD', 'T_scanProduction',
-	(bop_common_production_fields.merge t_scan_production_log_fields.merge common_fields)
+#t_scan_production_log_fields = {
+#	:production_part_no => :string,
+#	:lot_no             => :string,
+#	:sample_size        => :integer,
+#	:defect_qty         => :integer,
+#	:remark             => :string,
+#}
+#generate_form 'BOP_PRD', 'T_scanProduction',
+#	(bop_common_production_fields.merge t_scan_production_log_fields.merge common_fields)
 
 # DOC# 3746-02-60001	AOI production
 aoi_production_log_fields = {
 	:status_code => :string,
 	:lot_no      => :string,
-	:input_qty   => :integer,
-	:output_qty  => :integer,
 	:rework_qty  => :integer,
-	:reject_qty  => :integer,
-	:reject_code => :string,
 	:remark      => :string,
 }
 generate_form 'BOP_PRD', 'AoiProduction',
@@ -149,8 +121,6 @@ generate_form 'BOP_PRD', 'AoiProduction',
 ba_production_log_fields = {
 	:status_code         => :string,
 	:lot_no              => :string,
-	:reflow_recipe       => :string,
-	:materal_information => :string,
 	:remark              => :string,
 }
 generate_form 'BOP_PRD', 'BaProduction',
