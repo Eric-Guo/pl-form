@@ -44,7 +44,6 @@ substrate_laser_mark_production_fields = {
 	:lot_no                     => :string,
 	:laser_power                => :float,
 	:laser_depth                => :float,
-
 }
 generate_form 'BOP_PRD', 'SubstrateLaserMarkProd',
 	(bop_common_production_fields.merge substrate_laser_mark_production_fields.merge common_fields)
@@ -54,7 +53,7 @@ generate_form 'BOP_PRD', 'SubstrateLaserMarkProd',
 substrate_ink_mark_production_log_fields = {
 	:status_code                  => :string,
 	:lot_no                       => :string,
-
+}
 generate_form 'BOP_PRD', 'InMarkProduction',
 	(bop_common_production_fields.merge substrate_ink_mark_production_log_fields.merge common_fields)
 
@@ -72,7 +71,6 @@ generate_form 'BOP_PRD', 'InMarkProduction',
 ink_mark_production_log_fields = {
 	:status_code                 => :string,
 	:lot_no                      => :string,
-
 }
 generate_form 'BOP_PRD', 'InkMarkProduction',
 	(bop_common_production_fields.merge ink_mark_production_log_fields.merge common_fields)
@@ -82,7 +80,6 @@ generate_form 'BOP_PRD', 'InkMarkProduction',
 laser_cut_production_log_fields = {
 	:status_code                 => :string,
 	:lot_no                      => :string,
-
 }
 generate_form 'BOP_PRD', 'LaserCutProduction',
 	(bop_common_production_fields.merge laser_cut_production_log_fields.merge common_fields)
@@ -91,7 +88,6 @@ generate_form 'BOP_PRD', 'LaserCutProduction',
 saw_singulation_production_log_fields = {
 	:status_code                 => :string,
 	:lot_no                      => :string,
-
 }
 generate_form 'BOP_PRD', 'SawSingulationProduction',
 	(bop_common_production_fields.merge saw_singulation_production_log_fields.merge common_fields)
