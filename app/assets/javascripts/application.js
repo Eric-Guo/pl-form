@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+$(document).ready(function() {
+	$("form").bind("keypress", function(e) {
+	        if (e.keyCode == 13) return false;
+	  });
+});
