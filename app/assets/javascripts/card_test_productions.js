@@ -6,4 +6,11 @@ $(document).ready(function() {
 	        });
 	    }
 	});
+	$('#card_test_production_package.string').typeahead({
+	    source: function (query, process) {
+	        return $.get('/typeahead/package', { query: query }, function (data) {
+	            return process(data);
+	        });
+	    }
+	});
 });
