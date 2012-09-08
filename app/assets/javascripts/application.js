@@ -18,4 +18,24 @@ $(document).ready(function() {
 	$("form").bind("keypress", function(e) {
 	        if (e.keyCode == 13) return false;
 	  });
+	$('div.controls input').each(function() {
+	   if ($(this).attr("id").indexOf('_lot_no') > 0) {
+	      $(this).typeahead({
+			    source: function (query, process) {
+	  	      return $.get('/typeahead/lot', { query: query }, function (data) {
+	    	        return process(data);
+	      	  });
+	    		}
+				});
+	   }
+	   if ($(this).attr("id").indexOf('_package') > 0) {
+	      $(this).typeahead({
+			    source: function (query, process) {
+	  	      return $.get('/typeahead/package', { query: query }, function (data) {
+	    	        return process(data);
+	      	  });
+	    		}
+				});
+	   }
+	});
 });
