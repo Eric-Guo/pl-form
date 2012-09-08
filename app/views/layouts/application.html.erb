@@ -26,7 +26,7 @@
         <div class="btn-group pull-right">
 <% if user_signed_in? %>
           <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-            <i class="icon-user"></i> <%= current_user.badge %>
+            <i class="icon-user"></i> <%= current_user.badge %>(<%= current_user.shift_code %>)
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
