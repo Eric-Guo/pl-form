@@ -172,7 +172,7 @@ def generate_form(dept, form, fields, detail_fields=nil)
 		if status_code.present?
 			status_codes_inserts="\n  def status_codes\n"
 			status_codes_inserts<< "    #{status_code.to_s}\n"
-			status_codes_inserts<< "  end"
+			status_codes_inserts<< "  end\n"
 		end
 		inject_into_file "app/models/#{form.underscore}.rb", :before => "end\n" do
 			status_codes_inserts
