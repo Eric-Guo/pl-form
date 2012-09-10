@@ -23,9 +23,13 @@
 # * [done]Add typeahead of complete lot name to reduce input error. (via dynamicly, need link to MES DB in backend)
 # * [done]Add new feature support define status code per each forms (optional)
 def generate_form(dept, form, fields, detail_fields=nil)
-	if fields[:status_code].kind_of? Array
-		status_code = fields[:status_code]
-		fields[:status_code] = :string
+	if fields.has_key? :status_code
+		if fields[:status_code].kind_of? Array
+			status_code = fields[:status_code]
+			fields[:status_code] = :string
+		else
+			status_code = ['(N) Normal operation','(SC) Shift Change','(OP) MC Set Up','(CD) Change Device','(CS) Change Solder Paste','(CC) Change Component','(MS) Mount Squeegee','(CS) Change Stencil','(RM) Repaire M/C','(PM) PM'] # give default
+		end
 	end
 
 	generate :scaffold, "#{form}#{fields.collect {|k,v| " #{k}:#{v}"}.join}"
@@ -164,18 +168,19 @@ def generate_form(dept, form, fields, detail_fields=nil)
 	  "  <li><%= link_to '#{form.titleize}', #{form.pluralize.underscore}_path -%></li>\n"
 	end
 
-	if status_code.present?
-		status_codes_inserts="\n  def status_codes\n"
-		status_codes_inserts<< "    #{status_code.to_s}\n"
-		status_codes_inserts<< "  end"
+	if fields.has_key? :status_code
+		if status_code.present?
+			status_codes_inserts="\n  def status_codes\n"
+			status_codes_inserts<< "    #{status_code.to_s}\n"
+			status_codes_inserts<< "  end"
+		end
+		inject_into_file "app/models/#{form.underscore}.rb", :before => "end\n" do
+			status_codes_inserts
+		end
+		inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :after => '<!--Note-->' do
+			"<h5>#{status_code.collect {|i| "#{i}, "}.join}</h5>"
+		end
 	end
-	inject_into_file "app/models/#{form.underscore}.rb", :before => "end\n" do
-		status_codes_inserts
-	end
-
-	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :after => '<!--Note-->' do
-"<h5>#{status_code.collect {|i| "#{i}, "}.join}</h5>"
-	end if fields.has_key? :status_code
 
 	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :after => '<!--Note-->' do
 '<h5>KGD Machine Status: A :Operation Time (机器运行时间); B :Check Probe Mark (检查针痕); C :Change Probe Card (更换针卡); D :Setup Device (机器转换不同产品); E :PM & CAL (维护校准时间); F :Prober Down Time (针测机停机时间); G :Tester Down Time (测试机停机时间); H :Facility Down (厂务停机时间); I :Engeer Use Time (工程使用时间); J :End lot Time (Lot转换时间); K :Idle (待料时间); L :Misc (其它)</h5>'
