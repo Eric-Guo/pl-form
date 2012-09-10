@@ -1,10 +1,8 @@
 # encoding: UTF-8
 # PL-Forms Feature Status:
-# * Add new feature support define status code per each forms (optional)
 # * Status code need redefine for each department (COP, FOP, BOP, )
 # * Sub-total status code in shift time, sum the same status code and production qty
 # * Add pass/failed confirm with QA, allow QA confirm after Operator input the data, QA have an extended time (e.g. 4 hours) to confirm
-# * Add typeahead of complete lot name to reduce input error. (via dynamicly, need link to MES DB in backend)
 # * [no technical issue, need MFG line give 2 level category info, lacking such info in Excel] FOP Introduce 2 level form navigation, profile add department and only show department forms for perticular user
 # * [phaseII]Kickout all operator login account
 # * [phaseII]Support barcode scan via Mobile Phone Camera
@@ -22,7 +20,14 @@
 # * [done] Add filter based on user profile
 # * [done] All input/update/delete action will be record now, not only including last one, all in history
 # * [done]Seperate TOP ENG and PRD forms
+# * [done]Add typeahead of complete lot name to reduce input error. (via dynamicly, need link to MES DB in backend)
+# * [done]Add new feature support define status code per each forms (optional)
 def generate_form(dept, form, fields, detail_fields=nil)
+	if fields[:status_code].kind_of? Array
+		status_code = fields[:status_code]
+		fields[:status_code] = :string
+	end
+
 	generate :scaffold, "#{form}#{fields.collect {|k,v| " #{k}:#{v}"}.join}"
 
 	inject_into_file "app/models/#{form.underscore}.rb", :before => "end\n" do
@@ -150,6 +155,7 @@ def generate_form(dept, form, fields, detail_fields=nil)
 		end
 	end # detail_fields.present?
 
+  # Update the navigation page
 	inject_into_file "app/views/application/_nav.html.erb", :before => "</ul><!--#{dept}-->\n" do
 	  "  <li><%= link_to '#{form.titleize}', #{form.pluralize.underscore}_path -%></li>\n"
 	end
@@ -158,8 +164,17 @@ def generate_form(dept, form, fields, detail_fields=nil)
 	  "  <li><%= link_to '#{form.titleize}', #{form.pluralize.underscore}_path -%></li>\n"
 	end
 
+	if status_code.present?
+		status_codes_inserts="\n  def status_codes\n"
+		status_codes_inserts<< "    #{status_code.to_s}\n"
+		status_codes_inserts<< "  end"
+	end
+	inject_into_file "app/models/#{form.underscore}.rb", :before => "end\n" do
+		status_codes_inserts
+	end
+
 	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :after => '<!--Note-->' do
-'<h5>Status Code: (N) Normal operation 一般作业；(SC)Shift Change 换班；(OP) MC Set Up 开机；(CD) Change device换型号；(CS) Change solder paste  换锡膏；(CC) Change component  换元器件；(MS) mount squeegee 安装刮刀；(CS) change stencil 更换钢板；(RM) Repaire M/C 修机；(PM) PM 保养。</h5>'
+"<h5>#{status_code.collect {|i| "#{i}, "}.join}</h5>"
 	end if fields.has_key? :status_code
 
 	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :after => '<!--Note-->' do

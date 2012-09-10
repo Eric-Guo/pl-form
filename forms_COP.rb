@@ -13,7 +13,7 @@
 # DOC# 3755-02-11001	Production Log Sheet(Tray Ink mark)
 tray_ink_mark_production_fields = {
 	:machine_no                 => :string,
-	:status_code                => :string,
+	:status_code                => ["(N) Normal operation","(OP) MC open","(RM) Repaire M/C","(PM) PM","(CD) Change Device","(SC) Shift change","(CI) Change Ink"],
 	:device_no                  => :string,
 	:program_id                 => :string,
 	:lot_no                     => :string,
@@ -34,7 +34,6 @@ tray_ink_mark_production_detail_fields = {
 	:data3          => :float,
 	:data4          => :float,
 	:data5          => :float,
-
 }
 generate_form 'COP_PRD', 'TrayInkMarkProduction',
 	(tray_ink_mark_production_fields.merge common_fields), tray_ink_mark_production_detail_fields
