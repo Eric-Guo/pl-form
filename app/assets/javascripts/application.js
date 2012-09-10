@@ -37,5 +37,14 @@ $(document).ready(function() {
 	    		}
 				});
 	   }
+	   if ($(this).attr("id").indexOf('_device') > 0) {
+	      $(this).typeahead({
+			    source: function (query, process) {
+	  	      return $.get('/typeahead/device', { query: query }, function (data) {
+	    	        return process(data);
+	      	  });
+	    		}
+				});
+	   }
 	});
 });

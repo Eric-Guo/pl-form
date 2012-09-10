@@ -6,7 +6,7 @@ module ApplicationHelper
       f.input field_name.to_sym, :input_html => {'autocomplete' => 'off' , 'data-provide' => :typeahead, 'data-items' => 4, 'data-source' => '["2G","4G","8G","16G","24G","32G","60G","64G","120G","128G","256G","512G","1024G"]'}
   	when :check_type
   		f.input field_name.to_sym, :collection => ['CS','CD','RM','CT']
-    when :lot_no, :package
+    when :lot_no, :package, :device
       f.input field_name.to_sym, :input_html => { 'autocomplete' => 'off' }
     when :lot_out_time
       f.input field_name.to_sym, :include_blank => true, :value => nil

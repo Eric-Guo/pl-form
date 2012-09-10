@@ -4,6 +4,7 @@ PlForm::Application.routes.draw do
   get "home/index"
   get "typeahead/lot"
   get "typeahead/package"
+  get "typeahead/device"
   root :to => 'home#index'
 
   # The priority is based upon order of creation:
