@@ -1,5 +1,5 @@
 # encoding: UTF-8
-# file date 8/29/2012 by Eric
+# file date 9/10/2012 by Eric
 
 # DOC# 3755-02-00101 	COP FVI Rework Form
 #cop_rework_form_fields = {
@@ -13,7 +13,7 @@
 # DOC# 3755-02-11001	Production Log Sheet(Tray Ink mark)
 tray_ink_mark_production_fields = {
 	:machine_no                 => :string,
-	:status_code                => ["(N) Normal operation","(OP) MC open","(RM) Repaire M/C","(PM) PM","(CD) Change Device","(SC) Shift change","(CI) Change Ink"],
+	:status_code                => ["(N) Normal Operation","(OP) MC Open","(RM) Repaire M/C","(PM) PM","(CD) Change Device","(SC) Shift Change","(CI) Change Ink"],
 	:device_no                  => :string,
 	:program_id                 => :string,
 	:lot_no                     => :string,
@@ -41,7 +41,7 @@ generate_form 'COP_PRD', 'TrayInkMarkProduction',
 # DOC# 3755-02-11005	Cosmetic_Marking_Production_Log_Sheet_R1
 cosmetic_marking_production_fields = {
 	:machine_no                 => :string,
-	:status_code                => :string,
+	:status_code                => ['(N) Normal Operation','(OP) MC Open','(RM) Repaire M/C','(PM) PM','(CD) Change Device','(SC) Shift Change'],
 	:lot_no                     => :string,
 	:device_no                  => :string,
 	:in_qty                     => :integer,
@@ -67,7 +67,7 @@ generate_form 'COP_PRD', 'CosmeticMarkingProd',
 # DOC# 3755-02-12001	Production Log Sheet(Compound Black TOP)
 compound_black_top_production_fields = {
 	:machine_no                     => :string,
-	:status_code                    => :string,
+	:status_code                    => ['(N) Normal Operation','(OP) MC Open','(RM) Repaire M/C','(PM) PM','(CD) Change Device','(SC) Shift Change','(CI) Change Ink'],
 	:lot_no                         => :string,
 	:device_no                      => :string,
 	:in_qty                         => :integer,
@@ -86,7 +86,7 @@ generate_form 'COP_PRD', 'CompoundBlackTopProd',
 # DOC# 3755-02-20004	Production Log Sheet (welding)
 welding_production_fields = {
 	:machine_no              => :string,
-	:status_code             => :string, # 机台状态一律用这个，会生成统一下拉框
+	:status_code             => ['(Prod) Production','(W/M) Waiting Material','(R/M) Repaire M/C','(P/M) PM','(M/P) M/C Power On','(Eng) Engineering','(L/P) Lid PN Change','(P/A)Parameter Adjustment','(S/C)Shift Change'],
 	:product_type            => :string,
 	:device                  => :string,
 	:lot_no                  => :string,
@@ -111,7 +111,7 @@ generate_form 'COP_PRD', 'WeldingProduction',
 # DOC# 3755-02-50004	Production Log Sheet ( card assembly laser mark)
 card_assembly_laser_mark_production_fields = {
 	:machine_no                 => :string,
-	:status_code                => :string,
+	:status_code                => ['(Prod) Production','(CD) Change Device','(SC) Shift Change','(RM) Repaire M/C','(PM) PM','(MD) Machine Down','(Eng) Engineering','(WM) Wait Material'],
 	:lot_no                     => :string,
 	:in_qty                     => :integer,
 	:out_qty                    => :integer,
@@ -139,8 +139,8 @@ generate_form 'COP_PRD', 'CardAssyLaserMarkPrd',
 
 # DOC# 3755-02-60004	Production Log Sheet (SD label)
 sd_label_production_fields = {
-    :machine_no                 => :string,
-	:status_code                => :string,
+  :machine_no                 => :string,
+	:status_code                => ['(S/U) MC Set Up','(Prod) Production','(C/D) Change Device','(WM) Wait Material','(RM) Repaire M/C','(PM) PM','(Eng) Engineering','(M/D) Machine Done'],
 	:lot_no                     => :string,
 	:in_qty                     => :integer,
 	:out_qty                    => :integer,
@@ -149,7 +149,6 @@ sd_label_production_fields = {
 	:visual_inspection	        => :boolean,
 	:label_position	            => :boolean,
 	:confirm_by_qc              => :boolean,
-
 }
 generate_form 'COP_PRD', 'SdLabelProduction',
    (sd_label_production_fields.merge common_fields)
@@ -166,7 +165,7 @@ generate_form 'COP_PRD', 'SdLabelProduction',
 # DOC# 3755-02-60029 Production Log Sheet (Mask Label)
 mask_label_production_fields = {
 	:machine_no                 => :string,
-	:status_code                => :string,
+	:status_code                => ['(S/U) MC Set Up','(Prod) Production','(C/D) Change Device','(WM) Wait Material','(RM) Repaire M/C','(PM) PM','(Eng) Engineering','(M/D) Machine Done'],
 	:lot_no                     => :string,
 	:in_qty                     => :integer,
 	:out_qty                    => :integer,
@@ -219,7 +218,7 @@ generate_form 'COP_PRD', 'MaskLabelProduction',
 # DOC# 3755-02-90011	Production Log Sheet ( Ink Masking)
 ink_masking_production_fields = {
 	:machine_no                 => :string,
-	:status_code                => :string,
+	:status_code                => ['(N) Normal Operation','(OP) MC Set Up','(RM) Repaire M/C','(PM) PM','(CD) Change Device','(WM) Wait Material'],
 	:lot_no                     => :string,
 	:in_qty                     => :integer,
 	:out_qty                    => :integer,
@@ -244,7 +243,7 @@ generate_form 'COP_PRD', 'InkMaskingProd',
 # DOC# 3755-02-60016	Production Log Sheet (Bake)
 bake_production_fields = {
 	:machine_no    => :string,
-	:status_code   => :string,
+	:status_code   => ['(S/U) MC Set Up','(Prod) Production','(C/D) Change Device','(WM) Wait Material','(RM) Repaire M/C','(PM) PM','(Eng) Engineering','(M/D) Machine Done'],
 	:lot_no        => :string,
 	:out_qty       => :integer,
 	:bake_program  => :string,
