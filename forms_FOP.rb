@@ -299,14 +299,14 @@ die_attach_production_fields = {
 die_attach_production_detail_fields = {
 	:items => ["低倍显微镜目检结果 Visual Inspection","芯片偏移 Die Placement (≤ ±25µm)","芯片旋转 Die Rotation (memory ≤ 20um  CTL/CB≤15um)","芯片倾斜 Die tilt (≤50µm )","叠片高度 Stack height , 标准参见DA positrol guide line"],
 	:x_1 => :float,
-	:x_2 => :float,
-	:x_3 => :float,
-	:x_4 => :float,
-	:X_5 => :float,
 	:y_1 => :float,
+	:x_2 => :float,
 	:y_2 => :float,
+	:x_3 => :float,
 	:y_3 => :float,
+	:x_4 => :float,
 	:y_4 => :float,
+	:x_5 => :float,
 	:y_5 => :float,
 }
 generate_form 'FOP_PRD', 'DieAttachProduction',
