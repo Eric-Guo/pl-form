@@ -1,7 +1,7 @@
 # encoding: UTF-8
 # PL-Forms Feature Status:
-# * Status code need redefine for each department (COP, FOP, BOP, )
 # * Sub-total status code in shift time, sum the same status code and production qty
+# * check_items, criterias need same feature of items and specs
 # * Add pass/failed confirm with QA, allow QA confirm after Operator input the data, QA have an extended time (e.g. 4 hours) to confirm
 # * [no technical issue, need MFG line give 2 level category info, lacking such info in Excel] FOP Introduce 2 level form navigation, profile add department and only show department forms for perticular user
 # * [phaseII]Kickout all operator login account
@@ -22,6 +22,7 @@
 # * [done]Seperate TOP ENG and PRD forms
 # * [done]Add typeahead of complete lot name to reduce input error. (via dynamicly, need link to MES DB in backend)
 # * [done]Add new feature support define status code per each forms (optional)
+# * [done]Status code need redefine for each department (COP, FOP, BOP, )
 def generate_form(dept, form, fields, detail_fields=nil)
 	if fields.has_key? :status_code
 		if fields[:status_code].kind_of? Array

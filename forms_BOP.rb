@@ -1,5 +1,5 @@
 # encoding: UTF-8
-# file date 9/3/2012 by Eric
+# file date 9/8/2012 by Eric
 
 # Common Production Fields can be merge in production log form
 bop_common_production_fields = {
