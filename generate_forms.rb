@@ -3,6 +3,8 @@
 # * Sub-total status code in shift time, sum the same status code and production qty
 # * check_items, criterias need same feature of items and specs
 # * Add pass/failed confirm with QA, allow QA confirm after Operator input the data, QA have an extended time (e.g. 4 hours) to confirm
+# * Can not support android IME scan bar code input
+# * Layout padding top should be larger
 # * [no technical issue, need MFG line give 2 level category info, lacking such info in Excel] FOP Introduce 2 level form navigation, profile add department and only show department forms for perticular user
 # * [phaseII]Kickout all operator login account
 # * [phaseII]Support barcode scan via Mobile Phone Camera
