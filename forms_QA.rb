@@ -491,7 +491,7 @@ out_of_box_audit_document_checklist_general_detail_fields = {
 	"Out box X of X"],
 	:check_list_result => :boolean,
 }
-generate_form 'QA', 'OutOfBoxAuditChecklist',
+generate_form 'QA', 'OobAuditChecklist116',
 	(out_of_box_audit_document_checklist_general_fields.merge common_fields), out_of_box_audit_document_checklist_general_detail_fields
 
 
@@ -636,7 +636,7 @@ out_of_box_audit_document_checklist_motorola_detail_fields = {
 	"Moto specific OBA check items Affix at back side of packing list"],
 	:check_list_result => :boolean,
 }
-generate_form 'QA', 'OutOfBoxAuditChecklist',
+generate_form 'QA', 'OobAuditChecklist117',
 	(out_of_box_audit_document_checklist_motorola_fields.merge common_fields), out_of_box_audit_document_checklist_motorola_detail_fields
 
 
@@ -783,7 +783,7 @@ out_of_box_audit_document_checklist_nokia_detail_fields = {
 	"Nokia specific OBA check items Match"],
     :check_list_result => :boolean,
 }
-generate_form 'QA', 'OutOfBoxAuditChecklist',
+generate_form 'QA', 'OobAuditChecklist118',
 	(out_of_box_audit_document_checklist_nokia_fields.merge common_fields), out_of_box_audit_document_checklist_nokia_detail_fields
 
 
@@ -937,7 +937,7 @@ out_of_box_audit_document_checklist_semc_detail_fields = {
 	"SEMC specific OBA check items Match"],
     :check_list_result => :boolean,
 }
-generate_form 'QA', 'OutOfBoxAuditChecklist',
+generate_form 'QA', 'OobAuditChecklist119',
 	(out_of_box_audit_document_checklist_semc_fields.merge common_fields), out_of_box_audit_document_checklist_semc_detail_fields
 
 
@@ -1077,12 +1077,8 @@ out_of_box_audit_document_checklist_ssmp_detail_fields = {
 	"SSMP specific Match"],
     :check_list_result => :boolean,
 }
-generate_form 'QA', 'OutOfBoxAuditChecklist',
+generate_form 'QA', 'OobAuditChecklist120',
 	(out_of_box_audit_document_checklist_ssmp_fields.merge common_fields), out_of_box_audit_document_checklist_ssmp_detail_fields
-
-
-
-
 
 
 
@@ -1206,7 +1202,7 @@ out_of_box_audit_document_checklist_samsung_detail_fields = {
     "Samsung specific OBA check items Match"],
 	:check_list_result => :boolean,
 }
-generate_form 'QA', 'OutOfBoxAuditChecklist',
+generate_form 'QA', 'OobAuditChecklist203',
 	(out_of_box_audit_document_checklist_samsung_fields.merge common_fields), out_of_box_audit_document_checklist_samsung_detail_fields
 
 
@@ -1331,7 +1327,7 @@ out_of_box_audit_document_checklist_tapa_reel_detail_fields = {
     "Specific OBA check items Maximum 3 different date codes combined in one roll. And date code cycle can’t exceed 8 weeks"],
     :check_list_result => :boolean,
 }
-generate_form 'QA', 'OutOfBoxAuditChecklist',
+generate_form 'QA', 'OobAuditChecklist179',
 	(out_of_box_audit_document_checklist_tapa_reel_fields.merge common_fields), out_of_box_audit_document_checklist_tapa_reel_detail_fields
 
 
@@ -1469,5 +1465,5 @@ out_of_box_audit_document_checklist_apple_ulga_tape_reel_detail_fields = {
 	"Specific OBA check items Maximum 2 different date codes combined in one roll. And date code cycle can’t exceed 8 weeks"],
     :check_list_result => :boolean,
 }
-generate_form 'QA', 'OutOfBoxAuditChecklist',
+generate_form 'QA', 'OobAuditChecklist182',
 	(out_of_box_audit_document_checklist_apple_ulga_tape_reel_fields.merge common_fields), out_of_box_audit_document_checklist_apple_ulga_tape_reel_detail_fields
