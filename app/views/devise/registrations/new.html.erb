@@ -5,7 +5,7 @@
 
   <div class="inputs">
     <%= f.input :badge, :required => true, :autofocus => true %>
-    <%= f.input :shift_code, :required => true, :collection => ['A/Day', 'A/Night', 'B/Day', 'B/Night', 'C/Day', 'C/Night','R Shift'] %>
+    <%= f.input :shift_code, :required => true, :collection => ['A', 'B', 'C', 'R'] %>
     <%= f.input :department, :required => true, :collection => ['MAT','FOP','BOP','TOP','COP','KGD','QA'] %>
     <%= f.input :email %>
     <%= f.input :password, :required => true %>
