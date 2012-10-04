@@ -290,7 +290,7 @@ qa_qc_kgd_inspection_working_monitor_fields = {
 	:defect_description => :string,
 	:qdn_no_remark      => :string,
 }
-generate_form 'QA', 'QcKgdInspectWorkingMonitor',
+generate_form 'QA', 'QcKgdInspectMonitor',
 	(qa_qc_kgd_inspection_working_monitor_fields.merge common_fields)
 
 
@@ -305,7 +305,7 @@ qa_qc_wpt_bst_inspection_monitor_fields = {
 	:change_capillary_reason => :string,
 	:result                  => :boolean,
 }
-generate_form 'QA', 'QcWptBstInspectionMonitor',
+generate_form 'QA', 'QcWptBstInspecMonitor',
 	(qa_qc_wpt_bst_inspection_monitor_fields.merge common_fields)
 
 
