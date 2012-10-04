@@ -57,6 +57,12 @@ def generate_form(dept, form, fields, detail_fields=nil)
 
 			dm_specs = detail_fields[:specs]
 			detail_fields[:specs]=:string unless dm_specs.nil?
+
+			dm_check_items = detail_fields[:check_items]
+			detail_fields[:check_items]=:string unless dm_check_items.nil?
+
+			dm_criterias = detail_fields[:criterias]
+			detail_fields[:criterias]=:string unless dm_criterias.nil?
 		end
 
 		generate :model, "#{dm_name} #{form.underscore}:references #{detail_fields.collect {|k,v| " #{k}:#{v}"}.join}"
@@ -91,6 +97,16 @@ def generate_form(dept, form, fields, detail_fields=nil)
 			detail_model_inserts<<"    #{dm_specs.to_s}\n"
 			detail_model_inserts<<"  end\n\n"
 		end
+		if dm_check_items.present?
+			detail_model_inserts<<"  def check_items_desc\n"
+			detail_model_inserts<<"    #{dm_check_items.to_s}\n"
+			detail_model_inserts<<"  end\n\n"
+		end
+		if dm_criterias.present?
+			detail_model_inserts<<"  def criterias_desc\n"
+			detail_model_inserts<<"    #{dm_criterias.to_s}\n"
+			detail_model_inserts<<"  end\n\n"
+		end
 		inject_into_file "app/models/#{dm_name.underscore}.rb", :before => "end\n" do
 			detail_model_inserts
 		end
@@ -103,6 +119,12 @@ def generate_form(dept, form, fields, detail_fields=nil)
 		if dm_specs.present?
 			detail_controller_new_inserts<<"        t.specs=t.specs_desc[i]\n"
 		end
+		if dm_check_items.present?
+			detail_controller_new_inserts<<"        t.check_items=t.check_items_desc[i]\n"
+		end
+		if dm_criterias.present?
+			detail_controller_new_inserts<<"        t.criterias=t.criterias_desc[i]\n"
+		end
 		detail_controller_new_inserts<<"    end\n"
 		inject_into_file "app/controllers/#{form.underscore.pluralize}_controller.rb", :after => "# after_controller_new\n" do
 			detail_controller_new_inserts
@@ -114,6 +136,12 @@ def generate_form(dept, form, fields, detail_fields=nil)
 			detail_controller_create_inserts<<"      d[1][:items] = @#{form.underscore}.#{dm_name.underscore.pluralize}.build.items_desc[d[0].to_i]\n"
 			if dm_specs.present?
 			detail_controller_create_inserts<<"      d[1][:specs] = @#{form.underscore}.#{dm_name.underscore.pluralize}.build.specs_desc[d[0].to_i]\n"
+			end
+			if dm_check_items.present?
+			detail_controller_create_inserts<<"      d[1][:check_items] = @#{form.underscore}.#{dm_name.underscore.pluralize}.build.check_items_desc[d[0].to_i]\n"
+			end
+			if dm_criterias.present?
+			detail_controller_create_inserts<<"      d[1][:criterias] = @#{form.underscore}.#{dm_name.underscore.pluralize}.build.criterias_desc[d[0].to_i]\n"
 			end
 			detail_controller_create_inserts<<"    end\n"
 		end
@@ -131,7 +159,7 @@ def generate_form(dept, form, fields, detail_fields=nil)
 		detail_view__form_inserts<< "  <%= f.fields_for :#{dm_name.underscore.pluralize}, detail do |g| %>\n"
 		detail_view__form_inserts<< "    <tr>\n"
 		detail_fields.keys.each do |field_name|
-	  	if [:items, :specs].include? field_name
+	  	if [:items, :specs, :check_items, :criterias].include? field_name
 				detail_view__form_inserts<< "<td><%= detail.#{field_name.to_s} %></td>\n"
 	 		else
 				detail_view__form_inserts<< "<td><%= g.input :#{field_name.to_s}, :wrapper => :tdata, :input_html => { :class => 'input-mini' } %></td>\n"
