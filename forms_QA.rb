@@ -393,8 +393,8 @@ out_of_box_audit_document_checklist_general_detail_fields = {
 	"PO#",
 	"PO#",
 	"Delivery Number",
-	"Device P/N"
-	"Device P/N"
+	"Device P/N",
+	"Device P/N",
 	"Ship to Address",
 	"Ship to Address",
 	"Number of Boxes",
