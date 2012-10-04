@@ -1,7 +1,6 @@
 # encoding: UTF-8
 # PL-Forms Feature Status:
 # * Sub-total status code in shift time, sum the same status code and production qty
-# * check_items, criterias need same feature of items and specs
 # * Add pass/failed confirm with QA, allow QA confirm after Operator input the data, QA have an extended time (e.g. 4 hours) to confirm
 # * Can not support android IME scan bar code input
 # * Layout padding top should be larger
@@ -25,6 +24,7 @@
 # * [done]Add typeahead of complete lot name to reduce input error. (via dynamicly, need link to MES DB in backend)
 # * [done]Add new feature support define status code per each forms (optional)
 # * [done]Status code need redefine for each department (COP, FOP, BOP, )
+# * [done]check_items, criterias need same feature of items and specs
 def generate_form(dept, form, fields, detail_fields=nil)
 	if fields.has_key? :status_code
 		if fields[:status_code].kind_of? Array
