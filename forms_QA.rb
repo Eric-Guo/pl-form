@@ -290,7 +290,7 @@ qa_qc_kgd_inspection_working_monitor_fields = {
 	:defect_description => :string,
 	:qdn_no_remark      => :string,
 }
-generate_form 'QA', 'QcKgdInspectionWorkingMonitor',
+generate_form 'QA', 'QcKgdInspectWorkingMonitor',
 	(qa_qc_kgd_inspection_working_monitor_fields.merge common_fields)
 
 
