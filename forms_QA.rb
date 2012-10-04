@@ -369,10 +369,7 @@ qa_qc_packing_monitor_fields = {
 	:qdn_no_remark          => :string,
 }
 generate_form 'QA', 'QcPackingMonitor',
-	(qa_qc_packing_monitor_fields.merge common_fields), qa_qc_packing_monitor_detail_fields
-
-
-
+	(qa_qc_packing_monitor_fields.merge common_fields)
 
 
 # Doc#: 3712-02-00116 Out Of Box Audit Document Checklist
