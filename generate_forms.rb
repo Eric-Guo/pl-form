@@ -38,11 +38,11 @@ def generate_form(dept, form, fields, detail_fields=nil)
 	generate :scaffold, "#{form}#{fields.collect {|k,v| " #{k}:#{v}"}.join}"
 
 	inject_into_file "app/models/#{form.underscore}.rb", :before => "end\n" do
-	  "  audited\n"
+		"  audited\n"
 	end
 
 	inject_into_file "app/models/#{form.underscore}.rb", :before => "end\n" do
-	  "  validates :status_code, :presence => true\n"
+		"  validates :status_code, :presence => true\n"
 	end if fields.has_key? :status_code
 
 	if detail_fields.present?
@@ -70,15 +70,15 @@ def generate_form(dept, form, fields, detail_fields=nil)
 		# resolve index name too long
 		Dir.glob("db/migrate/*_create_#{dm_name.underscore.pluralize}.rb") do |dm|
 			inject_into_file dm, :before => "\n  end\nend" do
-		  	", :name => 'i_#{dm_name.underscore}'"
+				", :name => 'i_#{dm_name.underscore}'"
 			end
 		end
 
 		inject_into_file "app/models/#{form.underscore}.rb", :before => "end\n" do
-	  	"  has_many :#{dm_name.underscore.pluralize}, dependent: :destroy\n" + \
-	  	"  accepts_nested_attributes_for :#{dm_name.underscore.pluralize}\n" + \
-	  	"  attr_accessible :#{dm_name.underscore.pluralize}_attributes\n" + \
-	  	"  has_associated_audits\n"
+			"  has_many :#{dm_name.underscore.pluralize}, dependent: :destroy\n" + \
+			"  accepts_nested_attributes_for :#{dm_name.underscore.pluralize}\n" + \
+			"  attr_accessible :#{dm_name.underscore.pluralize}_attributes\n" + \
+			"  has_associated_audits\n"
 		end
 
 		inject_into_file "app/models/#{dm_name.underscore}.rb", :before => "class" do
@@ -135,13 +135,13 @@ def generate_form(dept, form, fields, detail_fields=nil)
 			detail_controller_create_inserts<<"    params[:#{form.underscore}][:#{dm_name.underscore.pluralize}_attributes].each do |d|\n"
 			detail_controller_create_inserts<<"      d[1][:items] = @#{form.underscore}.#{dm_name.underscore.pluralize}.build.items_desc[d[0].to_i]\n"
 			if dm_specs.present?
-			detail_controller_create_inserts<<"      d[1][:specs] = @#{form.underscore}.#{dm_name.underscore.pluralize}.build.specs_desc[d[0].to_i]\n"
+				detail_controller_create_inserts<<"      d[1][:specs] = @#{form.underscore}.#{dm_name.underscore.pluralize}.build.specs_desc[d[0].to_i]\n"
 			end
 			if dm_check_items.present?
-			detail_controller_create_inserts<<"      d[1][:check_items] = @#{form.underscore}.#{dm_name.underscore.pluralize}.build.check_items_desc[d[0].to_i]\n"
+				detail_controller_create_inserts<<"      d[1][:check_items] = @#{form.underscore}.#{dm_name.underscore.pluralize}.build.check_items_desc[d[0].to_i]\n"
 			end
 			if dm_criterias.present?
-			detail_controller_create_inserts<<"      d[1][:criterias] = @#{form.underscore}.#{dm_name.underscore.pluralize}.build.criterias_desc[d[0].to_i]\n"
+				detail_controller_create_inserts<<"      d[1][:criterias] = @#{form.underscore}.#{dm_name.underscore.pluralize}.build.criterias_desc[d[0].to_i]\n"
 			end
 			detail_controller_create_inserts<<"    end\n"
 		end
@@ -159,11 +159,11 @@ def generate_form(dept, form, fields, detail_fields=nil)
 		detail_view__form_inserts<< "  <%= f.fields_for :#{dm_name.underscore.pluralize}, detail do |g| %>\n"
 		detail_view__form_inserts<< "    <tr>\n"
 		detail_fields.keys.each do |field_name|
-	  	if [:items, :specs, :check_items, :criterias].include? field_name
+			if [:items, :specs, :check_items, :criterias].include? field_name
 				detail_view__form_inserts<< "<td><%= detail.#{field_name.to_s} %></td>\n"
-	 		else
+			else
 				detail_view__form_inserts<< "<td><%= g.input :#{field_name.to_s}, :wrapper => :tdata, :input_html => { :class => 'input-mini' } %></td>\n"
-	 		end
+			end
 		end
 		detail_view__form_inserts<< "    </tr>\n"
 		detail_view__form_inserts<< "  <% end %>\n"
@@ -177,26 +177,26 @@ def generate_form(dept, form, fields, detail_fields=nil)
 		dm_table_items=detail_fields.keys.map {|e| "<td><%= d.#{e.to_s} %></td>\n"}.join
 
 		inject_into_file "app/views/#{form.underscore.pluralize}/show.html.erb", :after => "<!--end_of_header-->\n" do
-	  	'  <table class="table table-bordered">' + "\n" + \
-	  	'    <tr>' + "\n" \
-	  	"#{dm_table_headers}" + \
-	  	'    </tr>' + "\n" + \
-	  	"<% @#{form.underscore}.#{dm_name.underscore.pluralize}.each do |d| %>\n" + \
-	  	'    <tr>' + "\n" \
-	  	"#{dm_table_items}" + \
-	  	'    </tr>' + "\n" + \
-	  	"<% end %>\n" + \
-	  	"  </table>\n"
+			'  <table class="table table-bordered">' + "\n" + \
+			'    <tr>' + "\n" \
+			"#{dm_table_headers}" + \
+			'    </tr>' + "\n" + \
+			"<% @#{form.underscore}.#{dm_name.underscore.pluralize}.each do |d| %>\n" + \
+			'    <tr>' + "\n" \
+			"#{dm_table_items}" + \
+			'    </tr>' + "\n" + \
+			"<% end %>\n" + \
+			"  </table>\n"
 		end
 	end # detail_fields.present?
 
-  # Update the navigation page
+	# Update the navigation page
 	inject_into_file "app/views/application/_nav.html.erb", :before => "</ul><!--#{dept}-->\n" do
-	  "  <li><%= link_to '#{form.titleize}', #{form.pluralize.underscore}_path -%></li>\n"
+		"  <li><%= link_to '#{form.titleize}', #{form.pluralize.underscore}_path -%></li>\n"
 	end
 
 	inject_into_file "app/views/home/index.html.erb", :after => "<!--#{dept}-->\n" do
-	  "  <li><%= link_to '#{form.titleize}', #{form.pluralize.underscore}_path -%></li>\n"
+		"  <li><%= link_to '#{form.titleize}', #{form.pluralize.underscore}_path -%></li>\n"
 	end
 
 	if fields.has_key? :status_code
@@ -214,43 +214,43 @@ def generate_form(dept, form, fields, detail_fields=nil)
 	end
 
 	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :after => '<!--Note-->' do
-'<h5>KGD Machine Status: A :Operation Time (机器运行时间); B :Check Probe Mark (检查针痕); C :Change Probe Card (更换针卡); D :Setup Device (机器转换不同产品); E :PM & CAL (维护校准时间); F :Prober Down Time (针测机停机时间); G :Tester Down Time (测试机停机时间); H :Facility Down (厂务停机时间); I :Engeer Use Time (工程使用时间); J :End lot Time (Lot转换时间); K :Idle (待料时间); L :Misc (其它)</h5>'
+		'<h5>KGD Machine Status: A :Operation Time (机器运行时间); B :Check Probe Mark (检查针痕); C :Change Probe Card (更换针卡); D :Setup Device (机器转换不同产品); E :PM & CAL (维护校准时间); F :Prober Down Time (针测机停机时间); G :Tester Down Time (测试机停机时间); H :Facility Down (厂务停机时间); I :Engeer Use Time (工程使用时间); J :End lot Time (Lot转换时间); K :Idle (待料时间); L :Misc (其它)</h5>'
 	end if fields.has_key? :kgd_machine_status
 
 	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :before => '  <%= f.submit :class => "btn" %>' do
-"  <%= f.text_field :device_cont, :class => 'input-small search-query', :placeholder => 'PN Device', :title => 'Type here to search PN Device' %>\n"
+		"  <%= f.text_field :device_cont, :class => 'input-small search-query', :placeholder => 'PN Device', :title => 'Type here to search PN Device' %>\n"
 	end if fields.has_key? :device
 
 	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :before => '  <%= f.submit :class => "btn" %>' do
-"  <%= f.text_field :lot_no_cont, :class => 'input-small search-query', :placeholder => 'Lot No.', :title => 'Type here to search Lot No.' %>\n"
+		"  <%= f.text_field :lot_no_cont, :class => 'input-small search-query', :placeholder => 'Lot No.', :title => 'Type here to search Lot No.' %>\n"
 	end if fields.has_key? :lot_no
 
 	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :before => '  <%= f.submit :class => "btn" %>' do
-"  <%= f.text_field :reject_code_cont, :class => 'input-small search-query', :placeholder => 'Reject Code', :title => 'Type here to search Reject Code' %>\n"
+		"  <%= f.text_field :reject_code_cont, :class => 'input-small search-query', :placeholder => 'Reject Code', :title => 'Type here to search Reject Code' %>\n"
 	end if fields.has_key? :reject_code
 
 	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :before => '  <%= f.submit :class => "btn" %>' do
-"  <%= f.text_field :gold_wire_no_cont, :class => 'input-medium search-query', :placeholder => 'Goldwire No.', :title => 'Type here to search Goldwire No.' %>\n"
+		"  <%= f.text_field :gold_wire_no_cont, :class => 'input-medium search-query', :placeholder => 'Goldwire No.', :title => 'Type here to search Goldwire No.' %>\n"
 	end if fields.has_key? :gold_wire_no
 
 	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :before => '  <%= f.submit :class => "btn" %>' do
-"  <%= f.text_field :wafer_no_cont, :class => 'input-medium search-query', :placeholder => 'Wafer No.', :title => 'Type here to search Wafer No.' %>\n"
+		"  <%= f.text_field :wafer_no_cont, :class => 'input-medium search-query', :placeholder => 'Wafer No.', :title => 'Type here to search Wafer No.' %>\n"
 	end if fields.has_key? :wafer_no
 
 	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :before => '  <%= f.submit :class => "btn" %>' do
-"  <%= f.text_field :material_no_cont, :class => 'input-medium search-query', :placeholder => 'Material No', :title => 'Type here to search Material No.' %>\n"
+		"  <%= f.text_field :material_no_cont, :class => 'input-medium search-query', :placeholder => 'Material No', :title => 'Type here to search Material No.' %>\n"
 	end if fields.has_key? :material_no
 
 	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :before => '  <%= f.submit :class => "btn" %>' do
-"  <%= f.text_field :batch_no_cont, :class => 'input-medium search-query', :placeholder => 'Batch No', :title => 'Type here to search Batch No.' %>\n"
+		"  <%= f.text_field :batch_no_cont, :class => 'input-medium search-query', :placeholder => 'Batch No', :title => 'Type here to search Batch No.' %>\n"
 	end if fields.has_key? :batch_no
 
 	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :before => '  <%= f.submit :class => "btn" %>' do
-"  <%= f.text_field :applicant_badge_cont, :class => 'input-medium search-query', :placeholder => 'Applicant Badge', :title => 'Type here to search Applicant Badge' %>\n"
+		"  <%= f.text_field :applicant_badge_cont, :class => 'input-medium search-query', :placeholder => 'Applicant Badge', :title => 'Type here to search Applicant Badge' %>\n"
 	end if fields.has_key? :applicant_badge
 
 	inject_into_file "app/views/#{form.pluralize.underscore}/index.html.erb", :before => '  <%= f.submit :class => "btn" %>' do
-"  <%= f.text_field :remark_cont, :class => 'input-small search-query', :placeholder => 'Remark', :title => 'Type here to search Remark' %>\n"
+		"  <%= f.text_field :remark_cont, :class => 'input-small search-query', :placeholder => 'Remark', :title => 'Type here to search Remark' %>\n"
 	end if fields.has_key? :remark
 end
 
@@ -282,4 +282,3 @@ eval File.read(File.expand_path('../forms_QA.rb', __FILE__))
 
 # generate Test forms (only used while development)
 #eval File.read(File.expand_path('../forms_test.rb', __FILE__))
-
