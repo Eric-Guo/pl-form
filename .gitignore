@@ -16,7 +16,8 @@
 
 *.sublime-workspace
 .idea/
-
+.yardoc/
+doc/
 public/assets/
 
 .tags*
