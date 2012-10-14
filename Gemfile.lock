@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Eric-Guo/ransack.git
-  revision: f38ecb30f8583a3e91b2586a6382d73ace25cfde
+  revision: 91c6ae0e8bb7d285278ce2cffc3fe814f3f7b120
   specs:
     ransack (0.7.0)
       actionpack (~> 3.0)
@@ -21,7 +21,7 @@ GEM
       journey (~> 1.0.4)
       rack (~> 1.4.0)
       rack-cache (~> 1.2)
-      rack-test (~> 0.6.2)
+      rack-test (~> 0.6.1)
       sprockets (~> 2.1.3)
     activemodel (3.2.8)
       activesupport (= 3.2.8)
@@ -45,7 +45,7 @@ GEM
     audited (3.0.0)
     audited-activerecord (3.0.0)
       activerecord (~> 3.0)
-      audited (= 3.0.0.rc2)
+      audited (= 3.0.0)
     bcrypt-ruby (3.0.1)
     bcrypt-ruby (3.0.1-x86-mingw32)
     bootstrap-will_paginate (0.0.9)
