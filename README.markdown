@@ -16,7 +16,7 @@ Customized rails template script
 
 ### forms_*.rb
 
-All forms define ruby program
+All forms definition.
 
 ### lib/template/*
 
