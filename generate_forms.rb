@@ -263,22 +263,22 @@ common_fields = {
 }
 
 # generate FOP forms
-eval File.read(File.expand_path('../forms_FOP.rb', __FILE__))
+#eval File.read(File.expand_path('../forms_FOP.rb', __FILE__))
 
 # generate BOP forms
-eval File.read(File.expand_path('../forms_BOP.rb', __FILE__))
+#eval File.read(File.expand_path('../forms_BOP.rb', __FILE__))
 
 # generate TOP forms
-eval File.read(File.expand_path('../forms_TOP.rb', __FILE__))
+#eval File.read(File.expand_path('../forms_TOP.rb', __FILE__))
 
 # generate COP forms
-eval File.read(File.expand_path('../forms_COP.rb', __FILE__))
+#eval File.read(File.expand_path('../forms_COP.rb', __FILE__))
 
 # generate KGD forms
-eval File.read(File.expand_path('../forms_KGD.rb', __FILE__))
+#eval File.read(File.expand_path('../forms_KGD.rb', __FILE__))
 
 # generate QA forms
-eval File.read(File.expand_path('../forms_QA.rb', __FILE__))
+#eval File.read(File.expand_path('../forms_QA.rb', __FILE__))
 
 # generate Test forms (only used while development)
-#eval File.read(File.expand_path('../forms_test.rb', __FILE__))
+eval File.read(File.expand_path('../forms_test.rb', __FILE__))
