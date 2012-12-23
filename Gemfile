@@ -14,7 +14,7 @@ gem 'bootstrap-will_paginate'
 gem 'devise'
 gem 'cancan'
 gem 'simple_form'
-gem "ransack", :git => "https://github.com/Eric-Guo/ransack.git"
+gem "ransack"
 gem "audited-activerecord"
 
 # Gems used only for assets and not required
