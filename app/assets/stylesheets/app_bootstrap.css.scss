@@ -1,9 +1,8 @@
 @import "variables-united";
-@import "bootswatch-united";
 
 // import original bootstrap
-@import "twitter/bootstrap";
-@import "twitter/bootstrap-responsive";
+@import "bootstrap";
+@import "bootswatch-united";
 
 body {
     padding-top: 36px;

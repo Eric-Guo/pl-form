@@ -8,7 +8,7 @@ gem 'rails', '3.2.17'
 gem 'sqlite3'
 gem 'ruby-oci8', '~> 2.1.3'
 gem 'activerecord-oracle_enhanced-adapter', '~> 1.4.3', '< 1.5'
-gem 'anjlab-bootstrap-rails', '>= 2.0', :require => 'bootstrap-rails'
+gem 'bootstrap-sass', '< 3.0'
 gem 'bootstrap-will_paginate'
 gem 'devise', '< 3.1'
 gem 'cancancan', '~> 1.7'
@@ -23,7 +23,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platform => :ruby
+  # gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
