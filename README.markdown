@@ -5,6 +5,7 @@ It's a actually project using in Enterprise, purpose is simple, just building a 
 ## How to use it
 
 * bundle install
+* rake assets:precompile
 * rake rails:template LOCATION=generate_forms.rb
 * rake db:migrate
 
