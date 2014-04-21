@@ -1,19 +1,18 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.9'
+gem 'rails', '3.2.17'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'ruby-oci8', '~> 2.1.2'
-gem 'activerecord-oracle_enhanced-adapter', '~> 1.4.1'
-gem 'win32console', :platforms => :mingw
+gem 'ruby-oci8', '~> 2.1.3'
+gem 'activerecord-oracle_enhanced-adapter', '~> 1.4.3', '< 1.5'
 gem 'anjlab-bootstrap-rails', '>= 2.0', :require => 'bootstrap-rails'
 gem 'bootstrap-will_paginate'
-gem 'devise'
-gem 'cancan'
-gem 'simple_form'
+gem 'devise', '< 3.1'
+gem 'cancancan', '~> 1.7'
+gem 'simple_form', '<3.0'
 gem "ransack"
 gem "audited-activerecord"
 
@@ -31,10 +30,10 @@ end
 
 group :development do
   gem 'quiet_assets'
-  gem 'pry-rails'
-  gem 'pry-debugger'
+  # Disable below two line if you using rubymine
+  #gem 'pry-rails'
+  #gem 'pry-debugger'
 end
-gem 'rack-webconsole-pry', :require => 'rack-webconsole'
 
 gem 'jquery-rails'
 
@@ -52,3 +51,5 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+gem 'sprockets', '=2.2.2.backport2'
