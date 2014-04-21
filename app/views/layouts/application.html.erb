@@ -79,8 +79,9 @@
       <%= yield %>
       <hr>
       <footer>
-        <p>&copy; Sandisk Semiconductor Shanghai Co.Ltd 2012</p>
+        <p>&copy; Company 2014</p>
       </footer>
+      <%= debug(params) if Rails.env.development? %>
     </div><!--/.fluid-container-->
 </body>
 </html>
